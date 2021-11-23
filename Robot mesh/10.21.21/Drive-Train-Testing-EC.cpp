@@ -1,0 +1,185 @@
+// VEX V5 C++ Project with Competition Template
+#include "vex.h"
+using namespace vex;
+
+//#region config_globals
+vex::brain      Brain;
+vex::motor      left_drive_mtr(vex::PORT1, vex::gearSetting::ratio18_1, false);
+vex::motor      right_drive_mtr(vex::PORT2, vex::gearSetting::ratio18_1, true);
+vex::motor      omni_drive_mtr(vex::PORT3, vex::gearSetting::ratio18_1, false);
+vex::motor      lift_mtr(vex::PORT5, vex::gearSetting::ratio18_1, false);
+vex::limit      limit_A(Brain.ThreeWirePort.A);
+vex::bumper     bumper_B(Brain.ThreeWirePort.B);
+vex::pot        pot_C(Brain.ThreeWirePort.C);
+vex::limit      forklift_limit(Brain.ThreeWirePort.D);
+vex::limit      forklift_limit_down(Brain.ThreeWirePort.E);
+vex::drivetrain dt(left_drive_mtr, right_drive_mtr, 319.1764, 292.1, 0, vex::distanceUnits::mm, 1);
+vex::controller con(vex::controllerType::primary);
+//#endregion config_globals
+
+/*static bool threadArmRunning = false;
+static bool threadArm2Running = false;
+static bool threadKillRunning = false;
+static thread m_upthread1;
+static thread m_downthread1;
+static thread m_killthread1;*/
+// Creates a competition object that allows access to Competition methods.
+vex::competition Competition;
+
+void limitTest() {
+    while (true){
+        if (limit_A == 1) {
+            left_drive_mtr.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+            right_drive_mtr.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+        }
+    }
+}
+
+void potTest() {
+    while(true) {
+        Brain.Screen.clearScreen();
+    
+        // display the potentiometer rotation value on the screen
+        Brain.Screen.printAt(1, 20, "rotation: %f degrees", pot_C.value(rotationUnits::deg));
+    
+        // display the potentiometer percent value on the screen
+        Brain.Screen.printAt(1, 40, "percent: %f %%", pot_C.value(percentUnits::pct));
+        
+        // display the potentiometer analog value on the screen
+        Brain.Screen.printAt(1, 60, "analog: %f mV", pot_C.value(analogUnits::mV));
+        
+        //Sleep the task for a short amount of time to prevent wasted resources.
+        sleepMs(500);
+    }
+}
+
+void bumpTest() {
+    while(true) {
+        while(bumper_B.pressing()){
+            left_drive_mtr.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+            right_drive_mtr.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+        }
+    }
+}
+
+void killButton() {
+    while(true) {
+        if(con.ButtonR1.pressing()){
+            lift_mtr.stop(vex::brakeType::hold);
+            omni_drive_mtr.stop(vex::brakeType::hold);
+            right_drive_mtr.stop(vex::brakeType::hold);
+            left_drive_mtr.stop(vex::brakeType::hold);
+        }
+    }
+}
+
+void lift_thread() {
+    while(true) {
+        if(con.ButtonL1.pressing()){
+            //lift_mtr.rotateFor(5, vex::rotationUnits::deg, 10, vex::velocityUnits::pct, true);
+            //if (forklift_limit.pressing()) {
+                 //lift_mtr.stop(vex::brakeType::hold);
+            //}
+            //else {
+                lift_mtr.spin(vex::directionType::fwd, 10, vex::velocityUnits::pct);
+            //}
+        }
+        else if(con.ButtonL2.pressing()){
+            //lift_mtr.rotateFor(5, vex::rotationUnits::deg, 10, vex::velocityUnits::pct, true);
+            //if (forklift_limit_down.pressing()) {
+                 //lift_mtr.stop(vex::brakeType::hold);
+            //}
+            //else {
+                lift_mtr.spin(vex::directionType::rev, 10, vex::velocityUnits::pct);
+            //}
+        }
+        else{
+            lift_mtr.stop(vex::brakeType::hold);
+        }
+    }
+}
+
+void liftDown() {
+    while(true) {
+        while(con.ButtonL2.pressing()){
+            lift_mtr.rotateFor(5, vex::rotationUnits::deg, 10, vex::velocityUnits::pct, true);
+            //lift_drive_mtr.spin(vex::directionType::fwd, 0, vex::velocityUnits::pct);
+        }
+    }
+}
+
+
+void pre_auton() {
+    // All activities that occur before competition start
+    // Example: setting initial position
+
+}
+
+void autonomous() {
+    // Place autonomous code here
+    dt.driveFor(vex::directionType::rev, 9, vex::distanceUnits::in, 100, vex::velocityUnits::pct, true);
+    /*while (true){
+        if (forklift_limit == 1) {
+            
+    }*/
+}
+
+void drivercontrol() {
+    // Place drive control code here, inside the loop
+    while (true) {
+        // This is the main loop for the driver control.
+        // Each time through the loop you should update motor
+        // movements based on input from the controller.
+
+        
+        float max = 100.0;
+        float left_percent = con.Axis3.value()/max;
+        float right_percent = con.Axis2.value()/max;
+           
+        float motor_max = 100;
+        int left_power = left_percent * motor_max;
+        int right_power = right_percent * motor_max;
+        //omni wheel power
+        float side_percent = con.Axis4.value()/max;
+        int omni_power = side_percent * motor_max;
+        
+        left_drive_mtr.spin(vex::directionType::fwd, left_power, vex::velocityUnits::pct); 
+        right_drive_mtr.spin(vex::directionType::fwd, right_power, vex::velocityUnits::pct);
+        omni_drive_mtr.spin(vex::directionType::rev, omni_power, vex::velocityUnits::pct);
+        //lift_mtr.spin(vex::directionType::fwd, 10, vex::velocityUnits::pct); (test)
+        
+        
+        //omni_drive_mtr.spin(vex::directionType::fwd, (this would be con.ButtonR1.pressing()), vex::velocityUnits::pct);
+        //program thread that can stop all motors
+        
+        //left_drive_mtr1.spin(vex::directionType::fwd, left_power, vex::velocityUnits::pct); 
+        //right_drive_mtr1.spin(vex::directionType::fwd, right_power, vex::velocityUnits::pct);
+        
+        wait(20,timeUnits::msec);
+    }
+}
+
+int main() {
+    // Do not adjust the lines below
+    Brain.Screen.print("User Program has Started.");
+    /*thread m_limitthread = thread(limitTest);
+    thread m_potthread = thread(potTest);
+    thread m_bumpthread1 = thread(bumpTest);*/
+    
+    /*thread m_upthread1 = thread(liftUp);
+    thread m_downthread1 = thread(liftDown);*/
+    
+    // Set up (but don't start) callbacks for autonomous and driver control periods.
+    Competition.autonomous(autonomous);
+    Competition.drivercontrol(drivercontrol);
+    
+    //thread m_upthread1 = thread(lift_thread);
+    //testing
+    //thread m_killthread = thread(killButton);
+
+    // Run the pre-autonomous function.
+    pre_auton();
+
+    // Robot Mesh Studio runtime continues to run until all threads and
+    // competition callbacks are finished.
+}
