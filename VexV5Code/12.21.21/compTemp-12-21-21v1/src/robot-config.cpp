@@ -20,7 +20,7 @@ controller Controller1 = controller(primary);
 motor arm = motor(PORT7, ratio18_1, false);
 motor lift1 = motor(PORT10, ratio18_1, false);
 motor lift2 = motor(PORT4, ratio18_1, false);
-motor lift_clamp = motor(PORT6, ratio18_1, false);
+motor lift_clamp = motor(PORT5, ratio18_1, false);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
