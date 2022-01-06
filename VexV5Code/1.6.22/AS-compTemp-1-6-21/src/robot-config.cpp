@@ -121,13 +121,18 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonX/ButtonB status to control lift_clamp
       if (Controller1.ButtonX.pressing()) {
+        lift_clamp.setStopping(hold);
         lift_clamp.spin(forward, 50, velocityUnits::pct);
+        Brain.Screen.print("the x button is being pressed");
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonB.pressing()) {
+        lift_clamp.setStopping(hold);
         lift_clamp.spin(reverse, 50, velocityUnits::pct);
+        Brain.Screen.print("the b button is being pressed");
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
         lift_clamp.stop(hold);
+        Brain.Screen.print("no clamp button is pressed");
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1XBButtonsControlMotorsStopped = true;
       }
