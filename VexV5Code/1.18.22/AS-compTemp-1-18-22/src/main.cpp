@@ -55,6 +55,22 @@ void pre_auton(void) {
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
+//start of pre defined functions 
+void arms_down(void) {
+  arm.setVelocity(100,percent);
+  arm.spinFor(forward, 50, degrees);
+  arm.stop(hold);
+  arm.setVelocity(20,percent);
+}
+
+void arms_up(void) {
+  arm.setVelocity(100,percent);
+  arm.spinFor(reverse, 50, degrees);
+  arm.stop(hold);
+  arm.setVelocity(20,percent);
+}
+
+//start of main functions
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
