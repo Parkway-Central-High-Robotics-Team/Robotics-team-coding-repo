@@ -77,7 +77,7 @@ Discarded input sections
                 0x00000000        0x8 build/src/main.o
  .llvm_addrsig  0x00000000        0x6 build/src/main.o
  .text          0x00000000        0x0 build/src/robot-config.o
- .llvm_addrsig  0x00000000       0x14 build/src/robot-config.o
+ .llvm_addrsig  0x00000000       0x11 build/src/robot-config.o
  .text          0x00000000        0x0 C:\Program Files (x86)\VEX Robotics\VEXcode Pro V5\sdk/vexv5\libv5rt.a(v5_startup.c.obj)
  .data          0x00000000        0x0 C:\Program Files (x86)\VEX Robotics\VEXcode Pro V5\sdk/vexv5\libv5rt.a(v5_startup.c.obj)
  .bss           0x00000000        0x0 C:\Program Files (x86)\VEX Robotics\VEXcode Pro V5\sdk/vexv5\libv5rt.a(v5_startup.c.obj)

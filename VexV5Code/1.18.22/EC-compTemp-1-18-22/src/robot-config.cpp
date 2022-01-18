@@ -83,39 +83,39 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.setVelocity(drivetrainRightSideSpeed, percent);
         RightDriveSmart.spin(forward);
       }
-      // check the ButtonL1/ButtonL2 status to control liftfront
+      // check the ButtonL1/ButtonL2 status to control liftFront
       if (Controller1.ButtonL1.pressing()) {
-        liftfront.spin(reverse, 75, velocityUnits::pct);
+        liftFront.spin(reverse, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
-        liftfront.spin(forward, 75, velocityUnits::pct);
+        liftFront.spin(forward, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        liftfront.stop(hold);
+        liftFront.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1LeftShoulderControlMotorsStopped = true;
       }
-      // check the ButtonR1/ButtonR2 status to control liftback
+      // check the ButtonR1/ButtonR2 status to control liftBack
       if (Controller1.ButtonR1.pressing()) {
-        liftback.spin(reverse, 75, velocityUnits::pct);
+        liftBack.spin(reverse, 75, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonR2.pressing()) {
-        liftback.spin(forward, 75, velocityUnits::pct);
+        liftBack.spin(forward, 75, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (!Controller1RightShoulderControlMotorsStopped) {
-        liftback.stop(hold);
+        liftBack.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1RightShoulderControlMotorsStopped = true;
       }
-      // check the ButtonUp/ButtonDown status to control arm
+      // check the ButtonUp/ButtonDown status to control armLift
       if (Controller1.ButtonUp.pressing()) {
-        arm.spin(forward, 20, velocityUnits::pct);
+        armLift.spin(forward, 20, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
-        arm.spin(reverse, 20, velocityUnits::pct);
+        armLift.spin(reverse, 20, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (!Controller1UpDownButtonsControlMotorsStopped) {
-        arm.stop(hold);
+        armLift.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1UpDownButtonsControlMotorsStopped = true;
       }
