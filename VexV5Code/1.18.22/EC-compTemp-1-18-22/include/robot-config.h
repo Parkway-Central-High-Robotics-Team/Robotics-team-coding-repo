@@ -6,8 +6,8 @@ extern brain Brain;
 extern smartdrive Drivetrain;
 extern controller Controller1;
 extern motor arm;
-extern motor lift1;
-extern motor lift2;
+extern motor liftfront;
+extern motor liftback;
 extern motor lift_clamp;
 
 /**

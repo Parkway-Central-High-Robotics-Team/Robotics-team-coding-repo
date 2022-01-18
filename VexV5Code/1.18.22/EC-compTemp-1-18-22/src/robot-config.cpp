@@ -83,27 +83,27 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.setVelocity(drivetrainRightSideSpeed, percent);
         RightDriveSmart.spin(forward);
       }
-      // check the ButtonL1/ButtonL2 status to control lift1
+      // check the ButtonL1/ButtonL2 status to control liftfront
       if (Controller1.ButtonL1.pressing()) {
-        lift1.spin(reverse, 75, velocityUnits::pct);
+        liftfront.spin(reverse, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
-        lift1.spin(forward, 75, velocityUnits::pct);
+        liftfront.spin(forward, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        lift1.stop(hold);
+        liftfront.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1LeftShoulderControlMotorsStopped = true;
       }
-      // check the ButtonR1/ButtonR2 status to control lift2
+      // check the ButtonR1/ButtonR2 status to control liftback
       if (Controller1.ButtonR1.pressing()) {
-        lift2.spin(reverse, 75, velocityUnits::pct);
+        liftback.spin(reverse, 75, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonR2.pressing()) {
-        lift2.spin(forward, 75, velocityUnits::pct);
+        liftback.spin(forward, 75, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (!Controller1RightShoulderControlMotorsStopped) {
-        lift2.stop(hold);
+        liftback.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1RightShoulderControlMotorsStopped = true;
       }
