@@ -56,16 +56,46 @@ void pre_auton(void) {
 /*---------------------------------------------------------------------------*/
 
 //start of pre defined functions 
-void arms_down(void) {
+void arms_down_full(void) {
   arm.setVelocity(100,percent);
   arm.spinFor(forward, 50, degrees);
   arm.stop(hold);
   arm.setVelocity(20,percent);
 }
 
-void arms_up(void) {
+void arms_up_full(void) {
   arm.setVelocity(100,percent);
   arm.spinFor(reverse, 50, degrees);
+  arm.stop(hold);
+  arm.setVelocity(20,percent);
+}
+
+void arms_down_deg(int deg) {
+  arm.setVelocity(100,percent);
+  arm.spinFor(reverse, deg, degrees);
+  arm.stop(hold);
+  arm.setVelocity(20,percent);
+}
+
+void arms_up_deg(int deg) {
+  arm.setVelocity(100,percent);
+  arm.spinFor(forward, deg, degrees);
+  arm.stop(hold);
+  arm.setVelocity(20,percent);
+}
+
+void arms_down_time(int ms) {
+  arm.setVelocity(100,percent);
+  arm.spin(reverse);
+  wait(ms, msec);
+  arm.stop(hold);
+  arm.setVelocity(20,percent);
+}
+
+void arms_up_time(int ms) {
+  arm.setVelocity(100,percent);
+  arm.spin(forward);
+  wait(ms, msec);
   arm.stop(hold);
   arm.setVelocity(20,percent);
 }
