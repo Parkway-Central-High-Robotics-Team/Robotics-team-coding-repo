@@ -19,7 +19,7 @@ smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainIn
 controller Controller1 = controller(primary);
 motor liftFront = motor(PORT10, ratio18_1, false); //not in use at the moment
 motor liftBack = motor(PORT7, ratio18_1, false);
-motor armLift = motor(PORT4, ratio18_1, false); //not in use at the moment
+motor claw_back = motor(PORT6, ratio18_1, false); 
 motor lift_clamp = motor(PORT5, ratio18_1, false); 
 
 // VEXcode generated functions
@@ -38,10 +38,10 @@ bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 // joysticks: used for tank drive
 // button R1: used to raise the back lift
 // button R2: used to lower the back likt
-// button L1: not in use 
-// button L2: not in use
-// button X: used to open the claw
-// button B: used to close the claw
+// button L1: open the claw
+// button L2: close the claw
+// button X: used to open the lift clamp
+// button B: used to close the lift clamp
 // button Y: not in use
 // button A: not in use
 // button Up: not in use
@@ -101,37 +101,37 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonL1/ButtonL2 status to control liftFront
       if (Controller1.ButtonL1.pressing()) {
-        liftFront.spin(reverse, 75, velocityUnits::pct);
+        claw_back.spin(forward, 35, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
-        liftFront.spin(forward, 75, velocityUnits::pct);
+        claw_back.spin(reverse, 35, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        liftFront.stop(hold);
+        claw_back.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1LeftShoulderControlMotorsStopped = true;
       }
       // check the ButtonR1/ButtonR2 status to control liftBack
       if (Controller1.ButtonR1.pressing()) {
-        liftBack.spin(reverse, 75, velocityUnits::pct);
+        liftBack.spin(reverse, 100, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonR2.pressing()) {
-        liftBack.spin(forward, 75, velocityUnits::pct);
+        liftBack.spin(forward, 100, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (!Controller1RightShoulderControlMotorsStopped) {
         liftBack.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1RightShoulderControlMotorsStopped = true;
       }
-      // check the ButtonUp/ButtonDown status to control armLift
+      // check the ButtonUp/ButtonDown status to control liftFront
       if (Controller1.ButtonUp.pressing()) {
-        armLift.spin(forward, 20, velocityUnits::pct);
+        liftFront.spin(forward, 20, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
-        armLift.spin(reverse, 20, velocityUnits::pct);
+        liftFront.spin(reverse, 20, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (!Controller1UpDownButtonsControlMotorsStopped) {
-        armLift.stop(hold);
+        liftFront.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1UpDownButtonsControlMotorsStopped = true;
       }
