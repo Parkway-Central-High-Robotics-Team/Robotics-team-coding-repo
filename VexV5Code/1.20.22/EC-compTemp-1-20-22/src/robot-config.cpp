@@ -17,10 +17,10 @@ motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 inertial DrivetrainInertial = inertial(PORT11);
 smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainInertial, 319.19, 320, 177.79999999999998, mm, 1);
 controller Controller1 = controller(primary);
-motor armLift = motor(PORT7, ratio18_1, false);
-motor liftFront = motor(PORT10, ratio18_1, false);
-motor liftBack = motor(PORT4, ratio18_1, false);
-motor lift_clamp = motor(PORT5, ratio18_1, false);
+motor liftFront = motor(PORT10, ratio18_1, false); //not in use at the moment
+motor liftBack = motor(PORT7, ratio18_1, false);
+motor armLift = motor(PORT4, ratio18_1, false); //not in use at the moment
+motor lift_clamp = motor(PORT5, ratio18_1, false); 
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -33,6 +33,22 @@ bool Controller1XBButtonsControlMotorsStopped = true;
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 
+/* 
+// controller map
+// joysticks: used for tank drive
+// button R1: used to raise the back lift
+// button R2: used to lower the back likt
+// button L1: not in use 
+// button L2: not in use
+// button X: used to open the claw
+// button B: used to close the claw
+// button Y: not in use
+// button A: not in use
+// button Up: not in use
+// button Down: not in use
+// button Left: not in use
+// button Right: not in use
+*/
 
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
@@ -121,10 +137,10 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonX/ButtonB status to control lift_clamp
       if (Controller1.ButtonX.pressing()) {
-        lift_clamp.spin(forward, 50, velocityUnits::pct);
+        lift_clamp.spin(reverse, 50, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonB.pressing()) {
-        lift_clamp.spin(reverse, 50, velocityUnits::pct);
+        lift_clamp.spin(forward, 50, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
         lift_clamp.stop(hold);
