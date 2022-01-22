@@ -44,36 +44,36 @@ competition Competition;
 
 //start of pre defined functions 
 
-//start of arm functions 
-void claw_back_down_full(void) {
+//start of claw functions 
+void claw_back_open_full(void) {
   claw_back.setVelocity(100,percent);
   claw_back.spinFor(forward, 50, degrees);
   claw_back.stop(hold);
   claw_back.setVelocity(20,percent);
 }
 
-void arms_up_full(void) {
+void claw_back_close_full(void) {
   claw_back.setVelocity(100,percent);
   claw_back.spinFor(reverse, 50, degrees);
   claw_back.stop(hold);
   claw_back.setVelocity(20,percent);
 }
 
-void arms_down_deg(int deg) {
+void claw_back_open_deg(int deg) {
   claw_back.setVelocity(100,percent);
   claw_back.spinFor(reverse, deg, degrees);
   claw_back.stop(hold);
   claw_back.setVelocity(20,percent);
 }
 
-void arms_up_deg(int deg) {
+void claw_back_close_deg(int deg) {
   claw_back.setVelocity(100,percent);
   claw_back.spinFor(forward, deg, degrees);
   claw_back.stop(hold);
   claw_back.setVelocity(20,percent);
 }
 
-void arms_down_time(int ms) {
+void claw_back_close_time(int ms) {
   claw_back.setVelocity(100,percent);
   claw_back.spin(reverse);
   wait(ms, msec);
@@ -81,7 +81,7 @@ void arms_down_time(int ms) {
   claw_back.setVelocity(20,percent);
 }
 
-void arms_up_time(int ms) {
+void claw_back_open_time(int ms) {
   claw_back.setVelocity(100,percent);
   claw_back.spin(forward);
   wait(ms, msec);
@@ -234,11 +234,8 @@ void autonomous(void) {
   // Insert autonomous user code here.
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,24,inches);
-  Drivetrain.turnFor(left,90,degrees);
-  liftFront.spin(forward);
-  liftBack.spin(forward);
-  leftMotorA.spin(forward);
-  leftMotorB.spin(forward);
+  claw_back_close_deg(100);
+  Drivetrain.driveFor(reverse,24,inches);
   // ..........................................................................
 }
 
