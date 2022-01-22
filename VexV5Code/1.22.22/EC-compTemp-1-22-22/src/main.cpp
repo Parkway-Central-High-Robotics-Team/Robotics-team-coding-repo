@@ -12,10 +12,15 @@
 // [Name]               [Type]        [Port(s)]
 // Drivetrain           drivetrain    2, 3, 8, 9, 11  
 // Controller1          controller                    
-// arm                  motor         7               
-// lift1                motor         10              
-// lift2                motor         4               
-// lift_clamp           motor         6               
+// DrivetrainInertial   inertial      11
+// leftMotorA           motor         2
+// leftMotorB           motor         3
+// rightMotorA          motor         8
+// rightMotorB          motor         9
+// liftFront            motor         10  
+// liftBack             motor         7                           
+// claw_back            motor         6               
+// lift_clamp           motor         5               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -61,6 +66,10 @@ void autonomous(void) {
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,24,inches);
   Drivetrain.turnFor(left,90,degrees);
+  liftFront.spin(forward);
+  liftBack.spin(forward);
+  leftMotorA.spin(forward);
+  leftMotorB.spin(forward);
   // ..........................................................................
 }
 
