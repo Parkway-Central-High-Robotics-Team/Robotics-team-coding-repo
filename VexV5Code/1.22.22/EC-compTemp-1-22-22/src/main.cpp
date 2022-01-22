@@ -42,6 +42,175 @@ competition Competition;
 /*  not every time that the robot is disabled.                               */
 /*---------------------------------------------------------------------------*/
 
+//start of pre defined functions 
+
+//start of arm functions 
+void claw_back_down_full(void) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(forward, 50, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
+}
+
+void arms_up_full(void) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(reverse, 50, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
+}
+
+void arms_down_deg(int deg) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(reverse, deg, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
+}
+
+void arms_up_deg(int deg) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(forward, deg, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
+}
+
+void arms_down_time(int ms) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spin(reverse);
+  wait(ms, msec);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
+}
+
+void arms_up_time(int ms) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spin(forward);
+  wait(ms, msec);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
+}
+//end of arm functions
+
+//begin of front lift functions 
+void lift_front_up(void) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(forward, 100, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_down(void) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(reverse, 100, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_up_deg(int deg) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(forward, deg, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_down_deg(int deg) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(reverse, deg, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_up_time(int ms) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spin(forward);
+  wait(ms, msec);
+  liftFront.stop(hold);
+}
+
+void lift_front_down_time(int ms) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spin(reverse);
+  wait(ms, msec);
+  liftFront.stop(hold);
+}
+//end of front lift functions 
+
+//begin of back lift functions 
+void lift_back_up(void) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(forward, 100, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_down(void) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(reverse, 100, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_up_deg(int deg) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(forward, deg, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_down_deg(int deg) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(reverse, deg, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_up_time(int ms) {
+  liftBack.setVelocity(75,percent);
+  liftFront.spin(forward);
+  wait(ms, msec);
+  liftFront.stop(hold);
+}
+
+void lift_back_down_time(int ms) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spin(reverse);
+  wait(ms, msec);
+  liftBack.stop(hold);
+}
+//end of back lift functions 
+
+//begin of lift_clamp functions 
+void lift_clamp_up(void) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(forward, 100, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_clamp_down(void) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spinFor(reverse, 100, degrees);
+  lift_clamp.stop(hold);
+}
+
+void llift_clamp_up_deg(int deg) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spinFor(forward, deg, degrees);
+  lift_clamp.stop(hold);
+}
+
+void lift_clamp_down_deg(int deg) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spinFor(reverse, deg, degrees);
+  lift_clamp.stop(hold);
+}
+
+void lift_clamp_up_time(int ms) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spin(forward);
+  wait(ms, msec);
+  lift_clamp.stop(hold);
+}
+
+void lift_clamp_down_time(int ms) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spin(reverse);
+  wait(ms, msec);
+  lift_clamp.stop(hold);
+}
+//end of lift_clamp functions 
+
+//start of pre defined functions 
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
