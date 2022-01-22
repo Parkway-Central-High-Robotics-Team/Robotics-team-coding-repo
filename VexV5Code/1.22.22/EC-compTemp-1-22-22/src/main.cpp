@@ -61,14 +61,14 @@ void claw_back_close_full(void) {
 
 void claw_back_open_deg(int deg) {
   claw_back.setVelocity(100,percent);
-  claw_back.spinFor(reverse, deg, degrees);
+  claw_back.spinFor(forward, deg, degrees);
   claw_back.stop(hold);
   claw_back.setVelocity(20,percent);
 }
 
 void claw_back_close_deg(int deg) {
   claw_back.setVelocity(100,percent);
-  claw_back.spinFor(forward, deg, degrees);
+  claw_back.spinFor(reverse, deg, degrees);
   claw_back.stop(hold);
   claw_back.setVelocity(20,percent);
 }
@@ -105,13 +105,13 @@ void lift_front_down(void) {
 
 void lift_front_up_deg(int deg) {
   liftFront.setVelocity(75,percent);
-  liftFront.spinFor(forward, deg, degrees);
+  liftFront.spinFor(reverse, deg, degrees);
   liftFront.stop(hold);
 }
 
 void lift_front_down_deg(int deg) {
   liftFront.setVelocity(75,percent);
-  liftFront.spinFor(reverse, deg, degrees);
+  liftFront.spinFor(forward, deg, degrees);
   liftFront.stop(hold);
 }
 
@@ -144,20 +144,20 @@ void lift_back_down(void) {
 }
 
 void lift_back_up_deg(int deg) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(forward, deg, degrees);
+  liftBack.setVelocity(100,percent);
+  liftBack.spinFor(reverse, deg, degrees);
   liftBack.stop(hold);
 }
 
 void lift_back_down_deg(int deg) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(reverse, deg, degrees);
+  liftBack.setVelocity(100,percent);
+  liftBack.spinFor(forward, deg, degrees);
   liftBack.stop(hold);
 }
 
 void lift_back_up_time(int ms) {
   liftBack.setVelocity(75,percent);
-  liftFront.spin(forward);
+  liftBack.spin(forward);
   wait(ms, msec);
   liftFront.stop(hold);
 }
@@ -171,44 +171,69 @@ void lift_back_down_time(int ms) {
 //end of back lift functions 
 
 //begin of lift_clamp functions 
-void lift_clamp_up(void) {
+void lift_clamp_open(void) {
   liftBack.setVelocity(75,percent);
   liftBack.spinFor(forward, 100, degrees);
   liftBack.stop(hold);
 }
 
-void lift_clamp_down(void) {
+void lift_clamp_close(void) {
   lift_clamp.setVelocity(75,percent);
   lift_clamp.spinFor(reverse, 100, degrees);
   lift_clamp.stop(hold);
 }
 
-void llift_clamp_up_deg(int deg) {
-  lift_clamp.setVelocity(75,percent);
-  lift_clamp.spinFor(forward, deg, degrees);
-  lift_clamp.stop(hold);
-}
-
-void lift_clamp_down_deg(int deg) {
+void lift_clamp_open_deg(int deg) {
   lift_clamp.setVelocity(75,percent);
   lift_clamp.spinFor(reverse, deg, degrees);
   lift_clamp.stop(hold);
 }
 
-void lift_clamp_up_time(int ms) {
+void lift_clamp_close_deg(int deg) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spinFor(forward, deg, degrees);
+  lift_clamp.stop(hold);
+}
+
+void lift_clamp_open_time(int ms) {
   lift_clamp.setVelocity(75,percent);
   lift_clamp.spin(forward);
   wait(ms, msec);
   lift_clamp.stop(hold);
 }
 
-void lift_clamp_down_time(int ms) {
+void lift_clamp_close_time(int ms) {
   lift_clamp.setVelocity(75,percent);
   lift_clamp.spin(reverse);
   wait(ms, msec);
   lift_clamp.stop(hold);
 }
 //end of lift_clamp functions 
+
+//start of auton
+void far_front_1_goal(void) {
+  Drivetrain.setDriveVelocity(100,percent);
+  Drivetrain.driveFor(forward,45,inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(forward,5,inches);
+  claw_back_close_deg(175);
+  Drivetrain.driveFor(reverse,30,inches);
+}
+
+void far_front_side_2_goal(void) {
+  Drivetrain.setDriveVelocity(100,percent);
+  Drivetrain.driveFor(forward,45,inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(forward,5,inches);
+  claw_back_close_deg(175);
+  //lift_back_up_deg(50);
+  Drivetrain.turnFor(left, 50, degrees);
+  Drivetrain.driveFor(reverse, 10 ,inches);
+  lift_clamp_close_deg(100);
+  Drivetrain.turnFor(right, 40, degrees);
+  Drivetrain.driveFor(reverse , 20, inches);
+}
+//end of auton
 
 //start of pre defined functions 
 void pre_auton(void) {
@@ -232,10 +257,7 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(forward,24,inches);
-  claw_back_close_deg(100);
-  Drivetrain.driveFor(reverse,24,inches);
+  far_front_side_2_goal();
   // ..........................................................................
 }
 
