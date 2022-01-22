@@ -12,10 +12,15 @@
 // [Name]               [Type]        [Port(s)]
 // Drivetrain           drivetrain    2, 3, 8, 9, 11  
 // Controller1          controller                    
+// DrivetrainInertial   inertial      11
+// leftMotorA           motor         2
+// leftMotorB           motor         3
+// rightMotorA          motor         8
+// rightMotorB          motor         9
 // arm                  motor         7               
-// lift1                motor         10              
-// lift2                motor         4               
-// lift_clamp           motor         6               
+// liftFront            motor         10  
+// liftBack             motor         4                                       
+// lift_clamp           motor         5 
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -56,6 +61,8 @@ void pre_auton(void) {
 /*---------------------------------------------------------------------------*/
 
 //start of pre defined functions 
+
+//start of arm functions 
 void arms_down_full(void) {
   arm.setVelocity(100,percent);
   arm.spinFor(forward, 50, degrees);
@@ -99,6 +106,127 @@ void arms_up_time(int ms) {
   arm.stop(hold);
   arm.setVelocity(20,percent);
 }
+//end of arm functions
+
+//begin of front lift functions 
+void lift_front_up(void) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(forward, 100, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_down(void) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(reverse, 100, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_up_deg(int deg) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(forward, deg, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_down_deg(int deg) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spinFor(reverse, deg, degrees);
+  liftFront.stop(hold);
+}
+
+void lift_front_up_time(int ms) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spin(forward);
+  wait(ms, msec);
+  liftFront.stop(hold);
+}
+
+void lift_front_down_time(int ms) {
+  liftFront.setVelocity(75,percent);
+  liftFront.spin(reverse);
+  wait(ms, msec);
+  liftFront.stop(hold);
+}
+//end of front lift functions 
+
+//begin of back lift functions 
+void lift_back_up(void) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(forward, 100, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_down(void) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(reverse, 100, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_up_deg(int deg) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(forward, deg, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_down_deg(int deg) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(reverse, deg, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_back_up_time(int ms) {
+  liftBack.setVelocity(75,percent);
+  liftFront.spin(forward);
+  wait(ms, msec);
+  liftFront.stop(hold);
+}
+
+void lift_back_down_time(int ms) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spin(reverse);
+  wait(ms, msec);
+  liftBack.stop(hold);
+}
+//end of back lift functions 
+
+//begin of lift_clamp functions 
+void lift_clamp_up(void) {
+  liftBack.setVelocity(75,percent);
+  liftBack.spinFor(forward, 100, degrees);
+  liftBack.stop(hold);
+}
+
+void lift_clamp_down(void) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spinFor(reverse, 100, degrees);
+  lift_clamp.stop(hold);
+}
+
+void llift_clamp_up_deg(int deg) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spinFor(forward, deg, degrees);
+  lift_clamp.stop(hold);
+}
+
+void lift_clamp_down_deg(int deg) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spinFor(reverse, deg, degrees);
+  lift_clamp.stop(hold);
+}
+
+void lift_clamp_up_time(int ms) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spin(forward);
+  wait(ms, msec);
+  lift_clamp.stop(hold);
+}
+
+void lift_clamp_down_time(int ms) {
+  lift_clamp.setVelocity(75,percent);
+  lift_clamp.spin(reverse);
+  wait(ms, msec);
+  lift_clamp.stop(hold);
+}
+//end of lift_clamp functions 
 
 //start of main functions
 void autonomous(void) {
