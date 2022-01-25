@@ -19,7 +19,7 @@ smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainIn
 controller Controller1 = controller(primary);
 motor liftFront = motor(PORT10, ratio18_1, false); //not in use at the moment
 motor liftBack = motor(PORT7, ratio18_1, false);
-motor claw_back = motor(PORT6, ratio18_1, false); 
+motor claw_front = motor(PORT6, ratio18_1, false); 
 motor lift_clamp = motor(PORT5, ratio18_1, false); 
 
 // VEXcode generated functions
@@ -38,8 +38,8 @@ bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 // joysticks: used for tank drive
 // button R1: used to raise the back lift
 // button R2: used to lower the back likt
-// button L1: open the claw
-// button L2: close the claw
+// button L1: open the front claw
+// button L2: close the front claw
 // button X: used to open the lift clamp
 // button B: used to close the lift clamp
 // button Y: not in use
@@ -101,13 +101,13 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonL1/ButtonL2 status to control liftFront
       if (Controller1.ButtonL1.pressing()) {
-        claw_back.spin(forward, 35, velocityUnits::pct);
+        claw_front.spin(forward, 35, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
-        claw_back.spin(reverse, 35, velocityUnits::pct);
+        claw_front.spin(reverse, 35, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        claw_back.stop(hold);
+        claw_front.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1LeftShoulderControlMotorsStopped = true;
       }

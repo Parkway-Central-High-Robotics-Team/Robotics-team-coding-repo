@@ -12,7 +12,7 @@ extern motor rightMotorA;
 extern motor rightMotorB; 
 extern motor liftFront;
 extern motor liftBack;
-extern motor claw_back;
+extern motor claw_front;
 extern motor lift_clamp;
 
 /**
