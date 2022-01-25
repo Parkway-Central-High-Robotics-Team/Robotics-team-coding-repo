@@ -212,19 +212,21 @@ void blue_right_2_goal(void) {
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,5,inches);
   Drivetrain.setDriveVelocity(75,percent);
-  claw_front_close_deg(165);
+  claw_front_close_time(1250);
+  //claw_front_close_deg(165);
   lift_back_up_deg(20);
   Drivetrain.turnFor(left, 40, degrees);
   //Drivetrain.turn(left);
   //wait(1000, msec);
   //Drivetrain.stop(coast);
   Drivetrain.driveFor(reverse, 25 ,inches);
-  lift_clamp_close_deg(225);
+  //lift_clamp_close_deg(240);
+  lift_clamp_close_time(1000);
   //Drivetrain.turnFor(right, 50, degrees);
   Drivetrain.turn(right);
-  wait(1500, msec);
+  wait(1750, msec);
   Drivetrain.stop(coast);
-  Drivetrain.driveFor(reverse , 25, inches);
+  Drivetrain.driveFor(reverse , 30, inches);
 }
 //end of auton
 
