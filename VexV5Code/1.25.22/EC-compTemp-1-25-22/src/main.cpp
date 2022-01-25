@@ -197,7 +197,7 @@ void auton_function_test(void) {
 
 }
 
-void blue_right_1_goal(void) {
+void all_corners_1_goal(void) {
   Drivetrain.setDriveVelocity(100,percent);
   Drivetrain.driveFor(forward,45,inches);
   Drivetrain.setDriveVelocity(50,percent);
@@ -211,13 +211,20 @@ void blue_right_2_goal(void) {
   Drivetrain.driveFor(forward,45,inches);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,5,inches);
-  claw_front_close_deg(175);
-  //lift_back_up_deg(50);
-  Drivetrain.turnFor(left, 50, degrees);
-  Drivetrain.driveFor(reverse, 10 ,inches);
-  lift_clamp_close_deg(100);
-  Drivetrain.turnFor(right, 40, degrees);
-  Drivetrain.driveFor(reverse , 20, inches);
+  Drivetrain.setDriveVelocity(75,percent);
+  claw_front_close_deg(165);
+  lift_back_up_deg(20);
+  Drivetrain.turnFor(left, 40, degrees);
+  //Drivetrain.turn(left);
+  //wait(1000, msec);
+  //Drivetrain.stop(coast);
+  Drivetrain.driveFor(reverse, 25 ,inches);
+  lift_clamp_close_deg(225);
+  //Drivetrain.turnFor(right, 50, degrees);
+  Drivetrain.turn(right);
+  wait(1500, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.driveFor(reverse , 25, inches);
 }
 //end of auton
 
@@ -243,7 +250,7 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  auton_function_test();
+  blue_right_2_goal();
   // ..........................................................................
 }
 
