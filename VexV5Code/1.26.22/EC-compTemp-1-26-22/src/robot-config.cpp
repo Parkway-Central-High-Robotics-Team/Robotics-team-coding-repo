@@ -4,22 +4,21 @@ using namespace vex;
 using signature = vision::signature;
 using code = vision::code;
 
+// VEXcode device constructors
 // A global instance of brain used for printing to the V5 Brain screen
 brain  Brain;
-
-// VEXcode device constructors
-motor leftMotorA = motor(PORT2, ratio18_1, false);
-motor leftMotorB = motor(PORT3, ratio18_1, false);
+motor leftMotorA = motor(PORT2, ratio18_1, true);
+motor leftMotorB = motor(PORT3, ratio18_1, true);
 motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
-motor rightMotorA = motor(PORT8, ratio18_1, true);
-motor rightMotorB = motor(PORT9, ratio18_1, true);
+motor rightMotorA = motor(PORT8, ratio18_1, false);
+motor rightMotorB = motor(PORT9, ratio18_1, false);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 inertial DrivetrainInertial = inertial(PORT11);
 smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainInertial, 319.19, 320, 177.79999999999998, mm, 1);
 controller Controller1 = controller(primary);
-motor liftFront = motor(PORT10, ratio18_1, false); //not in use at the moment
-motor liftBack = motor(PORT7, ratio18_1, false);
-motor claw_front = motor(PORT6, ratio18_1, false); 
+motor lift_back = motor(PORT10, ratio18_1, false); //not in use at the moment
+motor lift_front = motor(PORT7, ratio18_1, false);
+motor claw_back = motor(PORT6, ratio18_1, false); 
 motor lift_clamp = motor(PORT5, ratio18_1, false); 
 
 // VEXcode generated functions
@@ -59,8 +58,8 @@ int rc_auto_loop_function_Controller1() {
       // calculate the drivetrain motor velocities from the controller joystick axies
       // left = Axis3
       // right = Axis2
-      int drivetrainLeftSideSpeed = Controller1.Axis3.position();
-      int drivetrainRightSideSpeed = Controller1.Axis2.position();
+      int drivetrainLeftSideSpeed = Controller1.Axis2.position();
+      int drivetrainRightSideSpeed = Controller1.Axis3.position();
       
       // check if the value is inside of the deadband range
       if (drivetrainLeftSideSpeed < 5 && drivetrainLeftSideSpeed > -5) {
@@ -99,39 +98,39 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.setVelocity(drivetrainRightSideSpeed, percent);
         RightDriveSmart.spin(forward);
       }
-      // check the ButtonL1/ButtonL2 status to control liftFront
+      // check the ButtonL1/ButtonL2 status to control lift_back
       if (Controller1.ButtonL1.pressing()) {
-        claw_front.spin(forward, 35, velocityUnits::pct);
+        claw_back.spin(forward, 35, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
-        claw_front.spin(reverse, 35, velocityUnits::pct);
+        claw_back.spin(reverse, 35, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        claw_front.stop(hold);
+        claw_back.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1LeftShoulderControlMotorsStopped = true;
       }
-      // check the ButtonR1/ButtonR2 status to control liftBack
+      // check the ButtonR1/ButtonR2 status to control lift_front
       if (Controller1.ButtonR1.pressing()) {
-        liftBack.spin(reverse, 100, velocityUnits::pct);
+        lift_front.spin(reverse, 100, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonR2.pressing()) {
-        liftBack.spin(forward, 100, velocityUnits::pct);
+        lift_front.spin(forward, 100, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (!Controller1RightShoulderControlMotorsStopped) {
-        liftBack.stop(hold);
+        lift_front.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1RightShoulderControlMotorsStopped = true;
       }
-      // check the ButtonUp/ButtonDown status to control liftFront
+      // check the ButtonUp/ButtonDown status to control lift_back
       if (Controller1.ButtonUp.pressing()) {
-        liftFront.spin(forward, 20, velocityUnits::pct);
+        lift_back.spin(forward, 20, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
-        liftFront.spin(reverse, 20, velocityUnits::pct);
+        lift_back.spin(reverse, 20, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (!Controller1UpDownButtonsControlMotorsStopped) {
-        liftFront.stop(hold);
+        lift_back.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1UpDownButtonsControlMotorsStopped = true;
       }

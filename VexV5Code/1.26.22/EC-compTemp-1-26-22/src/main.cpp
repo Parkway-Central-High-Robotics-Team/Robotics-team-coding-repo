@@ -18,8 +18,8 @@
 // rightMotorA          motor         8
 // rightMotorB          motor         9
 // liftFront            motor         10  Not in use at the moment 
-// liftBack             motor         7                           
-// claw_front            motor         6               
+// lift_front             motor         7                           
+// claw_back            motor         6               
 // lift_clamp           motor         5               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
@@ -45,97 +45,97 @@ competition Competition;
 //start of pre defined functions 
 
 //start of claw functions 
-void claw_front_open_full(void) {
-  claw_front.setVelocity(100,percent);
-  claw_front.spinFor(forward, 50, degrees);
-  claw_front.stop(hold);
-  claw_front.setVelocity(20,percent);
+void claw_back_open_full(void) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(forward, 50, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
 }
 
-void claw_front_close_full(void) {
-  claw_front.setVelocity(100,percent);
-  claw_front.spinFor(reverse, 50, degrees);
-  claw_front.stop(hold);
-  claw_front.setVelocity(20,percent);
+void claw_back_close_full(void) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(reverse, 50, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
 }
 
-void claw_front_open_deg(int deg) {
-  claw_front.setVelocity(100,percent);
-  claw_front.spinFor(forward, deg, degrees);
-  claw_front.stop(hold);
-  claw_front.setVelocity(20,percent);
+void claw_back_open_deg(int deg) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(forward, deg, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
 }
 
-void claw_front_close_deg(int deg) {
-  claw_front.setVelocity(100,percent);
-  claw_front.spinFor(reverse, deg, degrees);
-  claw_front.stop(hold);
-  claw_front.setVelocity(20,percent);
+void claw_back_close_deg(int deg) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spinFor(reverse, deg, degrees);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
 }
 
-void claw_front_close_time(int ms) {
-  claw_front.setVelocity(100,percent);
-  claw_front.spin(reverse);
+void claw_back_close_time(int ms) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spin(reverse);
   wait(ms, msec);
-  claw_front.stop(hold);
-  claw_front.setVelocity(20,percent);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
 }
 
-void claw_front_open_time(int ms) {
-  claw_front.setVelocity(100,percent);
-  claw_front.spin(forward);
+void claw_back_open_time(int ms) {
+  claw_back.setVelocity(100,percent);
+  claw_back.spin(forward);
   wait(ms, msec);
-  claw_front.stop(hold);
-  claw_front.setVelocity(20,percent);
+  claw_back.stop(hold);
+  claw_back.setVelocity(20,percent);
 }
 //end of arm functions
 
 //begin of back lift functions 
 // gear ratio is 7:1
-void lift_back_up(void) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(reverse, 100, degrees);
-  liftBack.stop(hold);
+void lift_front_up(void) {
+  lift_front.setVelocity(75,percent);
+  lift_front.spinFor(reverse, 100, degrees);
+  lift_front.stop(hold);
 }
 
-void lift_back_down(void) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(forward, 100, degrees);
-  liftBack.stop(hold);
+void lift_front_down(void) {
+  lift_front.setVelocity(75,percent);
+  lift_front.spinFor(forward, 100, degrees);
+  lift_front.stop(hold);
 }
 
-void lift_back_up_deg(int deg) {
-  liftBack.setVelocity(100,percent);
-  liftBack.spinFor(reverse, deg * 7, degrees, true);
-  liftBack.stop(hold);
+void lift_front_up_deg(int deg) {
+  lift_front.setVelocity(100,percent);
+  lift_front.spinFor(reverse, deg * 7, degrees, true);
+  lift_front.stop(hold);
 }
 
-void lift_back_down_deg(int deg) {
-  liftBack.setVelocity(100,percent);
-  liftBack.spinFor(forward, deg * 7, degrees, true);
-  liftBack.stop(hold);
+void lift_front_down_deg(int deg) {
+  lift_front.setVelocity(100,percent);
+  lift_front.spinFor(forward, deg * 7, degrees, true);
+  lift_front.stop(hold);
 }
 
-void lift_back_up_time(int ms) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spin(reverse);
+void lift_front_up_time(int ms) {
+  lift_front.setVelocity(75,percent);
+  lift_front.spin(reverse);
   wait(ms * 7, msec);
-  liftFront.stop(hold);
+  lift_front.stop(hold);
 }
 
-void lift_back_down_time(int ms) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spin(forward);
+void lift_front_down_time(int ms) {
+  lift_front.setVelocity(75,percent);
+  lift_front.spin(forward);
   wait(ms * 7, msec);
-  liftBack.stop(hold);
+  lift_front.stop(hold);
 }
 //end of back lift functions 
 
 //begin of lift_clamp functions 
 void lift_clamp_open(void) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(reverse, 100, degrees);
-  liftBack.stop(hold);
+  lift_front.setVelocity(75,percent);
+  lift_front.spinFor(reverse, 100, degrees);
+  lift_front.stop(hold);
 }
 
 void lift_clamp_close(void) {
@@ -174,19 +174,19 @@ void lift_clamp_close_time(int ms) {
 //start of auton
 
 void auton_function_test(void) {
-  //claw_front_open_full();
-  //claw_front_close_full();
-  //claw_front_open_time(100);
-  //claw_front_close_time(100);
-  //claw_front_open_deg(100);
-  //claw_front_close_deg(100);
+  //claw_back_open_full();
+  //claw_back_close_full();
+  //claw_back_open_time(100);
+  //claw_back_close_time(100);
+  //claw_back_open_deg(100);
+  //claw_back_close_deg(100);
 
-  //lift_back_up();
-  //lift_back_down();
-  //lift_back_up_deg(100);
-  //lift_back_down_deg(100);
-  //lift_back_up_time(100);
-  //lift_back_down_time(100);
+  //lift_front_up();
+  //lift_front_down();
+  //lift_front_up_deg(100);
+  //lift_front_down_deg(100);
+  //lift_front_up_time(100);
+  //lift_front_down_time(100);
 
   //lift_clamp_open();
   //lift_clamp_close();
@@ -202,7 +202,7 @@ void all_corners_1_goal(void) {
   Drivetrain.driveFor(forward,45,inches);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,5,inches);
-  claw_front_close_deg(175);
+  claw_back_close_deg(175);
   Drivetrain.driveFor(reverse,30,inches);
 }
 
@@ -212,9 +212,9 @@ void blue_right_2_goal(void) {
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,5,inches);
   Drivetrain.setDriveVelocity(75,percent);
-  claw_front_close_time(1250);
-  //claw_front_close_deg(165);
-  lift_back_up_deg(20);
+  claw_back_close_time(1250);
+  //claw_back_close_deg(165);
+  lift_front_up_deg(20);
   Drivetrain.turnFor(left, 40, degrees);
   //Drivetrain.turn(left);
   //wait(1000, msec);
