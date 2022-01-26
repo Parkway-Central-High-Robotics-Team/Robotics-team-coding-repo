@@ -208,25 +208,42 @@ void all_corners_1_goal(void) {
 
 void blue_right_2_goal(void) {
   Drivetrain.setDriveVelocity(100,percent);
-  Drivetrain.driveFor(forward,45,inches);
+  Drivetrain.driveFor(reverse,45,inches);
   Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(forward,5,inches);
+  Drivetrain.driveFor(reverse,5,inches);
   Drivetrain.setDriveVelocity(75,percent);
-  claw_back_close_time(1250);
+  claw_back_close_time(1000);
   //claw_back_close_deg(165);
   lift_front_up_deg(20);
-  Drivetrain.turnFor(left, 40, degrees);
-  //Drivetrain.turn(left);
-  //wait(1000, msec);
-  //Drivetrain.stop(coast);
-  Drivetrain.driveFor(reverse, 25 ,inches);
+  //Drivetrain.turnFor(right, 40, degrees);
+  Drivetrain.turn(right);
+  wait(750, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.driveFor(forward, 25 ,inches);
   //lift_clamp_close_deg(240);
   lift_clamp_close_time(1000);
   //Drivetrain.turnFor(right, 50, degrees);
-  Drivetrain.turn(right);
+  Drivetrain.turn(left);
   wait(1750, msec);
   Drivetrain.stop(coast);
-  Drivetrain.driveFor(reverse , 30, inches);
+  Drivetrain.driveFor(forward , 30, inches);
+}
+
+void blue_left_2_goal(void) {
+  Drivetrain.setDriveVelocity(100, percent);
+  Drivetrain.driveFor(reverse, 50, inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,5,inches);
+  Drivetrain.setDriveVelocity(100,percent);
+  claw_back_close_time(1000);
+  Drivetrain.driveFor(forward, 43, inches);
+  Drivetrain.turn(right);
+  wait(1350, msec);
+  Drivetrain.stop(coast);
+  lift_front_up_deg(20);
+  Drivetrain.driveFor(forward, 10 ,inches);
+  lift_clamp_close_time(1000);
+  Drivetrain.driveFor(forward, 10 ,inches);
 }
 //end of auton
 
@@ -252,7 +269,7 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  blue_right_2_goal();
+  blue_left_2_goal();
   // ..........................................................................
 }
 
