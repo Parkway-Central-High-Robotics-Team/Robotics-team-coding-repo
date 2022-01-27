@@ -199,11 +199,11 @@ void auton_function_test(void) {
 
 void all_corners_1_goal(void) {
   Drivetrain.setDriveVelocity(100,percent);
-  Drivetrain.driveFor(forward,45,inches);
+  Drivetrain.driveFor(reverse,45,inches);
   Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(forward,5,inches);
+  Drivetrain.driveFor(reverse,5,inches);
   claw_back_close_deg(175);
-  Drivetrain.driveFor(reverse,30,inches);
+  Drivetrain.driveFor(forward,30,inches);
 }
 
 void blue_right_2_goal(void) {
@@ -231,26 +231,36 @@ void blue_right_2_goal(void) {
 
 void blue_left_2_goal(void) {
   Drivetrain.setDriveVelocity(100, percent);
-  Drivetrain.driveFor(reverse, 50, inches);
+  Drivetrain.driveFor(reverse, 45, inches);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(reverse,5,inches);
   Drivetrain.setDriveVelocity(100,percent);
-  claw_back_close_time(1000);
-  Drivetrain.driveFor(forward, 43, inches);
+  claw_back_close_time(500);
+  Drivetrain.driveFor(forward, 41, inches);
   Drivetrain.turn(right);
-  wait(1350, msec);
+  wait(1550, msec);
   Drivetrain.stop(coast);
   lift_front_up_deg(20);
-  Drivetrain.driveFor(forward, 10 ,inches);
+  //Drivetrain.driveFor(forward, 5 ,inches);
+  Drivetrain.drive(forward);
+  wait(800, msec);
+  Drivetrain.stop(coast);
   lift_clamp_close_time(1000);
-  Drivetrain.driveFor(forward, 10 ,inches);
+  //Drivetrain.driveFor(forward, 10 ,inches);
+  Drivetrain.drive(forward);
+  wait(250, msec);
+  Drivetrain.stop(coast);
+  lift_clamp_open_time(750);
+  Drivetrain.drive(reverse);
+  wait(500, msec);
+  Drivetrain.stop(coast);
 }
 //end of auton
 
 //start of pre defined functions 
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
-  vexcodeInit();
+  blue_left_2_goal();
 
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
@@ -269,7 +279,7 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  blue_left_2_goal();
+  all_corners_1_goal();
   // ..........................................................................
 }
 
