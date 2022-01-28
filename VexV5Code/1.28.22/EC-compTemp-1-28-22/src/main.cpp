@@ -255,12 +255,62 @@ void blue_left_2_goal(void) {
   wait(500, msec);
   Drivetrain.stop(coast);
 }
+
+void red_right_2_goal(void) {
+  Drivetrain.setDriveVelocity(100,percent);
+  Drivetrain.driveFor(reverse,45,inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,5,inches);
+  Drivetrain.setDriveVelocity(75,percent);
+  claw_back_close_time(1000);
+  //claw_back_close_deg(165);
+  lift_front_up_deg(20);
+  //Drivetrain.turnFor(right, 40, degrees);
+  Drivetrain.turn(right);
+  wait(750, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.driveFor(forward, 25 ,inches);
+  //lift_clamp_close_deg(240);
+  lift_clamp_close_time(1000);
+  //Drivetrain.turnFor(right, 50, degrees);
+  Drivetrain.turn(left);
+  wait(1750, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.driveFor(forward , 30, inches);
+}
+
+void red_left_2_goal(void) {
+  Drivetrain.setDriveVelocity(100, percent);
+  Drivetrain.driveFor(reverse, 45, inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,5,inches);
+  Drivetrain.setDriveVelocity(100,percent);
+  claw_back_close_time(500);
+  Drivetrain.driveFor(forward, 41, inches);
+  Drivetrain.turn(right);
+  wait(1550, msec);
+  Drivetrain.stop(coast);
+  lift_front_up_deg(20);
+  //Drivetrain.driveFor(forward, 5 ,inches);
+  Drivetrain.drive(forward);
+  wait(800, msec);
+  Drivetrain.stop(coast);
+  lift_clamp_close_time(1000);
+  //Drivetrain.driveFor(forward, 10 ,inches);
+  Drivetrain.drive(forward);
+  wait(250, msec);
+  Drivetrain.stop(coast);
+  lift_clamp_open_time(750);
+  Drivetrain.drive(reverse);
+  wait(500, msec);
+  Drivetrain.stop(coast);
+}
 //end of auton
 
 //start of pre defined functions 
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
-  blue_left_2_goal();
+  vexcodeInit();
 
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
