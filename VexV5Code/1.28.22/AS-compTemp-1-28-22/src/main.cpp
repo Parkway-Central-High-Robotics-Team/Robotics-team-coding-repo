@@ -66,7 +66,7 @@ void pre_auton(void) {
 void arms_down_full(void) {
   arm.setVelocity(100,percent);
   arm.spinFor(forward, 50, degrees);
-  arm.stop(hold);
+  arm.stop(coast);
   arm.setVelocity(20,percent);
 }
 
