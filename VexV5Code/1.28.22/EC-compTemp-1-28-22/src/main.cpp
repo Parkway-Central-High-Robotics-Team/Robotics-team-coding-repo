@@ -260,7 +260,7 @@ void blue_left_2_goal(void) {
 //start of pre defined functions 
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
-  blue_left_2_goal();
+  vexcodeInit();
 
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
