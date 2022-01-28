@@ -208,7 +208,7 @@ void all_corners_1_goal(void) {
 
 void blue_right_2_goal(void) {
   Drivetrain.setDriveVelocity(100,percent);
-  Drivetrain.driveFor(reverse,45,inches);
+  Drivetrain.driveFor(reverse,43,inches);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(reverse,5,inches);
   Drivetrain.setDriveVelocity(75,percent);
