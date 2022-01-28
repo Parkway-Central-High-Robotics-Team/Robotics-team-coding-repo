@@ -8,7 +8,7 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-motor leftMotorA = motor(PORT2, ratio18_1, false);
+motor leftMotorA = motor(PORT5, ratio18_1, false);
 motor leftMotorB = motor(PORT3, ratio18_1, false);
 motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
 motor rightMotorA = motor(PORT8, ratio18_1, true);
@@ -20,7 +20,7 @@ controller Controller1 = controller(primary);
 motor arm = motor(PORT7, ratio18_1, false);
 motor liftfront = motor(PORT10, ratio18_1, false);
 motor liftback = motor(PORT4, ratio18_1, false);
-motor lift_clamp = motor(PORT5, ratio18_1, false);
+motor lift_clamp = motor(PORT6, ratio18_1, false);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -33,6 +33,8 @@ bool Controller1XBButtonsControlMotorsStopped = true;
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 
+bool controlset2 = false;
+bool apressed = false;
 
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
@@ -45,7 +47,12 @@ int rc_auto_loop_function_Controller1() {
       // right = Axis2
       int drivetrainLeftSideSpeed = Controller1.Axis3.position();
       int drivetrainRightSideSpeed = Controller1.Axis2.position();
-      
+      if(controlset2){
+        drivetrainLeftSideSpeed=drivetrainLeftSideSpeed/2;
+        drivetrainRightSideSpeed=drivetrainRightSideSpeed/2;
+      }
+
+
       // check if the value is inside of the deadband range
       if (drivetrainLeftSideSpeed < 5 && drivetrainLeftSideSpeed > -5) {
         // check if the left motor has already been stopped
@@ -83,15 +90,29 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.setVelocity(drivetrainRightSideSpeed, percent);
         RightDriveSmart.spin(forward);
       }
+      if(Controller1.ButtonA.pressing()){ 
+        if(!apressed){
+          if(!controlset2){
+            controlset2=true;
+          }
+          else{
+            controlset2=false;
+          }
+          apressed=true;
+        }
+      } 
+      else {
+        apressed=false;
+      }
       // check the ButtonL1/ButtonL2 status to control liftfront
       if (Controller1.ButtonL1.pressing()) {
-        liftfront.spin(reverse, 75, velocityUnits::pct);
+        lift_clamp.spin(reverse, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
-        liftfront.spin(forward, 75, velocityUnits::pct);
+        lift_clamp.spin(forward, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        liftfront.stop(hold);
+        lift_clamp.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1LeftShoulderControlMotorsStopped = true;
       }
@@ -121,17 +142,17 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonX/ButtonB status to control lift_clamp
       if (Controller1.ButtonX.pressing()) {
-        lift_clamp.setStopping(hold);
-        lift_clamp.spin(forward, 50, velocityUnits::pct);
+        liftfront.setStopping(hold);
+        liftfront.spin(forward, 50, velocityUnits::pct);
         Brain.Screen.print("the x button is being pressed");
         Controller1XBButtonsControlMotorsStopped = false;
-      } else if (Controller1.ButtonB.pressing()) {
-        lift_clamp.setStopping(hold);
-        lift_clamp.spin(reverse, 50, velocityUnits::pct);
+      } else if (Controller1.ButtonY.pressing()) {
+        liftfront.setStopping(hold);
+        liftfront.spin(reverse, 50, velocityUnits::pct);
         Brain.Screen.print("the b button is being pressed");
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
-        lift_clamp.stop(hold);
+        liftfront.stop(hold);
         Brain.Screen.print("no clamp button is pressed");
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1XBButtonsControlMotorsStopped = true;
@@ -162,6 +183,7 @@ void vexcodeInit( void ) {
   // reset the screen now that the calibration is complete
   Brain.Screen.clearScreen();
   Brain.Screen.setCursor(1,1);
+  //THREAD HERE
   task rc_auto_loop_task_Controller1(rc_auto_loop_function_Controller1);
   wait(50, msec);
   Brain.Screen.clearScreen();

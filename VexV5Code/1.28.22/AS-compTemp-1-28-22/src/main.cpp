@@ -18,8 +18,8 @@
 // rightMotorA          motor         8
 // rightMotorB          motor         9
 // arm                  motor         7               
-// liftFront            motor         10  
-// liftBack             motor         4                                       
+// liftfront            motor         10  
+// liftback             motor         4                                       
 // lift_clamp           motor         5 
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
@@ -110,89 +110,89 @@ void arms_up_time(int ms) {
 
 //begin of front lift functions 
 void lift_front_up(void) {
-  liftFront.setVelocity(75,percent);
-  liftFront.spinFor(forward, 100, degrees);
-  liftFront.stop(hold);
+  liftfront.setVelocity(75,percent);
+  liftfront.spinFor(forward, 100, degrees);
+  liftfront.stop(hold);
 }
 
 void lift_front_down(void) {
-  liftFront.setVelocity(75,percent);
-  liftFront.spinFor(reverse, 100, degrees);
-  liftFront.stop(hold);
+  liftfront.setVelocity(75,percent);
+  liftfront.spinFor(reverse, 100, degrees);
+  liftfront.stop(hold);
 }
 
 void lift_front_up_deg(int deg) {
-  liftFront.setVelocity(75,percent);
-  liftFront.spinFor(forward, deg, degrees);
-  liftFront.stop(hold);
+  liftfront.setVelocity(75,percent);
+  liftfront.spinFor(forward, deg, degrees);
+  liftfront.stop(hold);
 }
 
 void lift_front_down_deg(int deg) {
-  liftFront.setVelocity(75,percent);
-  liftFront.spinFor(reverse, deg, degrees);
-  liftFront.stop(hold);
+  liftfront.setVelocity(75,percent);
+  liftfront.spinFor(reverse, deg, degrees);
+  liftfront.stop(hold);
 }
 
-void lift_front_up_time(int ms) {
-  liftFront.setVelocity(75,percent);
-  liftFront.spin(forward);
+void lift_front_up_time(int velocity, int ms) {
+  liftfront.setVelocity(velocity,percent);
+  liftfront.spin(forward);
   wait(ms, msec);
-  liftFront.stop(hold);
+  liftfront.stop(hold);
 }
 
-void lift_front_down_time(int ms) {
-  liftFront.setVelocity(75,percent);
-  liftFront.spin(reverse);
+void lift_front_down_time(int velocity, int ms) {
+  liftfront.setVelocity(velocity,percent);
+  liftfront.spin(reverse);
   wait(ms, msec);
-  liftFront.stop(hold);
+  liftfront.stop(hold);
 }
 //end of front lift functions 
 
 //begin of back lift functions 
 void lift_back_up(void) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(forward, 100, degrees);
-  liftBack.stop(hold);
+  liftback.setVelocity(75,percent);
+  liftback.spinFor(forward, 100, degrees);
+  liftback.stop(hold);
 }
 
 void lift_back_down(void) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(reverse, 100, degrees);
-  liftBack.stop(hold);
+  liftback.setVelocity(75,percent);
+  liftback.spinFor(reverse, 100, degrees);
+  liftback.stop(hold);
 }
 
 void lift_back_up_deg(int deg) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(forward, deg, degrees);
-  liftBack.stop(hold);
+  liftback.setVelocity(75,percent);
+  liftback.spinFor(forward, deg, degrees);
+  liftback.stop(hold);
 }
 
 void lift_back_down_deg(int deg) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(reverse, deg, degrees);
-  liftBack.stop(hold);
+  liftback.setVelocity(75,percent);
+  liftback.spinFor(reverse, deg, degrees);
+  liftback.stop(hold);
 }
 
 void lift_back_up_time(int ms) {
-  liftBack.setVelocity(75,percent);
-  liftFront.spin(forward);
+  liftback.setVelocity(75,percent);
+  liftfront.spin(forward);
   wait(ms, msec);
-  liftFront.stop(hold);
+  liftfront.stop(hold);
 }
 
 void lift_back_down_time(int ms) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spin(reverse);
+  liftback.setVelocity(75,percent);
+  liftback.spin(reverse);
   wait(ms, msec);
-  liftBack.stop(hold);
+  liftback.stop(hold);
 }
 //end of back lift functions 
 
 //begin of lift_clamp functions 
 void lift_clamp_up(void) {
-  liftBack.setVelocity(75,percent);
-  liftBack.spinFor(forward, 100, degrees);
-  liftBack.stop(hold);
+  liftback.setVelocity(75,percent);
+  liftback.spinFor(forward, 100, degrees);
+  liftback.stop(hold);
 }
 
 void lift_clamp_down(void) {
@@ -229,12 +229,33 @@ void lift_clamp_down_time(int ms) {
 //end of lift_clamp functions 
 
 //start of main functions
-void autonomous(void) {
+void autonomousR(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,24,inches);
+  lift_front_up_time(100,500);
+  Drivetrain.turnFor(left,45,degrees); 
+  rightMotorA.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+  rightMotorB.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+  leftMotorA.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+  leftMotorB.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+  wait(500, msec);
+  arm.spin(vex::directionType::rev, 60, vex::velocityUnits::pct);
+  wait(200, msec);
+  arm.stop(vex::brakeType::coast);
+  wait(680, msec);
+  Drivetrain.turnFor(right,45,degrees);
+  Drivetrain.driveFor(forward,10,inches);
+  arm.spin(vex::directionType::fwd, 60, vex::velocityUnits::pct);
+  wait(200, msec);
+  arm.stop(hold);
+  wait(200, msec);
+  Drivetrain.driveFor(reverse,30,inches);
   Drivetrain.turnFor(left,90,degrees);
+  arm.stop(coast);
+  lift_front_up_time(100,1500);
+  
   // ..........................................................................
 }
 
@@ -270,7 +291,7 @@ void usercontrol(void) {
 //
 int main() {
   // Set up callbacks for autonomous and driver control periods.
-  Competition.autonomous(autonomous);
+  Competition.autonomous(autonomousR);
   Competition.drivercontrol(usercontrol);
 
   // Run the pre-autonomous function.

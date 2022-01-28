@@ -11,8 +11,8 @@ extern motor leftMotorB;
 extern motor rightMotorA; 
 extern motor rightMotorB; 
 extern motor arm;
-extern motor liftFront;
-extern motor liftBack;
+extern motor liftfront;
+extern motor liftback;
 extern motor lift_clamp;
 
 /**
