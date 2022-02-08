@@ -10,7 +10,7 @@ extern motor leftMotorA;
 extern motor leftMotorB;
 extern motor rightMotorA; 
 extern motor rightMotorB; 
-extern motor lift_back;
+extern motor Quick_grab;
 extern motor lift_front;
 extern motor claw_back;
 extern motor lift_clamp;

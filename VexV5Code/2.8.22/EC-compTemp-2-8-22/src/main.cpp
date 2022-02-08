@@ -17,8 +17,8 @@
 // leftMotorB           motor         3
 // rightMotorA          motor         8
 // rightMotorB          motor         9
-// liftFront            motor         10  Not in use at the moment 
-// lift_front             motor         7                           
+// Quick_grab           motor         10
+// lift_front           motor         7                           
 // claw_back            motor         6               
 // lift_clamp           motor         5               
 // ---- END VEXCODE CONFIGURED DEVICES ----
@@ -86,9 +86,9 @@ void claw_back_open_time(int ms) {
   claw_back.spin(forward);
   wait(ms, msec);
   claw_back.stop(hold);
-  claw_back.setVelocity(20,percent);
+  Quick_grab.setVelocity(20,percent);
 }
-//end of arm functions
+//end of claw functions
 
 //begin of back lift functions 
 // gear ratio is 7:1
@@ -170,6 +170,55 @@ void lift_clamp_close_time(int ms) {
   lift_clamp.stop(hold);
 }
 //end of lift_clamp functions 
+
+// start of Quick grab functions
+
+void Quick_grab_up_full(void) {
+  Quick_grab.setVelocity(100,percent);
+  Quick_grab.spinFor(forward, 50, degrees);
+  Quick_grab.stop(hold);
+  Quick_grab.setVelocity(20,percent);
+}
+
+void Quick_grab_down_full(void) {
+  Quick_grab.setVelocity(100,percent);
+  Quick_grab.spinFor(reverse, 50, degrees);
+  Quick_grab.stop(hold);
+  Quick_grab.setVelocity(20,percent);
+}
+
+void Quick_grab_up_deg(int deg) {
+  Quick_grab.setVelocity(100,percent);
+  Quick_grab.spinFor(forward, deg, degrees);
+  Quick_grab.stop(hold);
+  Quick_grab.setVelocity(20,percent);
+}
+
+void Quick_grab_down_deg(int deg) {
+  Quick_grab.setVelocity(100,percent);
+  Quick_grab.spinFor(reverse, deg, degrees);
+  Quick_grab.stop(hold);
+  Quick_grab.setVelocity(20,percent);
+}
+
+void Quick_grab_up_time(int ms) {
+  Quick_grab.setVelocity(100,percent);
+  Quick_grab.spin(reverse);
+  wait(ms, msec);
+  Quick_grab.stop(hold);
+  Quick_grab.setVelocity(20,percent);
+}
+
+void Quick_grab_down_time(int ms) {
+  Quick_grab.setVelocity(100,percent);
+  Quick_grab.spin(forward);
+  wait(ms, msec);
+  Quick_grab.stop(hold);
+  Quick_grab.setVelocity(20,percent);
+}
+
+// end of quick grab functions 
+
 
 //start of auton
 
@@ -305,6 +354,17 @@ void red_left_2_goal(void) {
   wait(500, msec);
   Drivetrain.stop(coast);
 }
+
+void new_auto (void) {
+  Drivetrain.setDriveVelocity(100,percent);
+  Drivetrain.driveFor(reverse,32,inches);
+  Quick_grab_down_time(400);
+  Drivetrain.driveFor(forward,12,inches);
+  Quick_grab_up_time(400);
+  Drivetrain.driveFor(reverse,12,inches); 
+  claw_back_close_deg(175);
+  Drivetrain.driveFor(forward,20,inches);
+}
 //end of auton
 
 //start of pre defined functions 
@@ -329,7 +389,7 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  all_corners_1_goal();
+  new_auto();
   // ..........................................................................
 }
 
