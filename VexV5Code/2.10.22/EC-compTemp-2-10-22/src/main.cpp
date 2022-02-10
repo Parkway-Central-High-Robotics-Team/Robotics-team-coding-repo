@@ -223,6 +223,20 @@ void Quick_grab_down_time(int ms) {
 
 void grab_goal_backside(void) {
   claw_back_open_time(500);
+  Drivetrain.drive(reverse);
+  wait(250, msec);
+  Drivetrain.stop(coast);
+  claw_back_close_time(1000);
+}
+
+void grab_goal_frontside(void) {
+  lift_front_down_time(250);
+  lift_front_up_deg(20);
+  lift_clamp_open_time(500);
+  Drivetrain.drive(forward);
+  wait(250, msec);
+  Drivetrain.stop(coast);
+  lift_clamp_close_time(750);
 }
 
 // end of driver control functions 
@@ -362,7 +376,7 @@ void red_left_2_goal(void) {
   Drivetrain.stop(coast);
 }
 
-void new_auto (void) {
+void new_auto_og (void) {
   Drivetrain.setDriveVelocity(100,percent);
   Drivetrain.driveFor(reverse,32,inches);
   Quick_grab_down_time(400);
@@ -371,6 +385,26 @@ void new_auto (void) {
   Drivetrain.driveFor(reverse,12,inches); 
   claw_back_close_deg(175);
   Drivetrain.driveFor(forward,20,inches);
+}
+
+void new_auto (void) {
+  Drivetrain.setDriveVelocity(100,percent);
+  Drivetrain.driveFor(reverse,32,inches);
+  Quick_grab_down_time(600);
+  Drivetrain.driveFor(forward,32,inches);
+  Quick_grab_up_time(1000);
+  Drivetrain.turn(left);
+  wait(360, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.drive(reverse);
+  wait(600, msec);
+  Drivetrain.stop(coast);
+  claw_back_close_time(500);
+  Drivetrain.driveFor(forward,20,inches);
+
+  //Drivetrain.driveFor(reverse,20,inches); 
+  //claw_back_close_deg(175);
+  //Drivetrain.driveFor(forward,20,inches);
 }
 //end of auton
 
@@ -420,6 +454,17 @@ void usercontrol(void) {
     // ........................................................................
     // Insert user code here. This is where you use the joystick values to
     // update your motors, etc.
+    /*if (Controller1.ButtonLeft.pressing()) {
+        claw_back.spin(forward, 35, velocityUnits::pct);
+        Controller1LeftShoulderControlMotorsStopped = false;
+      } else if (Controller1.ButtonRight.pressing()) {
+        claw_back.spin(reverse, 35, velocityUnits::pct);
+        Controller1LeftShoulderControlMotorsStopped = false;
+      } else if (!Controller1LeftShoulderControlMotorsStopped) {
+        claw_back.stop(hold);
+        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+        Controller1LeftShoulderControlMotorsStopped = true;
+      }*/
     // ........................................................................
 
     wait(20, msec); // Sleep the task for a short amount of time to

@@ -16,7 +16,7 @@ motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 inertial DrivetrainInertial = inertial(PORT11);
 smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainInertial, 319.19, 320, 177.79999999999998, mm, 1);
 controller Controller1 = controller(primary);
-motor Quick_grab = motor(PORT10, ratio18_1, false);
+motor Quick_grab = motor(PORT4, ratio18_1, false);
 motor lift_front = motor(PORT7, ratio18_1, false);
 motor claw_back = motor(PORT6, ratio18_1, false); 
 motor lift_clamp = motor(PORT5, ratio18_1, false); 
@@ -124,10 +124,10 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonUp/ButtonDown status to control lift_back
       if (Controller1.ButtonUp.pressing()) {
-        Quick_grab.spin(forward, 20, velocityUnits::pct);
+        Quick_grab.spin(reverse, 50, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
-        Quick_grab.spin(reverse, 20, velocityUnits::pct);
+        Quick_grab.spin(forward, 50, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (!Controller1UpDownButtonsControlMotorsStopped) {
         Quick_grab.stop(hold);
