@@ -379,11 +379,16 @@ void red_left_2_goal(void) {
 void new_auto_og (void) {
   Drivetrain.setDriveVelocity(100,percent);
   Drivetrain.driveFor(reverse,32,inches);
-  Quick_grab_down_time(400);
-  Drivetrain.driveFor(forward,12,inches);
-  Quick_grab_up_time(400);
-  Drivetrain.driveFor(reverse,12,inches); 
-  claw_back_close_deg(175);
+  Quick_grab_down_time(600);
+  Drivetrain.driveFor(forward,32,inches);
+  Quick_grab_up_time(1000);
+  Drivetrain.turn(left);
+  wait(360, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.drive(reverse);
+  wait(600, msec);
+  Drivetrain.stop(coast);
+  claw_back_close_time(500);
   Drivetrain.driveFor(forward,20,inches);
 }
 
@@ -401,6 +406,14 @@ void new_auto (void) {
   Drivetrain.stop(coast);
   claw_back_close_time(500);
   Drivetrain.driveFor(forward,20,inches);
+
+  Quick_grab_up_time(1000);
+  Drivetrain.turn(right);
+  wait(700, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.driveFor(reverse,20,inches);
+  Quick_grab_down_time(600);
+  Drivetrain.driveFor(forward,32,inches);
 
   //Drivetrain.driveFor(reverse,20,inches); 
   //claw_back_close_deg(175);
