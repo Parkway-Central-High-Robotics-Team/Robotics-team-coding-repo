@@ -219,6 +219,13 @@ void Quick_grab_down_time(int ms) {
 
 // end of quick grab functions 
 
+// start of driver control functions 
+
+void grab_goal_backside(void) {
+  claw_back_open_time(500);
+}
+
+// end of driver control functions 
 
 //start of auton
 
