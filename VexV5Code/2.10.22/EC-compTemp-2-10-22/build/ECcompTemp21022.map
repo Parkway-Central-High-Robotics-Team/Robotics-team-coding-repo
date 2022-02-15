@@ -188,7 +188,7 @@ Discarded input sections
  .ARM.exidx.text._Z15red_left_2_goalv
                 0x00000000        0x8 build/src/main.o
  .text._Z11new_auto_ogv
-                0x00000000       0xf8 build/src/main.o
+                0x00000000      0x160 build/src/main.o
  .ARM.exidx.text._Z11new_auto_ogv
                 0x00000000        0x8 build/src/main.o
  .text._Z9pre_autonv
