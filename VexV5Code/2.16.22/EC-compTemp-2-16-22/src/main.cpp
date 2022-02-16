@@ -121,14 +121,14 @@ void lift_front_down_deg(int deg) {
 void lift_front_up_time(int ms) {
   lift_front.setVelocity(75,percent);
   lift_front.spin(reverse);
-  wait(ms * 7, msec);
+  wait(ms, msec);
   lift_front.stop(hold);
 }
 
 void lift_front_down_time(int ms) {
   lift_front.setVelocity(75,percent);
   lift_front.spin(forward);
-  wait(ms * 7, msec);
+  wait(ms, msec);
   lift_front.stop(hold);
 }
 //end of back lift functions 
@@ -233,11 +233,12 @@ void grab_goal_backside(void) {
 void grab_goal_frontside(void) {
   
   lift_front_up_time(500);
-  lift_clamp_open_time(500);
+  lift_clamp_open_time(150);
   lift_front_down_time(500);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,7,inches);
   lift_clamp_close_time(750);
+  lift_front_down_time(200);
 }
 
 // end of driver control functions 
@@ -395,29 +396,35 @@ void new_auto_og (void) {
 
 void new_auto (void) {
   Drivetrain.setDriveVelocity(100,percent);
+  claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(485, msec);
+  wait(550, msec);
   //Drivetrain.driveFor(reverse,29,inches);
-  Quick_grab_down_time(600); //while driving reverse, lowers the quick grab
+  Quick_grab_down_time(450); //while driving reverse, lowers the quick grab
   //wait(100, msec);
   Drivetrain.stop(brake); //stops driving
-  Drivetrain.driveFor(forward,36,inches);//drives 
+  Drivetrain.driveFor(forward,32,inches);//drives 
+  Drivetrain.setDriveVelocity(25,percent);
+  Drivetrain.driveFor(forward,1,inches);
   Quick_grab_up_time(1000);
+  Drivetrain.setDriveVelocity(100,percent);
+
   Drivetrain.turn(left);
-  wait(425, msec);
+  wait(600, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse);
-  wait(500, msec);
+  wait(550, msec);
   Drivetrain.stop(coast);
   claw_back_close_time(500);
+
   Drivetrain.driveFor(forward,17,inches);
 
   claw_back_open_time(500);
   Drivetrain.turn(right);
-  wait(750, msec);
+  wait(800, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse);
-  wait(500, msec);
+  wait(600, msec);
   Quick_grab_down_time(600);
   wait(500, msec);
   Drivetrain.stop(coast);
