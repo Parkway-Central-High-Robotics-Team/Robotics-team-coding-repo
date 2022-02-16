@@ -224,18 +224,19 @@ void Quick_grab_down_time(int ms) {
 // start of driver control functions 
 
 void grab_goal_backside(void) {
-  claw_back_open_time(250);
-  Drivetrain.setDriveVelocity(100,percent);
-  Drivetrain.driveFor(reverse,5,inches);
-  claw_back_close_time(1000);
+  claw_back_open_time(150);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,9,inches);
+  claw_back_close_time(500);
 }
 
 void grab_goal_frontside(void) {
-  lift_front_down_time(100);
-  lift_front_up_deg(20);
+  
+  lift_front_up_time(500);
   lift_clamp_open_time(500);
-  Drivetrain.setDriveVelocity(100,percent);
-  Drivetrain.driveFor(forward,5,inches);
+  lift_front_down_time(500);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(forward,7,inches);
   lift_clamp_close_time(750);
 }
 

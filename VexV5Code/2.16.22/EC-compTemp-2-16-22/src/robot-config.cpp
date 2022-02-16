@@ -102,10 +102,10 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonL1/ButtonL2 status to control lift_back
       if (Controller1.ButtonL1.pressing()) {
-        claw_back.spin(forward, 35, velocityUnits::pct);
+        claw_back.spin(forward, 70, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
-        claw_back.spin(reverse, 35, velocityUnits::pct);
+        claw_back.spin(reverse, 70, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
         claw_back.stop(hold);
@@ -154,11 +154,11 @@ int rc_auto_loop_function_Controller1() {
       } else if (Controller1.ButtonRight.pressing()) {
         grab_goal_frontside();
         Controller1LeftRightButtonsControlMotorsStopped = false;
-      } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        Drivetrain.stop(coast);
+      } //else if (!Controller1LeftShoulderControlMotorsStopped) {
+        //Drivetrain.stop(coast);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
-        Controller1LeftRightButtonsControlMotorsStopped = true;
-      }
+        //Controller1LeftRightButtonsControlMotorsStopped = true;
+      //}
 
     }
     // wait before repeating the process
