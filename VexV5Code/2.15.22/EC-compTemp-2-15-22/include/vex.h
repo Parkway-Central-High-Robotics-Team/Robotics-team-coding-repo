@@ -25,3 +25,6 @@
 
 #define repeat(iterations)                                                     \
   for (int iterator = 0; iterator < iterations; iterator++)
+
+void grab_goal_backside(void);
+void grab_goal_frontside(void);

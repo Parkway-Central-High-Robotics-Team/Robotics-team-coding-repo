@@ -21,6 +21,7 @@ motor lift_front = motor(PORT7, ratio18_1, false);
 motor claw_back = motor(PORT6, ratio18_1, false); 
 motor lift_clamp = motor(PORT5, ratio18_1, false); 
 
+
 // VEXcode generated functions
 // define variable for remote controller enable/disable
 bool RemoteControlCodeEnabled = true;
@@ -29,6 +30,7 @@ bool Controller1LeftShoulderControlMotorsStopped = true;
 bool Controller1RightShoulderControlMotorsStopped = true;
 bool Controller1UpDownButtonsControlMotorsStopped = true;
 bool Controller1XBButtonsControlMotorsStopped = true;
+bool Controller1LeftRightButtonsControlMotorsStopped = true;
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 
@@ -146,6 +148,18 @@ int rc_auto_loop_function_Controller1() {
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1XBButtonsControlMotorsStopped = true;
       }
+      if (Controller1.ButtonLeft.pressing()) {
+        grab_goal_backside();
+        Controller1LeftRightButtonsControlMotorsStopped = false;
+      } else if (Controller1.ButtonRight.pressing()) {
+        grab_goal_frontside();
+        Controller1LeftRightButtonsControlMotorsStopped = false;
+      } else if (!Controller1LeftShoulderControlMotorsStopped) {
+        Drivetrain.stop(coast);
+        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+        Controller1LeftRightButtonsControlMotorsStopped = true;
+      }
+
     }
     // wait before repeating the process
     wait(20, msec);
@@ -176,3 +190,6 @@ void vexcodeInit( void ) {
   wait(50, msec);
   Brain.Screen.clearScreen();
 }
+
+
+
