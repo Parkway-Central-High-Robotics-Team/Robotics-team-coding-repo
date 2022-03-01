@@ -6,7 +6,7 @@
 /*    Description:  Default header for V5 projects                            */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
-//
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,6 +17,7 @@
 #include "v5_vcs.h"
 
 #include "robot-config.h"
+#include "pre-defined-functions.h"
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \
@@ -26,5 +27,5 @@
 #define repeat(iterations)                                                     \
   for (int iterator = 0; iterator < iterations; iterator++)
 
-void grab_goal_backside(void);
-void grab_goal_frontside(void);
+
+
