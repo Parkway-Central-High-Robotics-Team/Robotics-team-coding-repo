@@ -21,6 +21,22 @@ motor lift_front = motor(PORT7, ratio18_1, false);
 motor claw_back = motor(PORT6, ratio18_1, false); 
 motor lift_clamp = motor(PORT5, ratio18_1, false); 
 
+//** ----------Start of controler map---------- **\\
+//                  Controller Map                \\
+// Joysticks: Used for tank drive                 \\
+// Button R1: Used to raise the back lift         \\
+// Button R2: Used to lower the back lift         \\
+// Button L1: Used to open the front claw         \\
+// Button L2: Used to close the front claw        \\
+// Button X: Used to open the lift clamp          \\
+// Button B: Used to close the lift clamp         \\
+// Button Y: not in use                           \\
+// Button A: not in use                           \\
+// Button Up: Used to raise the quick grab        \\
+// Button Down: Used to lower the quick grab      \\
+// Button Left: Used for grab goal backside       \\
+// Button Right: Used for grab goal frontside     \\
+//** -----------End of controler map----------- **\\
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -33,23 +49,6 @@ bool Controller1XBButtonsControlMotorsStopped = true;
 bool Controller1LeftRightButtonsControlMotorsStopped = true;
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
-
-/* 
-// controller map
-// joysticks: used for tank drive
-// button R1: used to raise the back lift
-// button R2: used to lower the back likt
-// button L1: open the front claw
-// button L2: close the front claw
-// button X: used to open the lift clamp
-// button B: used to close the lift clamp
-// button Y: not in use
-// button A: not in use
-// button Up: not in use
-// button Down: not in use
-// button Left: not in use
-// button Right: not in use
-*/
 
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
@@ -154,12 +153,7 @@ int rc_auto_loop_function_Controller1() {
       } else if (Controller1.ButtonRight.pressing()) {
         grab_goal_frontside();
         Controller1LeftRightButtonsControlMotorsStopped = false;
-      } //else if (!Controller1LeftShoulderControlMotorsStopped) {
-        //Drivetrain.stop(coast);
-        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
-        //Controller1LeftRightButtonsControlMotorsStopped = true;
-      //}
-
+      } 
     }
     // wait before repeating the process
     wait(20, msec);
@@ -190,6 +184,3 @@ void vexcodeInit( void ) {
   wait(50, msec);
   Brain.Screen.clearScreen();
 }
-
-
-

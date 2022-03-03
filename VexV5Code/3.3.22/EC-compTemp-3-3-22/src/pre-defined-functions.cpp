@@ -2,9 +2,9 @@
 #include "pre-defined-functions.h"
 using namespace vex;
 
-//start of pre defined functions 
+//** ----------Start of pre defined functions ---------- **//
 
-//start of claw functions 
+//** Start of claw functions **//
 void claw_back_open_full(void) {
   claw_back.setVelocity(100,percent);
   claw_back.spinFor(forward, 50, degrees);
@@ -48,10 +48,10 @@ void claw_back_open_time(int ms) {
   claw_back.stop(hold);
   Quick_grab.setVelocity(20,percent);
 }
-//end of claw functions
+//** End of claw functions **//
 
-//begin of back lift functions 
-// gear ratio is 7:1
+//** Start of lift functions **//
+// Gear ratio is 7:1 //
 void lift_front_up(void) {
   lift_front.setVelocity(75,percent);
   lift_front.spinFor(reverse, 100, degrees);
@@ -89,9 +89,9 @@ void lift_front_down_time(int ms) {
   wait(ms, msec);
   lift_front.stop(hold);
 }
-//end of back lift functions 
+//** End of lift functions **// 
 
-//begin of lift_clamp functions 
+//** Start of lift clamp functions **// 
 void lift_clamp_open(void) {
   lift_front.setVelocity(75,percent);
   lift_front.spinFor(reverse, 100, degrees);
@@ -129,9 +129,9 @@ void lift_clamp_close_time(int ms) {
   wait(ms, msec);
   lift_clamp.stop(hold);
 }
-//end of lift_clamp functions 
+//** End of lift clamp functions **// 
 
-// start of Quick grab functions
+//** Start of quick grab functions **// 
 void Quick_grab_up_full(void) {
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spinFor(forward, 50, degrees);
@@ -175,10 +175,9 @@ void Quick_grab_down_time(int ms) {
   Quick_grab.stop(hold);
   Quick_grab.setVelocity(20,percent);
 }
-// end of quick grab functions 
+//** End of quick grab functions **// 
 
-// start of driver control functions 
-
+//** Start of driver helper functions **// 
 void grab_goal_backside(void) {
   claw_back_open_time(150);
   Drivetrain.setDriveVelocity(50,percent);
@@ -189,12 +188,12 @@ void grab_goal_backside(void) {
 
 void grab_goal_frontside(void) {
   
-  //lift_front_up_time(500);
   lift_clamp_open_time(150);
   lift_front_down_time(100);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,9,inches);
   lift_clamp_close_time(750);
-  //lift_front_down_time(200);
 }
-// end of driver control functions 
+//** End of driver helper functions **//
+
+//** ----------End of pre defined functions ---------- **\\
