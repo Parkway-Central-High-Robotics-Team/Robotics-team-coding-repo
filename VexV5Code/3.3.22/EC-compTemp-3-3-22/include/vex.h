@@ -23,6 +23,7 @@
 
 #include "robot-config.h"
 #include "pre-defined-functions.h"
+#include "autonomous-functions.h"
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \
