@@ -151,6 +151,7 @@ void lift_clamp_close_time(int ms) {
 
 //** Start of quick grab functions **// 
 void Quick_grab_up_full(void) {
+  // Raises the front lift clamp fully
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spinFor(forward, 50, degrees);
   Quick_grab.stop(hold);
@@ -158,6 +159,7 @@ void Quick_grab_up_full(void) {
 }
 
 void Quick_grab_down_full(void) {
+  // Lowers the front lift clamp fully
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spinFor(reverse, 50, degrees);
   Quick_grab.stop(hold);
