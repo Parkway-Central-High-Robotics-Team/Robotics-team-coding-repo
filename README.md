@@ -13,3 +13,8 @@ Any additional information goes here
 - [@Targed](https://github.com/targed)
 - [@hgreenn1378](https://github.com/greenn1378)
 
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
