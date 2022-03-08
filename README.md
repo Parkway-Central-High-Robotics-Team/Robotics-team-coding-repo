@@ -7,6 +7,13 @@ https://drive.google.com/drive/folders/1m6y-5Cl-S9-uSEkgwX5xBIIcqZ27FNts?usp=sha
 
 Any additional information goes here
 
+## Vex documentation
+
+[VEXcode API Reference](https://api.vexcode.cloud/v5/)
+[VCS Command Reference](https://help.vexcodingstudio.com/index.html)
+[Vex V5](https://kb.vex.com/hc/en-us/categories/360002333191-V5)
+[Vex Forum](https://www.vexforum.com/)
+
 ## Authors
 
 - [@Kaiserl4961](https://www.github.com/kaiserl4961)
