@@ -50,10 +50,10 @@ void Quick_grab_up_time(int ms);
 void Quick_grab_down_time(int ms);
 // End of global quick grab functions
 
-// Start of global autonomus functions
+// Start of global helper functions
 void grab_goal_backside(void);
 void grab_goal_frontside(void);
-// End of global autonomus functions
+// End of global helper functions
 
 //** End of global functions **\\
 #endif
