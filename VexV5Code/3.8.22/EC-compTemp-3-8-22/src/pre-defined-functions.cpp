@@ -151,7 +151,7 @@ void lift_clamp_close_time(int ms) {
 
 //** Start of quick grab functions **// 
 void Quick_grab_up_full(void) {
-  // Raises the front lift clamp fully
+  // Raises the quick grab fully
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spinFor(forward, 50, degrees);
   Quick_grab.stop(hold);
@@ -159,7 +159,7 @@ void Quick_grab_up_full(void) {
 }
 
 void Quick_grab_down_full(void) {
-  // Lowers the front lift clamp fully
+  // Lowers the quick grab fully
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spinFor(reverse, 50, degrees);
   Quick_grab.stop(hold);
@@ -167,6 +167,7 @@ void Quick_grab_down_full(void) {
 }
 
 void Quick_grab_up_deg(int deg) {
+  // Raises the quick grab the inputed degrees
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spinFor(forward, deg, degrees);
   Quick_grab.stop(hold);
@@ -174,6 +175,7 @@ void Quick_grab_up_deg(int deg) {
 }
 
 void Quick_grab_down_deg(int deg) {
+  // Lowers the quick grab the inputed degrees
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spinFor(reverse, deg, degrees);
   Quick_grab.stop(hold);
@@ -181,6 +183,7 @@ void Quick_grab_down_deg(int deg) {
 }
 
 void Quick_grab_up_time(int ms) {
+  // Raises the quick grab the inputed time in milliseconds
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spin(reverse);
   wait(ms, msec);
@@ -189,6 +192,7 @@ void Quick_grab_up_time(int ms) {
 }
 
 void Quick_grab_down_time(int ms) {
+  // Lowers the quick grab the inputed time in milliseconds
   Quick_grab.setVelocity(100,percent);
   Quick_grab.spin(forward);
   wait(ms, msec);
@@ -198,7 +202,10 @@ void Quick_grab_down_time(int ms) {
 //** End of quick grab functions **// 
 
 //** Start of driver helper functions **// 
+
+// Functions to help the driver with repetitive tasks
 void grab_goal_backside(void) {
+  // Uses the back claw to grab a goal at the push of the left button
   claw_back_open_time(150);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(reverse,9,inches);
@@ -207,7 +214,7 @@ void grab_goal_backside(void) {
 
 
 void grab_goal_frontside(void) {
-  
+  // Uses the front claw to grab a goal at the push of the right button
   lift_clamp_open_time(150);
   lift_front_down_time(100);
   Drivetrain.setDriveVelocity(50,percent);
