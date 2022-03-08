@@ -9,10 +9,10 @@ Any additional information goes here
 
 ## Vex documentation
 
-[VEXcode API Reference](https://api.vexcode.cloud/v5/)
-[VCS Command Reference](https://help.vexcodingstudio.com/index.html)
-[Vex V5](https://kb.vex.com/hc/en-us/categories/360002333191-V5)
-[Vex Forum](https://www.vexforum.com/)
+- [VEXcode API Reference](https://api.vexcode.cloud/v5/)
+- [VCS Command Reference](https://help.vexcodingstudio.com/index.html)
+- [Vex V5](https://kb.vex.com/hc/en-us/categories/360002333191-V5)
+- [Vex Forum](https://www.vexforum.com/)
 
 ## Authors
 
