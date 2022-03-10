@@ -24,6 +24,7 @@
 #include "robot-config.h"
 #include "pre-defined-functions.h"
 #include "autonomous-functions.h"
+#include "vision.h"
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \
