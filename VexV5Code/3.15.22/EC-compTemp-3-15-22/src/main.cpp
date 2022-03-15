@@ -13,6 +13,7 @@
 // Drivetrain           drivetrain    2, 3, 8, 9, 11  
 // Controller1          controller                    
 // DrivetrainInertial   inertial      11
+// Vision1              vision        12
 // leftMotorA           motor         2
 // leftMotorB           motor         3
 // rightMotorA          motor         8
@@ -29,6 +30,7 @@ using namespace vex;
 
 // A global instance of competition
 competition Competition;
+
 
 // define your global instances of motors and other devices here
 

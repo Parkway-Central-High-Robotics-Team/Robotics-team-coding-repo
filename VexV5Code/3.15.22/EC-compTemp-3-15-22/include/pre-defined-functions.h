@@ -13,6 +13,8 @@ using namespace vex;
 #include "v5_vcs.h"
 
 //** Start of global functions **\\
+//void RightDriveSmart(void);
+//void LeftDriveSmart(void);
 
 // Start of global claw back functions
 void claw_back_open_full(void);
