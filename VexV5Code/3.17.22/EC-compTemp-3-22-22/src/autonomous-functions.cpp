@@ -151,23 +151,25 @@ void new_auto_og (void) {
   Drivetrain.driveFor(forward,20,inches);
 }
 
-void new_auto (void) {
+void new_auto_2_goal_works (void) {
   Drivetrain.setDriveVelocity(100,percent);
   claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(550, msec);
+  wait(435, msec);
   //Drivetrain.driveFor(reverse,29,inches);
-  Quick_grab_down_time(450); //while driving reverse, lowers the quick grab
+  Quick_grab_down_time(400); //while driving reverse, lowers the quick grab
   //wait(100, msec);
   Drivetrain.stop(brake); //stops driving
+  wait(200, msec);
   Drivetrain.driveFor(forward,32,inches);//drives 
   Drivetrain.setDriveVelocity(25,percent);
+  wait(500, msec);
   Drivetrain.driveFor(forward,2,inches);
   Quick_grab_up_time(1000);
   Drivetrain.setDriveVelocity(100,percent);
 
   Drivetrain.turn(left);
-  wait(600, msec);
+  wait(500, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse);
   wait(550, msec);
@@ -177,6 +179,62 @@ void new_auto (void) {
   Drivetrain.driveFor(forward,17,inches);
 
   claw_back_open_time(500);
+  /*Drivetrain.turn(right);
+  wait(800, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.drive(reverse);
+  wait(600, msec);
+  Quick_grab_down_time(600);
+  wait(500, msec);
+  Drivetrain.stop(coast);
+  Quick_grab_down_time(600);
+  Drivetrain.driveFor(forward,42,inches);
+  */
+  //Drivetrain.driveFor(reverse,20,inches); 
+  //claw_back_close_deg(175);
+  //Drivetrain.driveFor(forward,20,inches);
+}
+
+void new_auto (void) {
+  Drivetrain.setDriveVelocity(100,percent);
+  claw_back.stop(hold);
+  Drivetrain.drive(reverse); //drives reverse 
+  wait(435, msec);
+  //Drivetrain.driveFor(reverse,29,inches);
+  Quick_grab_down_time(400); //while driving reverse, lowers the quick grab
+  //wait(100, msec);
+  Drivetrain.stop(brake); //stops driving
+  wait(200, msec);
+  //Drivetrain.driveFor(forward,32,inches);//drives 
+  Drivetrain.driveFor(forward,10,inches);//drives 
+  Drivetrain.setDriveVelocity(25,percent);
+  wait(500, msec);
+  Drivetrain.driveFor(forward,2,inches);
+  Quick_grab_up_time(1000);
+  Drivetrain.setDriveVelocity(100,percent);
+
+  //Drivetrain.turn(left);
+  Drivetrain.turn(right);
+  wait(345, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.drive(reverse); //drives reverse 
+  wait(275, msec);
+  //Drivetrain.driveFor(reverse,29,inches);
+  Quick_grab_down_time(550); //while driving reverse, lowers the quick grab
+  //wait(100, msec);
+  Drivetrain.stop(brake); //stops driving
+  wait(250, msec);
+  Quick_grab_down_time(50);
+  Drivetrain.driveFor(forward,10,inches);
+  Quick_grab_up_time(1000);
+
+  claw_back_open_time(500);
+  Drivetrain.driveFor(reverse,20,inches);
+  claw_back_close_time(500);
+  Drivetrain.turn(left);
+  wait(500, msec);
+  Drivetrain.stop(coast);
+
   /*Drivetrain.turn(right);
   wait(800, msec);
   Drivetrain.stop(coast);
