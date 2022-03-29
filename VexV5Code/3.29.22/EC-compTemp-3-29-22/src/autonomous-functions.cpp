@@ -155,12 +155,13 @@ void new_auto_2_goal_works (void) {
   Drivetrain.setDriveVelocity(100,percent);
   claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(435, msec);
+  wait(425, msec);
   //Drivetrain.driveFor(reverse,29,inches);
-  Quick_grab_down_time(400); //while driving reverse, lowers the quick grab
+  Quick_grab_down_time(475); //while driving reverse, lowers the quick grab
   //wait(100, msec);
   Drivetrain.stop(brake); //stops driving
-  wait(200, msec);
+  wait(350, msec);
+  Quick_grab_down_time(100);
   Drivetrain.driveFor(forward,32,inches);//drives 
   Drivetrain.setDriveVelocity(25,percent);
   wait(500, msec);
