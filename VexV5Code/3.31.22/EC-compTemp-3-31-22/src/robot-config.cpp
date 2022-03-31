@@ -28,10 +28,10 @@ motor lift_clamp = motor(PORT5, ratio18_1, false);
 // Button R2: Used to lower the back lift         \\
 // Button L1: Used to open the front claw         \\
 // Button L2: Used to close the front claw        \\
-// Button X: Used to open the lift clamp          \\
-// Button B: Used to close the lift clamp         \\
-// Button Y: not in use                           \\
-// Button A: not in use                           \\
+// Button X: Used to lift a goal on platform      \\
+// Button B: Used to lower lift from platform     \\
+// Button Y: Used to open the lift clamp          \\
+// Button A: Used to close the lift clamp         \\
 // Button Up: Used to raise the quick grab        \\
 // Button Down: Used to lower the quick grab      \\
 // Button Left: Used for grab goal backside       \\
@@ -46,6 +46,7 @@ bool Controller1LeftShoulderControlMotorsStopped = true;
 bool Controller1RightShoulderControlMotorsStopped = true;
 bool Controller1UpDownButtonsControlMotorsStopped = true;
 bool Controller1XBButtonsControlMotorsStopped = true;
+bool Controller1YAButtonsControlMotorsStopped = true;
 bool Controller1LeftRightButtonsControlMotorsStopped = true;
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
@@ -136,10 +137,10 @@ int rc_auto_loop_function_Controller1() {
         Controller1UpDownButtonsControlMotorsStopped = true;
       }
       // check the ButtonX/ButtonB status to control lift_clamp
-      if (Controller1.ButtonX.pressing()) {
+      if (Controller1.ButtonY.pressing()) {
         lift_clamp.spin(reverse, 50, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
-      } else if (Controller1.ButtonB.pressing()) {
+      } else if (Controller1.ButtonA.pressing()) {
         lift_clamp.spin(forward, 50, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
@@ -147,12 +148,21 @@ int rc_auto_loop_function_Controller1() {
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1XBButtonsControlMotorsStopped = true;
       }
+
       if (Controller1.ButtonLeft.pressing()) {
         grab_goal_backside();
         Controller1LeftRightButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonRight.pressing()) {
         grab_goal_frontside();
         Controller1LeftRightButtonsControlMotorsStopped = false;
+      } 
+
+      if (Controller1.ButtonX.pressing()) {
+        lift_goal_on_platform();
+        Controller1YAButtonsControlMotorsStopped = false;
+      } else if (Controller1.ButtonB.pressing()) {
+        lower_lift_from_platform();
+        Controller1YAButtonsControlMotorsStopped = false;
       } 
     }
     // wait before repeating the process

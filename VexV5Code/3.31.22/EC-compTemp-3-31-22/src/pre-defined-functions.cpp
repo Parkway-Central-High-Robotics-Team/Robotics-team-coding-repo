@@ -221,6 +221,20 @@ void grab_goal_frontside(void) {
   Drivetrain.driveFor(forward,9,inches);
   lift_clamp_close_time(750);
 }
+
+void lift_goal_on_platform(void) {
+  lift_clamp_close_time(400);
+  lift_front_up_deg(90);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(forward,9,inches);
+  lift_clamp_open_time(600);
+}
+
+void lower_lift_from_platform(void) {
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,9,inches);
+  lift_front_down_time(500);
+}
 //** End of driver helper functions **//
 
 //** ----------End of pre defined functions ---------- **\\

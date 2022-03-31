@@ -55,6 +55,8 @@ void Quick_grab_down_time(int ms);
 // Start of global helper functions
 void grab_goal_backside(void);
 void grab_goal_frontside(void);
+void lift_goal_on_platform(void);
+void lower_lift_from_platform(void);
 // End of global helper functions
 
 //** End of global functions **\\
