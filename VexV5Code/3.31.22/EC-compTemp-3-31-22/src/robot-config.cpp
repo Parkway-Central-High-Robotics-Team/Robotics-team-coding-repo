@@ -138,10 +138,10 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonX/ButtonB status to control lift_clamp
       if (Controller1.ButtonY.pressing()) {
-        lift_clamp.spin(reverse, 50, velocityUnits::pct);
+        lift_clamp.spin(reverse, 100, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonA.pressing()) {
-        lift_clamp.spin(forward, 50, velocityUnits::pct);
+        lift_clamp.spin(forward, 100, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
         lift_clamp.stop(hold);

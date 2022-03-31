@@ -223,17 +223,21 @@ void grab_goal_frontside(void) {
 }
 
 void lift_goal_on_platform(void) {
-  lift_clamp_close_time(400);
-  lift_front_up_deg(90);
   Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(forward,9,inches);
-  lift_clamp_open_time(600);
+  lift_clamp_open_time(400);
+  lift_clamp_close_time(400);
+  Drivetrain.driveFor(reverse,4,inches);
+  lift_front_up_time(2000);
+  Drivetrain.driveFor(forward,20,inches);
+  lift_clamp_open_time(400);
 }
 
 void lower_lift_from_platform(void) {
   Drivetrain.setDriveVelocity(50,percent);
+  lift_front_down_time(200);
   Drivetrain.driveFor(reverse,9,inches);
-  lift_front_down_time(500);
+  lift_clamp_close_time(250);
+  lift_front_down_time(2000);
 }
 //** End of driver helper functions **//
 
