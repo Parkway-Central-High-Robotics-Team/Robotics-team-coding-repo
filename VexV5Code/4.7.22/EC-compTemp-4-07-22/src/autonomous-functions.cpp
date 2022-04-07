@@ -155,7 +155,7 @@ void new_auto_2_goal_works (void) {
   Drivetrain.setDriveVelocity(100,percent);
   claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(400, msec);
+  wait(475, msec);
   //Drivetrain.driveFor(reverse,29,inches);
   Quick_grab_down_time(475); //while driving reverse, lowers the quick grab
   //wait(100, msec);
@@ -202,7 +202,7 @@ void new_auto (void) {
   Drivetrain.setDriveVelocity(100,percent);
   claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(435, msec);
+  wait(475, msec);
   //Drivetrain.driveFor(reverse,29,inches);
   Quick_grab_down_time(400); //while driving reverse, lowers the quick grab
   //wait(100, msec);
@@ -213,15 +213,15 @@ void new_auto (void) {
   Drivetrain.setDriveVelocity(25,percent);
   wait(500, msec);
   Drivetrain.driveFor(forward,2,inches);
-  Quick_grab_up_time(1000);
+  Quick_grab_up_time(500);
   Drivetrain.setDriveVelocity(100,percent);
 
   //Drivetrain.turn(left);
   Drivetrain.turn(right);
-  wait(345, msec);
+  wait(385, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(275, msec);
+  wait(475, msec);
   //Drivetrain.driveFor(reverse,29,inches);
   Quick_grab_down_time(550); //while driving reverse, lowers the quick grab
   //wait(100, msec);
