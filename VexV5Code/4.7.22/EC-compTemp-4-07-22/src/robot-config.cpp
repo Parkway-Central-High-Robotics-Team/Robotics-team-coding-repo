@@ -137,10 +137,10 @@ int rc_auto_loop_function_Controller1() {
         Controller1UpDownButtonsControlMotorsStopped = true;
       }
       // check the ButtonX/ButtonB status to control lift_clamp
-      if (Controller1.ButtonY.pressing()) {
+      if (Controller1.ButtonX.pressing()) {
         lift_clamp.spin(reverse, 100, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
-      } else if (Controller1.ButtonA.pressing()) {
+      } else if (Controller1.ButtonB.pressing()) {
         lift_clamp.spin(forward, 100, velocityUnits::pct);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
@@ -157,10 +157,10 @@ int rc_auto_loop_function_Controller1() {
         Controller1LeftRightButtonsControlMotorsStopped = false;
       } 
 
-      if (Controller1.ButtonX.pressing()) {
+      if (Controller1.ButtonY.pressing()) {
         lift_goal_on_platform();
         Controller1YAButtonsControlMotorsStopped = false;
-      } else if (Controller1.ButtonB.pressing()) {
+      } else if (Controller1.ButtonA.pressing()) {
         lower_lift_from_platform();
         Controller1YAButtonsControlMotorsStopped = false;
       } 

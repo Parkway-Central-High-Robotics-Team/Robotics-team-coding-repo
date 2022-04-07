@@ -208,17 +208,23 @@ void grab_goal_backside(void) {
   // Uses the back claw to grab a goal at the push of the left button
   claw_back_open_time(150);
   Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(reverse,9,inches);
+  Drivetrain.drive(reverse);
+  wait(500, msec);
+  Drivetrain.stop(coast);
+  //Drivetrain.driveFor(reverse,9,inches);
   claw_back_close_time(300);
   }
 
 
 void grab_goal_frontside(void) {
   // Uses the front claw to grab a goal at the push of the right button
-  lift_clamp_open_time(150);
+  lift_clamp_open_time(400);
   lift_front_down_time(100);
   Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(forward,9,inches);
+  Drivetrain.drive(forward);
+  wait(500, msec);
+  Drivetrain.stop(coast);
+  //Drivetrain.driveFor(forward,9,inches);
   lift_clamp_close_time(750);
 }
 
@@ -228,16 +234,22 @@ void lift_goal_on_platform(void) {
   lift_clamp_close_time(400);
   Drivetrain.driveFor(reverse,4,inches);
   lift_front_up_time(2000);
-  Drivetrain.driveFor(forward,20,inches);
-  lift_clamp_open_time(400);
+  //Drivetrain.driveFor(forward,20,inches);
+  Drivetrain.drive(forward);
+  wait(1000, msec);
+  Drivetrain.stop(coast);
+  lift_clamp_open_time(350);
 }
 
 void lower_lift_from_platform(void) {
   Drivetrain.setDriveVelocity(50,percent);
   lift_front_down_time(200);
-  Drivetrain.driveFor(reverse,9,inches);
+  //Drivetrain.driveFor(reverse,9,inches);
+  Drivetrain.drive(reverse);
+  wait(800, msec);
+  Drivetrain.stop(coast);
   lift_clamp_close_time(250);
-  lift_front_down_time(2000);
+  lift_front_down_time(1650);
 }
 //** End of driver helper functions **//
 
