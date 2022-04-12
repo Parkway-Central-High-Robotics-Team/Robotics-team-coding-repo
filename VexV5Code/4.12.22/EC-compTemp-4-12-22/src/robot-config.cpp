@@ -126,9 +126,11 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonUp/ButtonDown status to control lift_back
       if (Controller1.ButtonUp.pressing()) {
+        Quick_grab.setStopping(hold);
         Quick_grab.spin(reverse, 100, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
+        Quick_grab.setStopping(coast);
         Quick_grab.spin(forward, 100, velocityUnits::pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (!Controller1UpDownButtonsControlMotorsStopped) {

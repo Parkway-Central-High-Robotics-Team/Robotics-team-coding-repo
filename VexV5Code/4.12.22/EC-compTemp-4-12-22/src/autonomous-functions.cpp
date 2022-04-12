@@ -155,27 +155,31 @@ void new_auto_2_goal_works (void) {
   Drivetrain.setDriveVelocity(100,percent);
   claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(475, msec);
+  wait(100, msec);
   //Drivetrain.driveFor(reverse,29,inches);
-  Quick_grab_down_time(475); //while driving reverse, lowers the quick grab
-  //wait(100, msec);
-  Drivetrain.stop(brake); //stops driving
-  wait(350, msec);
-  Quick_grab_down_time(100);
-  Drivetrain.setDriveVelocity(100,percent);
-  Drivetrain.driveFor(forward,5,inches);//drives 
+  Quick_grab_down_time(275); //while driving reverse, lowers the quick grab
+  Quick_grab.spin(forward);
+  wait(50, msec);
+  Quick_grab.stop(coast);
+  wait(275, msec);
+  Drivetrain.stop(coast);
+  Quick_grab.spin(reverse);
+  wait(200, msec);
   Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(forward,28,inches);//drives 
-  wait(500, msec);
+  Drivetrain.driveFor(forward,24,inches);//drives 
+  Quick_grab.spin(forward);
+  wait(100, msec);
+  Quick_grab.stop(coast);
+  //wait(500, msec);
   Drivetrain.driveFor(forward,2,inches);
   Quick_grab_up_time(1000);
   Drivetrain.setDriveVelocity(100,percent);
 
   Drivetrain.turn(left);
-  wait(400, msec);
+  wait(450, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse);
-  wait(550, msec);
+  wait(625, msec);
   Drivetrain.stop(coast);
   claw_back_close_time(500);
 
@@ -200,14 +204,23 @@ void new_auto_2_goal_works (void) {
 
 void new_auto (void) {
   Drivetrain.setDriveVelocity(100,percent);
+  Quick_grab.setVelocity(100,percent);
+  Quick_grab.setStopping(coast);
   claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(475, msec);
+  wait(400, msec);
   //Drivetrain.driveFor(reverse,29,inches);
   Quick_grab_down_time(400); //while driving reverse, lowers the quick grab
+  Quick_grab.spin(reverse);
+  wait(10, msec);
+  Quick_grab.stop(coast);
+  Quick_grab.spin(reverse);
+  wait(400, msec);
+  Quick_grab.stop(coast);
   //wait(100, msec);
-  Drivetrain.stop(brake); //stops driving
+  Drivetrain.stop(coast); //stops driving
   wait(200, msec);
+  
   //Drivetrain.driveFor(forward,32,inches);//drives 
   Drivetrain.driveFor(forward,10,inches);//drives 
   Drivetrain.setDriveVelocity(25,percent);

@@ -206,7 +206,7 @@ void Quick_grab_down_time(int ms) {
 // Functions to help the driver with repetitive tasks
 void grab_goal_backside(void) {
   // Uses the back claw to grab a goal at the push of the left button
-  claw_back_open_time(150);
+  claw_back_open_time(300);
   Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.drive(reverse);
   wait(500, msec);
