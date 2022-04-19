@@ -171,7 +171,7 @@ void new_auto_2_goal_works (void) {
   wait(100, msec);
   Quick_grab.stop(coast);
   //wait(500, msec);
-  Drivetrain.driveFor(forward,3,inches);
+  Drivetrain.driveFor(forward,3,inches); 
   Quick_grab_up_time(1000);
   Drivetrain.setDriveVelocity(100,percent);
 
