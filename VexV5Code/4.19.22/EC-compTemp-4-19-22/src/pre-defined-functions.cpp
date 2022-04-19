@@ -229,6 +229,7 @@ void grab_goal_frontside(void) {
 }
 
 void lift_goal_on_platform(void) {
+  // Uses the front lift to grab the goal, backs up. raises the front lift, drives forward. and deposits the goal on the platform
   Drivetrain.setDriveVelocity(50,percent);
   lift_clamp_open_time(400);
   lift_clamp_close_time(400);
