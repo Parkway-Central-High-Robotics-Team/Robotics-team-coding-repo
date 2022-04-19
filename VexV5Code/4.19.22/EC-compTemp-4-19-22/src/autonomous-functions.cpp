@@ -161,7 +161,7 @@ void new_auto_2_goal_works (void) {
   Quick_grab.spin(forward);
   wait(50, msec);
   Quick_grab.stop(coast);
-  wait(350, msec);
+  wait(285, msec);
   Drivetrain.stop(coast);
   Quick_grab.spin(reverse);
   wait(200, msec);
@@ -176,7 +176,7 @@ void new_auto_2_goal_works (void) {
   Drivetrain.setDriveVelocity(100,percent);
 
   Drivetrain.turn(left);
-  wait(525, msec);
+  wait(475, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse);
   wait(625, msec);

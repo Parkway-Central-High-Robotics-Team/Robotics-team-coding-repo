@@ -28,10 +28,10 @@ motor lift_clamp = motor(PORT5, ratio18_1, false);
 // Button R2: Used to lower the back lift         \\
 // Button L1: Used to open the front claw         \\
 // Button L2: Used to close the front claw        \\
-// Button X: Used to lift a goal on platform      \\
-// Button B: Used to lower lift from platform     \\
-// Button Y: Used to open the lift clamp          \\
-// Button A: Used to close the lift clamp         \\
+// Button Y: Used to lift a goal on platform      \\
+// Button A: Used to lower lift from platform     \\
+// Button X: Used to open the lift clamp          \\
+// Button B: Used to close the lift clamp         \\
 // Button Up: Used to raise the quick grab        \\
 // Button Down: Used to lower the quick grab      \\
 // Button Left: Used for grab goal backside       \\
@@ -150,20 +150,22 @@ int rc_auto_loop_function_Controller1() {
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1XBButtonsControlMotorsStopped = true;
       }
-
+      // check the ButtonLeft/ButtonRight status to control the grab-goal pre-defined functions
       if (Controller1.ButtonLeft.pressing()) {
         grab_goal_backside();
         Controller1LeftRightButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonRight.pressing()) {
         grab_goal_frontside();
+        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1LeftRightButtonsControlMotorsStopped = false;
       } 
-
+      // check the ButtonY/ButtonA status to control the goal-on-platform pre-defined functions
       if (Controller1.ButtonY.pressing()) {
         lift_goal_on_platform();
         Controller1YAButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonA.pressing()) {
         lower_lift_from_platform();
+        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1YAButtonsControlMotorsStopped = false;
       } 
     }

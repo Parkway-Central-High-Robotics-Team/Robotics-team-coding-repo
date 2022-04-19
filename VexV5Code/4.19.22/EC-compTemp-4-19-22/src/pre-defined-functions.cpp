@@ -243,6 +243,7 @@ void lift_goal_on_platform(void) {
 }
 
 void lower_lift_from_platform(void) {
+  // Lowers the front liftand drives reverse to clear the platform
   Drivetrain.setDriveVelocity(50,percent);
   lift_front_down_time(200);
   //Drivetrain.driveFor(reverse,9,inches);
