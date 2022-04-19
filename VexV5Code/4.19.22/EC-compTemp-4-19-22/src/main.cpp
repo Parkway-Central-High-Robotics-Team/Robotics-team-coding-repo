@@ -66,7 +66,7 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  new_auto_2_goal_works();
+  new_auto();
   // ..........................................................................
 }
 
