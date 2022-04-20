@@ -230,10 +230,10 @@ void new_auto (void) {
 
   //Drivetrain.turn(left);
   Drivetrain.turn(right);
-  wait(475, msec);
+  wait(492, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(750, msec);
+  wait(740, msec);
   //Drivetrain.driveFor(reverse,29,inches);
   //Quick_grab_down_time(500); //while driving reverse, lowers the quick grab
   //wait(100, msec);
@@ -241,16 +241,26 @@ void new_auto (void) {
   wait(250, msec);
   Quick_grab.spin(reverse);
   wait(200, msec);
-  Drivetrain.driveFor(forward,10,inches);
-  //Quick_grab.stop(coast);
+  Drivetrain.driveFor(forward,35,inches);
+  wait(1000, msec);
+  //Drivetrain.drive(reverse); //drives reverse 
+  //wait(100, msec);
+  //Drivetrain.stop(brake); //stops driving
+  Quick_grab.spin(forward);
+  wait(150, msec);
+  Quick_grab.stop(coast);
+  wait(1000, msec);
   //wait(500, msec);
-  Drivetrain.driveFor(forward,3,inches); 
+  Drivetrain.driveFor(forward,6,inches); 
   Quick_grab_up_time(1000);
 
   claw_back_open_time(500);
-  Drivetrain.driveFor(reverse,20,inches);
-  claw_back_close_time(500);
   Drivetrain.turn(left);
+  wait(400, msec);
+  Drivetrain.stop(coast);
+  Drivetrain.driveFor(reverse,28,inches);
+  claw_back_close_time(500);
+  Drivetrain.turn(right);
   wait(500, msec);
   Drivetrain.stop(coast);
 
