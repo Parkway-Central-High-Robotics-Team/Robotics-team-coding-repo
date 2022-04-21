@@ -256,9 +256,11 @@ void new_auto (void) {
 
   claw_back_open_time(500);
   Drivetrain.turn(left);
-  wait(400, msec);
+  wait(375, msec);
   Drivetrain.stop(coast);
-  Drivetrain.driveFor(reverse,28,inches);
+  Drivetrain.driveFor(reverse,26,inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,1.5,inches);
   claw_back_close_time(500);
   Drivetrain.turn(right);
   wait(500, msec);
