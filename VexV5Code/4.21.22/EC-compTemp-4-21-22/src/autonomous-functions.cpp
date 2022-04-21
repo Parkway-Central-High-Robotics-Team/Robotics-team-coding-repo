@@ -230,18 +230,21 @@ void new_auto (void) {
 
   //Drivetrain.turn(left);
   Drivetrain.turn(right);
-  wait(492, msec);
+  wait(484, msec);
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(740, msec);
+  wait(735, msec);
   //Drivetrain.driveFor(reverse,29,inches);
   //Quick_grab_down_time(500); //while driving reverse, lowers the quick grab
   //wait(100, msec);
   Drivetrain.stop(brake); //stops driving
+
   wait(250, msec);
   Quick_grab.spin(reverse);
-  wait(200, msec);
-  Drivetrain.driveFor(forward,35,inches);
+  wait(400, msec);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(forward,30,inches);
+  Drivetrain.setDriveVelocity(100,percent);
   wait(1000, msec);
   //Drivetrain.drive(reverse); //drives reverse 
   //wait(100, msec);
@@ -249,22 +252,56 @@ void new_auto (void) {
   Quick_grab.spin(forward);
   wait(150, msec);
   Quick_grab.stop(coast);
-  wait(1000, msec);
+  wait(200, msec);
+
+  //lift_front_up_time(400);
+  //lift_clamp_close_time(300);
+  //lift_front_down_time(350);
+
   //wait(500, msec);
+  Drivetrain.setDriveVelocity(50,percent);
   Drivetrain.driveFor(forward,6,inches); 
+  Drivetrain.setDriveVelocity(100,percent);
   Quick_grab_up_time(1000);
 
   claw_back_open_time(500);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,12,inches); 
+  Drivetrain.setDriveVelocity(100,percent);
+
   Drivetrain.turn(left);
+  wait(485, msec);
+  Drivetrain.stop(coast);
+
+  Drivetrain.driveFor(reverse,14,inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,3,inches);
+  Drivetrain.setDriveVelocity(100,percent);
+  claw_back_close_time(500);
+
+  Drivetrain.turn(right);
   wait(375, msec);
   Drivetrain.stop(coast);
-  Drivetrain.driveFor(reverse,26,inches);
   Drivetrain.setDriveVelocity(50,percent);
-  Drivetrain.driveFor(reverse,1.5,inches);
-  claw_back_close_time(500);
+  Drivetrain.driveFor(forward,16,inches);
+  Drivetrain.setDriveVelocity(100,percent);
+
+  //lift_clamp_open_time(400);
+  //lift_front_down_time(100);
+  Drivetrain.setDriveVelocity(100,percent);
+  Drivetrain.drive(forward);
+  wait(750, msec);
+  Drivetrain.stop(coast);
+  //Drivetrain.driveFor(forward,9,inches);
+  //lift_clamp_close_time(450);
+
+  //Drivetrain.turnFor(right, 45, degrees);
   Drivetrain.turn(right);
   wait(500, msec);
   Drivetrain.stop(coast);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(forward,10,inches);
+  Drivetrain.setDriveVelocity(100,percent);
 
   /*Drivetrain.turn(right);
   wait(800, msec);

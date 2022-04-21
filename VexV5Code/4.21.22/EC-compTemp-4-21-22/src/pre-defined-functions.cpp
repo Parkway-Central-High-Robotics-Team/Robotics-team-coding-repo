@@ -225,7 +225,7 @@ void grab_goal_frontside(void) {
   wait(500, msec);
   Drivetrain.stop(coast);
   //Drivetrain.driveFor(forward,9,inches);
-  lift_clamp_close_time(750);
+  lift_clamp_close_time(450);
 }
 
 void lift_goal_on_platform(void) {
