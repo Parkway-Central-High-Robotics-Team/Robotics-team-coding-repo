@@ -193,7 +193,7 @@ void new_auto_2_goal_works (void) {
   Drivetrain.stop(coast);
   Drivetrain.drive(reverse);
   wait(600, msec);
-  Quick_grab_down_time(600);
+  Quick_grab_down_time(601);
   wait(500, msec);
   Drivetrain.stop(coast);
   Quick_grab_down_time(600);
