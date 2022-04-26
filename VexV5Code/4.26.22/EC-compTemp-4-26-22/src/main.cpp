@@ -66,8 +66,9 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  Drivetrain.turnFor(right, 90, deg);
-  //auton_function_test();
+  
+  
+  new_auto();
   // ..........................................................................
 }
 
