@@ -201,7 +201,7 @@ void new_auto_2_goal_works (void) {
   */
   //Drivetrain.driveFor(reverse,20,inches); 
   //claw_back_close_deg(175);
-  //Drivetrain.driveFor(forward,20,inches);
+  //Drivetrain.driveFor(forward,21,inches);
 }
 
 void new_auto (void) {
