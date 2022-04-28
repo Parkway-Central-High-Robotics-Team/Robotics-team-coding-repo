@@ -52,6 +52,12 @@ void Quick_grab_up_time(int ms);
 void Quick_grab_down_time(int ms);
 // End of global quick grab functions
 
+// Start of Drivetrain helper functions
+void turn_left_smooth_deg(int deg);
+void turn_right_smooth_deg(int deg);
+void turn_smooth_time(int ms);
+// End of drivetrain helper functions
+
 // Start of global helper functions
 void grab_goal_backside(void);
 void grab_goal_frontside(void);

@@ -23,6 +23,7 @@ void auton_function_test(void) {
   //lift_clamp_close_deg(100);
   //lift_clamp_open_time(100);
   //lift_clamp_close_time(100);
+  turn_left_smooth_deg(360);
 }
 
 void all_corners_1_goal(void) {
@@ -210,14 +211,14 @@ void right_side_3_goal_no_ring (void) {
   Quick_grab.spin(forward);
   wait(100, msec);
   Quick_grab.stop(coast);
-  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.setDriveVelocity(20,percent);
   Drivetrain.driveFor(forward,3,inches); // gets the quick grab unhooked from the goal
   Drivetrain.setDriveVelocity(100,percent);
   Drivetrain.stop(coast);
 
   //Drivetrain.turnFor(right, 45, degrees);
   Drivetrain.turn(right);
-  wait(470, msec);
+  wait(485, msec);
   Drivetrain.stop(coast); // turns right and drives reverse to the center goal
   Drivetrain.drive(reverse); 
   wait(730, msec);
@@ -245,7 +246,7 @@ void right_side_3_goal_no_ring (void) {
   Drivetrain.driveFor(reverse,8,inches); 
   Drivetrain.setDriveVelocity(100,percent); // drives reverse and turns to get inline with the first yellow goal
   Drivetrain.turn(left);
-  wait(535, msec);
+  wait(550, msec);
   Drivetrain.stop(coast);
 
   Drivetrain.driveFor(reverse,14,inches);
@@ -254,10 +255,10 @@ void right_side_3_goal_no_ring (void) {
   Drivetrain.setDriveVelocity(100,percent);
   claw_back_close_time(500);
   lift_front_up_time(400);
-  lift_clamp_close_time(200);
+  lift_clamp_close_time(250);
 
   Drivetrain.turn(right);
-  wait(650, msec);
+  wait(600, msec);
   Drivetrain.stop(coast);
   lift_front_down_time(400);
   Drivetrain.setDriveVelocity(50,percent); // turns right for the front lift to be inline with the alliance goal and drives forward
@@ -272,6 +273,7 @@ void right_side_3_goal_no_ring (void) {
   Drivetrain.drive(forward);
   wait(750, msec);
   Drivetrain.stop(coast);
+  lift_clamp_open_time(250);
 }
 
 //end of auton 

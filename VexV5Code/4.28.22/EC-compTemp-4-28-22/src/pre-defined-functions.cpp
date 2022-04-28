@@ -201,6 +201,31 @@ void Quick_grab_down_time(int ms) {
 }
 //** End of quick grab functions **// 
 
+
+void turn_left_smooth_deg(int deg) {
+  Drivetrain.setDriveVelocity(10, percent);
+  Drivetrain.setTurnVelocity(10, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(30, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(50, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(70, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(100, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(70, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(50, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(30, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setTurnVelocity(10, percent);
+  Drivetrain.turnFor(left, deg/9, degrees);
+  Drivetrain.setDriveVelocity(1, percent);
+}
+
+
 //** Start of driver helper functions **// 
 
 // Functions to help the driver with repetitive tasks
