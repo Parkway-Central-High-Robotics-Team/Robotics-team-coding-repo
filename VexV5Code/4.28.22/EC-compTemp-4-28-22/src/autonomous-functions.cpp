@@ -23,7 +23,7 @@ void auton_function_test(void) {
   //lift_clamp_close_deg(100);
   //lift_clamp_open_time(100);
   //lift_clamp_close_time(100);
-  turn_left_smooth_deg(360);
+  //turn_left_smooth_deg(360);
 }
 
 void all_corners_1_goal(void) {
