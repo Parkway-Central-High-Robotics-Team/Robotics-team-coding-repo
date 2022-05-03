@@ -239,7 +239,7 @@ void right_side_2_goal_1_ring (void) {
   
 }
 
-void right_side_3_goal_no_ring (void) {
+void right_side_3_goal_1_ring (void) {
 
   Drivetrain.setDriveVelocity(100,percent);
   claw_back.stop(hold);

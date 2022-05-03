@@ -22,7 +22,7 @@ void red_right_2_goal(void);            // An old autonomus that grabs 2 goals f
 void left_side_2_goal_1_ring(void);             // An old autonomus that grabs 2 goals for the red left side
 void new_auto_og (void);                // A new autonomus backup for new_auto
 void right_side_2_goal_1_ring (void);   // The main autonomus that we use to grab 2 goals 
-void right_side_3_goal_no_ring (void);  // A new autonomus that utilizes the quick grab to get 3 goals
+void right_side_3_goal_1_ring (void);  // A new autonomus that utilizes the quick grab to get 3 goals
 // End of global autonomous functions
 
 //** End of global functions **\\

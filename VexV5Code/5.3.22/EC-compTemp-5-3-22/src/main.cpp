@@ -66,7 +66,7 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  left_side_2_goal_1_ring();
+  right_side_3_goal_1_ring();
   // ..........................................................................
 }
 
