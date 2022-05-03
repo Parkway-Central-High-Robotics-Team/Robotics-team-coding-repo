@@ -235,8 +235,6 @@ void right_side_2_goal_1_ring (void) {
   lift_front_up_time(300);
   lift_clamp_close_time(275);
   lift_front_down_time(300);
-
-  
 }
 
 void right_side_3_goal_1_ring (void) {
