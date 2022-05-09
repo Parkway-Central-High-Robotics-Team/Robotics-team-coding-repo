@@ -66,7 +66,8 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
-  right_side_3_goal_1_ring();
+  // Calls autonomous functions defined in autonomous-functions.cpp
+  right_side_2_goal_1_ring();
   // ..........................................................................
 }
 

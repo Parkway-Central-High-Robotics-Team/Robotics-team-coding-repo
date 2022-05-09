@@ -19,10 +19,10 @@ void all_corners_1_goal(void);          // An old autonomus that works for all c
 void blue_right_2_goal(void);           // An old autonomus that grabs 2 goals for the blue right side 
 void blue_left_2_goal(void);            // An old autonomus that grabs 2 goals for the blue left side 
 void red_right_2_goal(void);            // An old autonomus that grabs 2 goals for the red right side 
-void left_side_2_goal_1_ring(void);             // An old autonomus that grabs 2 goals for the red left side
+void left_side_2_goal_1_ring(void);     // An autonomus that grabs 2 goals and puts a ring in the blue goal for the left side
 void new_auto_og (void);                // A new autonomus backup for new_auto
-void right_side_2_goal_1_ring (void);   // The main autonomus that we use to grab 2 goals 
-void right_side_3_goal_1_ring (void);  // A new autonomus that utilizes the quick grab to get 3 goals
+void right_side_2_goal_1_ring (void);   // An autonomus that grabs 2 goals and puts a ring in the blue goal for the right side
+void right_side_3_goal_1_ring (void);   // A new autonomus that utilizes the quick grab to get 3 goals and puts a ring in the blue goal for the right side
 // End of global autonomous functions
 
 //** End of global functions **\\

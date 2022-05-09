@@ -140,7 +140,7 @@ void left_side_2_goal_1_ring(void) {
   Drivetrain.stop(coast);
 
   Drivetrain.drive(reverse);
-  wait(400, msec);
+  wait(800, msec);
   Drivetrain.stop(coast);
   claw_back_close_time(200);
 
@@ -189,15 +189,15 @@ void right_side_2_goal_1_ring (void) {
   Drivetrain.setDriveVelocity(100,percent);
   claw_back.stop(hold);
   Drivetrain.drive(reverse); //drives reverse 
-  wait(100, msec);
+  //wait(75, msec);
   //Drivetrain.driveFor(reverse,29,inches);
-  Quick_grab_down_time(300); //while driving reverse, lowers the quick grab
+  Quick_grab_down_time(325); //while driving reverse, lowers the quick grab
   Quick_grab.spin(forward);
-  wait(50, msec);
+  wait(20, msec);
   Quick_grab.stop(coast);
-  wait(155, msec);
+  wait(260, msec);
   Drivetrain.stop(coast);
-  wait(100, msec);
+  wait(150, msec);
   Quick_grab.spin(reverse);
   wait(200, msec);
   Drivetrain.setDriveVelocity(50,percent);
@@ -230,11 +230,18 @@ void right_side_2_goal_1_ring (void) {
   wait(300, msec);
   claw_back_open_time(200);
   lift_clamp_close_time(275);
+  claw_back.stop(coast);
 
   claw_back_close_time(300);
-  lift_front_up_time(300);
-  lift_clamp_close_time(275);
-  lift_front_down_time(300);
+  claw_back_open_time(300);
+  claw_back.stop(coast);
+  wait(500, msec);
+  claw_back_open_time(300);
+
+  //lift_clamp_open_time(50);
+  //lift_front_up_time(300);
+  //lift_clamp_close_time(275);
+  //lift_front_down_time(300);
 }
 
 void right_side_3_goal_1_ring (void) {
