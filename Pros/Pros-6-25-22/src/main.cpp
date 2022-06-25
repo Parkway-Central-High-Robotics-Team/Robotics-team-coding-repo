@@ -6,12 +6,16 @@
  * When this callback is fired, it will toggle line 2 of the LCD text between
  * "I was pressed!" and nothing.
  */
-void on_center_button() {
+void on_center_button()
+{
 	static bool pressed = false;
 	pressed = !pressed;
-	if (pressed) {
+	if (pressed)
+	{
 		pros::lcd::set_text(2, "I was pressed!");
-	} else {
+	}
+	else
+	{
 		pros::lcd::clear_line(2);
 	}
 }
@@ -22,7 +26,8 @@ void on_center_button() {
  * All other competition modes are blocked by initialize; it is recommended
  * to keep execution time for this mode under a few seconds.
  */
-void initialize() {
+void initialize()
+{
 	pros::lcd::initialize();
 	pros::lcd::set_text(1, "Hello PROS User!");
 
@@ -73,15 +78,17 @@ void autonomous() {}
  * operator control task will be stopped. Re-enabling the robot will restart the
  * task, not resume it from where it left off.
  */
-void opcontrol() {
+void opcontrol()
+{
 	pros::Controller master(pros::E_CONTROLLER_MASTER);
 	pros::Motor left_mtr(1);
 	pros::Motor right_mtr(2);
 
-	while (true) {
+	while (true)
+	{
 		pros::lcd::print(0, "%d %d %d", (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,
-		                 (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
-		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
+						 (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
+						 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
 		int left = master.get_analog(ANALOG_LEFT_Y);
 		int right = master.get_analog(ANALOG_RIGHT_Y);
 
