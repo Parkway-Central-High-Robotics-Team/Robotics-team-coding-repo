@@ -73,8 +73,31 @@ void autonomous() {}
  * operator control task will be stopped. Re-enabling the robot will restart the
  * task, not resume it from where it left off.
  */
+
+
+#define LEFT_FRONT_WHEELS_PORT 8
+#define LEFT_BACK_WHEELS_PORT 9
+#define RIGHT_FRONT_WHEELS_PORT 2
+#define RIGHT_BACK_WHEELS_PORT 3
 void opcontrol() {
-	pros::Controller master(pros::E_CONTROLLER_MASTER);
+	//std::int32_t pros::Controller::get_analog ( pros::controller_analog_e_t channel )
+	//std::int32_t motor_move ( const std::int8_t voltage )
+	//pros::Controller master(pros::E_CONTROLLER_MASTER);
+	pros::Motor left_front_wheel (LEFT_FRONT_WHEELS_PORT);
+  	pros::Motor right_front_wheel (RIGHT_FRONT_WHEELS_PORT, true); // This reverses the motor
+	pros::Motor left_back_wheel (LEFT_BACK_WHEELS_PORT);
+  	pros::Motor right_back_wheel (RIGHT_BACK_WHEELS_PORT, true); // This reverses the motor
+  	pros::Controller master (CONTROLLER_MASTER);
+
+  	while (true) {
+    	left_front_wheel.move(master.get_analog(ANALOG_LEFT_Y));
+    	right_front_wheel.move(master.get_analog(ANALOG_RIGHT_Y));
+		left_back_wheel.move(master.get_analog(ANALOG_LEFT_Y));
+    	right_back_wheel.move(master.get_analog(ANALOG_RIGHT_Y));
+
+    	pros::delay(2);
+  }
+	/*pros::Controller master(pros::E_CONTROLLER_MASTER);
 	pros::Motor left_mtr(1);
 	pros::Motor right_mtr(2);
 
@@ -88,5 +111,6 @@ void opcontrol() {
 		left_mtr = left;
 		right_mtr = right;
 		pros::delay(20);
-	}
+	}*/
+
 }
