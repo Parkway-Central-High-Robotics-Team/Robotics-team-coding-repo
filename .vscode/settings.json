@@ -1,5 +1,6 @@
 {
   "pros.showInstallOnStartup": false,
+  "clang.executable": "C:\\Program Files\\LLVM\\bin\\clang.exe",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
