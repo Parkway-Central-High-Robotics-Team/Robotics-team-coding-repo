@@ -1,5 +1,6 @@
 {
   "pros.showInstallOnStartup": false,
+  "clang.executable": "C:\\Program Files\\LLVM\\bin\\clang.exe",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
@@ -28,6 +29,5 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
-  ],
-  "clang.executable": "\"C:\\Users\\ltkli\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\14.0.3\\clangd_14.0.3\\bin\\\""
+  ]
 }
