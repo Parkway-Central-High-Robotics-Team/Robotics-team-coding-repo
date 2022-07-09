@@ -1,7 +1,6 @@
 # Robotics-team-coding-repo
 
-IF downloading the files from the folders does not work the here is the link to a shared drive folder with all our code in it
-https://drive.google.com/drive/folders/1m6y-5Cl-S9-uSEkgwX5xBIIcqZ27FNts?usp=sharing
+A GitHub repository created and managed by the Parkway Central High School robotics team in St. Louis, Missouri. 
 
 ## Refrences
 
@@ -24,7 +23,7 @@ https://drive.google.com/drive/folders/1m6y-5Cl-S9-uSEkgwX5xBIIcqZ27FNts?usp=sha
 
 ## Installation
 
-To create a copy of the repository to your own machine. 
+To create a copy of the repository on your own machine. 
 
 ### Clone using Git
 
