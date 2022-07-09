@@ -1,6 +1,6 @@
 # Robotics-team-coding-repo
 
-A GitHub repository created and managed by the Parkway Central High School robotics team in St. Louis, Missouri. 
+A GitHub repository created and managed by the Parkway Central High Schools robotics team in St. Louis, Missouri. 
 
 ## Refrences
 
@@ -41,6 +41,9 @@ To create a copy of the repository on your own machine.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+If downloading the files from the folders does not work, here is the link to a shared drive folder with all our code in it. 
+https://drive.google.com/drive/folders/1m6y-5Cl-S9-uSEkgwX5xBIIcqZ27FNts?usp=sharing
 
 ## Badges
 
