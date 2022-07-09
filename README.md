@@ -36,6 +36,7 @@ To create a copy of the repository on your own machine.
 - [@Kaiserl4961](https://www.github.com/kaiserl4961)
 - [@Targed](https://github.com/targed)
 - [@hgreenn1378](https://github.com/greenn1378)
+- [@ppapulis](https://github.com/ppapulis)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
