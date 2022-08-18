@@ -111,7 +111,7 @@ void opcontrol() {
   // channel ) std::int32_t motor_move ( const std::int8_t voltage )
   // pros::Controller master(pros::E_CONTROLLER_MASTER);
 
-  autonomous();
+  //autonomous();
 
   pros::Motor left_front_wheel(LEFT_FRONT_WHEELS_PORT);
   pros::Motor right_front_wheel(RIGHT_FRONT_WHEELS_PORT,
