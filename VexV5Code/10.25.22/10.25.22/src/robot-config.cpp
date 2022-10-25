@@ -55,6 +55,8 @@ bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 bool DrivetrainStrafingNeedsToBeStopped_Controller1 = true;
 
+int pressedNum = 0;
+
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
   // process the controller input every 20 milliseconds
@@ -127,22 +129,16 @@ int rc_auto_loop_function_Controller1() {
             DrivetrainRNeedsToBeStopped_Controller1 = true;
         } 
         if (Controller1.ButtonL1.pressing()) {
-          //discFlick.spin(forward, 100, velocityUnits::pct);
-          //discFlick.spinFor(reverse, 90, rotationUnits::deg);
-          //discFlick.spinFor(forward, 300, timeUnits::msec, 100, velocityUnits::pct);
-          spinMtrs.spin(forward, 100, velocityUnits::pct);
+          spinMtrs.spin(forward, 25*pressedNum, velocityUnits::pct);
           Controller1LeftShoulderControlMotorsStopped = false;
-        } else if (Controller1.ButtonL2.pressing()) {
-          //discFlick.spin(reverse, 100, velocityUnits::pct);
-          //discFlick.spinFor(reverse, 325, timeUnits::msec, 100, velocityUnits::pct);
-          spinMtrs.spin(reverse, 100, velocityUnits::pct);
+          if(pressedNum < 4){
+            pressedNum +=1;
+          }else{
+            pressedNum=0;
+          }
+        }else if (Controller1.ButtonL2.pressing()) {
+          spinMtrs.stop(hold);
           Controller1LeftShoulderControlMotorsStopped = false;
-        } else if (!Controller1LeftShoulderControlMotorsStopped) {
-          discFlick.stop(hold);
-          // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
-          //I girlbossed too close to the sun :((((
-          //pure of heart, dumb of ass
-          Controller1LeftShoulderControlMotorsStopped = true;
         }
         if (Controller1.ButtonX.pressing()) {
           //discFlick.spin(forward, 100, velocityUnits::pct);
