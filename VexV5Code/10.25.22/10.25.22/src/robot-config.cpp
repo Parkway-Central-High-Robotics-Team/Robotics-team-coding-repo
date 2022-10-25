@@ -1,4 +1,5 @@
 #include "vex.h"
+#include <iostream>
 
 using namespace vex;
 using signature = vision::signature;
@@ -59,6 +60,7 @@ bool DrivetrainStrafingNeedsToBeStopped_Controller1 = true;
 int rc_auto_loop_function_Controller1() {
   // process the controller input every 20 milliseconds
   // update the motors based on the input values
+  int pressedNum = 0;
   while(true) {
        if(RemoteControlCodeEnabled) {
       // calculate the drivetrain motor velocities from the controller joystick axies
@@ -125,24 +127,16 @@ int rc_auto_loop_function_Controller1() {
             StrafeBGroup.stop();
             DrivetrainLNeedsToBeStopped_Controller1 = true;
             DrivetrainRNeedsToBeStopped_Controller1 = true;
-        } 
-        if (Controller1.ButtonL1.pressing()) {
-          //discFlick.spin(forward, 100, velocityUnits::pct);
-          //discFlick.spinFor(reverse, 90, rotationUnits::deg);
-          //discFlick.spinFor(forward, 300, timeUnits::msec, 100, velocityUnits::pct);
-          spinMtrs.spin(forward, 100, velocityUnits::pct);
-          Controller1LeftShoulderControlMotorsStopped = false;
-        } else if (Controller1.ButtonL2.pressing()) {
-          //discFlick.spin(reverse, 100, velocityUnits::pct);
-          //discFlick.spinFor(reverse, 325, timeUnits::msec, 100, velocityUnits::pct);
-          spinMtrs.spin(reverse, 100, velocityUnits::pct);
-          Controller1LeftShoulderControlMotorsStopped = false;
-        } else if (!Controller1LeftShoulderControlMotorsStopped) {
-          discFlick.stop(hold);
-          // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
-          //I girlbossed too close to the sun :((((
-          //pure of heart, dumb of ass
-          Controller1LeftShoulderControlMotorsStopped = true;
+        }
+        if (Controller1.ButtonR1.pressing()) {
+          if (pressedNum == 0) {
+            spinMtrs.stop(hold);
+            pressedNum +=1;
+          }else{
+            spinMtrs.spin(forward, 25*pressedNum, velocityUnits::pct);
+            Controller1LeftShoulderControlMotorsStopped = false;
+            pressedNum +=1;
+          }
         }
         if (Controller1.ButtonX.pressing()) {
           //discFlick.spin(forward, 100, velocityUnits::pct);
@@ -175,8 +169,13 @@ int rc_auto_loop_function_Controller1() {
         else if(!Controller1RightShoulderControlMotorsStopped){
           intake.stop(hold);
         }
+        
       }
       // check the ButtonY/ButtonA status to control the goal-on-platform pre-defined functions
+    }
+    std::cout << pressedNum;
+    if(pressedNum >= 4){
+      pressedNum = 0;
     }
     // wait before repeating the process
     wait(20, msec);
@@ -207,3 +206,27 @@ void vexcodeInit( void ) {
   wait(50, msec);
   Brain.Screen.clearScreen();
 }
+
+/*
+        if(pressedNum != 0 || pressedNum <= 4){
+          if (Controller1.ButtonR1.pressing()) {
+            //discFlick.spin(forward, 100, velocityUnits::pct);
+            //discFlick.spinFor(reverse, 90, rotationUnits::deg);
+            //discFlick.spinFor(forward, 300, timeUnits::msec, 100, velocityUnits::pct);
+            spinMtrs.spin(forward, 25*pressedNum, velocityUnits::pct);
+            Controller1LeftShoulderControlMotorsStopped = false;
+            pressedNum +=1;
+          } else if (!Controller1LeftShoulderControlMotorsStopped) {
+            discFlick.stop(hold);
+            // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+            //I girlbossed too close to the sun :((((
+            //pure of heart, dumb of ass
+            Controller1LeftShoulderControlMotorsStopped = true;
+          }
+        }else if(pressedNum > 5){
+          pressedNum = 0;
+          discFlick.stop(hold);
+        }else{
+          pressedNum += 1;
+        }
+*/

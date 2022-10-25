@@ -26,6 +26,7 @@
 
 #include "vex.h"
 #include "pre-defined-functions.h"
+#include <iostream>
 using namespace vex;
 
 // A global instance of competition
