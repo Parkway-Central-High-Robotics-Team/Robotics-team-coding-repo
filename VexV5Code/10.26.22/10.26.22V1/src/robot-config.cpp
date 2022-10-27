@@ -141,9 +141,9 @@ int rc_auto_loop_function_Controller1() {
 
       //START OF BUTTON FUNCTIONS
       //DISCFLICK BUTTON
-      if (Controller1.ButtonX.pressing()) {
-        discFlick.spinFor(forward, 175, timeUnits::msec, 100, velocityUnits::pct);
-        discFlick.spinFor(reverse, 300, timeUnits::msec, 100, velocityUnits::pct);
+      if (Controller1.ButtonUp.pressing()) {
+        discFlick.spinFor(forward, 155, timeUnits::msec, 100, velocityUnits::pct);
+        discFlick.spinFor(reverse, 230, timeUnits::msec, 100, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
         discFlick.stop(coast);
@@ -161,7 +161,7 @@ int rc_auto_loop_function_Controller1() {
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         //I girlbossed too close to the sun :((((
         //pure of heart, dumb of ass
-        Controller1RightShoulderControlMotorsStopped = true;
+        Controller1RightShoulderControlMotorsStopped = false;
       }
       else if(!Controller1RightShoulderControlMotorsStopped){
         intake.stop(hold);
@@ -172,6 +172,7 @@ int rc_auto_loop_function_Controller1() {
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
+        Controller1LeftShoulderControlMotorsStopped = false;
       } else if (!Controller1LeftShoulderControlMotorsStopped) {
         discFlick.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
@@ -179,25 +180,25 @@ int rc_auto_loop_function_Controller1() {
         //pure of heart, dumb of ass
         Controller1LeftShoulderControlMotorsStopped = true;
       }
-      if (Controller1.ButtonLeft.pressing()) {
-        spinMtrs.spin(forward, 25, velocityUnits::pct);
+      if (Controller1.ButtonY.pressing()) {
+        spinMtrs.spin(forward, 85, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
-      } else if(Controller1.ButtonUp.pressing()) {
-        spinMtrs.spin(forward, 50, velocityUnits::pct);
+      } else if(Controller1.ButtonX.pressing()) {
+        spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
-      } else if(Controller1.ButtonRight.pressing()) {
-        spinMtrs.spin(forward, 75, velocityUnits::pct);
+      } else if(Controller1.ButtonA.pressing()) {
+        spinMtrs.spin(forward, 95, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
-      } else if(Controller1.ButtonDown.pressing()) {
+      } else if(Controller1.ButtonB.pressing()) {
         spinMtrs.spin(forward, 100, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       }
 
-      if(!Controller1.ButtonB.pressing() && buttonBState){
+      if(!Controller1.ButtonDown.pressing() && buttonBState){
         spinMtrs.spin(forward, speed(numPres), velocityUnits::pct);
         buttonBState = false;
       }
-      if(Controller1.ButtonB.pressing()){
+      if(Controller1.ButtonDown.pressing()){
         numPres += 1;
         buttonBState = true;
       }
