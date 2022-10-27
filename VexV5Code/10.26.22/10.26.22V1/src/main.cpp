@@ -25,8 +25,8 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
-#include "pre-defined-functions.h"
 using namespace vex;
+#include "robot-config.cpp"
 
 // A global instance of competition
 competition Competition;
@@ -64,6 +64,24 @@ void pre_auton(void) {
 /*---------------------------------------------------------------------------*/
 
 void autonomous(void) {
+  //change color on roller
+  //go forward slightly
+  RightDriveSmart.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
+  LeftDriveSmart.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
+  wait(100, timeUnits::msec);
+  //turn right
+  RightDriveSmart.spin(vex::directionType::rev, 75, vex::velocityUnits::pct);
+  LeftDriveSmart.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
+  wait(100, timeUnits::msec);
+  //go forward to reach shooting range and start shoooting mtrs
+  RightDriveSmart.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
+  LeftDriveSmart.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
+  wait(100, timeUnits::msec);
+  //shoot preloads
+  spinMtrs.spin(vex::directionType::fwd, 75, vex::velocityUnits::pct);
+  discFlick.spinFor(forward, 175, timeUnits::msec, 100, velocityUnits::pct);
+  discFlick.spinFor(reverse, 300, timeUnits::msec, 100, velocityUnits::pct);
+  wait(100, timeUnits::msec);
   // ..........................................................................
   // Insert autonomous user code here.
   // Calls autonomous functions defined in autonomous-functions.cpp

@@ -1,3 +1,3 @@
 #include "vex.h"
-#include "autonomous-functions.h"
+#include "robot-config.cpp"
 using namespace vex;
