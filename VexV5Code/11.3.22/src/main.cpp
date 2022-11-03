@@ -67,7 +67,8 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // Calls autonomous functions defined in autonomous-functions.cpp
-  auton_function_test();
+  all_corners_1_goal();
+  
   // ..........................................................................
 }
 

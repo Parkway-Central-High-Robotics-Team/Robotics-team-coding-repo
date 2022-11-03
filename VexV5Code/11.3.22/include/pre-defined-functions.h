@@ -1,5 +1,3 @@
-//#ifndef PRE_DEFINED_FUNCTIONS
-//#define PRE_DEFINED_FUNCTIONS
 #pragma once
 using namespace vex;
 
@@ -21,3 +19,15 @@ void strafeLeftDis(int inch, int vel);
 void strafeRight(int vel);
 void strafeRightTime(int msc, int vel);
 void strafeRightDis(int inch, int vel);
+
+void intakeIn(int vel);
+void intakeInTime(int msc, int vel);
+void intakeInDeg(int deg, int vel);
+
+void intakeOut(int vel);
+void intakeOutTime(int msc, int vel);
+void intakeOutDeg(int deg, int vel);
+
+void startFlyWheel(int vel);
+void stopFlyWheel(void);
+

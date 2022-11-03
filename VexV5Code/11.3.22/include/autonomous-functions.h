@@ -11,3 +11,4 @@ using namespace vex;
 #include "v5_vcs.h"
 
 void auton_function_test(void);
+void all_corners_1_goal(void);

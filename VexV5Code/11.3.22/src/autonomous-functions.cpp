@@ -3,17 +3,31 @@
 using namespace vex;
 
 void auton_function_test(void) {
-  Drivetrain.setDriveVelocity(100,percent);
-  Drivetrain.driveFor(forward,8,inches);
+  Drivetrain.driveFor(forward,5,inches);
   //turn right
-  Drivetrain.turnFor(right, 40, degrees);
+  /*
+  Drivetrain.turnFor(right, 90, degrees);
   wait(100, timeUnits::msec);
   //go forward to reach shooting range and start shoooting mtrs
-  Drivetrain.driveFor(forward,8,inches);
-  //shoot preloads
-  spinMtrs.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
-  wait(1000, timeUnits::msec);
-  discFlick.spinFor(forward, 175, timeUnits::msec, 100, velocityUnits::pct);
-  discFlick.spinFor(reverse, 300, timeUnits::msec, 100, velocityUnits::pct);
+  Drivetrain.driveFor(forward,5,inches);
+  startFlyWheel(100);
   wait(100, timeUnits::msec);
+  //shoot preloads
+  flickDisk();
+  wait(100, timeUnits::msec);
+  intakeInTime(1000, 100);
+  flickDisk();
+  wait(100, timeUnits::msec);
+  intakeInTime(1000, 100);
+  flickDisk();
+  wait(100, timeUnits::msec);
+  stopFlyWheel();*/
+}
+
+void all_corners_1_goal(void) {
+  Drivetrain.setDriveVelocity(100,percent);
+  Drivetrain.driveFor(reverse,41,inches);
+  Drivetrain.setDriveVelocity(50,percent);
+  Drivetrain.driveFor(reverse,5,inches);
+  Drivetrain.driveFor(forward,35,inches);
 }
