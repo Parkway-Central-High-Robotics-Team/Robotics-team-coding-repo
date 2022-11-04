@@ -5,8 +5,8 @@ using namespace vex;
 void flickDisk(void){
   discFlick.setStopping(coast);
   discFlick.spinFor(reverse, 75, timeUnits::msec, 100, velocityUnits::pct);
-  discFlick.spinFor(forward, 200, timeUnits::msec, 100, velocityUnits::pct);
-  discFlick.spinFor(reverse, 200, timeUnits::msec, 100, velocityUnits::pct);
+  discFlick.spinFor(forward, 150  , timeUnits::msec, 100, velocityUnits::pct);
+  discFlick.spinFor(reverse, 175, timeUnits::msec, 100, velocityUnits::pct);
 }
 
 void intakeIn(int vel){
