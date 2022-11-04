@@ -1,5 +1,4 @@
 #pragma once
-using namespace vex;
 
 #include <math.h>
 #include <stdio.h>
