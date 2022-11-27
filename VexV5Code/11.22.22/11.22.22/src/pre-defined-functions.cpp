@@ -15,30 +15,47 @@ using namespace vex;
 };
 
 StrafeLeft strafeLeftObj;
+*/
 
-void strafeLeftThreadFunctionStrafeAGroup(int vel){ 
-  StrafeAGroup.spin(reverse, vel, velocityUnits::pct);
+void strafeLeftThreadFunctionStrafeAGroup(void){ 
+  StrafeAGroup.spin(reverse);
+  this_thread::sleep_for(25);
 }
 
 void strafeLeftThreadFunctionStrafeBGroup(void){ 
   StrafeBGroup.spin(forward);
+  this_thread::sleep_for(25);
 }
 
-void strafeLeft(int vel){  
-  strafeLeftObj.strafeLeftThreadFunctionStrafeAGroup(vel);
-  thread strafeLeftThread1 = thread(strafeLeftThreadFunctionStrafeAGroup);
-  thread strafeLeftThread2 = thread(strafeLeftThreadFunctionStrafeBGroup);
-  thread (strafeLeftThreadFunctionStrafeAGroup, 100);
-  thread
-  strafeLeftThread1.join();
-  strafeLeftThread2.join();
-}*/
+void strafeRightThreadFunctionStrafeAGroup(void){ 
+  StrafeAGroup.spin(forward);
+  this_thread::sleep_for(25);
+}
+
+void strafeRightThreadFunctionStrafeBGroup(void){ 
+  StrafeBGroup.spin(reverse);
+  this_thread::sleep_for(25);
+}
+
 
 void strafeLeft(int vel){
+  StrafeAGroup.setVelocity(vel, velocityUnits::pct);
+  StrafeBGroup.setVelocity(vel, velocityUnits::pct);
+  thread strafeLeftThread1 = thread(strafeLeftThreadFunctionStrafeAGroup);
+  thread strafeLeftThread2 = thread(strafeLeftThreadFunctionStrafeBGroup);
+  strafeLeftThread1.join();
+  strafeLeftThread2.join();
+}
+
+void strafeRight(int vel){
   StrafeAGroup.setVelocity(vel, percent);
   StrafeBGroup.setVelocity(vel, percent);
-  StrafeAGroup.spin(reverse, vel, velocityUnits::pct);
-  StrafeBGroup.spin(forward, vel, velocityUnits::pct);
+  StrafeAGroup.setVelocity(vel, velocityUnits::pct);
+  StrafeBGroup.setVelocity(vel, velocityUnits::pct);
+  thread strafeRightThread1 = thread(strafeRightThreadFunctionStrafeAGroup);
+  thread strafeRightThread2 = thread(strafeRightThreadFunctionStrafeBGroup);
+  strafeRightThread1.join();
+  strafeRightThread2.join();
 }
 
 void strafeLeftTime(int msc, int vel){
@@ -55,21 +72,6 @@ void strafeLeftDis(int inch, int vel){
   StrafeBGroup.spinFor(forward, inch, rotationUnits::deg, vel, velocityUnits::pct);
   StrafeAGroup.stop();
   StrafeBGroup.stop();
-}
-
-void strafeRightThreadFunctionStrafeAGroup(void){ 
-  StrafeAGroup.spin(reverse);
-}
-
-void strafeRightThreadFunctionStrafeBGroup(void){ 
-  StrafeBGroup.spin(forward);
-}
-
-void strafeRight(int vel){
-  StrafeAGroup.setVelocity(vel, percent);
-  StrafeBGroup.setVelocity(vel, percent);
-  StrafeAGroup.spin(forward);
-  StrafeBGroup.spin(reverse);
 }
 
 void strafeRightTime(int msc, int vel){

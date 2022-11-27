@@ -109,15 +109,10 @@ int rc_auto_loop_function_Controller1() {
 
       if (Controller1.ButtonUp.pressing()) {
         flickDisk();
-        Controller1LeftShoulderControlMotorsStopped = false;
+        Controller1UpDownButtonsControlMotorsStopped = false;
       } if (Controller1.ButtonDown.pressing()) {
         visionTest();
-      } else if (!Controller1XBButtonsControlMotorsStopped) {
-        discFlick.stop(coast);
-        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
-        //I girlbossed too close to the sun :((((
-        //pure of heart, dumb of ass
-        Controller1LeftShoulderControlMotorsStopped = true;
+        Controller1UpDownButtonsControlMotorsStopped = false;
       }
       //INTAKE BUTTONS
       if(Controller1.ButtonR1.pressing()){

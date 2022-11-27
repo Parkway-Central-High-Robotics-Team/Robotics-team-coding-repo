@@ -12,10 +12,8 @@
 // [Name]               [Type]        [Port(s)]
 // Drivetrain           drivetrain    3, 4, 8, 9, 11  
 // Controller1          controller                    
-// ---- END VEXCODE CONFIGURED DEVICES ----
-
+// ---- END VEXCODE CONFIGURED DEVICES ---
 #include "vex.h"
-
 
 using namespace vex;
 

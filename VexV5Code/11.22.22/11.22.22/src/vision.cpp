@@ -1,4 +1,5 @@
-//#include "vex.h"
+#include "vex.h"
+#include "pre-defined-functions.h"
 #include "vision.h"
 using namespace vex;
 
@@ -86,18 +87,22 @@ bool spinnerPos(void) {
   if(blueExist && redExist == false){
     Brain.Screen.print("Returned: 1");
     Brain.Screen.newLine();
+    returner = 1;
     return returner;
   }else if (redExist && blueExist == false) {
     Brain.Screen.print("Returned: 2");
     Brain.Screen.newLine();
+    returner = 2;
     return returner;
   }else if (redExist && blueExist) {
     Brain.Screen.print("Returned: 3");
     Brain.Screen.newLine();
+    returner = 3;
     return returner;
   }
   Brain.Screen.print("Returned: 0");
   Brain.Screen.newLine();
+  returner = 0;
   return returner;
 }
 
