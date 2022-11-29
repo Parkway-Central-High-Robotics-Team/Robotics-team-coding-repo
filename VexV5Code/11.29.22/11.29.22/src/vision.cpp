@@ -8,7 +8,9 @@ using namespace vex;
 // change before each match
 // red = 0
 // blue = 1
-int side = 0;
+int redSide = 0;
+int blueSide = 1;
+int side = blueSide;
 ////////////////////
 
 ////////////////////
@@ -38,18 +40,42 @@ int returner = 0;
 
 bool blueTest(void) {
   Vision1.takeSnapshot(SIG_BLUE);
-  return Vision1.largestObject.exists;
+  if(Vision1.largestObject.exists){
+    if(Vision1.largestObject.width >= 50){
+      return true;
+    }
+  }
+  return false;
 }
 
 bool redTest(void) {
   Vision1.takeSnapshot(SIG_RED);
-  return Vision1.largestObject.exists;
+  if(Vision1.largestObject.exists){
+    if(Vision1.largestObject.width >= 50){
+      return true;
+    }
+  }
+  return false;
 }
 
-bool spinnerPos(void) {
+void spinnerPos(void) {
   bool blueExist = blueTest();
   bool redExist = redTest();
-  if(blueExist && redExist == false){
+
+  if(side == redSide){
+    if(!redExist && blueExist){
+      intake.stop(brakeType::hold);
+    }else {
+      intake.spin(forward, 35, velocityUnits::pct);
+    }
+  }else if (side == blueSide) {
+    if(redExist && !blueExist){
+      intake.stop(brakeType::hold);
+    }else {
+      intake.spin(forward, 35, velocityUnits::pct);
+    }
+  }
+  /*if(blueExist && redExist == false){
     Brain.Screen.print("Returned: 1");
     Brain.Screen.newLine();
     returner = 1;
@@ -58,6 +84,7 @@ bool spinnerPos(void) {
     Brain.Screen.print("Returned: 2");
     Brain.Screen.newLine();
     returner = 2;
+
     return returner;
   }else if (redExist && blueExist) {
     Brain.Screen.print("Returned: 3");
@@ -68,18 +95,27 @@ bool spinnerPos(void) {
   Brain.Screen.print("Returned: 0");
   Brain.Screen.newLine();
   returner = 0;
-  return returner;
+  return returner;*/
 }
 
-void spinnerBlueToRed(void){
-  intake.setVelocity(50, velocityUnits::pct);
-  intake.spinFor(forward, 25, rotationUnits::deg);
+/*void spinnerBlueToRed(void){
+  //intake.setVelocity(50, velocityUnits::pct);
+  //intake.spinFor(forward, 25, rotationUnits::deg);
+  if(side==0){
+    intake.spin(forward, 50, velocityUnits::pct);
+  }
+
 }
 
 void spinnerRedToBlue(void){
-  intake.setVelocity(50, velocityUnits::pct);
-  intake.spinFor(reverse, 25, rotationUnits::deg);
+  //intake.setVelocity(50, velocityUnits::pct);
+  //intake.spinFor(reverse, 25, rotationUnits::deg);
+  intake.spin(reverse, 50, velocityUnits::pct);
 }
+
+void spinnerStop(void){
+
+}*/
 
 void spinnerInbetween(void){
   if(side == 0){
@@ -93,7 +129,7 @@ void spinnerInbetween(void){
 
 void visionTest(void){
     spinnerPos();
-    if((int)returner == 1){
+    /*if((int)returner == 1){
         spinnerBlueToRed();
         Brain.Screen.print("spinnerBlueToRed");
         Brain.Screen.newLine();
@@ -104,6 +140,6 @@ void visionTest(void){
         spinnerInbetween();
         Brain.Screen.print("spinnerInbetween");
         Brain.Screen.newLine();
-  }
+  }*/
 }
 ////////////////////
