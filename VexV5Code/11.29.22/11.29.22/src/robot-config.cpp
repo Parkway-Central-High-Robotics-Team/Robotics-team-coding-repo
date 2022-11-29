@@ -47,24 +47,6 @@ bool rightBackWheelNeedsToBeStopped_Controller1 = true;
 bool buttonBState = false;
 bool driveBool = true;
 
-int speed(int level){
-    int newNum1 = 0;
-    if (level > 4)
-    {
-        if (level % 4 !=0)
-        {
-            level = level % 4;
-        }else{
-            level = 4;
-        }
-    }
-    for (int i = 1; i <= level; i++) {
-        newNum1 = 25*i;
-    }
-    return newNum1;
-}
-int numPres = 0;
-
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
   // process the controller input every 20 milliseconds
