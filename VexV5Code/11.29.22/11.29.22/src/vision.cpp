@@ -75,47 +75,7 @@ void spinnerPos(void) {
       intake.spin(forward, 35, velocityUnits::pct);
     }
   }
-  /*if(blueExist && redExist == false){
-    Brain.Screen.print("Returned: 1");
-    Brain.Screen.newLine();
-    returner = 1;
-    return returner;
-  }else if (redExist && blueExist == false) {
-    Brain.Screen.print("Returned: 2");
-    Brain.Screen.newLine();
-    returner = 2;
-
-    return returner;
-  }else if (redExist && blueExist) {
-    Brain.Screen.print("Returned: 3");
-    Brain.Screen.newLine();
-    returner = 3;
-    return returner;
-  }
-  Brain.Screen.print("Returned: 0");
-  Brain.Screen.newLine();
-  returner = 0;
-  return returner;*/
 }
-
-/*void spinnerBlueToRed(void){
-  //intake.setVelocity(50, velocityUnits::pct);
-  //intake.spinFor(forward, 25, rotationUnits::deg);
-  if(side==0){
-    intake.spin(forward, 50, velocityUnits::pct);
-  }
-
-}
-
-void spinnerRedToBlue(void){
-  //intake.setVelocity(50, velocityUnits::pct);
-  //intake.spinFor(reverse, 25, rotationUnits::deg);
-  intake.spin(reverse, 50, velocityUnits::pct);
-}
-
-void spinnerStop(void){
-
-}*/
 
 void spinnerInbetween(void){
   if(side == 0){
@@ -129,17 +89,5 @@ void spinnerInbetween(void){
 
 void visionTest(void){
     spinnerPos();
-    /*if((int)returner == 1){
-        spinnerBlueToRed();
-        Brain.Screen.print("spinnerBlueToRed");
-        Brain.Screen.newLine();
-    }else if ((int)returner == 2) {
-        spinnerRedToBlue();
-        Brain.Screen.print("spinnerRedToBlue");
-    }else if ((int)returner == 3) {
-        spinnerInbetween();
-        Brain.Screen.print("spinnerInbetween");
-        Brain.Screen.newLine();
-  }*/
 }
 ////////////////////
