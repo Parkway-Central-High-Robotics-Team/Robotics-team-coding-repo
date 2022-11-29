@@ -3,6 +3,16 @@
 #include "vision.h"
 using namespace vex;
 
+////////////////////
+// varable to determine what side to rotate the vision sensor to
+// change before each match
+// red = 0
+// blue = 1
+int side = 0;
+////////////////////
+
+////////////////////
+// vision rotation code
 int stopWidth = 250;
 int minColorWidth = 20;
 float maxWheelPercentModifier = 1;
@@ -16,26 +26,15 @@ bool APressed = false;
 bool BPressed = false;
 bool XPressed = false;
 
-
 void TrackWithLargeFunction() {
   centerErrorPercent = ((float)abs(158 - smoothedCenter)/(float)158)*100;
   LeftDriveSmart.spin(fwd, maxWheelPercentModifier*ceil(trunc(stopWidth/Vision1.largestObject.width)/(stopWidth/Vision1.largestObject.width))*(100 - centerErrorPercent + trunc(smoothedCenter/158)*centerErrorPercent), pct);
   RightDriveSmart.spin(fwd, maxWheelPercentModifier*ceil(trunc(stopWidth/Vision1.largestObject.width)/(stopWidth/Vision1.largestObject.width))*(100 - trunc(smoothedCenter/158)*centerErrorPercent), pct);
 }
+////////////////////
 
+////////////////////
 int returner = 0;
-
-void visionTester(void){
-    Vision1.takeSnapshot(SIG_RED);
-    if(Vision1.largestObject.exists){
-      intake.spinFor(forward, 50, rotationUnits::deg);
-    }
-}
-
-void visionTester1(void){
-    int bright = Vision1.getBrightness();
-    Brain.Screen.print(bright);
-}
 
 bool blueTest(void) {
   Vision1.takeSnapshot(SIG_BLUE);
@@ -73,15 +72,23 @@ bool spinnerPos(void) {
 }
 
 void spinnerBlueToRed(void){
-  intake.spinFor(forward, 50, rotationUnits::deg);
+  intake.setVelocity(50, velocityUnits::pct);
+  intake.spinFor(forward, 25, rotationUnits::deg);
 }
 
 void spinnerRedToBlue(void){
-  intake.spinFor(reverse, 50, rotationUnits::deg);
+  intake.setVelocity(50, velocityUnits::pct);
+  intake.spinFor(reverse, 25, rotationUnits::deg);
 }
 
 void spinnerInbetween(void){
-
+  if(side == 0){
+    intake.setVelocity(50, velocityUnits::pct);
+    intake.spinFor(forward, 25, rotationUnits::deg);
+  }else if (side == 1) {
+    intake.setVelocity(50, velocityUnits::pct);
+    intake.spinFor(reverse, 25, rotationUnits::deg);
+  }
 }
 
 void visionTest(void){
@@ -99,3 +106,4 @@ void visionTest(void){
         Brain.Screen.newLine();
   }
 }
+////////////////////
