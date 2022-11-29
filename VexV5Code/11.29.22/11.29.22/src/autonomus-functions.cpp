@@ -1,28 +1,56 @@
 #include "vex.h"
 #include "autonomous-functions.h"
+#include "robot-config.h"
+#include "vision.h"
+
+
 using namespace vex;
+void moveForward(int milliseconds){
+  LeftDriveSmart.spinFor(forward, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+  RightDriveSmart.spinFor(forward,milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+
+  
+}
+
+void moveBackward(int milliseconds){
+  LeftDriveSmart.spinFor(reverse, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+  LeftDriveSmart.spinFor(reverse, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+}
+
+void turnRight(int milliseconds){
+  LeftDriveSmart.spinFor(forward, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+  RightDriveSmart.spinFor(reverse,milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+}
+
+void turnLeft(int milliseconds){
+  LeftDriveSmart.spinFor(reverse, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+  RightDriveSmart.spinFor(forward,milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+}
+
+void expansion(void){
+  //enter in pneumatic code from "pneumaticstestv3"
+}
+
 
 void auton_function_test(void) {
-  //strafeLeftDis(10,25);
-  Drivetrain.driveFor(forward,15,inches);
-  //strafeLeftTime(1500,25);
-  //strafeRightTime(1500,25);
-  //turn right
-  Drivetrain.turnFor(right, 90, degrees);
-  Brain.Screen.newLine();
-  /*wait(100, timeUnits::msec);
-  //go forward to reach shooting range and start shoooting mtrs
-  Drivetrain.driveFor(forward,5,inches);
-  startFlyWheel(100);
-  wait(100, timeUnits::msec);
-  //shoot preloads
-  flickDisk();
-  wait(100, timeUnits::msec);
-  intakeInTime(1000, 100);
-  flickDisk();
-  wait(100, timeUnits::msec);
-  intakeInTime(1000, 100);
-  flickDisk();
-  wait(100, timeUnits::msec);
-  stopFlyWheel();*/
+  //roller first
+
+  // go forward, turn right, move backward
+  moveForward(1000);
+  turnRight(1000);
+  moveBackward(1000);
+  // roller 
+  //turn right until parallel with divison
+  turnRight(1000);
+  //move forward to top left roller
+  moveForward(1000);
+  //turn left
+  turnLeft(1000);
+  //roller
+  //move backward, turn right
+  moveBackward(1000);
+  turnRight(1000);
+  // roller
+  //move out and expand
+
 }
