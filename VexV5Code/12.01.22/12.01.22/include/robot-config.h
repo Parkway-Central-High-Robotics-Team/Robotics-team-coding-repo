@@ -22,6 +22,7 @@ extern motor leftMotorB;
 extern motor rightMotorA; 
 extern motor rightMotorB; 
 
+extern digital_out DigitalOutB;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

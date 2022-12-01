@@ -24,4 +24,5 @@ void strafeRight(int vel);
 void strafeRightTime(int msc, int vel);
 void strafeRightDis(int inch, int vel);
 
-void visionTest (void);
+void visionTest(void);
+void pneumaticsFunction(void);

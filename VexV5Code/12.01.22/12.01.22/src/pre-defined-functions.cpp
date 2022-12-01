@@ -130,3 +130,15 @@ void startFlyWheel(int vel){
 void stopFlyWheel(void){
   spinMtrs.stop();
 }
+
+void pneumaticsFunction(void){
+  // NEEDS TO BE SET TO FALSE IN GLOBAL CODESPACE 
+  DigitalOutB.set(false);
+    if(DigitalOutB.value() == 0){
+      DigitalOutB.set(true);
+      Brain.Screen.print("L1 is Pressing");
+    }else if(DigitalOutB.value() == 1){
+     DigitalOutB.set(false);
+     Brain.Screen.print("L2 is Pressing");
+  }
+}

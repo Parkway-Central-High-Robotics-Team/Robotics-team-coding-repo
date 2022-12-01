@@ -1,15 +1,10 @@
 #include "vex.h"
 #include "autonomous-functions.h"
-#include "robot-config.h"
-#include "vision.h"
-
 
 using namespace vex;
 void moveForward(int milliseconds){
   LeftDriveSmart.spinFor(forward, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
   RightDriveSmart.spinFor(forward,milliseconds, timeUnits::msec, 100, velocityUnits::pct);
-
-  
 }
 
 void moveBackward(int milliseconds){

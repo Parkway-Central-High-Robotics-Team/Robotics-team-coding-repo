@@ -24,6 +24,7 @@ motor spinMtr1 = motor(PORT12, ratio18_1, true);
 motor spinMtr2 = motor(PORT13, ratio18_1, false);
 motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
 motor discFlick = motor(PORT15, ratio18_1, false);
+digital_out DigitalOutB = digital_out(Brain.ThreeWirePort.B);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -151,5 +152,6 @@ int rc_auto_loop_function_Controller1() {
  * This should be called at the start of your int main function.
  */
 void vexcodeInit( void ) {
+  DigitalOutB.set(false);
   task rc_auto_loop_task_Controller1(rc_auto_loop_function_Controller1);
 }
