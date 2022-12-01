@@ -8,6 +8,7 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
+digital_out Pneumatics = digital_out(Brain.ThreeWirePort.F);
 motor leftMotorA = motor(PORT3, ratio18_1, false);
 motor leftMotorB = motor(PORT4, ratio18_1, false);
 motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
@@ -118,10 +119,10 @@ int rc_auto_loop_function_Controller1() {
       }
       //INTAKE BUTTONS
       if(Controller1.ButtonR1.pressing()){
-        intake.spin(forward, 100, velocityUnits::pct);
+        intake.spin(forward, 40, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonR2.pressing()) {
-        intake.spin(reverse, 100, velocityUnits::pct);
+        intake.spin(reverse, 40, velocityUnits::pct);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         //I girlbossed too close to the sun :((((
         //pure of heart, dumb of ass
@@ -145,17 +146,20 @@ int rc_auto_loop_function_Controller1() {
         Controller1LeftShoulderControlMotorsStopped = true;
       }
       if (Controller1.ButtonY.pressing()) {
-        spinMtrs.spin(forward, 85, velocityUnits::pct);
+        spinMtrs.spin(forward, 25, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonX.pressing()) {
-        spinMtrs.spin(forward, 90, velocityUnits::pct);
+        spinMtrs.spin(forward, 50, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonA.pressing()) {
-        spinMtrs.spin(forward, 95, velocityUnits::pct);
+        spinMtrs.spin(forward, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonB.pressing()) {
         spinMtrs.spin(forward, 100, velocityUnits::pct);
+        
         Controller1LeftShoulderControlMotorsStopped = false;
+      } if (Controller1.ButtonDown.pressing()) {
+          Pneumatics.set(true);
       }
     }
     // wait before repeating the process
