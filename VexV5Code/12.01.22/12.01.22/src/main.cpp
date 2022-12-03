@@ -10,9 +10,19 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// Drivetrain           drivetrain    3, 4, 8, 9, 11  
 // Controller1          controller                    
-// ---- END VEXCODE CONFIGURED DEVICES ---
+// Drivetrain           drivetrain    3, 4, 8, 9, 11  
+// StrafeTrain          drivetrain    3, 4, 8, 9, 11
+// leftMotorA           motor         3
+// leftMotorB           motor         4
+// rightMotorA          motor         8
+// rightMotorB          motor         9
+// intake               motor         20
+// spinMtr1             motor         12
+// spinMtr2             motor         13
+// vision1              vision        5
+// inertial             inertial      11
+// ---- END VEXCODE CONFIGURED DEVICES ----
 #include "vex.h"
 
 using namespace vex;

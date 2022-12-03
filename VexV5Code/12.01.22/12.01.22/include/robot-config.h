@@ -5,7 +5,7 @@ extern brain Brain;
 using signature = vision::signature;
 
 // VEXcode devices
-extern drivetrain Drivetrain;
+extern smartdrive Drivetrain;
 extern controller Controller1;
 extern motor_group spinMtrs;
 extern motor_group RightDriveSmart;
@@ -22,7 +22,7 @@ extern motor leftMotorB;
 extern motor rightMotorA; 
 extern motor rightMotorB; 
 
-extern digital_out DigitalOutB;
+extern digital_out Pneumatics;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

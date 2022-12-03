@@ -17,14 +17,14 @@ motor rightMotorB = motor(PORT9, ratio18_1, true);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 motor_group StrafeAGroup = motor_group(leftMotorA, rightMotorB);
 motor_group StrafeBGroup = motor_group(leftMotorB, rightMotorA);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
+inertial DrivetrainInertial = inertial(PORT11);
+smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainInertial, 319.19, 320, 177.79999999999998, mm, 1);
 controller Controller1 = controller(primary);
 motor intake = motor(PORT20, ratio18_1, false);
 motor spinMtr1 = motor(PORT12, ratio18_1, true);
 motor spinMtr2 = motor(PORT13, ratio18_1, false);
 motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
-motor discFlick = motor(PORT15, ratio18_1, false);
-digital_out DigitalOutB = digital_out(Brain.ThreeWirePort.B);
+digital_out Pneumatics = digital_out(Brain.ThreeWirePort.B);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -91,7 +91,6 @@ int rc_auto_loop_function_Controller1() {
       // check if the value is inside of the deadband range
 
       if (Controller1.ButtonUp.pressing()) {
-        flickDisk();
         Controller1UpDownButtonsControlMotorsStopped = false;
       } if (Controller1.ButtonDown.pressing()) {
         visionTest();
@@ -119,13 +118,8 @@ int rc_auto_loop_function_Controller1() {
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
         Controller1LeftShoulderControlMotorsStopped = false;
-      } else if (!Controller1LeftShoulderControlMotorsStopped) {
-        discFlick.stop(hold);
-        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
-        //I girlbossed too close to the sun :((((
-        //pure of heart, dumb of ass
-        Controller1LeftShoulderControlMotorsStopped = true;
       }
+
       if (Controller1.ButtonY.pressing()) {
         spinMtrs.spin(forward, 85, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
@@ -152,6 +146,6 @@ int rc_auto_loop_function_Controller1() {
  * This should be called at the start of your int main function.
  */
 void vexcodeInit( void ) {
-  DigitalOutB.set(false);
+  Pneumatics.set(false);
   task rc_auto_loop_task_Controller1(rc_auto_loop_function_Controller1);
 }

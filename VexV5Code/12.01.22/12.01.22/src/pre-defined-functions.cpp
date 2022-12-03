@@ -88,13 +88,6 @@ void strafeRightDis(int inch, int vel){
   StrafeBGroup.stop();
 }
 
-void flickDisk(void){
-  discFlick.setStopping(coast);
-  discFlick.spinFor(reverse, 75, timeUnits::msec, 100, velocityUnits::pct);
-  discFlick.spinFor(forward, 150  , timeUnits::msec, 100, velocityUnits::pct);
-  discFlick.spinFor(reverse, 175, timeUnits::msec, 100, velocityUnits::pct);
-}
-
 void intakeIn(int vel){
   intake.spin(forward, vel, velocityUnits::pct);
 }
@@ -133,12 +126,12 @@ void stopFlyWheel(void){
 
 void pneumaticsFunction(void){
   // NEEDS TO BE SET TO FALSE IN GLOBAL CODESPACE 
-  DigitalOutB.set(false);
-    if(DigitalOutB.value() == 0){
-      DigitalOutB.set(true);
+  Pneumatics.set(false);
+    if(Pneumatics.value() == 0){
+      Pneumatics.set(true);
       Brain.Screen.print("L1 is Pressing");
-    }else if(DigitalOutB.value() == 1){
-     DigitalOutB.set(false);
+    }else if(Pneumatics.value() == 1){
+     Pneumatics.set(false);
      Brain.Screen.print("L2 is Pressing");
   }
 }

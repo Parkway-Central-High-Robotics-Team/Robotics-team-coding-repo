@@ -3,8 +3,6 @@
 #include "v5.h"
 #include "v5_vcs.h"
 
-void flickDisk(void);
-
 void intakeIn(int vel);
 void intakeInTime(int msc, int vel);
 void intakeInDeg(int deg, int vel);
