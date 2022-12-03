@@ -1,0 +1,1155 @@
+\hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h}{}\doxysection{Pros/\+Pros-\/7-\/13-\/22/include/display/lv\+\_\+core/lv\+\_\+obj.h File Reference}
+\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h}\index{Pros/Pros-\/7-\/13-\/22/include/display/lv\_core/lv\_obj.h@{Pros/Pros-\/7-\/13-\/22/include/display/lv\_core/lv\_obj.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+style.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+area.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+mem.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+ll.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+color.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+log.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__lv__obj__t}{\+\_\+lv\+\_\+obj\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structlv__obj__type__t}{lv\+\_\+obj\+\_\+type\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a65da928883c396e71a32dc32948b7eee}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a65da928883c396e71a32dc32948b7eee}} 
+\#define {\bfseries LV\+\_\+\+ANIM\+\_\+\+IN}~0x00    /$\ast$Animation to show an object. \textquotesingle{}OR\textquotesingle{} it with lv\+\_\+anim\+\_\+builtin\+\_\+t$\ast$/
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a7d55d2f88f4677cf2a71bb8f964aa241}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a7d55d2f88f4677cf2a71bb8f964aa241}} 
+\#define {\bfseries LV\+\_\+\+ANIM\+\_\+\+OUT}~0x80    /$\ast$Animation to hide an object. \textquotesingle{}OR\textquotesingle{} it with lv\+\_\+anim\+\_\+builtin\+\_\+t$\ast$/
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2f2ec9188076b4b4295e5ed99961d08b}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2f2ec9188076b4b4295e5ed99961d08b}} 
+\#define {\bfseries LV\+\_\+\+ANIM\+\_\+\+DIR\+\_\+\+MASK}~0x80    /$\ast$ANIM\+\_\+\+IN/ANIM\+\_\+\+OUT mask$\ast$/
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a928740e591ee641940bec3cb501e63e7}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a928740e591ee641940bec3cb501e63e7}} 
+\#define {\bfseries LV\+\_\+\+MAX\+\_\+\+ANCESTOR\+\_\+\+NUM}~8
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a56836b6e5426fe0b9190a6adb32120c2}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a56836b6e5426fe0b9190a6adb32120c2}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+design\+\_\+mode\+\_\+t}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aa41044912c65f3e608f82c80761ebcfc}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aa41044912c65f3e608f82c80761ebcfc}} 
+typedef bool($\ast$ {\bfseries lv\+\_\+design\+\_\+func\+\_\+t}) (struct \mbox{\hyperlink{struct__lv__obj__t}{\+\_\+lv\+\_\+obj\+\_\+t}} $\ast$obj, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask\+\_\+p, lv\+\_\+design\+\_\+mode\+\_\+t mode)
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a5c71f43250ed3699f40a8b634e342228}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a5c71f43250ed3699f40a8b634e342228}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+res\+\_\+t}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aaec725321f7abe33a79d04cdc91498ce}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aaec725321f7abe33a79d04cdc91498ce}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+signal\+\_\+t}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abf8b1b808dc0bff6efafc876c3063b33}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abf8b1b808dc0bff6efafc876c3063b33}} 
+typedef lv\+\_\+res\+\_\+t($\ast$ {\bfseries lv\+\_\+signal\+\_\+func\+\_\+t}) (struct \mbox{\hyperlink{struct__lv__obj__t}{\+\_\+lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+signal\+\_\+t sign, void $\ast$param)
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a764d29937ae4f6253a249a427a91e4d8}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a764d29937ae4f6253a249a427a91e4d8}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+align\+\_\+t}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a01de9a127bcf589bd7d0c695a429b158}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a01de9a127bcf589bd7d0c695a429b158}} 
+typedef struct \mbox{\hyperlink{struct__lv__obj__t}{\+\_\+lv\+\_\+obj\+\_\+t}} {\bfseries lv\+\_\+obj\+\_\+t}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aeb393805cb2c0050ccf8a95845e9c388}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aeb393805cb2c0050ccf8a95845e9c388}} 
+typedef lv\+\_\+res\+\_\+t($\ast$ {\bfseries lv\+\_\+action\+\_\+t}) (struct \mbox{\hyperlink{struct__lv__obj__t}{\+\_\+lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab4260358010f1488a9993f9cde2cb7c7}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab4260358010f1488a9993f9cde2cb7c7}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+protect\+\_\+t}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_acc825da68675e04ccbec34d41c448646}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_acc825da68675e04ccbec34d41c448646}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+anim\+\_\+builtin\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a06fc87d81c62e9abb8790b6e5713c55b}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a06fc87d81c62e9abb8790b6e5713c55b}} 
+enum \{ {\bfseries LV\+\_\+\+DESIGN\+\_\+\+DRAW\+\_\+\+MAIN}
+, {\bfseries LV\+\_\+\+DESIGN\+\_\+\+DRAW\+\_\+\+POST}
+, {\bfseries LV\+\_\+\+DESIGN\+\_\+\+COVER\+\_\+\+CHK}
+ \}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adf764cbdea00d65edcd07bb9953ad2b7}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adf764cbdea00d65edcd07bb9953ad2b7}} 
+enum \{ {\bfseries LV\+\_\+\+RES\+\_\+\+INV} = 0
+, {\bfseries LV\+\_\+\+RES\+\_\+\+OK}
+ \}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a99fb83031ce9923c84392b4e92f956b5}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a99fb83031ce9923c84392b4e92f956b5}} 
+enum \{ \newline
+{\bfseries LV\+\_\+\+SIGNAL\+\_\+\+CLEANUP}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+CHILD\+\_\+\+CHG}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+CORD\+\_\+\+CHG}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+STYLE\+\_\+\+CHG}
+, \newline
+{\bfseries LV\+\_\+\+SIGNAL\+\_\+\+REFR\+\_\+\+EXT\+\_\+\+SIZE}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+LANG\+\_\+\+CHG}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+GET\+\_\+\+TYPE}
+, {\bfseries \+\_\+\+LV\+\_\+\+SIGNAL\+\_\+\+FEEDBACK\+\_\+\+SECTION\+\_\+\+START}
+, \newline
+{\bfseries LV\+\_\+\+SIGNAL\+\_\+\+PRESSED}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+PRESSING}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+PRESS\+\_\+\+LOST}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+RELEASED}
+, \newline
+{\bfseries LV\+\_\+\+SIGNAL\+\_\+\+LONG\+\_\+\+PRESS}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+LONG\+\_\+\+PRESS\+\_\+\+REP}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+DRAG\+\_\+\+BEGIN}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+DRAG\+\_\+\+END}
+, \newline
+{\bfseries LV\+\_\+\+SIGNAL\+\_\+\+FOCUS}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+DEFOCUS}
+, {\bfseries LV\+\_\+\+SIGNAL\+\_\+\+CONTROLL}
+, {\bfseries \+\_\+\+LV\+\_\+\+SIGNAL\+\_\+\+FEEDBACK\+\_\+\+SECTION\+\_\+\+END}
+, \newline
+{\bfseries LV\+\_\+\+SIGNAL\+\_\+\+GET\+\_\+\+EDITABLE}
+ \}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc6126af1d45847bc59afa0aa3216b04}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc6126af1d45847bc59afa0aa3216b04}} 
+enum \{ \newline
+{\bfseries LV\+\_\+\+ALIGN\+\_\+\+CENTER} = 0
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+TOP\+\_\+\+LEFT}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+TOP\+\_\+\+MID}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+TOP\+\_\+\+RIGHT}
+, \newline
+{\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+BOTTOM\+\_\+\+LEFT}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+BOTTOM\+\_\+\+MID}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+BOTTOM\+\_\+\+RIGHT}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+LEFT\+\_\+\+MID}
+, \newline
+{\bfseries LV\+\_\+\+ALIGN\+\_\+\+IN\+\_\+\+RIGHT\+\_\+\+MID}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+TOP\+\_\+\+LEFT}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+TOP\+\_\+\+MID}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+TOP\+\_\+\+RIGHT}
+, \newline
+{\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+BOTTOM\+\_\+\+LEFT}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+BOTTOM\+\_\+\+MID}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+BOTTOM\+\_\+\+RIGHT}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+LEFT\+\_\+\+TOP}
+, \newline
+{\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+LEFT\+\_\+\+MID}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+LEFT\+\_\+\+BOTTOM}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+RIGHT\+\_\+\+TOP}
+, {\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+RIGHT\+\_\+\+MID}
+, \newline
+{\bfseries LV\+\_\+\+ALIGN\+\_\+\+OUT\+\_\+\+RIGHT\+\_\+\+BOTTOM}
+ \}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adc29c2ff13d900c2f185ee95427fb06c}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adc29c2ff13d900c2f185ee95427fb06c}} 
+enum \{ \newline
+{\bfseries LV\+\_\+\+PROTECT\+\_\+\+NONE} = 0x00
+, {\bfseries LV\+\_\+\+PROTECT\+\_\+\+CHILD\+\_\+\+CHG} = 0x01
+, {\bfseries LV\+\_\+\+PROTECT\+\_\+\+PARENT} = 0x02
+, {\bfseries LV\+\_\+\+PROTECT\+\_\+\+POS} = 0x04
+, \newline
+{\bfseries LV\+\_\+\+PROTECT\+\_\+\+FOLLOW} = 0x08
+, {\bfseries LV\+\_\+\+PROTECT\+\_\+\+PRESS\+\_\+\+LOST} = 0x10
+, {\bfseries LV\+\_\+\+PROTECT\+\_\+\+CLICK\+\_\+\+FOCUS} = 0x20
+ \}
+\item 
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a61dadd085c1777f559549e05962b2c9e}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a61dadd085c1777f559549e05962b2c9e}} 
+enum \{ \newline
+{\bfseries LV\+\_\+\+ANIM\+\_\+\+NONE} = 0
+, {\bfseries LV\+\_\+\+ANIM\+\_\+\+FLOAT\+\_\+\+TOP}
+, {\bfseries LV\+\_\+\+ANIM\+\_\+\+FLOAT\+\_\+\+LEFT}
+, {\bfseries LV\+\_\+\+ANIM\+\_\+\+FLOAT\+\_\+\+BOTTOM}
+, \newline
+{\bfseries LV\+\_\+\+ANIM\+\_\+\+FLOAT\+\_\+\+RIGHT}
+, {\bfseries LV\+\_\+\+ANIM\+\_\+\+GROW\+\_\+H}
+, {\bfseries LV\+\_\+\+ANIM\+\_\+\+GROW\+\_\+V}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a666fa58edac1e61856b2a00fe60308a0}{lv\+\_\+init}} (void)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0b23f329161ee2a16192618d032f9913}{lv\+\_\+obj\+\_\+create}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$parent, const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$copy)
+\item 
+lv\+\_\+res\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a417b2917d719634f9aa8e00aa6e76301}{lv\+\_\+obj\+\_\+del}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab9e1d84b921e63d1da83fe711b214aea}{lv\+\_\+obj\+\_\+clean}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aad66ca3c74dbc0c194bd5135fa18d033}{lv\+\_\+obj\+\_\+invalidate}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af71b4a2cd0975fb3b635d09a87b5fbdf}{lv\+\_\+scr\+\_\+load}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$scr)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc514aaa674d90d982ebefebca6b2284}{lv\+\_\+obj\+\_\+set\+\_\+parent}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$parent)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab224721bfc40f9fbedc291bccd84cbea}{lv\+\_\+obj\+\_\+set\+\_\+pos}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc849c766f9c18783e5ec600fa2b6874}{lv\+\_\+obj\+\_\+set\+\_\+x}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+coord\+\_\+t x)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a1993b15b44f347aeff5aa9f24e816eb2}{lv\+\_\+obj\+\_\+set\+\_\+y}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+coord\+\_\+t y)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abcc5ebd0d1bda82435697baeeb58048d}{lv\+\_\+obj\+\_\+set\+\_\+size}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+coord\+\_\+t w, lv\+\_\+coord\+\_\+t h)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a63d809001264dd8510fa9fe0f9aaced3}{lv\+\_\+obj\+\_\+set\+\_\+width}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+coord\+\_\+t w)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0d3e5fba894449938df0b10c9f442537}{lv\+\_\+obj\+\_\+set\+\_\+height}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+coord\+\_\+t h)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a785867b8a3b3fdf90e885374b9f3c004}{lv\+\_\+obj\+\_\+align}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$base, lv\+\_\+align\+\_\+t align, lv\+\_\+coord\+\_\+t x\+\_\+mod, lv\+\_\+coord\+\_\+t y\+\_\+mod)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3056503163211af2c3801d41fbaeff40}{lv\+\_\+obj\+\_\+align\+\_\+origo}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$base, lv\+\_\+align\+\_\+t align, lv\+\_\+coord\+\_\+t x\+\_\+mod, lv\+\_\+coord\+\_\+t y\+\_\+mod)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_afd4a4d1b1733db6877bbcc088331f90d}{lv\+\_\+obj\+\_\+realign}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3df59c38faba6b47461f23269b43bb38}{lv\+\_\+obj\+\_\+set\+\_\+auto\+\_\+realign}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ac9c62dbb12ae34560d7075baf987cdb2}{lv\+\_\+obj\+\_\+set\+\_\+style}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a35d75d3cd63a55ada122bbef8a79048f}{lv\+\_\+obj\+\_\+refresh\+\_\+style}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a044811a51cd2c0488a4b99aeda66b362}{lv\+\_\+obj\+\_\+report\+\_\+style\+\_\+mod}} (\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a68d00213906652fd3ab84f2e7dd4f133}{lv\+\_\+obj\+\_\+set\+\_\+hidden}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0c8cd5f39061009596025309672dae89}{lv\+\_\+obj\+\_\+set\+\_\+click}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af7857ca4d8ac1e8183f5d5f0f1d0ba33}{lv\+\_\+obj\+\_\+set\+\_\+top}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a696adcf79f6d66da07fdae2cd30bc9d2}{lv\+\_\+obj\+\_\+set\+\_\+drag}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_afcc8485737f799ba463194226f5d58fc}{lv\+\_\+obj\+\_\+set\+\_\+drag\+\_\+throw}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a542be047fdc3ac17cf2c319bcb4dfdb9}{lv\+\_\+obj\+\_\+set\+\_\+drag\+\_\+parent}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a9083ee45989a0943404ab63c2698c1b9}{lv\+\_\+obj\+\_\+set\+\_\+opa\+\_\+scale\+\_\+enable}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, bool en)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af6b6cba5ad8a35cb580a012913d8bd0b}{lv\+\_\+obj\+\_\+set\+\_\+opa\+\_\+scale}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+opa\+\_\+t opa\+\_\+scale)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a119dc65fc90f8b380f08dcb032905c35}{lv\+\_\+obj\+\_\+set\+\_\+protect}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, uint8\+\_\+t prot)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3b359e8f898fd2c8b8d1ab0c07919e15}{lv\+\_\+obj\+\_\+clear\+\_\+protect}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, uint8\+\_\+t prot)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a21906a1618ba576282ed737e0d31cedc}{lv\+\_\+obj\+\_\+set\+\_\+signal\+\_\+func}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+signal\+\_\+func\+\_\+t fp)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aaead6ed2c38e9b8c0196aa49a8fb91e7}{lv\+\_\+obj\+\_\+set\+\_\+design\+\_\+func}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, lv\+\_\+design\+\_\+func\+\_\+t fp)
+\item 
+void $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ad0baf535bc4d5062b2c74aa3647a5ebf}{lv\+\_\+obj\+\_\+allocate\+\_\+ext\+\_\+attr}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, uint16\+\_\+t ext\+\_\+size)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a7010311038f19d1c96535c6bd9be4400}{lv\+\_\+obj\+\_\+refresh\+\_\+ext\+\_\+size}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6f57ccf65f0238a24f10f4b2182ff3cb}{lv\+\_\+scr\+\_\+act}} (void)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a39ef6bfefe6f9e381b16d579d1316ae8}{lv\+\_\+layer\+\_\+top}} (void)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2186d718507982f1767269c1b3b7453f}{lv\+\_\+layer\+\_\+sys}} (void)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab26ad243fd93d4692a5230c8860c6da0}{lv\+\_\+obj\+\_\+get\+\_\+screen}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ae57dc586fb19ae81c4c9f70d8e7eec7d}{lv\+\_\+obj\+\_\+get\+\_\+parent}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a5a924f8482c3dba2ef03c87e242f7432}{lv\+\_\+obj\+\_\+get\+\_\+child}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$child)
+\item 
+\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a8fa52c5c705e5e69a4c27cf60e78fe77}{lv\+\_\+obj\+\_\+get\+\_\+child\+\_\+back}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$child)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6ce599b3f83982ae5fa192dce54cba76}{lv\+\_\+obj\+\_\+count\+\_\+children}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a05f006d361710d75650677e7c6c9cf3e}{lv\+\_\+obj\+\_\+get\+\_\+coords}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$cords\+\_\+p)
+\item 
+lv\+\_\+coord\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aeefcb58f5d09e5ba9722fc680a3ad409}{lv\+\_\+obj\+\_\+get\+\_\+x}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+lv\+\_\+coord\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adb5b94d45013ad689376f1b92eaf7072}{lv\+\_\+obj\+\_\+get\+\_\+y}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+lv\+\_\+coord\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a118b18e487255be1d8729239e9ddbee1}{lv\+\_\+obj\+\_\+get\+\_\+width}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+lv\+\_\+coord\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aada555bdfd06f2673714a7c6fd8a3b58}{lv\+\_\+obj\+\_\+get\+\_\+height}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+lv\+\_\+coord\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a47499183116a45cd215a11672a92104c}{lv\+\_\+obj\+\_\+get\+\_\+ext\+\_\+size}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a81d34938a827a7938e9d65579cace5d2}{lv\+\_\+obj\+\_\+get\+\_\+auto\+\_\+realign}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a610bcf1bdb3303bd8e8791875a08132a}{lv\+\_\+obj\+\_\+get\+\_\+style}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a818a3767b76e5edaf2a97beafdf53f61}{lv\+\_\+obj\+\_\+get\+\_\+hidden}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0faee4743a74deb1bc48dbd3f10d7943}{lv\+\_\+obj\+\_\+get\+\_\+click}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a54ef4ef13845592fb69222f56e8858d2}{lv\+\_\+obj\+\_\+get\+\_\+top}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a1d3e216562fa5dc093cf1f368566470b}{lv\+\_\+obj\+\_\+get\+\_\+drag}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a4de8f7bdc9e2333299a04eba46f979c2}{lv\+\_\+obj\+\_\+get\+\_\+drag\+\_\+throw}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adc034fe8bd3e032c3eb2b656d62e7474}{lv\+\_\+obj\+\_\+get\+\_\+drag\+\_\+parent}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+lv\+\_\+opa\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ad98aa79e5e4711dca417b08698db8acd}{lv\+\_\+obj\+\_\+get\+\_\+opa\+\_\+scale\+\_\+enable}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+lv\+\_\+opa\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adf69567824f68f18e280f41d891bd785}{lv\+\_\+obj\+\_\+get\+\_\+opa\+\_\+scale}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abca39a2aa901c928a3086778dc40ba31}{lv\+\_\+obj\+\_\+get\+\_\+protect}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+bool \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a80d6394bba9e1a414e797efd261ed02f}{lv\+\_\+obj\+\_\+is\+\_\+protected}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, uint8\+\_\+t prot)
+\item 
+lv\+\_\+signal\+\_\+func\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6d7ea254a3266aa256ee15cf8220e10b}{lv\+\_\+obj\+\_\+get\+\_\+signal\+\_\+func}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+lv\+\_\+design\+\_\+func\+\_\+t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a791cfc002076ad3ab267f59c16990f6f}{lv\+\_\+obj\+\_\+get\+\_\+design\+\_\+func}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void $\ast$ \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2b359fd5032703e11944f5715b325c2d}{lv\+\_\+obj\+\_\+get\+\_\+ext\+\_\+attr}} (const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a78c5213efe8e0d3c5a1d6a463b3b0971}{lv\+\_\+obj\+\_\+get\+\_\+type}} (\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$obj, \mbox{\hyperlink{structlv__obj__type__t}{lv\+\_\+obj\+\_\+type\+\_\+t}} $\ast$buf)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a666fa58edac1e61856b2a00fe60308a0}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a666fa58edac1e61856b2a00fe60308a0}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_init@{lv\_init}}
+\index{lv\_init@{lv\_init}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_init()}{lv\_init()}}
+{\footnotesize\ttfamily void lv\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Init. the \textquotesingle{}lv\textquotesingle{} library. \mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2186d718507982f1767269c1b3b7453f}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2186d718507982f1767269c1b3b7453f}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_layer\_sys@{lv\_layer\_sys}}
+\index{lv\_layer\_sys@{lv\_layer\_sys}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_layer\_sys()}{lv\_layer\_sys()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+layer\+\_\+sys (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Return with the system layer. (Same on every screen and it is above the all other layers) It is used for example by the cursor \begin{DoxyReturn}{Returns}
+pointer to the system layer object (transparent screen sized lv\+\_\+obj) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a39ef6bfefe6f9e381b16d579d1316ae8}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a39ef6bfefe6f9e381b16d579d1316ae8}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_layer\_top@{lv\_layer\_top}}
+\index{lv\_layer\_top@{lv\_layer\_top}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_layer\_top()}{lv\_layer\_top()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+layer\+\_\+top (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Return with the top layer. (Same on every screen and it is above the normal screen layer) \begin{DoxyReturn}{Returns}
+pointer to the top layer object (transparent screen sized lv\+\_\+obj) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a785867b8a3b3fdf90e885374b9f3c004}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a785867b8a3b3fdf90e885374b9f3c004}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_align@{lv\_obj\_align}}
+\index{lv\_obj\_align@{lv\_obj\_align}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_align()}{lv\_obj\_align()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+align (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{base,  }\item[{lv\+\_\+align\+\_\+t}]{align,  }\item[{lv\+\_\+coord\+\_\+t}]{x\+\_\+mod,  }\item[{lv\+\_\+coord\+\_\+t}]{y\+\_\+mod }\end{DoxyParamCaption})}
+
+Align an object to an other object. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object to align \\
+\hline
+{\em base} & pointer to an object (if NULL the parent is used). \textquotesingle{}obj\textquotesingle{} will be aligned to it. \\
+\hline
+{\em align} & type of alignment (see \textquotesingle{}lv\+\_\+align\+\_\+t\textquotesingle{} enum) \\
+\hline
+{\em x\+\_\+mod} & x coordinate shift after alignment \\
+\hline
+{\em y\+\_\+mod} & y coordinate shift after alignment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3056503163211af2c3801d41fbaeff40}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3056503163211af2c3801d41fbaeff40}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_align\_origo@{lv\_obj\_align\_origo}}
+\index{lv\_obj\_align\_origo@{lv\_obj\_align\_origo}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_align\_origo()}{lv\_obj\_align\_origo()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+align\+\_\+origo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{base,  }\item[{lv\+\_\+align\+\_\+t}]{align,  }\item[{lv\+\_\+coord\+\_\+t}]{x\+\_\+mod,  }\item[{lv\+\_\+coord\+\_\+t}]{y\+\_\+mod }\end{DoxyParamCaption})}
+
+Align an object to an other object. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object to align \\
+\hline
+{\em base} & pointer to an object (if NULL the parent is used). \textquotesingle{}obj\textquotesingle{} will be aligned to it. \\
+\hline
+{\em align} & type of alignment (see \textquotesingle{}lv\+\_\+align\+\_\+t\textquotesingle{} enum) \\
+\hline
+{\em x\+\_\+mod} & x coordinate shift after alignment \\
+\hline
+{\em y\+\_\+mod} & y coordinate shift after alignment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ad0baf535bc4d5062b2c74aa3647a5ebf}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ad0baf535bc4d5062b2c74aa3647a5ebf}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_allocate\_ext\_attr@{lv\_obj\_allocate\_ext\_attr}}
+\index{lv\_obj\_allocate\_ext\_attr@{lv\_obj\_allocate\_ext\_attr}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_allocate\_ext\_attr()}{lv\_obj\_allocate\_ext\_attr()}}
+{\footnotesize\ttfamily void $\ast$ lv\+\_\+obj\+\_\+allocate\+\_\+ext\+\_\+attr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{uint16\+\_\+t}]{ext\+\_\+size }\end{DoxyParamCaption})}
+
+Allocate a new ext. data for an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em ext\+\_\+size} & the size of the new ext. data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the allocated ext 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab9e1d84b921e63d1da83fe711b214aea}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab9e1d84b921e63d1da83fe711b214aea}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_clean@{lv\_obj\_clean}}
+\index{lv\_obj\_clean@{lv\_obj\_clean}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_clean()}{lv\_obj\_clean()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+clean (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Delete all children of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3b359e8f898fd2c8b8d1ab0c07919e15}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3b359e8f898fd2c8b8d1ab0c07919e15}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_clear\_protect@{lv\_obj\_clear\_protect}}
+\index{lv\_obj\_clear\_protect@{lv\_obj\_clear\_protect}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_clear\_protect()}{lv\_obj\_clear\_protect()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+clear\+\_\+protect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{uint8\+\_\+t}]{prot }\end{DoxyParamCaption})}
+
+Clear a bit or bits in the protect filed 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em prot} & \textquotesingle{}OR\textquotesingle{}-\/ed values from {\ttfamily lv\+\_\+protect\+\_\+t} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6ce599b3f83982ae5fa192dce54cba76}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6ce599b3f83982ae5fa192dce54cba76}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_count\_children@{lv\_obj\_count\_children}}
+\index{lv\_obj\_count\_children@{lv\_obj\_count\_children}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_count\_children()}{lv\_obj\_count\_children()}}
+{\footnotesize\ttfamily uint16\+\_\+t lv\+\_\+obj\+\_\+count\+\_\+children (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Count the children of an object (only children directly on \textquotesingle{}obj\textquotesingle{}) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+children number of \textquotesingle{}obj\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0b23f329161ee2a16192618d032f9913}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0b23f329161ee2a16192618d032f9913}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_create@{lv\_obj\_create}}
+\index{lv\_obj\_create@{lv\_obj\_create}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_create()}{lv\_obj\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+obj\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{parent,  }\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{copy }\end{DoxyParamCaption})}
+
+Create a basic object 
+\begin{DoxyParams}{Parameters}
+{\em parent} & pointer to a parent object. If NULL then a screen will be created \\
+\hline
+{\em copy} & pointer to a base object, if not NULL then the new object will be copied from it \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a417b2917d719634f9aa8e00aa6e76301}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a417b2917d719634f9aa8e00aa6e76301}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_del@{lv\_obj\_del}}
+\index{lv\_obj\_del@{lv\_obj\_del}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_del()}{lv\_obj\_del()}}
+{\footnotesize\ttfamily lv\+\_\+res\+\_\+t lv\+\_\+obj\+\_\+del (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Delete \textquotesingle{}obj\textquotesingle{} and all of its children 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+LV\+\_\+\+RES\+\_\+\+INV because the object is deleted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a81d34938a827a7938e9d65579cace5d2}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a81d34938a827a7938e9d65579cace5d2}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_auto\_realign@{lv\_obj\_get\_auto\_realign}}
+\index{lv\_obj\_get\_auto\_realign@{lv\_obj\_get\_auto\_realign}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_auto\_realign()}{lv\_obj\_get\_auto\_realign()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+get\+\_\+auto\+\_\+realign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the automatic realign property of the object. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: auto realign is enabled; false\+: auto realign is disabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a5a924f8482c3dba2ef03c87e242f7432}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a5a924f8482c3dba2ef03c87e242f7432}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_child@{lv\_obj\_get\_child}}
+\index{lv\_obj\_get\_child@{lv\_obj\_get\_child}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_child()}{lv\_obj\_get\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+obj\+\_\+get\+\_\+child (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{child }\end{DoxyParamCaption})}
+
+Iterate through the children of an object (start from the \char`\"{}youngest, lastly created\char`\"{}) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em child} & NULL at first call to get the next children and the previous return value later \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the child after \textquotesingle{}act\+\_\+child\textquotesingle{} or NULL if no more child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a8fa52c5c705e5e69a4c27cf60e78fe77}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a8fa52c5c705e5e69a4c27cf60e78fe77}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_child\_back@{lv\_obj\_get\_child\_back}}
+\index{lv\_obj\_get\_child\_back@{lv\_obj\_get\_child\_back}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_child\_back()}{lv\_obj\_get\_child\_back()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+obj\+\_\+get\+\_\+child\+\_\+back (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{child }\end{DoxyParamCaption})}
+
+Iterate through the children of an object (start from the \char`\"{}oldest\char`\"{}, firstly created) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em child} & NULL at first call to get the next children and the previous return value later \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the child after \textquotesingle{}act\+\_\+child\textquotesingle{} or NULL if no more child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0faee4743a74deb1bc48dbd3f10d7943}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0faee4743a74deb1bc48dbd3f10d7943}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_click@{lv\_obj\_get\_click}}
+\index{lv\_obj\_get\_click@{lv\_obj\_get\_click}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_click()}{lv\_obj\_get\_click()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+get\+\_\+click (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the click enable attribute of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: the object is clickable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a05f006d361710d75650677e7c6c9cf3e}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a05f006d361710d75650677e7c6c9cf3e}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_coords@{lv\_obj\_get\_coords}}
+\index{lv\_obj\_get\_coords@{lv\_obj\_get\_coords}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_coords()}{lv\_obj\_get\_coords()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+get\+\_\+coords (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{\mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{cords\+\_\+p }\end{DoxyParamCaption})}
+
+Copy the coordinates of an object to an area 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em cords\+\_\+p} & pointer to an area to store the coordinates \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a791cfc002076ad3ab267f59c16990f6f}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a791cfc002076ad3ab267f59c16990f6f}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_design\_func@{lv\_obj\_get\_design\_func}}
+\index{lv\_obj\_get\_design\_func@{lv\_obj\_get\_design\_func}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_design\_func()}{lv\_obj\_get\_design\_func()}}
+{\footnotesize\ttfamily lv\+\_\+design\+\_\+func\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+design\+\_\+func (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the design function of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the design function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a1d3e216562fa5dc093cf1f368566470b}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a1d3e216562fa5dc093cf1f368566470b}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_drag@{lv\_obj\_get\_drag}}
+\index{lv\_obj\_get\_drag@{lv\_obj\_get\_drag}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_drag()}{lv\_obj\_get\_drag()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+get\+\_\+drag (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the drag enable attribute of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: the object is dragable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adc034fe8bd3e032c3eb2b656d62e7474}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adc034fe8bd3e032c3eb2b656d62e7474}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_drag\_parent@{lv\_obj\_get\_drag\_parent}}
+\index{lv\_obj\_get\_drag\_parent@{lv\_obj\_get\_drag\_parent}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_drag\_parent()}{lv\_obj\_get\_drag\_parent()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+get\+\_\+drag\+\_\+parent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the drag parent attribute of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: drag parent is enabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a4de8f7bdc9e2333299a04eba46f979c2}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a4de8f7bdc9e2333299a04eba46f979c2}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_drag\_throw@{lv\_obj\_get\_drag\_throw}}
+\index{lv\_obj\_get\_drag\_throw@{lv\_obj\_get\_drag\_throw}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_drag\_throw()}{lv\_obj\_get\_drag\_throw()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+get\+\_\+drag\+\_\+throw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the drag throw enable attribute of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: drag throw is enabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2b359fd5032703e11944f5715b325c2d}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2b359fd5032703e11944f5715b325c2d}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_ext\_attr@{lv\_obj\_get\_ext\_attr}}
+\index{lv\_obj\_get\_ext\_attr@{lv\_obj\_get\_ext\_attr}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_ext\_attr()}{lv\_obj\_get\_ext\_attr()}}
+{\footnotesize\ttfamily void $\ast$ lv\+\_\+obj\+\_\+get\+\_\+ext\+\_\+attr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the ext pointer 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ext pointer but not the dynamic version Use it as ext-\/\texorpdfstring{$>$}{>}data1, and NOT da(ext)-\/\texorpdfstring{$>$}{>}data1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a47499183116a45cd215a11672a92104c}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a47499183116a45cd215a11672a92104c}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_ext\_size@{lv\_obj\_get\_ext\_size}}
+\index{lv\_obj\_get\_ext\_size@{lv\_obj\_get\_ext\_size}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_ext\_size()}{lv\_obj\_get\_ext\_size()}}
+{\footnotesize\ttfamily lv\+\_\+coord\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+ext\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the extended size attribute of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the extended size attribute 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aada555bdfd06f2673714a7c6fd8a3b58}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aada555bdfd06f2673714a7c6fd8a3b58}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_height@{lv\_obj\_get\_height}}
+\index{lv\_obj\_get\_height@{lv\_obj\_get\_height}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_height()}{lv\_obj\_get\_height()}}
+{\footnotesize\ttfamily lv\+\_\+coord\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+height (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the height of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a818a3767b76e5edaf2a97beafdf53f61}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a818a3767b76e5edaf2a97beafdf53f61}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_hidden@{lv\_obj\_get\_hidden}}
+\index{lv\_obj\_get\_hidden@{lv\_obj\_get\_hidden}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_hidden()}{lv\_obj\_get\_hidden()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+get\+\_\+hidden (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the hidden attribute of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: the object is hidden 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adf69567824f68f18e280f41d891bd785}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adf69567824f68f18e280f41d891bd785}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_opa\_scale@{lv\_obj\_get\_opa\_scale}}
+\index{lv\_obj\_get\_opa\_scale@{lv\_obj\_get\_opa\_scale}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_opa\_scale()}{lv\_obj\_get\_opa\_scale()}}
+{\footnotesize\ttfamily lv\+\_\+opa\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+opa\+\_\+scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the opa scale parameter of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+opa scale \mbox{[}0..255\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ad98aa79e5e4711dca417b08698db8acd}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ad98aa79e5e4711dca417b08698db8acd}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_opa\_scale\_enable@{lv\_obj\_get\_opa\_scale\_enable}}
+\index{lv\_obj\_get\_opa\_scale\_enable@{lv\_obj\_get\_opa\_scale\_enable}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_opa\_scale\_enable()}{lv\_obj\_get\_opa\_scale\_enable()}}
+{\footnotesize\ttfamily lv\+\_\+opa\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+opa\+\_\+scale\+\_\+enable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the opa scale enable parameter 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: opa scaling is enabled for this object and all children; false\+: no opa scaling 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ae57dc586fb19ae81c4c9f70d8e7eec7d}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ae57dc586fb19ae81c4c9f70d8e7eec7d}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_parent@{lv\_obj\_get\_parent}}
+\index{lv\_obj\_get\_parent@{lv\_obj\_get\_parent}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_parent()}{lv\_obj\_get\_parent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+obj\+\_\+get\+\_\+parent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Returns with the parent of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the parent of \textquotesingle{}obj\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abca39a2aa901c928a3086778dc40ba31}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abca39a2aa901c928a3086778dc40ba31}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_protect@{lv\_obj\_get\_protect}}
+\index{lv\_obj\_get\_protect@{lv\_obj\_get\_protect}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_protect()}{lv\_obj\_get\_protect()}}
+{\footnotesize\ttfamily uint8\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+protect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the protect field of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+protect field (\textquotesingle{}OR\textquotesingle{}ed values of {\ttfamily lv\+\_\+protect\+\_\+t}) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab26ad243fd93d4692a5230c8860c6da0}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab26ad243fd93d4692a5230c8860c6da0}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_screen@{lv\_obj\_get\_screen}}
+\index{lv\_obj\_get\_screen@{lv\_obj\_get\_screen}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_screen()}{lv\_obj\_get\_screen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+obj\+\_\+get\+\_\+screen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Return with the screen of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a screen 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6d7ea254a3266aa256ee15cf8220e10b}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6d7ea254a3266aa256ee15cf8220e10b}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_signal\_func@{lv\_obj\_get\_signal\_func}}
+\index{lv\_obj\_get\_signal\_func@{lv\_obj\_get\_signal\_func}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_signal\_func()}{lv\_obj\_get\_signal\_func()}}
+{\footnotesize\ttfamily lv\+\_\+signal\+\_\+func\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+signal\+\_\+func (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the signal function of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the signal function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a610bcf1bdb3303bd8e8791875a08132a}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a610bcf1bdb3303bd8e8791875a08132a}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_style@{lv\_obj\_get\_style}}
+\index{lv\_obj\_get\_style@{lv\_obj\_get\_style}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_style()}{lv\_obj\_get\_style()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$ lv\+\_\+obj\+\_\+get\+\_\+style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the style pointer of an object (if NULL get style of the parent) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a style 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a54ef4ef13845592fb69222f56e8858d2}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a54ef4ef13845592fb69222f56e8858d2}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_top@{lv\_obj\_get\_top}}
+\index{lv\_obj\_get\_top@{lv\_obj\_get\_top}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_top()}{lv\_obj\_get\_top()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+get\+\_\+top (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the top enable attribute of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: the auto top feature is enabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a78c5213efe8e0d3c5a1d6a463b3b0971}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a78c5213efe8e0d3c5a1d6a463b3b0971}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_type@{lv\_obj\_get\_type}}
+\index{lv\_obj\_get\_type@{lv\_obj\_get\_type}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_type()}{lv\_obj\_get\_type()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+get\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{\mbox{\hyperlink{structlv__obj__type__t}{lv\+\_\+obj\+\_\+type\+\_\+t}} $\ast$}]{buf }\end{DoxyParamCaption})}
+
+Get object\textquotesingle{}s and its ancestors type. Put their name in {\ttfamily type\+\_\+buf} starting with the current type. E.\+g. buf.\+type\mbox{[}0\mbox{]}=\char`\"{}lv\+\_\+btn\char`\"{}, buf.\+type\mbox{[}1\mbox{]}=\char`\"{}lv\+\_\+cont\char`\"{}, buf.\+type\mbox{[}2\mbox{]}=\char`\"{}lv\+\_\+obj\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object which type should be get \\
+\hline
+{\em buf} & pointer to an {\ttfamily \mbox{\hyperlink{structlv__obj__type__t}{lv\+\_\+obj\+\_\+type\+\_\+t}}} buffer to store the types \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a118b18e487255be1d8729239e9ddbee1}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a118b18e487255be1d8729239e9ddbee1}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_width@{lv\_obj\_get\_width}}
+\index{lv\_obj\_get\_width@{lv\_obj\_get\_width}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_width()}{lv\_obj\_get\_width()}}
+{\footnotesize\ttfamily lv\+\_\+coord\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the width of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the width 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aeefcb58f5d09e5ba9722fc680a3ad409}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aeefcb58f5d09e5ba9722fc680a3ad409}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_x@{lv\_obj\_get\_x}}
+\index{lv\_obj\_get\_x@{lv\_obj\_get\_x}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_x()}{lv\_obj\_get\_x()}}
+{\footnotesize\ttfamily lv\+\_\+coord\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+x (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the x coordinate of object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+distance of \textquotesingle{}obj\textquotesingle{} from the left side of its parent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adb5b94d45013ad689376f1b92eaf7072}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_adb5b94d45013ad689376f1b92eaf7072}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_get\_y@{lv\_obj\_get\_y}}
+\index{lv\_obj\_get\_y@{lv\_obj\_get\_y}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_get\_y()}{lv\_obj\_get\_y()}}
+{\footnotesize\ttfamily lv\+\_\+coord\+\_\+t lv\+\_\+obj\+\_\+get\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Get the y coordinate of object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+distance of \textquotesingle{}obj\textquotesingle{} from the top of its parent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aad66ca3c74dbc0c194bd5135fa18d033}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aad66ca3c74dbc0c194bd5135fa18d033}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_invalidate@{lv\_obj\_invalidate}}
+\index{lv\_obj\_invalidate@{lv\_obj\_invalidate}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_invalidate()}{lv\_obj\_invalidate()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+invalidate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Mark the object as invalid therefore its current position will be redrawn by \textquotesingle{}lv\+\_\+refr\+\_\+task\textquotesingle{} 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a80d6394bba9e1a414e797efd261ed02f}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a80d6394bba9e1a414e797efd261ed02f}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_is\_protected@{lv\_obj\_is\_protected}}
+\index{lv\_obj\_is\_protected@{lv\_obj\_is\_protected}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_is\_protected()}{lv\_obj\_is\_protected()}}
+{\footnotesize\ttfamily bool lv\+\_\+obj\+\_\+is\+\_\+protected (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{uint8\+\_\+t}]{prot }\end{DoxyParamCaption})}
+
+Check at least one bit of a given protect bitfield is set 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em prot} & protect bits to test (\textquotesingle{}OR\textquotesingle{}ed values of {\ttfamily lv\+\_\+protect\+\_\+t}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false\+: none of the given bits are set, true\+: at least one bit is set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_afd4a4d1b1733db6877bbcc088331f90d}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_afd4a4d1b1733db6877bbcc088331f90d}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_realign@{lv\_obj\_realign}}
+\index{lv\_obj\_realign@{lv\_obj\_realign}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_realign()}{lv\_obj\_realign()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+realign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Realign the object based on the last {\ttfamily lv\+\_\+obj\+\_\+align} parameters. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a7010311038f19d1c96535c6bd9be4400}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a7010311038f19d1c96535c6bd9be4400}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_refresh\_ext\_size@{lv\_obj\_refresh\_ext\_size}}
+\index{lv\_obj\_refresh\_ext\_size@{lv\_obj\_refresh\_ext\_size}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_refresh\_ext\_size()}{lv\_obj\_refresh\_ext\_size()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+refresh\+\_\+ext\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Send a \textquotesingle{}LV\+\_\+\+SIGNAL\+\_\+\+REFR\+\_\+\+EXT\+\_\+\+SIZE\textquotesingle{} signal to the object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a35d75d3cd63a55ada122bbef8a79048f}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a35d75d3cd63a55ada122bbef8a79048f}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_refresh\_style@{lv\_obj\_refresh\_style}}
+\index{lv\_obj\_refresh\_style@{lv\_obj\_refresh\_style}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_refresh\_style()}{lv\_obj\_refresh\_style()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+refresh\+\_\+style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+Notify an object about its style is modified 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a044811a51cd2c0488a4b99aeda66b362}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a044811a51cd2c0488a4b99aeda66b362}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_report\_style\_mod@{lv\_obj\_report\_style\_mod}}
+\index{lv\_obj\_report\_style\_mod@{lv\_obj\_report\_style\_mod}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_report\_style\_mod()}{lv\_obj\_report\_style\_mod()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+report\+\_\+style\+\_\+mod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{style }\end{DoxyParamCaption})}
+
+Notify all object if a style is modified 
+\begin{DoxyParams}{Parameters}
+{\em style} & pointer to a style. Only the objects with this style will be notified (NULL to notify all objects) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3df59c38faba6b47461f23269b43bb38}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a3df59c38faba6b47461f23269b43bb38}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_auto\_realign@{lv\_obj\_set\_auto\_realign}}
+\index{lv\_obj\_set\_auto\_realign@{lv\_obj\_set\_auto\_realign}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_auto\_realign()}{lv\_obj\_set\_auto\_realign()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+auto\+\_\+realign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Enable the automatic realign of the object when its size has changed based on the last {\ttfamily lv\+\_\+obj\+\_\+align} parameters. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: enable auto realign; false\+: disable auto realign \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0c8cd5f39061009596025309672dae89}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0c8cd5f39061009596025309672dae89}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_click@{lv\_obj\_set\_click}}
+\index{lv\_obj\_set\_click@{lv\_obj\_set\_click}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_click()}{lv\_obj\_set\_click()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Enable or disable the clicking of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: make the object clickable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aaead6ed2c38e9b8c0196aa49a8fb91e7}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aaead6ed2c38e9b8c0196aa49a8fb91e7}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_design\_func@{lv\_obj\_set\_design\_func}}
+\index{lv\_obj\_set\_design\_func@{lv\_obj\_set\_design\_func}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_design\_func()}{lv\_obj\_set\_design\_func()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+design\+\_\+func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+design\+\_\+func\+\_\+t}]{fp }\end{DoxyParamCaption})}
+
+Set a new design function for an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em fp} & the new design function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a696adcf79f6d66da07fdae2cd30bc9d2}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a696adcf79f6d66da07fdae2cd30bc9d2}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_drag@{lv\_obj\_set\_drag}}
+\index{lv\_obj\_set\_drag@{lv\_obj\_set\_drag}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_drag()}{lv\_obj\_set\_drag()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+drag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Enable the dragging of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: make the object dragable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a542be047fdc3ac17cf2c319bcb4dfdb9}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a542be047fdc3ac17cf2c319bcb4dfdb9}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_drag\_parent@{lv\_obj\_set\_drag\_parent}}
+\index{lv\_obj\_set\_drag\_parent@{lv\_obj\_set\_drag\_parent}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_drag\_parent()}{lv\_obj\_set\_drag\_parent()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+drag\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Enable to use parent for drag related operations. If trying to drag the object the parent will be moved instead 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: enable the \textquotesingle{}drag parent\textquotesingle{} for the object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_afcc8485737f799ba463194226f5d58fc}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_afcc8485737f799ba463194226f5d58fc}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_drag\_throw@{lv\_obj\_set\_drag\_throw}}
+\index{lv\_obj\_set\_drag\_throw@{lv\_obj\_set\_drag\_throw}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_drag\_throw()}{lv\_obj\_set\_drag\_throw()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+drag\+\_\+throw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Enable the throwing of an object after is is dragged 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: enable the drag throw \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0d3e5fba894449938df0b10c9f442537}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0d3e5fba894449938df0b10c9f442537}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_height@{lv\_obj\_set\_height}}
+\index{lv\_obj\_set\_height@{lv\_obj\_set\_height}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_height()}{lv\_obj\_set\_height()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+coord\+\_\+t}]{h }\end{DoxyParamCaption})}
+
+Set the height of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em h} & new height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a68d00213906652fd3ab84f2e7dd4f133}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a68d00213906652fd3ab84f2e7dd4f133}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_hidden@{lv\_obj\_set\_hidden}}
+\index{lv\_obj\_set\_hidden@{lv\_obj\_set\_hidden}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_hidden()}{lv\_obj\_set\_hidden()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+hidden (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Hide an object. It won\textquotesingle{}t be visible and clickable. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: hide the object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af6b6cba5ad8a35cb580a012913d8bd0b}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af6b6cba5ad8a35cb580a012913d8bd0b}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_opa\_scale@{lv\_obj\_set\_opa\_scale}}
+\index{lv\_obj\_set\_opa\_scale@{lv\_obj\_set\_opa\_scale}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_opa\_scale()}{lv\_obj\_set\_opa\_scale()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+opa\+\_\+scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+opa\+\_\+t}]{opa\+\_\+scale }\end{DoxyParamCaption})}
+
+Set the opa scale of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em opa\+\_\+scale} & a factor to scale down opacity \mbox{[}0..255\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a9083ee45989a0943404ab63c2698c1b9}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a9083ee45989a0943404ab63c2698c1b9}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_opa\_scale\_enable@{lv\_obj\_set\_opa\_scale\_enable}}
+\index{lv\_obj\_set\_opa\_scale\_enable@{lv\_obj\_set\_opa\_scale\_enable}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_opa\_scale\_enable()}{lv\_obj\_set\_opa\_scale\_enable()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+opa\+\_\+scale\+\_\+enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Set editable parameter Used by groups and keyboard/encoder control. Editable object has something inside to choose (the elements of a list) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: enable editing Set the opa scale enable parameter (required to set opa\+\_\+scale with {\ttfamily \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af6b6cba5ad8a35cb580a012913d8bd0b}{lv\+\_\+obj\+\_\+set\+\_\+opa\+\_\+scale()}}}) \\
+\hline
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: opa scaling is enabled for this object and all children; false\+: no opa scaling \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc514aaa674d90d982ebefebca6b2284}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc514aaa674d90d982ebefebca6b2284}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_parent@{lv\_obj\_set\_parent}}
+\index{lv\_obj\_set\_parent@{lv\_obj\_set\_parent}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_parent()}{lv\_obj\_set\_parent()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+Set a new parent for an object. Its relative position will be the same. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object. Can\textquotesingle{}t be a screen. \\
+\hline
+{\em parent} & pointer to the new parent object. (Can\textquotesingle{}t be NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab224721bfc40f9fbedc291bccd84cbea}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ab224721bfc40f9fbedc291bccd84cbea}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_pos@{lv\_obj\_set\_pos}}
+\index{lv\_obj\_set\_pos@{lv\_obj\_set\_pos}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_pos()}{lv\_obj\_set\_pos()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+coord\+\_\+t}]{x,  }\item[{lv\+\_\+coord\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Set relative the position of an object (relative to the parent) 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em x} & new distance from the left side of the parent \\
+\hline
+{\em y} & new distance from the top of the parent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a119dc65fc90f8b380f08dcb032905c35}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a119dc65fc90f8b380f08dcb032905c35}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_protect@{lv\_obj\_set\_protect}}
+\index{lv\_obj\_set\_protect@{lv\_obj\_set\_protect}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_protect()}{lv\_obj\_set\_protect()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+protect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{uint8\+\_\+t}]{prot }\end{DoxyParamCaption})}
+
+Set a bit or bits in the protect filed 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em prot} & \textquotesingle{}OR\textquotesingle{}-\/ed values from {\ttfamily lv\+\_\+protect\+\_\+t} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a21906a1618ba576282ed737e0d31cedc}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a21906a1618ba576282ed737e0d31cedc}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_signal\_func@{lv\_obj\_set\_signal\_func}}
+\index{lv\_obj\_set\_signal\_func@{lv\_obj\_set\_signal\_func}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_signal\_func()}{lv\_obj\_set\_signal\_func()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+signal\+\_\+func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+signal\+\_\+func\+\_\+t}]{fp }\end{DoxyParamCaption})}
+
+Set the signal function of an object. Always call the previous signal function in the new. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em fp} & the new signal function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abcc5ebd0d1bda82435697baeeb58048d}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abcc5ebd0d1bda82435697baeeb58048d}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_size@{lv\_obj\_set\_size}}
+\index{lv\_obj\_set\_size@{lv\_obj\_set\_size}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_size()}{lv\_obj\_set\_size()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+coord\+\_\+t}]{w,  }\item[{lv\+\_\+coord\+\_\+t}]{h }\end{DoxyParamCaption})}
+
+Set the size of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em w} & new width \\
+\hline
+{\em h} & new height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ac9c62dbb12ae34560d7075baf987cdb2}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ac9c62dbb12ae34560d7075baf987cdb2}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_style@{lv\_obj\_set\_style}}
+\index{lv\_obj\_set\_style@{lv\_obj\_set\_style}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_style()}{lv\_obj\_set\_style()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{style }\end{DoxyParamCaption})}
+
+Set a new style for an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em style\+\_\+p} & pointer to the new style \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af7857ca4d8ac1e8183f5d5f0f1d0ba33}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af7857ca4d8ac1e8183f5d5f0f1d0ba33}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_top@{lv\_obj\_set\_top}}
+\index{lv\_obj\_set\_top@{lv\_obj\_set\_top}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_top()}{lv\_obj\_set\_top()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+top (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{bool}]{en }\end{DoxyParamCaption})}
+
+Enable to bring this object to the foreground if it or any of its children is clicked 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em en} & true\+: enable the auto top feature \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a63d809001264dd8510fa9fe0f9aaced3}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a63d809001264dd8510fa9fe0f9aaced3}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_width@{lv\_obj\_set\_width}}
+\index{lv\_obj\_set\_width@{lv\_obj\_set\_width}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_width()}{lv\_obj\_set\_width()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+coord\+\_\+t}]{w }\end{DoxyParamCaption})}
+
+Set the width of an object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em w} & new width \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc849c766f9c18783e5ec600fa2b6874}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_abc849c766f9c18783e5ec600fa2b6874}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_x@{lv\_obj\_set\_x}}
+\index{lv\_obj\_set\_x@{lv\_obj\_set\_x}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_x()}{lv\_obj\_set\_x()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+coord\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+Set the x coordinate of a object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em x} & new distance from the left side from the parent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a1993b15b44f347aeff5aa9f24e816eb2}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a1993b15b44f347aeff5aa9f24e816eb2}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_obj\_set\_y@{lv\_obj\_set\_y}}
+\index{lv\_obj\_set\_y@{lv\_obj\_set\_y}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_obj\_set\_y()}{lv\_obj\_set\_y()}}
+{\footnotesize\ttfamily void lv\+\_\+obj\+\_\+set\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{obj,  }\item[{lv\+\_\+coord\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Set the y coordinate of a object 
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to an object \\
+\hline
+{\em y} & new distance from the top of the parent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6f57ccf65f0238a24f10f4b2182ff3cb}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a6f57ccf65f0238a24f10f4b2182ff3cb}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_scr\_act@{lv\_scr\_act}}
+\index{lv\_scr\_act@{lv\_scr\_act}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_scr\_act()}{lv\_scr\_act()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$ lv\+\_\+scr\+\_\+act (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Return with a pointer to the active screen \begin{DoxyReturn}{Returns}
+pointer to the active screen object (loaded by \textquotesingle{}\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af71b4a2cd0975fb3b635d09a87b5fbdf}{lv\+\_\+scr\+\_\+load()}}\textquotesingle{}) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af71b4a2cd0975fb3b635d09a87b5fbdf}\label{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_af71b4a2cd0975fb3b635d09a87b5fbdf}} 
+\index{lv\_obj.h@{lv\_obj.h}!lv\_scr\_load@{lv\_scr\_load}}
+\index{lv\_scr\_load@{lv\_scr\_load}!lv\_obj.h@{lv\_obj.h}}
+\doxysubsubsection{\texorpdfstring{lv\_scr\_load()}{lv\_scr\_load()}}
+{\footnotesize\ttfamily void lv\+\_\+scr\+\_\+load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__obj__t}{lv\+\_\+obj\+\_\+t}} $\ast$}]{scr }\end{DoxyParamCaption})}
+
+Load a new screen 
+\begin{DoxyParams}{Parameters}
+{\em scr} & pointer to a screen \\
+\hline
+\end{DoxyParams}

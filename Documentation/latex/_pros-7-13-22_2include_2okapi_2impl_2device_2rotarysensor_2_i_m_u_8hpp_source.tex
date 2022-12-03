@@ -1,0 +1,52 @@
+\hypertarget{_pros-7-13-22_2include_2okapi_2impl_2device_2rotarysensor_2_i_m_u_8hpp_source}{}\doxysection{IMU.\+hpp}
+\label{_pros-7-13-22_2include_2okapi_2impl_2device_2rotarysensor_2_i_m_u_8hpp_source}\index{Pros/Pros-\/7-\/13-\/22/include/okapi/impl/device/rotarysensor/IMU.hpp@{Pros/Pros-\/7-\/13-\/22/include/okapi/impl/device/rotarysensor/IMU.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}api.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/control/controllerInput.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/device/rotarysensor/continuousRotarySensor.hpp"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{13 \textcolor{keyword}{enum class} IMUAxes \{}
+\DoxyCodeLine{14   z, }
+\DoxyCodeLine{15   y, }
+\DoxyCodeLine{16   x  }
+\DoxyCodeLine{17 \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }IMU : \textcolor{keyword}{public} ContinuousRotarySensor \{}
+\DoxyCodeLine{20   \textcolor{keyword}{public}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classokapi_1_1_i_m_u_a8dd0b07e2bd1da965dcaefaabdf821c4}{IMU}}(std::uint8\_t iport, IMUAxes iaxis = IMUAxes::z);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_i_m_u_ab4f006169b21d7280980c14200986f02}{get}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{49   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_i_m_u_af28ffacddf2490f27eb5337dda85ebda}{getRemapped}}(\textcolor{keywordtype}{double} iupperBound = 1800, \textcolor{keywordtype}{double} ilowerBound = -\/1800) \textcolor{keyword}{const};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_i_m_u_acf02aac5308af0eff7e7a3e780dacbdf}{getAcceleration}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63   std::int32\_t \mbox{\hyperlink{classokapi_1_1_i_m_u_a1b5ba91b1eaa8520cc4a4154be382ddf}{reset}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{73   std::int32\_t \mbox{\hyperlink{classokapi_1_1_i_m_u_a233ed21c87990e6a30191ed401f9444a}{reset}}(\textcolor{keywordtype}{double} inewAngle);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{81   std::int32\_t \mbox{\hyperlink{classokapi_1_1_i_m_u_aaab7c59addb969843cc9549bcd4bd5ea}{calibrate}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{89   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_i_m_u_a7ae196ae818efa5bc2a47afb0dfd84fd}{controllerGet}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{94   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_i_m_u_aa0da8d98a5b6e7c1ca172b99b337c8c6}{isCalibrating}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{97   std::uint8\_t port;}
+\DoxyCodeLine{98   IMUAxes axis;}
+\DoxyCodeLine{99   \textcolor{keywordtype}{double} offset = 0;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_i_m_u_adc26013f851228b91483efc201ff6430}{readAngle}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

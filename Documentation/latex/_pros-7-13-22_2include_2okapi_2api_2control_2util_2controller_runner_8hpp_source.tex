@@ -1,0 +1,101 @@
+\hypertarget{_pros-7-13-22_2include_2okapi_2api_2control_2util_2controller_runner_8hpp_source}{}\doxysection{controller\+Runner.\+hpp}
+\label{_pros-7-13-22_2include_2okapi_2api_2control_2util_2controller_runner_8hpp_source}\index{Pros/Pros-\/7-\/13-\/22/include/okapi/api/control/util/controllerRunner.hpp@{Pros/Pros-\/7-\/13-\/22/include/okapi/api/control/util/controllerRunner.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/control/async/asyncController.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/control/controllerOutput.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/control/iterative/iterativeController.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}okapi/api/util/abstractRate.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}okapi/api/util/logging.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}okapi/api/util/timeUtil.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{17 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Input, \textcolor{keyword}{typename} Output> \textcolor{keyword}{class }ControllerRunner \{}
+\DoxyCodeLine{18   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \textcolor{keyword}{explicit} \mbox{\hyperlink{classokapi_1_1_controller_runner_a48f341d8073ec533b09307d48b719bb7}{ControllerRunner}}(\textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_time_util}{TimeUtil}} \&itimeUtil,}
+\DoxyCodeLine{26                             \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}())}
+\DoxyCodeLine{27     : logger(ilogger), rate(itimeUtil.getRate()) \{}
+\DoxyCodeLine{28   \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_controller_runner_aaab33207b895fe8d2d3f1533a9ad1446}{runUntilSettled}}(\textcolor{keyword}{const} Input itarget, \mbox{\hyperlink{classokapi_1_1_async_controller}{AsyncController<Input, Output>}} \&icontroller) \{}
+\DoxyCodeLine{38     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilSettled(AsyncController): Set target to "{}} +}
+\DoxyCodeLine{39              std::to\_string(itarget));}
+\DoxyCodeLine{40     icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{setTarget}}(itarget);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordflow}{while} (!icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{isSettled}}()) \{}
+\DoxyCodeLine{43       rate-\/>delayUntil(10\_ms);}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilSettled(AsyncController): Done waiting to settle"{}});}
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{48   \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_controller_runner_ab419d2bf6bccca115380467df452d6ca}{runUntilSettled}}(\textcolor{keyword}{const} Input itarget,}
+\DoxyCodeLine{59                                  \mbox{\hyperlink{classokapi_1_1_iterative_controller}{IterativeController<Input, Output>}} \&icontroller,}
+\DoxyCodeLine{60                                  \mbox{\hyperlink{classokapi_1_1_controller_output}{ControllerOutput<Output>}} \&ioutput) \{}
+\DoxyCodeLine{61     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilSettled(IterativeController): Set target to "{}} +}
+\DoxyCodeLine{62              std::to\_string(itarget));}
+\DoxyCodeLine{63     icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{setTarget}}(itarget);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordflow}{while} (!icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{isSettled}}()) \{}
+\DoxyCodeLine{66       ioutput.\mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{controllerSet}}(icontroller.\mbox{\hyperlink{classokapi_1_1_iterative_controller_a83e0aac640804974f0e06936b9f7898a}{getOutput}}());}
+\DoxyCodeLine{67       rate-\/>delayUntil(10\_ms);}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilSettled(IterativeController): Done waiting to settle"{}});}
+\DoxyCodeLine{71     \textcolor{keywordflow}{return} icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{72   \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_controller_runner_ab1e85de9c843d4b946f3d8672bf47f51}{runUntilAtTarget}}(\textcolor{keyword}{const} Input itarget,}
+\DoxyCodeLine{82                                   \mbox{\hyperlink{classokapi_1_1_async_controller}{AsyncController<Input, Output>}} \&icontroller) \{}
+\DoxyCodeLine{83     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilAtTarget(AsyncController): Set target to "{}} +}
+\DoxyCodeLine{84              std::to\_string(itarget));}
+\DoxyCodeLine{85     icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{setTarget}}(itarget);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keywordtype}{double} error = icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{88     \textcolor{keywordtype}{double} lastError = error;}
+\DoxyCodeLine{89     \textcolor{keywordflow}{while} (error != 0 \&\& std::copysign(1.0, error) == std::copysign(1.0, lastError)) \{}
+\DoxyCodeLine{90       lastError = error;}
+\DoxyCodeLine{91       rate-\/>delayUntil(10\_ms);}
+\DoxyCodeLine{92       error = icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilAtTarget(AsyncController): Done waiting to settle"{}});}
+\DoxyCodeLine{96     \textcolor{keywordflow}{return} icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{97   \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{107   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_controller_runner_af9654dd06bf58274b7cbcfd84813193a}{runUntilAtTarget}}(\textcolor{keyword}{const} Input itarget,}
+\DoxyCodeLine{108                                   \mbox{\hyperlink{classokapi_1_1_iterative_controller}{IterativeController<Input, Output>}} \&icontroller,}
+\DoxyCodeLine{109                                   \mbox{\hyperlink{classokapi_1_1_controller_output}{ControllerOutput<Output>}} \&ioutput) \{}
+\DoxyCodeLine{110     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilAtTarget(IterativeController): Set target to "{}} +}
+\DoxyCodeLine{111              std::to\_string(itarget));}
+\DoxyCodeLine{112     icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{setTarget}}(itarget);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{double} error = icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{115     \textcolor{keywordtype}{double} lastError = error;}
+\DoxyCodeLine{116     \textcolor{keywordflow}{while} (error != 0 \&\& std::copysign(1.0, error) == std::copysign(1.0, lastError)) \{}
+\DoxyCodeLine{117       ioutput.\mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{controllerSet}}(icontroller.\mbox{\hyperlink{classokapi_1_1_iterative_controller_a83e0aac640804974f0e06936b9f7898a}{getOutput}}());}
+\DoxyCodeLine{118       lastError = error;}
+\DoxyCodeLine{119       rate-\/>delayUntil(10\_ms);}
+\DoxyCodeLine{120       error = icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{121     \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     LOG\_INFO(\textcolor{stringliteral}{"{}ControllerRunner: runUntilAtTarget(IterativeController): Done waiting to settle"{}});}
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} icontroller.\mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}();}
+\DoxyCodeLine{125   \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{128   std::shared\_ptr<Logger> logger;}
+\DoxyCodeLine{129   std::unique\_ptr<AbstractRate> rate;}
+\DoxyCodeLine{130 \};}
+\DoxyCodeLine{131 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

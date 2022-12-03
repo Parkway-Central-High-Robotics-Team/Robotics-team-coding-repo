@@ -1,0 +1,92 @@
+\hypertarget{test-3_2include_2okapi_2api_2chassis_2model_2h_drive_model_8hpp_source}{}\doxysection{h\+Drive\+Model.\+hpp}
+\label{test-3_2include_2okapi_2api_2chassis_2model_2h_drive_model_8hpp_source}\index{Pros/test-\/3/include/okapi/api/chassis/model/hDriveModel.hpp@{Pros/test-\/3/include/okapi/api/chassis/model/hDriveModel.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/chassis/model/chassisModel.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/device/motor/abstractMotor.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/device/rotarysensor/continuousRotarySensor.hpp"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{13 \textcolor{keyword}{class }HDriveModel : \textcolor{keyword}{public} ChassisModel \{}
+\DoxyCodeLine{14   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28   \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}{HDriveModel}}(std::shared\_ptr<AbstractMotor> ileftSideMotor,}
+\DoxyCodeLine{29               std::shared\_ptr<AbstractMotor> irightSideMotor,}
+\DoxyCodeLine{30               std::shared\_ptr<AbstractMotor> imiddleMotor,}
+\DoxyCodeLine{31               std::shared\_ptr<ContinuousRotarySensor> ileftEnc,}
+\DoxyCodeLine{32               std::shared\_ptr<ContinuousRotarySensor> irightEnc,}
+\DoxyCodeLine{33               std::shared\_ptr<ContinuousRotarySensor> imiddleEnc,}
+\DoxyCodeLine{34               \textcolor{keywordtype}{double} imaxVelocity,}
+\DoxyCodeLine{35               \textcolor{keywordtype}{double} imaxVoltage);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}{forward}}(\textcolor{keywordtype}{double} ispeed) \textcolor{keyword}{override};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}{driveVector}}(\textcolor{keywordtype}{double} iySpeed, \textcolor{keywordtype}{double} izRotation) \textcolor{keyword}{override};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}{driveVectorVoltage}}(\textcolor{keywordtype}{double} iforwardSpeed, \textcolor{keywordtype}{double} iyaw) \textcolor{keyword}{override};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}{rotate}}(\textcolor{keywordtype}{double} ispeed) \textcolor{keyword}{override};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}{stop}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}{tank}}(\textcolor{keywordtype}{double} ileftSpeed, \textcolor{keywordtype}{double} irightSpeed, \textcolor{keywordtype}{double} ithreshold = 0) \textcolor{keyword}{override};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}{arcade}}(\textcolor{keywordtype}{double} iforwardSpeed, \textcolor{keywordtype}{double} iyaw, \textcolor{keywordtype}{double} ithreshold = 0) \textcolor{keyword}{override};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{113   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}{curvature}}(\textcolor{keywordtype}{double} iforwardSpeed, \textcolor{keywordtype}{double} icurvature, \textcolor{keywordtype}{double} ithreshold = 0) \textcolor{keyword}{override};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{123   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{124   \mbox{\hyperlink{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}{hArcade}}(\textcolor{keywordtype}{double} irightSpeed, \textcolor{keywordtype}{double} iforwardSpeed, \textcolor{keywordtype}{double} iyaw, \textcolor{keywordtype}{double} ithreshold = 0);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{134   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{135   \mbox{\hyperlink{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}{hCurvature}}(\textcolor{keywordtype}{double} irightSpeed, \textcolor{keywordtype}{double} iforwardSpeed, \textcolor{keywordtype}{double} icurvature, \textcolor{keywordtype}{double} ithreshold = 0);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{142   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}{left}}(\textcolor{keywordtype}{double} ispeed) \textcolor{keyword}{override};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{149   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}{right}}(\textcolor{keywordtype}{double} ispeed) \textcolor{keyword}{override};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{156   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}{middle}}(\textcolor{keywordtype}{double} ispeed);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{163   std::valarray<std::int32\_t> \mbox{\hyperlink{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}{getSensorVals}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{168   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}{resetSensors}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{175   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}{setBrakeMode}}(\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{AbstractMotor::brakeMode}} mode) \textcolor{keyword}{override};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{182   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}{setEncoderUnits}}(\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{AbstractMotor::encoderUnits}} units) \textcolor{keyword}{override};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{189   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}{setGearing}}(\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{AbstractMotor::gearset}} gearset) \textcolor{keyword}{override};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{199   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}{setMaxVelocity}}(\textcolor{keywordtype}{double} imaxVelocity) \textcolor{keyword}{override};}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{204   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}{getMaxVelocity}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{211   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}{setMaxVoltage}}(\textcolor{keywordtype}{double} imaxVoltage) \textcolor{keyword}{override};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{216   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}{getMaxVoltage}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{223   std::shared\_ptr<AbstractMotor> \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}{getLeftSideMotor}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{230   std::shared\_ptr<AbstractMotor> \mbox{\hyperlink{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}{getRightSideMotor}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{235   std::shared\_ptr<AbstractMotor> \mbox{\hyperlink{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}{getMiddleMotor}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{238   \textcolor{keywordtype}{double} maxVelocity;}
+\DoxyCodeLine{239   \textcolor{keywordtype}{double} maxVoltage;}
+\DoxyCodeLine{240   std::shared\_ptr<AbstractMotor> leftSideMotor;}
+\DoxyCodeLine{241   std::shared\_ptr<AbstractMotor> rightSideMotor;}
+\DoxyCodeLine{242   std::shared\_ptr<AbstractMotor> middleMotor;}
+\DoxyCodeLine{243   std::shared\_ptr<ContinuousRotarySensor> leftSensor;}
+\DoxyCodeLine{244   std::shared\_ptr<ContinuousRotarySensor> rightSensor;}
+\DoxyCodeLine{245   std::shared\_ptr<ContinuousRotarySensor> middleSensor;}
+\DoxyCodeLine{246 \};}
+\DoxyCodeLine{247 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

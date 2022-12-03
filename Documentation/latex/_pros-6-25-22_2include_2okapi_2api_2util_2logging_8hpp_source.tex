@@ -1,0 +1,166 @@
+\hypertarget{_pros-6-25-22_2include_2okapi_2api_2util_2logging_8hpp_source}{}\doxysection{logging.\+hpp}
+\label{_pros-6-25-22_2include_2okapi_2api_2util_2logging_8hpp_source}\index{Pros/Pros-\/6-\/25-\/22/include/okapi/api/util/logging.hpp@{Pros/Pros-\/6-\/25-\/22/include/okapi/api/util/logging.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/coreProsAPI.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/util/abstractTimer.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/util/mathUtil.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#if defined(THREADS\_STD)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}okapi/impl/util/timer.hpp"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define LOG\_DEBUG(msg) logger-\/>debug([=]() \{ return msg; \})}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define LOG\_INFO(msg) logger-\/>info([=]() \{ return msg; \})}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define LOG\_WARN(msg) logger-\/>warn([=]() \{ return msg; \})}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define LOG\_ERROR(msg) logger-\/>error([=]() \{ return msg; \})}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define LOG\_DEBUG\_S(msg) LOG\_DEBUG(std::string(msg))}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define LOG\_INFO\_S(msg) LOG\_INFO(std::string(msg))}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define LOG\_WARN\_S(msg) LOG\_WARN(std::string(msg))}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define LOG\_ERROR\_S(msg) LOG\_ERROR(std::string(msg))}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classokapi_1_1_logger}{Logger}} \{}
+\DoxyCodeLine{31   \textcolor{keyword}{public}:}
+\DoxyCodeLine{32   \textcolor{keyword}{enum class} \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81}{LogLevel}} \{}
+\DoxyCodeLine{33     \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81aad42f6697b035b7580e4fef93be20b4d}{debug}} = 4, }
+\DoxyCodeLine{34     \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81acaf9b6b99962bf5c2264824231d7a40c}{info}} = 3,  }
+\DoxyCodeLine{35     \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81a1ea4c3ab05ee0c6d4de30740443769cb}{warn}} = 2,  }
+\DoxyCodeLine{36     \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81acb5e100e5a9a3e7f6d1fd97512215282}{error}} = 1, }
+\DoxyCodeLine{37     \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81a3262d48df5d75e3452f0f16b313b7808}{off}} = 0    }
+\DoxyCodeLine{38   \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43   \mbox{\hyperlink{classokapi_1_1_logger_a9a81a6dda1c3cc49e6f103a1496eb2ca}{Logger}}() noexcept;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{54   \mbox{\hyperlink{classokapi_1_1_logger}{Logger}}(std::unique\_ptr<\mbox{\hyperlink{classokapi_1_1_abstract_timer}{AbstractTimer}}> itimer,}
+\DoxyCodeLine{55          std::string\_view ifileName,}
+\DoxyCodeLine{56          const \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81}{LogLevel}} \&ilevel) noexcept;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{66   \mbox{\hyperlink{classokapi_1_1_logger}{Logger}}(std::unique\_ptr<\mbox{\hyperlink{classokapi_1_1_abstract_timer}{AbstractTimer}}> itimer, FILE *ifile, const \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81}{LogLevel}} \&ilevel) noexcept;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \string~\mbox{\hyperlink{classokapi_1_1_logger}{Logger}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   constexpr \textcolor{keywordtype}{bool} isDebugLevelEnabled() const noexcept \{}
+\DoxyCodeLine{71     \textcolor{keywordflow}{return} toUnderlyingType(logLevel) >= toUnderlyingType(\mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81aad42f6697b035b7580e4fef93be20b4d}{LogLevel::debug}});}
+\DoxyCodeLine{72   \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81aad42f6697b035b7580e4fef93be20b4d}{debug}}(T ilazyMessage) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{75     \textcolor{keywordflow}{if} (isDebugLevelEnabled() \&\& logfile \&\& timer) \{}
+\DoxyCodeLine{76       std::scoped\_lock lock(logfileMutex);}
+\DoxyCodeLine{77       fprintf(logfile,}
+\DoxyCodeLine{78               \textcolor{stringliteral}{"{}\%ld (\%s) DEBUG: \%s\(\backslash\)n"{}},}
+\DoxyCodeLine{79               \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}(timer-\/>millis().convert(millisecond)),}
+\DoxyCodeLine{80               CrossplatformThread::getName().c\_str(),}
+\DoxyCodeLine{81               ilazyMessage().c\_str());}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83   \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} isInfoLevelEnabled() const noexcept \{}
+\DoxyCodeLine{86     \textcolor{keywordflow}{return} toUnderlyingType(logLevel) >= toUnderlyingType(\mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81acaf9b6b99962bf5c2264824231d7a40c}{LogLevel::info}});}
+\DoxyCodeLine{87   \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81acaf9b6b99962bf5c2264824231d7a40c}{info}}(T ilazyMessage) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{90     \textcolor{keywordflow}{if} (isInfoLevelEnabled() \&\& logfile \&\& timer) \{}
+\DoxyCodeLine{91       std::scoped\_lock lock(logfileMutex);}
+\DoxyCodeLine{92       fprintf(logfile,}
+\DoxyCodeLine{93               \textcolor{stringliteral}{"{}\%ld (\%s) INFO: \%s\(\backslash\)n"{}},}
+\DoxyCodeLine{94               \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}(timer-\/>millis().convert(millisecond)),}
+\DoxyCodeLine{95               CrossplatformThread::getName().c\_str(),}
+\DoxyCodeLine{96               ilazyMessage().c\_str());}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98   \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} isWarnLevelEnabled() const noexcept \{}
+\DoxyCodeLine{101     \textcolor{keywordflow}{return} toUnderlyingType(logLevel) >= toUnderlyingType(\mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81a1ea4c3ab05ee0c6d4de30740443769cb}{LogLevel::warn}});}
+\DoxyCodeLine{102   \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81a1ea4c3ab05ee0c6d4de30740443769cb}{warn}}(T ilazyMessage) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{105     \textcolor{keywordflow}{if} (isWarnLevelEnabled() \&\& logfile \&\& timer) \{}
+\DoxyCodeLine{106       std::scoped\_lock lock(logfileMutex);}
+\DoxyCodeLine{107       fprintf(logfile,}
+\DoxyCodeLine{108               \textcolor{stringliteral}{"{}\%ld (\%s) WARN: \%s\(\backslash\)n"{}},}
+\DoxyCodeLine{109               \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}(timer-\/>millis().convert(millisecond)),}
+\DoxyCodeLine{110               CrossplatformThread::getName().c\_str(),}
+\DoxyCodeLine{111               ilazyMessage().c\_str());}
+\DoxyCodeLine{112     \}}
+\DoxyCodeLine{113   \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115   \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} isErrorLevelEnabled() const noexcept \{}
+\DoxyCodeLine{116     \textcolor{keywordflow}{return} toUnderlyingType(logLevel) >= toUnderlyingType(\mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81acb5e100e5a9a3e7f6d1fd97512215282}{LogLevel::error}});}
+\DoxyCodeLine{117   \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81acb5e100e5a9a3e7f6d1fd97512215282}{error}}(T ilazyMessage) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{if} (isErrorLevelEnabled() \&\& logfile \&\& timer) \{}
+\DoxyCodeLine{121       std::scoped\_lock lock(logfileMutex);}
+\DoxyCodeLine{122       fprintf(logfile,}
+\DoxyCodeLine{123               \textcolor{stringliteral}{"{}\%ld (\%s) ERROR: \%s\(\backslash\)n"{}},}
+\DoxyCodeLine{124               \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long}\textcolor{keyword}{>}(timer-\/>millis().convert(millisecond)),}
+\DoxyCodeLine{125               CrossplatformThread::getName().c\_str(),}
+\DoxyCodeLine{126               ilazyMessage().c\_str());}
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128   \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{133   \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_logger_a15f8ef2e95e376c59c5f556bab2bd38a}{close}}() noexcept \{}
+\DoxyCodeLine{134     \textcolor{keywordflow}{if} (logfile) \{}
+\DoxyCodeLine{135       fclose(logfile);}
+\DoxyCodeLine{136       logfile = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138   \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{143   \textcolor{keyword}{static} std::shared\_ptr<Logger> \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{getDefaultLogger}}();}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{151   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_logger_a29dcc4ef1c691fe264def674b4c93fb8}{setDefaultLogger}}(std::shared\_ptr<Logger> ilogger);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153   \textcolor{keyword}{private}:}
+\DoxyCodeLine{154   \textcolor{keyword}{const} std::unique\_ptr<AbstractTimer> timer;}
+\DoxyCodeLine{155   \textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81}{LogLevel}} logLevel;}
+\DoxyCodeLine{156   FILE *logfile;}
+\DoxyCodeLine{157   \mbox{\hyperlink{class_crossplatform_mutex}{CrossplatformMutex}} logfileMutex;}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} isSerialStream(std::string\_view filename);}
+\DoxyCodeLine{160 \};}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{keyword}{extern} std::shared\_ptr<Logger> defaultLogger;}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{keyword}{struct }\mbox{\hyperlink{structokapi_1_1_default_logger_initializer}{DefaultLoggerInitializer}} \{}
+\DoxyCodeLine{165   \mbox{\hyperlink{structokapi_1_1_default_logger_initializer}{DefaultLoggerInitializer}}() \{}
+\DoxyCodeLine{166     \textcolor{keywordflow}{if} (count++ == 0) \{}
+\DoxyCodeLine{167       init();}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169   \}}
+\DoxyCodeLine{170   \mbox{\hyperlink{structokapi_1_1_default_logger_initializer}{\string~DefaultLoggerInitializer}}() \{}
+\DoxyCodeLine{171     \textcolor{keywordflow}{if} (-\/-\/count == 0) \{}
+\DoxyCodeLine{172       cleanup();}
+\DoxyCodeLine{173     \}}
+\DoxyCodeLine{174   \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176   \textcolor{keyword}{static} \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178   \textcolor{keyword}{static} \textcolor{keywordtype}{void} init() \{}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#if defined(THREADS\_STD)}}
+\DoxyCodeLine{180     defaultLogger = std::make\_shared<Logger>();}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{182     defaultLogger =}
+\DoxyCodeLine{183       std::make\_shared<Logger>(std::make\_unique<Timer>(), \textcolor{stringliteral}{"{}/ser/sout"{}}, \mbox{\hyperlink{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81a1ea4c3ab05ee0c6d4de30740443769cb}{Logger::LogLevel::warn}});}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{185   \}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   \textcolor{keyword}{static} \textcolor{keywordtype}{void} cleanup() \{}
+\DoxyCodeLine{188   \}}
+\DoxyCodeLine{189 \};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{keyword}{static} \mbox{\hyperlink{structokapi_1_1_default_logger_initializer}{DefaultLoggerInitializer}} defaultLoggerInitializer; \textcolor{comment}{// NOLINT(cert-\/err58-\/cpp)}}
+\DoxyCodeLine{192 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+\hypertarget{_pros-7-13-22_2include_2okapi_2api_2chassis_2controller_2chassis_controller_8hpp_source}{}\doxysection{chassis\+Controller.\+hpp}
+\label{_pros-7-13-22_2include_2okapi_2api_2chassis_2controller_2chassis_controller_8hpp_source}\index{Pros/Pros-\/7-\/13-\/22/include/okapi/api/chassis/controller/chassisController.hpp@{Pros/Pros-\/7-\/13-\/22/include/okapi/api/chassis/controller/chassisController.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/chassis/controller/chassisScales.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/chassis/model/chassisModel.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/device/motor/abstractMotor.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}okapi/api/units/QAngle.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}okapi/api/units/QLength.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <valarray>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{17 \textcolor{keyword}{class }ChassisController \{}
+\DoxyCodeLine{18   \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \textcolor{keyword}{explicit} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a8a4a431cb9da03a1c84e600dc0e31333}{ChassisController}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_chassis_controller}{\string~ChassisController}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a6d5b69139dfa8b814d05c74c22bcaa43}{moveDistance}}(QLength itarget) = 0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a7d0747474b5c27bbc987eb31ec80da5f}{moveRaw}}(\textcolor{keywordtype}{double} itarget) = 0;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a67a17268b871a4f1ae74d67891cbf5dd}{moveDistanceAsync}}(QLength itarget) = 0;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_ad05b6ec70254b51bc2a8dc78c69fe0f9}{moveRawAsync}}(\textcolor{keywordtype}{double} itarget) = 0;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_aab12308b3fad6793c007d7a33730a3f7}{turnAngle}}(QAngle idegTarget) = 0;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_ae521f7f79302cc5cae505b1a59c72567}{turnRaw}}(\textcolor{keywordtype}{double} idegTarget) = 0;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a87fc1f88bf06340d8f022a8c185b5e87}{turnAngleAsync}}(QAngle idegTarget) = 0;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_afe237940671dc8c0a47b18ddd2855fff}{turnRawAsync}}(\textcolor{keywordtype}{double} idegTarget) = 0;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{91   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a37ae36ec8936272eb31e3baed7eed417}{setTurnsMirrored}}(\textcolor{keywordtype}{bool} ishouldMirror) = 0;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{98   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_chassis_controller_af243e988026a00840a27db92c7b6e41f}{isSettled}}() = 0;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{103   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a01ed4e0eb7332cc149228387bbf1e91c}{waitUntilSettled}}() = 0;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{108   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_ac67edbbbe1c8480c4503b9875a3719cd}{stop}}() = 0;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{115   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a973c79ed60f4b0a25fe5273ba4146427}{setMaxVelocity}}(\textcolor{keywordtype}{double} imaxVelocity) = 0;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{120   \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a3306e5e19cafb3d231edcfef23c36e3e}{getMaxVelocity}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{125   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_chassis_scales}{ChassisScales}} \mbox{\hyperlink{classokapi_1_1_chassis_controller_a0a8e32fc7adad8567f550954505aaa06}{getChassisScales}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{130   \textcolor{keyword}{virtual} \mbox{\hyperlink{structokapi_1_1_abstract_motor_1_1_gearset_ratio_pair}{AbstractMotor::GearsetRatioPair}} \mbox{\hyperlink{classokapi_1_1_chassis_controller_aa19351888b997d4a6596dac24520ebff}{getGearsetRatioPair}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{135   \textcolor{keyword}{virtual} std::shared\_ptr<ChassisModel> \mbox{\hyperlink{classokapi_1_1_chassis_controller_a890b3d0c35e135582050f4a466ee2031}{getModel}}() = 0;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{140   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_chassis_model}{ChassisModel}} \&\mbox{\hyperlink{classokapi_1_1_chassis_controller_a00ec7acf54b6626584bb8a6d46ede433}{model}}() = 0;}
+\DoxyCodeLine{141 \};}
+\DoxyCodeLine{142 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

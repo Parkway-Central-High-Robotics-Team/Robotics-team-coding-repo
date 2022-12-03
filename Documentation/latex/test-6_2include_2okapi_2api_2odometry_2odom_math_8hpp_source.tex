@@ -1,0 +1,43 @@
+\hypertarget{test-6_2include_2okapi_2api_2odometry_2odom_math_8hpp_source}{}\doxysection{odom\+Math.\+hpp}
+\label{test-6_2include_2okapi_2api_2odometry_2odom_math_8hpp_source}\index{Pros/test-\/6/include/okapi/api/odometry/odomMath.hpp@{Pros/test-\/6/include/okapi/api/odometry/odomMath.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/odometry/odomState.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/odometry/point.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/util/logging.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{14 \textcolor{keyword}{class }OdomMath \{}
+\DoxyCodeLine{15   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \textcolor{keyword}{static} QLength \mbox{\hyperlink{classokapi_1_1_odom_math_af4c0b9754b7203779154942e3ba5fe84}{computeDistanceToPoint}}(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_point}{Point}} \&ipoint, \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \&istate);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{34   \textcolor{keyword}{static} QAngle \mbox{\hyperlink{classokapi_1_1_odom_math_a9b15d46abbc87c2fa0b96f915d893b72}{computeAngleToPoint}}(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_point}{Point}} \&ipoint, \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \&istate);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{44   \textcolor{keyword}{static} std::pair<QLength, QAngle> \mbox{\hyperlink{classokapi_1_1_odom_math_a519f40c11e774ba15680879c23877f05}{computeDistanceAndAngleToPoint}}(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_point}{Point}} \&ipoint,}
+\DoxyCodeLine{45                                                                    \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \&istate);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{53   \textcolor{keyword}{static} QAngle \mbox{\hyperlink{classokapi_1_1_odom_math_a489d0b1dbb76e626ac66f9696c30b54b}{constrainAngle360}}(\textcolor{keyword}{const} QAngle \&angle);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61   \textcolor{keyword}{static} QAngle \mbox{\hyperlink{classokapi_1_1_odom_math_a353a68717ff506dd93165252c3b60617}{constrainAngle180}}(\textcolor{keyword}{const} QAngle \&angle);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{private}:}
+\DoxyCodeLine{64   \mbox{\hyperlink{classokapi_1_1_odom_math}{OdomMath}}();}
+\DoxyCodeLine{65   \mbox{\hyperlink{classokapi_1_1_odom_math}{\string~OdomMath}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{74   \textcolor{keyword}{static} std::pair<double, double> computeDiffs(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_point}{Point}} \&ipoint, \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \&istate);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{83   \textcolor{keyword}{static} \textcolor{keywordtype}{double} computeDistance(\textcolor{keywordtype}{double} xDiff, \textcolor{keywordtype}{double} yDiff);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{93   \textcolor{keyword}{static} \textcolor{keywordtype}{double} computeAngle(\textcolor{keywordtype}{double} xDiff, \textcolor{keywordtype}{double} yDiff, \textcolor{keywordtype}{double} theta);}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

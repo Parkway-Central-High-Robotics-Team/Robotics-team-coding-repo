@@ -1,0 +1,2496 @@
+\hypertarget{classokapi_1_1_skid_steer_model}{}\doxysection{okapi\+::Skid\+Steer\+Model Class Reference}
+\label{classokapi_1_1_skid_steer_model}\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+Inheritance diagram for okapi\+::Skid\+Steer\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.858407cm]{classokapi_1_1_skid_steer_model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}{Skid\+Steer\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}{right}} (double ispeed) override
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}{get\+Right\+Side\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}{Skid\+Steer\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}{right}} (double ispeed) override
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}{get\+Right\+Side\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}{Skid\+Steer\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}{right}} (double ispeed) override
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}{get\+Right\+Side\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}{Skid\+Steer\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}{right}} (double ispeed) override
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}{get\+Right\+Side\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}{Skid\+Steer\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}{right}} (double ispeed) override
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}{get\+Right\+Side\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}{Skid\+Steer\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}{right}} (double ispeed) override
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}{get\+Right\+Side\+Motor}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a7328ea414229603ad144297832aba668}\label{classokapi_1_1_skid_steer_model_a7328ea414229603ad144297832aba668}} 
+double {\bfseries max\+Velocity}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5a8c43598d98dad4d2c76d5c5c9b34ad}\label{classokapi_1_1_skid_steer_model_a5a8c43598d98dad4d2c76d5c5c9b34ad}} 
+double {\bfseries max\+Voltage}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5f56ec1dadad3ed3c948eae61bd6ea78}\label{classokapi_1_1_skid_steer_model_a5f56ec1dadad3ed3c948eae61bd6ea78}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ {\bfseries left\+Side\+Motor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ae2a691f82305b1e207e3b1950135cd1f}\label{classokapi_1_1_skid_steer_model_ae2a691f82305b1e207e3b1950135cd1f}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ {\bfseries right\+Side\+Motor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a424c93b18eda51bde000deb2d183f691}\label{classokapi_1_1_skid_steer_model_a424c93b18eda51bde000deb2d183f691}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ {\bfseries left\+Sensor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_addcb5e94906c9844518ad8bc462442db}\label{classokapi_1_1_skid_steer_model_addcb5e94906c9844518ad8bc462442db}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ {\bfseries right\+Sensor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}\label{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!SkidSteerModel@{SkidSteerModel}}
+\index{SkidSteerModel@{SkidSteerModel}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{SkidSteerModel()}{SkidSteerModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily okapi\+::\+Skid\+Steer\+Model\+::\+Skid\+Steer\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for a skid steer drive (wheels parallel with robot\textquotesingle{}s direction of motion). When all motors are powered +100\%, the robot should move forward in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}\label{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!SkidSteerModel@{SkidSteerModel}}
+\index{SkidSteerModel@{SkidSteerModel}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{SkidSteerModel()}{SkidSteerModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily okapi\+::\+Skid\+Steer\+Model\+::\+Skid\+Steer\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for a skid steer drive (wheels parallel with robot\textquotesingle{}s direction of motion). When all motors are powered +100\%, the robot should move forward in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}\label{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!SkidSteerModel@{SkidSteerModel}}
+\index{SkidSteerModel@{SkidSteerModel}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{SkidSteerModel()}{SkidSteerModel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily okapi\+::\+Skid\+Steer\+Model\+::\+Skid\+Steer\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for a skid steer drive (wheels parallel with robot\textquotesingle{}s direction of motion). When all motors are powered +100\%, the robot should move forward in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}\label{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!SkidSteerModel@{SkidSteerModel}}
+\index{SkidSteerModel@{SkidSteerModel}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{SkidSteerModel()}{SkidSteerModel()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily okapi\+::\+Skid\+Steer\+Model\+::\+Skid\+Steer\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for a skid steer drive (wheels parallel with robot\textquotesingle{}s direction of motion). When all motors are powered +100\%, the robot should move forward in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}\label{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!SkidSteerModel@{SkidSteerModel}}
+\index{SkidSteerModel@{SkidSteerModel}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{SkidSteerModel()}{SkidSteerModel()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily okapi\+::\+Skid\+Steer\+Model\+::\+Skid\+Steer\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for a skid steer drive (wheels parallel with robot\textquotesingle{}s direction of motion). When all motors are powered +100\%, the robot should move forward in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}\label{classokapi_1_1_skid_steer_model_ac79ebd9b643ea68da98576ec355e94a5}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!SkidSteerModel@{SkidSteerModel}}
+\index{SkidSteerModel@{SkidSteerModel}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{SkidSteerModel()}{SkidSteerModel()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily okapi\+::\+Skid\+Steer\+Model\+::\+Skid\+Steer\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for a skid steer drive (wheels parallel with robot\textquotesingle{}s direction of motion). When all motors are powered +100\%, the robot should move forward in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}\label{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}\label{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}\label{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}\label{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}\label{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}\label{classokapi_1_1_skid_steer_model_a145f671aa2dd1c6991945929e4a3d97d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}\label{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}\label{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}\label{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}\label{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}\label{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}\label{classokapi_1_1_skid_steer_model_aa42df1d9df19db8a11c119bbdfc0a982}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}\label{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}\label{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}\label{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}\label{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}\label{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}\label{classokapi_1_1_skid_steer_model_a5fa39473f6a6d2deae988f63e972b66a}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}\label{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}\label{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}\label{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}\label{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}\label{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}\label{classokapi_1_1_skid_steer_model_aa9b68af25f8f924117b07a5c8e9f6c93}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}\label{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!forward@{forward}}
+\index{forward@{forward}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}\label{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!forward@{forward}}
+\index{forward@{forward}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}\label{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!forward@{forward}}
+\index{forward@{forward}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}\label{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!forward@{forward}}
+\index{forward@{forward}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}\label{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!forward@{forward}}
+\index{forward@{forward}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}\label{classokapi_1_1_skid_steer_model_a74ca9d9f1b0f80c9453194567c58e967}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!forward@{forward}}
+\index{forward@{forward}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}\label{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}\label{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}\label{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}\label{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}\label{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}\label{classokapi_1_1_skid_steer_model_a3f1813ada8205396c35abccbc0c9ff21}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}\label{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}\label{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}\label{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}\label{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}\label{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}\label{classokapi_1_1_skid_steer_model_a7e2fcfb65e940ea4d71780966b4b5b68}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}\label{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}\label{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}\label{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}\label{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}\label{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}\label{classokapi_1_1_skid_steer_model_ad4849d18c3a244eb60e1056860a3c4cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily double okapi\+::\+Skid\+Steer\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}\label{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}\label{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}\label{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}\label{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}\label{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}\label{classokapi_1_1_skid_steer_model_a0c58a580708b864d8c4391c7045e590b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}\label{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}\label{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}\label{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}\label{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}\label{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}\label{classokapi_1_1_skid_steer_model_a850e4de7ab3a30a354ac39f30a1e8603}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+Skid\+Steer\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a39af35aa25e5385584b3834911aed341}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}\label{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!left@{left}}
+\index{left@{left}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}\label{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!left@{left}}
+\index{left@{left}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}\label{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!left@{left}}
+\index{left@{left}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}\label{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!left@{left}}
+\index{left@{left}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}\label{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!left@{left}}
+\index{left@{left}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}\label{classokapi_1_1_skid_steer_model_af2b00108853b82eb0fb5ecb3b71f413d}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!left@{left}}
+\index{left@{left}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}\label{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}\label{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}\label{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}\label{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}\label{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}, and \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}\label{classokapi_1_1_skid_steer_model_af8885fc16e654eafa872dd7c760591cf}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6e4d43a1f3027798c0451c93f8cde057}{okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}\label{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!right@{right}}
+\index{right@{right}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}\label{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!right@{right}}
+\index{right@{right}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}\label{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!right@{right}}
+\index{right@{right}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}\label{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!right@{right}}
+\index{right@{right}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}\label{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!right@{right}}
+\index{right@{right}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}\label{classokapi_1_1_skid_steer_model_ada9bd222b5aeaa0507b57906ac59dd3b}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!right@{right}}
+\index{right@{right}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}\label{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}\label{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}\label{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}\label{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}\label{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}\label{classokapi_1_1_skid_steer_model_af02dab85c80cf8aa226b33a39851feff}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}\label{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}\label{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}\label{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}\label{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}\label{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}\label{classokapi_1_1_skid_steer_model_a84c100815058f4dcdc958b3349713f73}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}\label{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}\label{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}\label{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}\label{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}\label{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}\label{classokapi_1_1_skid_steer_model_a8922c028a9f09893061938fe50fb2a79}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}\label{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}\label{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}\label{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}\label{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}\label{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}\label{classokapi_1_1_skid_steer_model_ad890989e345cfd7455436bc5dd6efdcc}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}\label{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}\label{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}\label{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}\label{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}\label{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}\label{classokapi_1_1_skid_steer_model_a4beda353f201fa72fc8d31f47a08d473}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}\label{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}\label{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}\label{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}\label{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}\label{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}\label{classokapi_1_1_skid_steer_model_ad4dc0f8e3877b23ffb8ae58903bdffb7}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}\label{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!stop@{stop}}
+\index{stop@{stop}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}\label{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!stop@{stop}}
+\index{stop@{stop}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}\label{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!stop@{stop}}
+\index{stop@{stop}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}\label{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!stop@{stop}}
+\index{stop@{stop}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}\label{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!stop@{stop}}
+\index{stop@{stop}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}\label{classokapi_1_1_skid_steer_model_a98d212cff8bad647ada6bcd3054c7581}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!stop@{stop}}
+\index{stop@{stop}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}\label{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!tank@{tank}}
+\index{tank@{tank}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}\label{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!tank@{tank}}
+\index{tank@{tank}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}\label{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!tank@{tank}}
+\index{tank@{tank}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}\label{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!tank@{tank}}
+\index{tank@{tank}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}\label{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!tank@{tank}}
+\index{tank@{tank}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}\label{classokapi_1_1_skid_steer_model_aa51195896f1be6afe661d5c9a8e6ea4e}} 
+\index{okapi::SkidSteerModel@{okapi::SkidSteerModel}!tank@{tank}}
+\index{tank@{tank}!okapi::SkidSteerModel@{okapi::SkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Skid\+Steer\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pros/\+Pros-\/6-\/25-\/22/include/okapi/api/chassis/model/skid\+Steer\+Model.\+hpp\item 
+Pros/\+Pros-\/7-\/13-\/22/include/okapi/api/chassis/model/skid\+Steer\+Model.\+hpp\item 
+Pros/\+Pros-\/7-\/9-\/22/include/okapi/api/chassis/model/skid\+Steer\+Model.\+hpp\item 
+Pros/test-\/3/include/okapi/api/chassis/model/skid\+Steer\+Model.\+hpp\item 
+Pros/test-\/5/include/okapi/api/chassis/model/skid\+Steer\+Model.\+hpp\item 
+Pros/test-\/6/include/okapi/api/chassis/model/skid\+Steer\+Model.\+hpp\end{DoxyCompactItemize}

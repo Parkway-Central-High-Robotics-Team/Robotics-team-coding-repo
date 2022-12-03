@@ -1,0 +1,118 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__objx_2lv__preload_8h_source}{}\doxysection{lv\+\_\+preload.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__objx_2lv__preload_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_preload.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_preload.h}}
+\mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__objx_2lv__preload_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_PRELOAD\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_PRELOAD\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_PRELOAD != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_ARC == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_preload: lv\_arc is required. Enable it in lv\_conf.h (USE\_LV\_ARC  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#if USE\_LV\_ANIMATION == 0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#error "{}lv\_preload: animations are required. Enable it in lv\_conf.h (USE\_LV\_ANIMATION  1) "{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}lv\_arc.h"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{37 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{38 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{41 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{42 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{45     LV\_PRELOAD\_TYPE\_SPINNING\_ARC,}
+\DoxyCodeLine{46     LV\_PRELOAD\_TYPE\_FILLSPIN\_ARC,}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} uint8\_t lv\_preloader\_type\_t;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{/*Data of pre loader*/}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{52     lv\_arc\_ext\_t arc; \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{53     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{54     uint16\_t arc\_length;            \textcolor{comment}{/*Length of the spinning indicator in degree*/}}
+\DoxyCodeLine{55     uint16\_t time;                  \textcolor{comment}{/*Time of one round*/}}
+\DoxyCodeLine{56     lv\_preloader\_type\_t anim\_type;  \textcolor{comment}{/*Type of the arc animation*/}}
+\DoxyCodeLine{57 \} lv\_preload\_ext\_t;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{/*Styles*/}}
+\DoxyCodeLine{61 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{62     LV\_PRELOAD\_STYLE\_MAIN,}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} uint8\_t lv\_preload\_style\_t;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{67 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{68 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{76 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_preload\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{79 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{80 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{87 \textcolor{keywordtype}{void} lv\_preload\_set\_arc\_length(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload, uint16\_t deg);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{94 \textcolor{keywordtype}{void} lv\_preload\_set\_spin\_time(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload, uint16\_t time);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{97 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{98 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} lv\_preload\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload, lv\_preload\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{113 \textcolor{keywordtype}{void} lv\_preload\_set\_animation\_type(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload, lv\_preloader\_type\_t type);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{116 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{117 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123 uint16\_t lv\_preload\_get\_arc\_length(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{129 uint16\_t lv\_preload\_get\_spin\_time(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{137 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_preload\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload, lv\_preload\_style\_t type);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{144 lv\_preloader\_type\_t lv\_preload\_get\_animation\_type(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * preload);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{147 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{148 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{void} lv\_preload\_spinner\_animation(\textcolor{keywordtype}{void} * ptr, int32\_t val);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{159 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{160 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_PRELOAD*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{165 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_PRELOAD\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

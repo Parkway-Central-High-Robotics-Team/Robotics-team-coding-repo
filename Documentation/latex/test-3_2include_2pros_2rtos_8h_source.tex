@@ -1,0 +1,162 @@
+\hypertarget{test-3_2include_2pros_2rtos_8h_source}{}\doxysection{rtos.\+h}
+\label{test-3_2include_2pros_2rtos_8h_source}\index{Pros/test-\/3/include/pros/rtos.h@{Pros/test-\/3/include/pros/rtos.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef \_PROS\_RTOS\_H\_}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define \_PROS\_RTOS\_H\_}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{29 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// The highest priority that can be assigned to a task. Beware of deadlock.}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define TASK\_PRIORITY\_MAX 16}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{// The lowest priority that can be assigned to a task.}}
+\DoxyCodeLine{36 \textcolor{comment}{// This may cause severe performance problems and is generally not recommended.}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define TASK\_PRIORITY\_MIN 1}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// The default task priority, which should be used for most tasks.}}
+\DoxyCodeLine{40 \textcolor{comment}{// Default tasks such as autonomous() inherit this priority.}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define TASK\_PRIORITY\_DEFAULT 8}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{// The recommended stack size for a new task. This stack size is used for}}
+\DoxyCodeLine{44 \textcolor{comment}{// default tasks such as autonomous(). This equates to 32,768 bytes, or 128}}
+\DoxyCodeLine{45 \textcolor{comment}{// times the default stack size for a task in PROS 2.}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define TASK\_STACK\_DEPTH\_DEFAULT 0x2000}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{// The minimal stack size for a task. This equates to 2048 bytes, or 8 times the}}
+\DoxyCodeLine{49 \textcolor{comment}{// default stack size for a task in PROS 2.}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define TASK\_STACK\_DEPTH\_MIN 0x200}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{// The maximum number of characters allowed in a task's name.}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define TASK\_NAME\_MAX\_LEN 32}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{// The maximum timeout value that can be given to, for instance, a mutex grab.}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define TIMEOUT\_MAX ((uint32\_t)0xffffffffUL)}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* task\_t;}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} void (*task\_fn\_t)(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{62     E\_TASK\_STATE\_RUNNING = 0,}
+\DoxyCodeLine{63     E\_TASK\_STATE\_READY,}
+\DoxyCodeLine{64     E\_TASK\_STATE\_BLOCKED,}
+\DoxyCodeLine{65     E\_TASK\_STATE\_SUSPENDED,}
+\DoxyCodeLine{66     E\_TASK\_STATE\_DELETED,}
+\DoxyCodeLine{67     E\_TASK\_STATE\_INVALID}
+\DoxyCodeLine{68 \} task\_state\_e\_t;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{71     E\_NOTIFY\_ACTION\_NONE,}
+\DoxyCodeLine{72     E\_NOTIFY\_ACTION\_BITS,}
+\DoxyCodeLine{73     E\_NOTIFY\_ACTION\_INCR,}
+\DoxyCodeLine{74     E\_NOTIFY\_ACTION\_OWRITE,}
+\DoxyCodeLine{75     E\_NOTIFY\_ACTION\_NO\_OWRITE}
+\DoxyCodeLine{76 \} notify\_action\_e\_t;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#ifdef PROS\_USE\_SIMPLE\_NAMES}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define TASK\_STATE\_RUNNING pros::E\_TASK\_STATE\_RUNNING}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define TASK\_STATE\_READY pros::E\_TASK\_STATE\_READY}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define TASK\_STATE\_BLOCKED pros::E\_TASK\_STATE\_BLOCKED}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define TASK\_STATE\_SUSPENDED pros::E\_TASK\_STATE\_SUSPENDED}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define TASK\_STATE\_DELETED pros::E\_TASK\_STATE\_DELETED}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define TASK\_STATE\_INVALID pros::E\_TASK\_STATE\_INVALID}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_NONE pros::E\_NOTIFY\_ACTION\_NONE}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_BITS pros::E\_NOTIFY\_ACTION\_BITS}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_INCR pros::E\_NOTIFY\_ACTION\_INCR}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_OWRITE pros::E\_NOTIFY\_ACTION\_OWRITE}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_NO\_OWRITE pros::E\_NOTIFY\_ACTION\_NO\_OWRITE}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define TASK\_STATE\_RUNNING E\_TASK\_STATE\_RUNNING}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define TASK\_STATE\_READY E\_TASK\_STATE\_READY}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define TASK\_STATE\_BLOCKED E\_TASK\_STATE\_BLOCKED}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define TASK\_STATE\_SUSPENDED E\_TASK\_STATE\_SUSPENDED}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define TASK\_STATE\_DELETED E\_TASK\_STATE\_DELETED}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define TASK\_STATE\_INVALID E\_TASK\_STATE\_INVALID}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_NONE E\_NOTIFY\_ACTION\_NONE}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_BITS E\_NOTIFY\_ACTION\_BITS}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_INCR E\_NOTIFY\_ACTION\_INCR}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_OWRITE E\_NOTIFY\_ACTION\_OWRITE}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define NOTIFY\_ACTION\_NO\_OWRITE E\_NOTIFY\_ACTION\_NO\_OWRITE}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* mutex\_t;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define CURRENT\_TASK ((pros::task\_t)NULL)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define CURRENT\_TASK ((task\_t)NULL)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{118 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{126 uint32\_t millis(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{133 uint64\_t micros(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{162 task\_t task\_create(task\_fn\_t function, \textcolor{keywordtype}{void}* \textcolor{keyword}{const} parameters, uint32\_t prio, \textcolor{keyword}{const} uint16\_t stack\_depth,}
+\DoxyCodeLine{163                    \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} name);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{176 \textcolor{keywordtype}{void} task\_delete(task\_t task);}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{188 \textcolor{keywordtype}{void} task\_delay(\textcolor{keyword}{const} uint32\_t milliseconds);}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{keywordtype}{void} delay(\textcolor{keyword}{const} uint32\_t milliseconds);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{205 \textcolor{keywordtype}{void} task\_delay\_until(uint32\_t* \textcolor{keyword}{const} prev\_time, \textcolor{keyword}{const} uint32\_t delta);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{215 uint32\_t task\_get\_priority(task\_t task);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{229 \textcolor{keywordtype}{void} task\_set\_priority(task\_t task, uint32\_t prio);}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{239 task\_state\_e\_t task\_get\_state(task\_t task);}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{247 \textcolor{keywordtype}{void} task\_suspend(task\_t task);}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{255 \textcolor{keywordtype}{void} task\_resume(task\_t task);}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{265 uint32\_t task\_get\_count(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{275 \textcolor{keywordtype}{char}* task\_get\_name(task\_t task);}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{287 task\_t task\_get\_by\_name(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{295 task\_t task\_get\_current();}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{308 uint32\_t task\_notify(task\_t task);}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{323 \textcolor{keywordtype}{void} task\_join(task\_t task);}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{349 uint32\_t task\_notify\_ext(task\_t task, uint32\_t value, notify\_action\_e\_t action, uint32\_t* prev\_value);}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{367 uint32\_t task\_notify\_take(\textcolor{keywordtype}{bool} clear\_on\_exit, uint32\_t timeout);}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{380 \textcolor{keywordtype}{bool} task\_notify\_clear(task\_t task);}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{391 mutex\_t mutex\_create(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{411 \textcolor{keywordtype}{bool} mutex\_take(mutex\_t mutex, uint32\_t timeout);}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{426 \textcolor{keywordtype}{bool} mutex\_give(mutex\_t mutex);}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{434 \textcolor{keywordtype}{void} mutex\_delete(mutex\_t mutex);}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{437 \}  \textcolor{comment}{// namespace c}}
+\DoxyCodeLine{438 \}  \textcolor{comment}{// namespace pros}}
+\DoxyCodeLine{439 \}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_PROS\_RTOS\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,843 @@
+\hypertarget{test-6_2include_2pros_2screen_8h}{}\doxysection{Pros/test-\/6/include/pros/screen.h File Reference}
+\label{test-6_2include_2pros_2screen_8h}\index{Pros/test-\/6/include/pros/screen.h@{Pros/test-\/6/include/pros/screen.h}}
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pros/colors.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structscreen__touch__status__s}{screen\+\_\+touch\+\_\+status\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structscreen__touch__status__s}{screen\+\_\+touch\+\_\+status\+\_\+s}} \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a456e7026bc698ebfc65b14fa640166b1}{screen\+\_\+touch\+\_\+status\+\_\+s\+\_\+t}}
+\item 
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a48080ef3890c1cc5698a1fbc59587d18}\label{test-6_2include_2pros_2screen_8h_a48080ef3890c1cc5698a1fbc59587d18}} 
+typedef void($\ast$ {\bfseries touch\+\_\+event\+\_\+cb\+\_\+fn\+\_\+t}) (int16\+\_\+t, int16\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}} \{ \newline
+\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}{E\+\_\+\+TEXT\+\_\+\+SMALL}} = 0
+, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}{E\+\_\+\+TEXT\+\_\+\+MEDIUM}}
+, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}{E\+\_\+\+TEXT\+\_\+\+LARGE}}
+, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}{E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER}}
+, \newline
+\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}{E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER}}
+, \mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}{E\+\_\+\+TEXT\+\_\+\+SMALL}} = 0
+, \mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}{E\+\_\+\+TEXT\+\_\+\+MEDIUM}}
+, \mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}{E\+\_\+\+TEXT\+\_\+\+LARGE}}
+, \newline
+\mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}{E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER}}
+, \mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}{E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER}}
+, \mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}{E\+\_\+\+TEXT\+\_\+\+SMALL}} = 0
+, \mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}{E\+\_\+\+TEXT\+\_\+\+MEDIUM}}
+, \newline
+\mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}{E\+\_\+\+TEXT\+\_\+\+LARGE}}
+, \mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}{E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER}}
+, \mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}{E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER}}
+, \mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}{E\+\_\+\+TEXT\+\_\+\+SMALL}} = 0
+, \newline
+\mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}{E\+\_\+\+TEXT\+\_\+\+MEDIUM}}
+, \mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}{E\+\_\+\+TEXT\+\_\+\+LARGE}}
+, \mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}{E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER}}
+, \mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}{E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER}}
+, \newline
+\mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}{E\+\_\+\+TEXT\+\_\+\+SMALL}} = 0
+, \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}{E\+\_\+\+TEXT\+\_\+\+MEDIUM}}
+, \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}{E\+\_\+\+TEXT\+\_\+\+LARGE}}
+, \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}{E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER}}
+, \newline
+\mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}{E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER}}
+ \}
+\item 
+enum \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\+\_\+touch\+\_\+e\+\_\+t}} \{ \newline
+\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}{E\+\_\+\+TOUCH\+\_\+\+RELEASED}} = 0
+, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}{E\+\_\+\+TOUCH\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}{E\+\_\+\+TOUCH\+\_\+\+HELD}}
+, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}{E\+\_\+\+TOUCH\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}{E\+\_\+\+TOUCH\+\_\+\+RELEASED}} = 0
+, \mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}{E\+\_\+\+TOUCH\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}{E\+\_\+\+TOUCH\+\_\+\+HELD}}
+, \mbox{\hyperlink{_pros-7-9-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}{E\+\_\+\+TOUCH\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}{E\+\_\+\+TOUCH\+\_\+\+RELEASED}} = 0
+, \mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}{E\+\_\+\+TOUCH\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}{E\+\_\+\+TOUCH\+\_\+\+HELD}}
+, \mbox{\hyperlink{test-3_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}{E\+\_\+\+TOUCH\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}{E\+\_\+\+TOUCH\+\_\+\+RELEASED}} = 0
+, \mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}{E\+\_\+\+TOUCH\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}{E\+\_\+\+TOUCH\+\_\+\+HELD}}
+, \mbox{\hyperlink{test-5_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}{E\+\_\+\+TOUCH\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}{E\+\_\+\+TOUCH\+\_\+\+RELEASED}} = 0
+, \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}{E\+\_\+\+TOUCH\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}{E\+\_\+\+TOUCH\+\_\+\+HELD}}
+, \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}{E\+\_\+\+TOUCH\+\_\+\+ERROR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a62f9dcf3cbac6d605078a8bce73dad14}{screen\+\_\+set\+\_\+pen}} (uint32\+\_\+t color)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_ad4fe67ad5a03388e499862152affe6ac}{screen\+\_\+set\+\_\+eraser}} (uint32\+\_\+t color)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a6f56e303e19c522489c5f905f4d31889}{screen\+\_\+get\+\_\+pen}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_afe392493bec93b1caacdd5cf4edbd430}{screen\+\_\+get\+\_\+eraser}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a178eb27a4d5affe517df03b3eeec1125}{screen\+\_\+erase}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a37388ede171fc34a3db49bf3f3de3703}{screen\+\_\+scroll}} (int16\+\_\+t start\+\_\+line, int16\+\_\+t lines)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a5856a0396f73699ad3ea91b0ffeff481}{screen\+\_\+scroll\+\_\+area}} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1, int16\+\_\+t lines)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a6972837c5e7428bcbbc2bd621c45be17}{screen\+\_\+copy\+\_\+area}} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1, uint32\+\_\+t $\ast$buf, int32\+\_\+t stride)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_afbc1b69128bfb15f1352268335b5d031}{screen\+\_\+draw\+\_\+pixel}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a49be39f46e92faeacb3520555d27939b}{screen\+\_\+erase\+\_\+pixel}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a3ff7faa131f8bda06cef97b7913189c7}{screen\+\_\+draw\+\_\+line}} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a06a6f1a0a4f7e442c27add550e1db9d6}{screen\+\_\+erase\+\_\+line}} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a80ed9c5310c8adcc85198af0e8cc5208}{screen\+\_\+draw\+\_\+rect}} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a2e4927561131081a3853308d88ba4a1d}{screen\+\_\+erase\+\_\+rect}} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a869513cfbc7cbe000eb2f7351100e03a}{screen\+\_\+fill\+\_\+rect}} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a69b5824a0290babdcdd829d8b222b489}{screen\+\_\+draw\+\_\+circle}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t radius)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_aeb391bb1bb9593e3c922ae1596450af6}{screen\+\_\+erase\+\_\+circle}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t radius)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_af83da513de1a65c5b1bdc510b2aaedd5}{screen\+\_\+fill\+\_\+circle}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t radius)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_aaa873ed6506b8fd2ccfe89f298e99468}{screen\+\_\+print}} (\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}} txt\+\_\+fmt, const int16\+\_\+t line, const char $\ast$text,...)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a7b067e0508dd2283359b2fd09437b992}{screen\+\_\+print\+\_\+at}} (\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}} txt\+\_\+fmt, const int16\+\_\+t x, const int16\+\_\+t y, const char $\ast$text,...)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_abef283480ed7588907015a99cae49921}{screen\+\_\+vprintf}} (\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}} txt\+\_\+fmt, const int16\+\_\+t line, const char $\ast$text, va\+\_\+list args)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a192eb77b4155b36b365b4ca58a5c58bb}{screen\+\_\+vprintf\+\_\+at}} (\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}} txt\+\_\+fmt, const int16\+\_\+t x, const int16\+\_\+t y, const char $\ast$text, va\+\_\+list args)
+\item 
+\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a456e7026bc698ebfc65b14fa640166b1}{screen\+\_\+touch\+\_\+status\+\_\+s\+\_\+t}} \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a4f17500516d102a7892cdfc494fff9fb}{screen\+\_\+touch\+\_\+status}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2pros_2screen_8h_a483e08c81be655bbb0e9c0a7101ea50e}{screen\+\_\+touch\+\_\+callback}} (touch\+\_\+event\+\_\+cb\+\_\+fn\+\_\+t cb, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\+\_\+touch\+\_\+e\+\_\+t}} event\+\_\+type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Brain screen display and touch functions.
+
+Contains user calls to the v5 screen for touching and displaying graphics.
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2017-\/2021, Purdue University ACM SIGBots.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a456e7026bc698ebfc65b14fa640166b1}\label{test-6_2include_2pros_2screen_8h_a456e7026bc698ebfc65b14fa640166b1}} 
+\index{screen.h@{screen.h}!screen\_touch\_status\_s\_t@{screen\_touch\_status\_s\_t}}
+\index{screen\_touch\_status\_s\_t@{screen\_touch\_status\_s\_t}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_touch\_status\_s\_t}{screen\_touch\_status\_s\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structscreen__touch__status__s}{screen\+\_\+touch\+\_\+status\+\_\+s}} \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a456e7026bc698ebfc65b14fa640166b1}{screen\+\_\+touch\+\_\+status\+\_\+s\+\_\+t}}}
+
+! Struct representing screen touch status, screen last x, screen last y, press count, release count. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}} 
+\index{screen.h@{screen.h}!last\_touch\_e\_t@{last\_touch\_e\_t}}
+\index{last\_touch\_e\_t@{last\_touch\_e\_t}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{last\_touch\_e\_t}{last\_touch\_e\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\+\_\+touch\+\_\+e\+\_\+t}}}
+
+! Enum indicating what the current touch status is for the touchscreen. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}} 
+E\+\_\+\+TOUCH\+\_\+\+RELEASED&Last interaction with screen was a quick press. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}} 
+E\+\_\+\+TOUCH\+\_\+\+PRESSED&Last interaction with screen was a release. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_HELD@{E\_TOUCH\_HELD}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_HELD@{E\_TOUCH\_HELD}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}} 
+E\+\_\+\+TOUCH\+\_\+\+HELD&User is holding screen down. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}} 
+E\+\_\+\+TOUCH\+\_\+\+ERROR&An error occured while taking/returning the mutex. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}} 
+E\+\_\+\+TOUCH\+\_\+\+RELEASED&Last interaction with screen was a quick press. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}} 
+E\+\_\+\+TOUCH\+\_\+\+PRESSED&Last interaction with screen was a release. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_HELD@{E\_TOUCH\_HELD}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_HELD@{E\_TOUCH\_HELD}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}} 
+E\+\_\+\+TOUCH\+\_\+\+HELD&User is holding screen down. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}} 
+E\+\_\+\+TOUCH\+\_\+\+ERROR&An error occured while taking/returning the mutex. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}} 
+E\+\_\+\+TOUCH\+\_\+\+RELEASED&Last interaction with screen was a quick press. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}} 
+E\+\_\+\+TOUCH\+\_\+\+PRESSED&Last interaction with screen was a release. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_HELD@{E\_TOUCH\_HELD}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_HELD@{E\_TOUCH\_HELD}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}} 
+E\+\_\+\+TOUCH\+\_\+\+HELD&User is holding screen down. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}} 
+E\+\_\+\+TOUCH\+\_\+\+ERROR&An error occured while taking/returning the mutex. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}} 
+E\+\_\+\+TOUCH\+\_\+\+RELEASED&Last interaction with screen was a quick press. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}} 
+E\+\_\+\+TOUCH\+\_\+\+PRESSED&Last interaction with screen was a release. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_HELD@{E\_TOUCH\_HELD}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_HELD@{E\_TOUCH\_HELD}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}} 
+E\+\_\+\+TOUCH\+\_\+\+HELD&User is holding screen down. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}} 
+E\+\_\+\+TOUCH\+\_\+\+ERROR&An error occured while taking/returning the mutex. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_RELEASED@{E\_TOUCH\_RELEASED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}} 
+E\+\_\+\+TOUCH\+\_\+\+RELEASED&Last interaction with screen was a quick press. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_PRESSED@{E\_TOUCH\_PRESSED}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}} 
+E\+\_\+\+TOUCH\+\_\+\+PRESSED&Last interaction with screen was a release. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_HELD@{E\_TOUCH\_HELD}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_HELD@{E\_TOUCH\_HELD}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}} 
+E\+\_\+\+TOUCH\+\_\+\+HELD&User is holding screen down. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TOUCH\_ERROR@{E\_TOUCH\_ERROR}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}\label{test-6_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}} 
+E\+\_\+\+TOUCH\+\_\+\+ERROR&An error occured while taking/returning the mutex. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}} 
+\index{screen.h@{screen.h}!text\_format\_e\_t@{text\_format\_e\_t}}
+\index{text\_format\_e\_t@{text\_format\_e\_t}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{text\_format\_e\_t}{text\_format\_e\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}}}
+
+! Different font sizes that can be used in printing text. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_SMALL@{E\_TEXT\_SMALL}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_SMALL@{E\_TEXT\_SMALL}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}} 
+E\+\_\+\+TEXT\+\_\+\+SMALL&Small text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM&Normal/\+Medium text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE@{E\_TEXT\_LARGE}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE@{E\_TEXT\_LARGE}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE&Large text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER&Medium centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER&Large centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_SMALL@{E\_TEXT\_SMALL}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_SMALL@{E\_TEXT\_SMALL}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}} 
+E\+\_\+\+TEXT\+\_\+\+SMALL&Small text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM&Normal/\+Medium text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE@{E\_TEXT\_LARGE}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE@{E\_TEXT\_LARGE}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE&Large text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER&Medium centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER&Large centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_SMALL@{E\_TEXT\_SMALL}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_SMALL@{E\_TEXT\_SMALL}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}} 
+E\+\_\+\+TEXT\+\_\+\+SMALL&Small text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM&Normal/\+Medium text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE@{E\_TEXT\_LARGE}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE@{E\_TEXT\_LARGE}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE&Large text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER&Medium centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER&Large centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_SMALL@{E\_TEXT\_SMALL}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_SMALL@{E\_TEXT\_SMALL}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}} 
+E\+\_\+\+TEXT\+\_\+\+SMALL&Small text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM&Normal/\+Medium text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE@{E\_TEXT\_LARGE}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE@{E\_TEXT\_LARGE}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE&Large text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER&Medium centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER&Large centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_SMALL@{E\_TEXT\_SMALL}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_SMALL@{E\_TEXT\_SMALL}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}} 
+E\+\_\+\+TEXT\+\_\+\+SMALL&Small text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM@{E\_TEXT\_MEDIUM}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM&Normal/\+Medium text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE@{E\_TEXT\_LARGE}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE@{E\_TEXT\_LARGE}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE&Large text font size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_MEDIUM\_CENTER@{E\_TEXT\_MEDIUM\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}} 
+E\+\_\+\+TEXT\+\_\+\+MEDIUM\+\_\+\+CENTER&Medium centered text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}!screen.h@{screen.h}}\index{screen.h@{screen.h}!E\_TEXT\_LARGE\_CENTER@{E\_TEXT\_LARGE\_CENTER}}}\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}\label{test-6_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}} 
+E\+\_\+\+TEXT\+\_\+\+LARGE\+\_\+\+CENTER&Large centered text. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a6972837c5e7428bcbbc2bd621c45be17}\label{test-6_2include_2pros_2screen_8h_a6972837c5e7428bcbbc2bd621c45be17}} 
+\index{screen.h@{screen.h}!screen\_copy\_area@{screen\_copy\_area}}
+\index{screen\_copy\_area@{screen\_copy\_area}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_copy\_area()}{screen\_copy\_area()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+copy\+\_\+area (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1,  }\item[{uint32\+\_\+t $\ast$}]{buf,  }\item[{int32\+\_\+t}]{stride }\end{DoxyParamCaption})}
+
+Copy a screen region (designated by a rectangle) from an off-\/screen buffer to the screen
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0} & The (x,y) coordinates of the first corner of the rectangular region of the screen \\
+\hline
+{\em x1,y1} & The (x,y) coordinates of the second corner of the rectangular region of the screen \\
+\hline
+{\em buf} & Off-\/screen buffer containing screen data \\
+\hline
+{\em stride} & Off-\/screen buffer width in pixels, such that image size is stride-\/padding\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a69b5824a0290babdcdd829d8b222b489}\label{test-6_2include_2pros_2screen_8h_a69b5824a0290babdcdd829d8b222b489}} 
+\index{screen.h@{screen.h}!screen\_draw\_circle@{screen\_draw\_circle}}
+\index{screen\_draw\_circle@{screen\_draw\_circle}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_draw\_circle()}{screen\_draw\_circle()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+draw\+\_\+circle (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{radius }\end{DoxyParamCaption})}
+
+Draw a circle on the screen using the current pen color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & The (x,y) coordinates of the center of the circle \\
+\hline
+{\em r} & The radius of the circle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a3ff7faa131f8bda06cef97b7913189c7}\label{test-6_2include_2pros_2screen_8h_a3ff7faa131f8bda06cef97b7913189c7}} 
+\index{screen.h@{screen.h}!screen\_draw\_line@{screen\_draw\_line}}
+\index{screen\_draw\_line@{screen\_draw\_line}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_draw\_line()}{screen\_draw\_line()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+draw\+\_\+line (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1 }\end{DoxyParamCaption})}
+
+Draw a line on the screen using the current pen color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0} & The (x, y) coordinates of the first point of the line \\
+\hline
+{\em x1,y1} & The (x, y) coordinates of the second point of the line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_afbc1b69128bfb15f1352268335b5d031}\label{test-6_2include_2pros_2screen_8h_afbc1b69128bfb15f1352268335b5d031}} 
+\index{screen.h@{screen.h}!screen\_draw\_pixel@{screen\_draw\_pixel}}
+\index{screen\_draw\_pixel@{screen\_draw\_pixel}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_draw\_pixel()}{screen\_draw\_pixel()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Draw a single pixel on the screen using the current pen color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & The (x,y) coordinates of the pixel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a80ed9c5310c8adcc85198af0e8cc5208}\label{test-6_2include_2pros_2screen_8h_a80ed9c5310c8adcc85198af0e8cc5208}} 
+\index{screen.h@{screen.h}!screen\_draw\_rect@{screen\_draw\_rect}}
+\index{screen\_draw\_rect@{screen\_draw\_rect}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_draw\_rect()}{screen\_draw\_rect()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+draw\+\_\+rect (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1 }\end{DoxyParamCaption})}
+
+Draw a rectangle on the screen using the current pen color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0} & The (x,y) coordinates of the first point of the rectangle \\
+\hline
+{\em x1,y1} & The (x,y) coordinates of the second point of the rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a178eb27a4d5affe517df03b3eeec1125}\label{test-6_2include_2pros_2screen_8h_a178eb27a4d5affe517df03b3eeec1125}} 
+\index{screen.h@{screen.h}!screen\_erase@{screen\_erase}}
+\index{screen\_erase@{screen\_erase}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_erase()}{screen\_erase()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+erase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clear display with eraser color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_aeb391bb1bb9593e3c922ae1596450af6}\label{test-6_2include_2pros_2screen_8h_aeb391bb1bb9593e3c922ae1596450af6}} 
+\index{screen.h@{screen.h}!screen\_erase\_circle@{screen\_erase\_circle}}
+\index{screen\_erase\_circle@{screen\_erase\_circle}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_erase\_circle()}{screen\_erase\_circle()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+erase\+\_\+circle (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{radius }\end{DoxyParamCaption})}
+
+Erase a circle on the screen using the current eraser color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & The (x,y) coordinates of the center of the circle \\
+\hline
+{\em r} & The radius of the circle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a06a6f1a0a4f7e442c27add550e1db9d6}\label{test-6_2include_2pros_2screen_8h_a06a6f1a0a4f7e442c27add550e1db9d6}} 
+\index{screen.h@{screen.h}!screen\_erase\_line@{screen\_erase\_line}}
+\index{screen\_erase\_line@{screen\_erase\_line}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_erase\_line()}{screen\_erase\_line()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+erase\+\_\+line (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1 }\end{DoxyParamCaption})}
+
+Erase a line on the screen using the current eraser color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0} & The (x, y) coordinates of the first point of the line \\
+\hline
+{\em x1,y1} & The (x, y) coordinates of the second point of the line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a49be39f46e92faeacb3520555d27939b}\label{test-6_2include_2pros_2screen_8h_a49be39f46e92faeacb3520555d27939b}} 
+\index{screen.h@{screen.h}!screen\_erase\_pixel@{screen\_erase\_pixel}}
+\index{screen\_erase\_pixel@{screen\_erase\_pixel}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_erase\_pixel()}{screen\_erase\_pixel()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+erase\+\_\+pixel (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Erase a pixel from the screen (Sets the location)
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & The (x,y) coordinates of the erased\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a2e4927561131081a3853308d88ba4a1d}\label{test-6_2include_2pros_2screen_8h_a2e4927561131081a3853308d88ba4a1d}} 
+\index{screen.h@{screen.h}!screen\_erase\_rect@{screen\_erase\_rect}}
+\index{screen\_erase\_rect@{screen\_erase\_rect}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_erase\_rect()}{screen\_erase\_rect()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+erase\+\_\+rect (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1 }\end{DoxyParamCaption})}
+
+Erase a rectangle on the screen using the current eraser color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0} & The (x,y) coordinates of the first point of the rectangle \\
+\hline
+{\em x1,y1} & The (x,y) coordinates of the second point of the rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_af83da513de1a65c5b1bdc510b2aaedd5}\label{test-6_2include_2pros_2screen_8h_af83da513de1a65c5b1bdc510b2aaedd5}} 
+\index{screen.h@{screen.h}!screen\_fill\_circle@{screen\_fill\_circle}}
+\index{screen\_fill\_circle@{screen\_fill\_circle}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_fill\_circle()}{screen\_fill\_circle()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+fill\+\_\+circle (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{radius }\end{DoxyParamCaption})}
+
+Fill a circular region of the screen using the current pen color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & The (x,y) coordinates of the center of the circle \\
+\hline
+{\em r} & The radius of the circle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a869513cfbc7cbe000eb2f7351100e03a}\label{test-6_2include_2pros_2screen_8h_a869513cfbc7cbe000eb2f7351100e03a}} 
+\index{screen.h@{screen.h}!screen\_fill\_rect@{screen\_fill\_rect}}
+\index{screen\_fill\_rect@{screen\_fill\_rect}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_fill\_rect()}{screen\_fill\_rect()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+fill\+\_\+rect (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1 }\end{DoxyParamCaption})}
+
+Fill a rectangular region of the screen using the current pen color
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0} & The (x,y) coordinates of the first point of the rectangle \\
+\hline
+{\em x1,y1} & The (x,y) coordinates of the second point of the rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_afe392493bec93b1caacdd5cf4edbd430}\label{test-6_2include_2pros_2screen_8h_afe392493bec93b1caacdd5cf4edbd430}} 
+\index{screen.h@{screen.h}!screen\_get\_eraser@{screen\_get\_eraser}}
+\index{screen\_get\_eraser@{screen\_get\_eraser}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_get\_eraser()}{screen\_get\_eraser()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+get\+\_\+eraser (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get the current eraser color.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+\begin{DoxyReturn}{Returns}
+The current eraser color in the form of a value from the enum defined in colors.\+h, or PROS\+\_\+\+ERR if there was an error taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a6f56e303e19c522489c5f905f4d31889}\label{test-6_2include_2pros_2screen_8h_a6f56e303e19c522489c5f905f4d31889}} 
+\index{screen.h@{screen.h}!screen\_get\_pen@{screen\_get\_pen}}
+\index{screen\_get\_pen@{screen\_get\_pen}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_get\_pen()}{screen\_get\_pen()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+get\+\_\+pen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get the current pen color.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+\begin{DoxyReturn}{Returns}
+The current pen color in the form of a value from the enum defined in colors.\+h, or PROS\+\_\+\+ERR if there was an error taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_aaa873ed6506b8fd2ccfe89f298e99468}\label{test-6_2include_2pros_2screen_8h_aaa873ed6506b8fd2ccfe89f298e99468}} 
+\index{screen.h@{screen.h}!screen\_print@{screen\_print}}
+\index{screen\_print@{screen\_print}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_print()}{screen\_print()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}}}]{txt\+\_\+fmt,  }\item[{const int16\+\_\+t}]{line,  }\item[{const char $\ast$}]{text,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Screen Text Display Functions ~\newline
+ These functions allow programmers to display text on the v5 screen ~\newline
+ Print a formatted string to the screen on the specified line
+
+Will default to a medium sized font by default if invalid txt\+\_\+fmt is given.
+
+
+\begin{DoxyParams}{Parameters}
+{\em txt\+\_\+fmt} & Text format enum that determines if the text is medium, large, medium\+\_\+center, or large\+\_\+center. (DOES NOT SUPPORT SMALL) \\
+\hline
+{\em line} & The line number on which to print \\
+\hline
+{\em text} & Format string \\
+\hline
+{\em ...} & Optional list of arguments for the format string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a7b067e0508dd2283359b2fd09437b992}\label{test-6_2include_2pros_2screen_8h_a7b067e0508dd2283359b2fd09437b992}} 
+\index{screen.h@{screen.h}!screen\_print\_at@{screen\_print\_at}}
+\index{screen\_print\_at@{screen\_print\_at}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_print\_at()}{screen\_print\_at()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+print\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}}}]{txt\+\_\+fmt,  }\item[{const int16\+\_\+t}]{x,  }\item[{const int16\+\_\+t}]{y,  }\item[{const char $\ast$}]{text,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Print a formatted string to the screen at the specified point
+
+Will default to a medium sized font by default if invalid txt\+\_\+fmt is given.
+
+Text formats medium\+\_\+center and large\+\_\+center will default to medium and large respectively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em txt\+\_\+fmt} & Text format enum that determines if the text is small, medium, or large. \\
+\hline
+{\em x} & The y coordinate of the top left corner of the string \\
+\hline
+{\em y} & The x coordinate of the top left corner of the string \\
+\hline
+{\em text} & Format string \\
+\hline
+{\em ...} & Optional list of arguments for the format string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a37388ede171fc34a3db49bf3f3de3703}\label{test-6_2include_2pros_2screen_8h_a37388ede171fc34a3db49bf3f3de3703}} 
+\index{screen.h@{screen.h}!screen\_scroll@{screen\_scroll}}
+\index{screen\_scroll@{screen\_scroll}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_scroll()}{screen\_scroll()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+scroll (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{start\+\_\+line,  }\item[{int16\+\_\+t}]{lines }\end{DoxyParamCaption})}
+
+Scroll lines on the display upwards.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+line} & The line from which scrolling will start \\
+\hline
+{\em lines} & The number of lines to scroll up\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a5856a0396f73699ad3ea91b0ffeff481}\label{test-6_2include_2pros_2screen_8h_a5856a0396f73699ad3ea91b0ffeff481}} 
+\index{screen.h@{screen.h}!screen\_scroll\_area@{screen\_scroll\_area}}
+\index{screen\_scroll\_area@{screen\_scroll\_area}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_scroll\_area()}{screen\_scroll\_area()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+scroll\+\_\+area (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1,  }\item[{int16\+\_\+t}]{lines }\end{DoxyParamCaption})}
+
+Scroll lines within a region on the display
+
+This function behaves in the same way as {\ttfamily screen\+\_\+scroll}, except that you specify a rectangular region within which to scroll lines instead of a start line.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0} & The (x,y) coordinates of the first corner of the rectangular region \\
+\hline
+{\em x1,y1} & The (x,y) coordinates of the second corner of the rectangular region \\
+\hline
+{\em lines} & The number of lines to scroll upwards\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_ad4fe67ad5a03388e499862152affe6ac}\label{test-6_2include_2pros_2screen_8h_ad4fe67ad5a03388e499862152affe6ac}} 
+\index{screen.h@{screen.h}!screen\_set\_eraser@{screen\_set\_eraser}}
+\index{screen\_set\_eraser@{screen\_set\_eraser}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_set\_eraser()}{screen\_set\_eraser()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+set\+\_\+eraser (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Set the eraser color for erasing and the current background.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The background color to set (it is recommended to use values from the enum defined in colors.\+h)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if the mutex was successfully returned, or PROS\+\_\+\+ERR if there was an error either taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a62f9dcf3cbac6d605078a8bce73dad14}\label{test-6_2include_2pros_2screen_8h_a62f9dcf3cbac6d605078a8bce73dad14}} 
+\index{screen.h@{screen.h}!screen\_set\_pen@{screen\_set\_pen}}
+\index{screen\_set\_pen@{screen\_set\_pen}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_set\_pen()}{screen\_set\_pen()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+set\+\_\+pen (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Screen Graphical Display Functions ~\newline
+ These functions allow programmers to display shapes on the v5 screen ~\newline
+ Set the pen color for subsequent graphics operations
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The pen color to set (it is recommended to use values from the enum defined in colors.\+h)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if the mutex was successfully returned, or PROS\+\_\+\+ERR if there was an error either taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a483e08c81be655bbb0e9c0a7101ea50e}\label{test-6_2include_2pros_2screen_8h_a483e08c81be655bbb0e9c0a7101ea50e}} 
+\index{screen.h@{screen.h}!screen\_touch\_callback@{screen\_touch\_callback}}
+\index{screen\_touch\_callback@{screen\_touch\_callback}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_touch\_callback()}{screen\_touch\_callback()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+touch\+\_\+callback (\begin{DoxyParamCaption}\item[{touch\+\_\+event\+\_\+cb\+\_\+fn\+\_\+t}]{cb,  }\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\+\_\+touch\+\_\+e\+\_\+t}}}]{event\+\_\+type }\end{DoxyParamCaption})}
+
+Assigns a callback function to be called when a certain touch event happens.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & Function pointer to callback when event type happens \\
+\hline
+{\em event\+\_\+type} & Touch event that will trigger the callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured while taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a4f17500516d102a7892cdfc494fff9fb}\label{test-6_2include_2pros_2screen_8h_a4f17500516d102a7892cdfc494fff9fb}} 
+\index{screen.h@{screen.h}!screen\_touch\_status@{screen\_touch\_status}}
+\index{screen\_touch\_status@{screen\_touch\_status}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_touch\_status()}{screen\_touch\_status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a456e7026bc698ebfc65b14fa640166b1}{screen\+\_\+touch\+\_\+status\+\_\+s\+\_\+t}} screen\+\_\+touch\+\_\+status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Screen Touch Functions ~\newline
+ These functions allow programmers to access ~\newline
+ information about screen touches ~\newline
+ Gets the touch status of the last touch of the screen.
+
+\begin{DoxyReturn}{Returns}
+The last\+\_\+touch\+\_\+e\+\_\+t enum specifier that indicates the last touch status of the screen (E\+\_\+\+TOUCH\+\_\+\+EVENT\+\_\+\+RELEASE, E\+\_\+\+TOUCH\+\_\+\+EVENT\+\_\+\+PRESS, or E\+\_\+\+TOUCH\+\_\+\+EVENT\+\_\+\+PRESS\+\_\+\+AND\+\_\+\+HOLD). This will be released by default if no action was taken. If an error occured, the screen\+\_\+touch\+\_\+status\+\_\+s\+\_\+t will have its last\+\_\+touch\+\_\+e\+\_\+t enum specifier set to E\+\_\+\+TOUCH\+\_\+\+ERR, and other values set to -\/1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_abef283480ed7588907015a99cae49921}\label{test-6_2include_2pros_2screen_8h_abef283480ed7588907015a99cae49921}} 
+\index{screen.h@{screen.h}!screen\_vprintf@{screen\_vprintf}}
+\index{screen\_vprintf@{screen\_vprintf}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_vprintf()}{screen\_vprintf()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+vprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}}}]{txt\+\_\+fmt,  }\item[{const int16\+\_\+t}]{line,  }\item[{const char $\ast$}]{text,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+Print a formatted string to the screen on the specified line
+
+Same as {\ttfamily display\+\_\+printf} except that this uses a {\ttfamily va\+\_\+list} instead of the ellipsis operator so this can be used by other functions.
+
+Will default to a medium sized font by default if invalid txt\+\_\+fmt is given. Exposed mostly for writing libraries and custom functions.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em txt\+\_\+fmt} & Text format enum that determines if the text is medium, large, medium\+\_\+center, or large\+\_\+center. (DOES NOT SUPPORT SMALL) \\
+\hline
+{\em line} & The line number on which to print \\
+\hline
+{\em text} & Format string \\
+\hline
+{\em args} & List of arguments for the format string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured while taking or returning the screen mutex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2pros_2screen_8h_a192eb77b4155b36b365b4ca58a5c58bb}\label{test-6_2include_2pros_2screen_8h_a192eb77b4155b36b365b4ca58a5c58bb}} 
+\index{screen.h@{screen.h}!screen\_vprintf\_at@{screen\_vprintf\_at}}
+\index{screen\_vprintf\_at@{screen\_vprintf\_at}!screen.h@{screen.h}}
+\doxysubsubsection{\texorpdfstring{screen\_vprintf\_at()}{screen\_vprintf\_at()}}
+{\footnotesize\ttfamily uint32\+\_\+t screen\+\_\+vprintf\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\+\_\+format\+\_\+e\+\_\+t}}}]{txt\+\_\+fmt,  }\item[{const int16\+\_\+t}]{x,  }\item[{const int16\+\_\+t}]{y,  }\item[{const char $\ast$}]{text,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+Print a formatted string to the screen at the specified coordinates
+
+Same as {\ttfamily display\+\_\+printf\+\_\+at} except that this uses a {\ttfamily va\+\_\+list} instead of the ellipsis operator so this can be used by other functions.
+
+Will default to a medium sized font by default if invalid txt\+\_\+fmt is given.
+
+Text formats medium\+\_\+center and large\+\_\+center will default to medium and large respectively. Exposed mostly for writing libraries and custom functions.
+
+This function uses the following values of errno when an error state is reached\+: EACCESS -\/ Another resource is currently trying to access the screen mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em txt\+\_\+fmt} & Text format enum that determines if the text is small, medium, or large. \\
+\hline
+{\em x,y} & The (x,y) coordinates of the top left corner of the string \\
+\hline
+{\em text} & Format string \\
+\hline
+{\em args} & List of arguments for the format string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there were no errors, or PROS\+\_\+\+ERR if an error occured while taking or returning the screen mutex. 
+\end{DoxyReturn}

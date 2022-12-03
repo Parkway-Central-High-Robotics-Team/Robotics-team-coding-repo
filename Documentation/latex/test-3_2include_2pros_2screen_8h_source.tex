@@ -1,0 +1,139 @@
+\hypertarget{test-3_2include_2pros_2screen_8h_source}{}\doxysection{screen.\+h}
+\label{test-3_2include_2pros_2screen_8h_source}\index{Pros/test-\/3/include/pros/screen.h@{Pros/test-\/3/include/pros/screen.h}}
+\mbox{\hyperlink{test-3_2include_2pros_2screen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef \_PROS\_SCREEN\_H\_}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define \_PROS\_SCREEN\_H\_}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <stdarg.h>}   }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <stdbool.h>}  }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define \_GNU\_SOURCE}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <stdio.h>}  }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#undef \_GNU\_SOURCE}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}pros/colors.h"{}}     \textcolor{comment}{// c color macros}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{29 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{36     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa1420d9a2d680d6b75be24db3f7c91a1f}{E\_TEXT\_SMALL}} = 0, }
+\DoxyCodeLine{37     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0faeba36f74589e9ba489e3db823dd4f8c1}{E\_TEXT\_MEDIUM}}, }
+\DoxyCodeLine{38     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fae5abef25575129786bd0eed837981692}{E\_TEXT\_LARGE}}, }
+\DoxyCodeLine{39     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fad64d5ae2fb3be6df5070d9a0e3f245ab}{E\_TEXT\_MEDIUM\_CENTER}}, }
+\DoxyCodeLine{40     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0fa8b45e760f21eae2742e22bf0d6ee4bf2}{E\_TEXT\_LARGE\_CENTER}} }
+\DoxyCodeLine{41 \} \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\_format\_e\_t}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{47     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eac51cdc28392272fa9c60de2ee0716474}{E\_TOUCH\_RELEASED}} = 0, }
+\DoxyCodeLine{48     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea69e0a85308d29a97ea0de44acbcd76ae}{E\_TOUCH\_PRESSED}}, }
+\DoxyCodeLine{49     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333eaa84fff7f05937c11fd5ccef4dc22c5d6}{E\_TOUCH\_HELD}}, }
+\DoxyCodeLine{50     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333ea4512d5eccf96e4d80a87bf834544fa7d}{E\_TOUCH\_ERROR}} }
+\DoxyCodeLine{51 \} \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\_touch\_e\_t}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structscreen__touch__status__s}{screen\_touch\_status\_s}} \{}
+\DoxyCodeLine{57     \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\_touch\_e\_t}} \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a4e473df306276304a64218f5cb1afad1}{touch\_status}}; }
+\DoxyCodeLine{58     int16\_t x; }
+\DoxyCodeLine{59     int16\_t y; }
+\DoxyCodeLine{60     int32\_t press\_count; }
+\DoxyCodeLine{61     int32\_t release\_count; }
+\DoxyCodeLine{62 \} \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a456e7026bc698ebfc65b14fa640166b1}{screen\_touch\_status\_s\_t}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifdef PROS\_USE\_SIMPLE\_NAMES}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define TEXT\_SMALL pros::E\_TEXT\_SMALL}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define TEXT\_MEDIUM pros::E\_TEXT\_MEDIUM}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define TEXT\_LARGE pros::E\_TEXT\_LARGE}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define TEXT\_MEDIUM\_CENTER pros::E\_TEXT\_MEDIUM\_CENTER}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define TEXT\_LARGE\_CENTER pros::E\_LARGE\_CENTER}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define TOUCH\_RELEASED pros::E\_TOUCH\_RELEASED}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define TOUCH\_PRESSED pros::E\_TOUCH\_PRESSED}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define TOUCH\_HELD pros::E\_TOUCH\_HELD}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define TEXT\_SMALL E\_TEXT\_SMALL}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define TEXT\_MEDIUM E\_TEXT\_MEDIUM}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define TEXT\_LARGE E\_TEXT\_LARGE}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define TEXT\_MEDIUM\_CENTER E\_TEXT\_MEDIUM\_CENTER}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define TEXT\_LARGE\_CENTER E\_TEXT\_LARGE\_CENTER}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define TOUCH\_RELEASED E\_TOUCH\_RELEASED}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define TOUCH\_PRESSED E\_TOUCH\_PRESSED}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define TOUCH\_HELD E\_TOUCH\_HELD}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{typedef} void (*touch\_event\_cb\_fn\_t)(int16\_t, int16\_t);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{89 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{96 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{111 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a62f9dcf3cbac6d605078a8bce73dad14}{screen\_set\_pen}}(uint32\_t color);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{126 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_ad4fe67ad5a03388e499862152affe6ac}{screen\_set\_eraser}}(uint32\_t color);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{139 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a6f56e303e19c522489c5f905f4d31889}{screen\_get\_pen}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{152 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_afe392493bec93b1caacdd5cf4edbd430}{screen\_get\_eraser}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{164 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a178eb27a4d5affe517df03b3eeec1125}{screen\_erase}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{179 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a37388ede171fc34a3db49bf3f3de3703}{screen\_scroll}}(int16\_t start\_line, int16\_t lines);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{201 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a5856a0396f73699ad3ea91b0ffeff481}{screen\_scroll\_area}}(int16\_t x0, int16\_t y0, int16\_t x1, int16\_t y1, int16\_t lines);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{222 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a6972837c5e7428bcbbc2bd621c45be17}{screen\_copy\_area}}(int16\_t x0, int16\_t y0, int16\_t x1, int16\_t y1, uint32\_t* buf, int32\_t stride);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{236 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_afbc1b69128bfb15f1352268335b5d031}{screen\_draw\_pixel}}(int16\_t x, int16\_t y);}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{250 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a49be39f46e92faeacb3520555d27939b}{screen\_erase\_pixel}}(int16\_t x, int16\_t y);}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{265 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a3ff7faa131f8bda06cef97b7913189c7}{screen\_draw\_line}}(int16\_t x0, int16\_t y0, int16\_t x1, int16\_t y1);}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{280 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a06a6f1a0a4f7e442c27add550e1db9d6}{screen\_erase\_line}}(int16\_t x0, int16\_t y0, int16\_t x1, int16\_t y1);}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{295 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a80ed9c5310c8adcc85198af0e8cc5208}{screen\_draw\_rect}}(int16\_t x0, int16\_t y0, int16\_t x1, int16\_t y1);}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{310 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a2e4927561131081a3853308d88ba4a1d}{screen\_erase\_rect}}(int16\_t x0, int16\_t y0, int16\_t x1, int16\_t y1);}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{326 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a869513cfbc7cbe000eb2f7351100e03a}{screen\_fill\_rect}}(int16\_t x0, int16\_t y0, int16\_t x1, int16\_t y1);}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{341 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a69b5824a0290babdcdd829d8b222b489}{screen\_draw\_circle}}(int16\_t x, int16\_t y, int16\_t radius);}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{356 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_aeb391bb1bb9593e3c922ae1596450af6}{screen\_erase\_circle}}(int16\_t x, int16\_t y, int16\_t radius);}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{372 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_af83da513de1a65c5b1bdc510b2aaedd5}{screen\_fill\_circle}}(int16\_t x, int16\_t y, int16\_t radius);}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{378 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{393 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_aaa873ed6506b8fd2ccfe89f298e99468}{screen\_print}}(\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\_format\_e\_t}} txt\_fmt, \textcolor{keyword}{const} int16\_t line, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, ...);}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{411 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a7b067e0508dd2283359b2fd09437b992}{screen\_print\_at}}(\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\_format\_e\_t}} txt\_fmt, \textcolor{keyword}{const} int16\_t x, \textcolor{keyword}{const} int16\_t y, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, ...);}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{434 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_abef283480ed7588907015a99cae49921}{screen\_vprintf}}(\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\_format\_e\_t}} txt\_fmt, \textcolor{keyword}{const} int16\_t line, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, va\_list args);}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{459 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a192eb77b4155b36b365b4ca58a5c58bb}{screen\_vprintf\_at}}(\mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a1793008155ca135d61e68f63e1a77e0f}{text\_format\_e\_t}} txt\_fmt, \textcolor{keyword}{const} int16\_t x, \textcolor{keyword}{const} int16\_t y, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, va\_list args);}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{466 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{476 \mbox{\hyperlink{structscreen__touch__status__s}{screen\_touch\_status\_s\_t}} \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a4f17500516d102a7892cdfc494fff9fb}{screen\_touch\_status}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{491 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a483e08c81be655bbb0e9c0a7101ea50e}{screen\_touch\_callback}}(touch\_event\_cb\_fn\_t cb, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\_touch\_e\_t}} event\_type);}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{494 \} \textcolor{comment}{//namespace c}}
+\DoxyCodeLine{495 \} \textcolor{comment}{//namespace pros}}
+\DoxyCodeLine{496 \}}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#endif  }}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

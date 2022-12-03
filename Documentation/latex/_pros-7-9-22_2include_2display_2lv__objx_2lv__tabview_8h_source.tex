@@ -1,0 +1,154 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__objx_2lv__tabview_8h_source}{}\doxysection{lv\+\_\+tabview.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__objx_2lv__tabview_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_tabview.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_tabview.h}}
+\mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__objx_2lv__tabview_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_TABVIEW\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_TABVIEW\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_TABVIEW != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_BTNM == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_tabview: lv\_btnm is required. Enable it in lv\_conf.h (USE\_LV\_BTNM  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#if USE\_LV\_PAGE == 0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#error "{}lv\_tabview: lv\_page is required. Enable it in lv\_conf.h (USE\_LV\_PAGE  1) "{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}display/lv\_objx/lv\_win.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}display/lv\_objx/lv\_page.h"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{38 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{39 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{42 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{43 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/* parametes: pointer to a tabview object, tab\_id}}
+\DoxyCodeLine{46 \textcolor{comment}{ * return: LV\_RES\_INV: to prevent the loading of the tab;  LV\_RES\_OK: if everything is fine*/}}
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} lv\_res\_t (*lv\_tabview\_action\_t)(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *, uint16\_t);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{51     LV\_TABVIEW\_BTNS\_POS\_TOP,}
+\DoxyCodeLine{52     LV\_TABVIEW\_BTNS\_POS\_BOTTOM,}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} uint8\_t lv\_tabview\_btns\_pos\_t;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{/*Data of tab*/}}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{60     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{61     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btns;}
+\DoxyCodeLine{62     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * indic;}
+\DoxyCodeLine{63     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * content;   \textcolor{comment}{/*A rectangle to show the current tab*/}}
+\DoxyCodeLine{64     \textcolor{keyword}{const} \textcolor{keywordtype}{char} ** tab\_name\_ptr;}
+\DoxyCodeLine{65     \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} point\_last;}
+\DoxyCodeLine{66     uint16\_t tab\_cur;}
+\DoxyCodeLine{67     uint16\_t tab\_cnt;}
+\DoxyCodeLine{68     uint16\_t anim\_time;}
+\DoxyCodeLine{69     uint8\_t slide\_enable :1;    \textcolor{comment}{/*1: enable horizontal sliding by touch pad*/}}
+\DoxyCodeLine{70     uint8\_t draging :1;}
+\DoxyCodeLine{71     uint8\_t drag\_hor :1;}
+\DoxyCodeLine{72     uint8\_t btns\_hide :1;}
+\DoxyCodeLine{73     lv\_tabview\_btns\_pos\_t btns\_pos :1;}
+\DoxyCodeLine{74     lv\_tabview\_action\_t tab\_load\_action;}
+\DoxyCodeLine{75 \} lv\_tabview\_ext\_t;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{78     LV\_TABVIEW\_STYLE\_BG,}
+\DoxyCodeLine{79     LV\_TABVIEW\_STYLE\_INDIC,}
+\DoxyCodeLine{80     LV\_TABVIEW\_STYLE\_BTN\_BG,}
+\DoxyCodeLine{81     LV\_TABVIEW\_STYLE\_BTN\_REL,}
+\DoxyCodeLine{82     LV\_TABVIEW\_STYLE\_BTN\_PR,}
+\DoxyCodeLine{83     LV\_TABVIEW\_STYLE\_BTN\_TGL\_REL,}
+\DoxyCodeLine{84     LV\_TABVIEW\_STYLE\_BTN\_TGL\_PR,}
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 \textcolor{keyword}{typedef} uint8\_t lv\_tabview\_style\_t;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{89 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{90 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{99 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_tabview\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{105 \textcolor{keywordtype}{void} lv\_tabview\_clean(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *obj);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{108 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{109 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{117 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_tabview\_add\_tab(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * name);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{120 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{121 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{129 \textcolor{keywordtype}{void} lv\_tabview\_set\_tab\_act(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview, uint16\_t \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} anim\_en);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{137 \textcolor{keywordtype}{void} lv\_tabview\_set\_tab\_load\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview, lv\_tabview\_action\_t action);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{144 \textcolor{keywordtype}{void} lv\_tabview\_set\_sliding(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{151 \textcolor{keywordtype}{void} lv\_tabview\_set\_anim\_time(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview, uint16\_t anim\_time);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{159 \textcolor{keywordtype}{void} lv\_tabview\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview, lv\_tabview\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{166 \textcolor{keywordtype}{void} lv\_tabview\_set\_btns\_pos(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview, lv\_tabview\_btns\_pos\_t btns\_pos);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{void} lv\_tabview\_set\_btns\_hidden(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{176 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{177 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{184 uint16\_t lv\_tabview\_get\_tab\_act(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{191 uint16\_t lv\_tabview\_get\_tab\_count(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview);}
+\DoxyCodeLine{198 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_tabview\_get\_tab(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview, uint16\_t \textcolor{keywordtype}{id});}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{205 lv\_tabview\_action\_t lv\_tabview\_get\_tab\_load\_action(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{212 \textcolor{keywordtype}{bool} lv\_tabview\_get\_sliding(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{219 uint16\_t lv\_tabview\_get\_anim\_time(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * tabview);}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{227 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_tabview\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview, lv\_tabview\_style\_t type);}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{233 lv\_tabview\_btns\_pos\_t lv\_tabview\_get\_btns\_pos(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview);}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{240 \textcolor{keywordtype}{bool} lv\_tabview\_get\_btns\_hidden(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *tabview);}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{243 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{244 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_TABVIEW*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{249 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_TABVIEW\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,153 @@
+\hypertarget{test-5_2include_2display_2lv__objx_2lv__chart_8h_source}{}\doxysection{lv\+\_\+chart.\+h}
+\label{test-5_2include_2display_2lv__objx_2lv__chart_8h_source}\index{Pros/test-\/5/include/display/lv\_objx/lv\_chart.h@{Pros/test-\/5/include/display/lv\_objx/lv\_chart.h}}
+\mbox{\hyperlink{test-5_2include_2display_2lv__objx_2lv__chart_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_CHART\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_CHART\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_CHART != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}lv\_line.h"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{28 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{29 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define LV\_CHART\_POINT\_DEF  (LV\_COORD\_MIN)}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{34 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     lv\_coord\_t * points;}
+\DoxyCodeLine{38     lv\_color\_t color;}
+\DoxyCodeLine{39     uint16\_t start\_point;}
+\DoxyCodeLine{40 \} lv\_chart\_series\_t;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/*Data of chart */}}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     \textcolor{comment}{/*No inherited ext*/} \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{46     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{47     \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} series\_ll;       \textcolor{comment}{/*Linked list for the data line pointers (stores lv\_chart\_dl\_t)*/}}
+\DoxyCodeLine{48     lv\_coord\_t ymin;          \textcolor{comment}{/*y min value (used to scale the data)*/}}
+\DoxyCodeLine{49     lv\_coord\_t ymax;          \textcolor{comment}{/*y max value (used to scale the data)*/}}
+\DoxyCodeLine{50     uint8\_t hdiv\_cnt;     \textcolor{comment}{/*Number of horizontal division lines*/}}
+\DoxyCodeLine{51     uint8\_t vdiv\_cnt;     \textcolor{comment}{/*Number of vertical division lines*/}}
+\DoxyCodeLine{52     uint16\_t point\_cnt;   \textcolor{comment}{/*Point number in a data line*/}}
+\DoxyCodeLine{53     uint8\_t type    :4;   \textcolor{comment}{/*Line, column or point chart (from 'lv\_chart\_type\_t')*/}}
+\DoxyCodeLine{54     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{55         lv\_coord\_t width;  \textcolor{comment}{/*Line width or point radius*/}}
+\DoxyCodeLine{56         uint8\_t num;       \textcolor{comment}{/*Number of data lines in dl\_ll*/}}
+\DoxyCodeLine{57         lv\_opa\_t opa;      \textcolor{comment}{/*Opacity of data lines*/}}
+\DoxyCodeLine{58         lv\_opa\_t dark;     \textcolor{comment}{/*Dark level of the point/column bottoms*/}}
+\DoxyCodeLine{59     \} series;}
+\DoxyCodeLine{60 \} lv\_chart\_ext\_t;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{/*Chart types*/}}
+\DoxyCodeLine{63 \textcolor{keyword}{enum}}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65     LV\_CHART\_TYPE\_LINE = 0x01,              \textcolor{comment}{/*Connect the points with lines*/}}
+\DoxyCodeLine{66     LV\_CHART\_TYPE\_COLUMN = 0x02,            \textcolor{comment}{/*Draw columns*/}}
+\DoxyCodeLine{67     LV\_CHART\_TYPE\_POINT = 0x04,             \textcolor{comment}{/*Draw circles on the points*/}}
+\DoxyCodeLine{68     LV\_CHART\_TYPE\_VERTICAL\_LINE = 0x08,     \textcolor{comment}{/*Draw vertical lines on points (useful when chart width == point count)*/}}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} uint8\_t lv\_chart\_type\_t;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{74 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{75 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{83 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_chart\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{86 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{87 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{95 lv\_chart\_series\_t * lv\_chart\_add\_series(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_color\_t color);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} lv\_chart\_clear\_serie(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_chart\_series\_t * serie);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{105 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{106 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} lv\_chart\_set\_div\_line\_count(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, uint8\_t hdiv, uint8\_t vdiv);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{122 \textcolor{keywordtype}{void} lv\_chart\_set\_range(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_coord\_t ymin, lv\_coord\_t ymax);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{129 \textcolor{keywordtype}{void} lv\_chart\_set\_type(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_chart\_type\_t type);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{136 \textcolor{keywordtype}{void} lv\_chart\_set\_point\_count(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, uint16\_t point\_cnt);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{143 \textcolor{keywordtype}{void} lv\_chart\_set\_series\_opa(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_opa\_t opa);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{150 \textcolor{keywordtype}{void} lv\_chart\_set\_series\_width(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_coord\_t width);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{157 \textcolor{keywordtype}{void} lv\_chart\_set\_series\_darking(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_opa\_t dark\_eff);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{165 \textcolor{keywordtype}{void} lv\_chart\_init\_points(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_chart\_series\_t * ser, lv\_coord\_t y);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{void} lv\_chart\_set\_points(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_chart\_series\_t * ser, lv\_coord\_t * y\_array);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{181 \textcolor{keywordtype}{void} lv\_chart\_set\_next(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart, lv\_chart\_series\_t * ser, lv\_coord\_t y);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{188 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_chart\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *chart, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style)}
+\DoxyCodeLine{189 \{}
+\DoxyCodeLine{190     \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ac9c62dbb12ae34560d7075baf987cdb2}{lv\_obj\_set\_style}}(chart, style);}
+\DoxyCodeLine{191 \}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{194 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{195 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{202 lv\_chart\_type\_t lv\_chart\_get\_type(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart);}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{209 uint16\_t lv\_chart\_get\_point\_cnt(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{216 lv\_opa\_t lv\_chart\_get\_series\_opa(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart);}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{223 lv\_coord\_t lv\_chart\_get\_series\_width(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{230 lv\_opa\_t lv\_chart\_get\_series\_darking(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart);}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{237 \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}}* lv\_chart\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *chart)}
+\DoxyCodeLine{238 \{}
+\DoxyCodeLine{239     \textcolor{keywordflow}{return} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a610bcf1bdb3303bd8e8791875a08132a}{lv\_obj\_get\_style}}(chart);}
+\DoxyCodeLine{240 \}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{243 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{244 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{250 \textcolor{keywordtype}{void} lv\_chart\_refresh(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * chart);}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{253 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{254 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_CHART*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{259 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_CHART\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

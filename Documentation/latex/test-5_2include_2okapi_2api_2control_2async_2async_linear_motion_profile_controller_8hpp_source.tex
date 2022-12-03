@@ -1,0 +1,129 @@
+\hypertarget{test-5_2include_2okapi_2api_2control_2async_2async_linear_motion_profile_controller_8hpp_source}{}\doxysection{async\+Linear\+Motion\+Profile\+Controller.\+hpp}
+\label{test-5_2include_2okapi_2api_2control_2async_2async_linear_motion_profile_controller_8hpp_source}\index{Pros/test-\/5/include/okapi/api/control/async/asyncLinearMotionProfileController.hpp@{Pros/test-\/5/include/okapi/api/control/async/asyncLinearMotionProfileController.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/control/async/asyncPositionController.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/control/util/pathfinderUtil.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/device/motor/abstractMotor.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}okapi/api/units/QAngularSpeed.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}okapi/api/units/QSpeed.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}okapi/api/util/logging.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}okapi/api/util/timeUtil.hpp"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}squiggles.hpp"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{21 \textcolor{keyword}{class }AsyncLinearMotionProfileController : \textcolor{keyword}{public} AsyncPositionController<std::string, double> \{}
+\DoxyCodeLine{22   \textcolor{keyword}{public}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a21a35de00d8ceb2ee1d46e1648ffc1f5}{AsyncLinearMotionProfileController}}(}
+\DoxyCodeLine{34     \textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_time_util}{TimeUtil}} \&itimeUtil,}
+\DoxyCodeLine{35     \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_pathfinder_limits}{PathfinderLimits}} \&ilimits,}
+\DoxyCodeLine{36     \textcolor{keyword}{const} std::shared\_ptr<\mbox{\hyperlink{classokapi_1_1_controller_output}{ControllerOutput<double>}}> \&ioutput,}
+\DoxyCodeLine{37     \textcolor{keyword}{const} QLength \&idiameter,}
+\DoxyCodeLine{38     \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_abstract_motor_1_1_gearset_ratio_pair}{AbstractMotor::GearsetRatioPair}} \&ipair,}
+\DoxyCodeLine{39     \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller}{AsyncLinearMotionProfileController}}(\mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller}{AsyncLinearMotionProfileController}} \&\&other) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller}{AsyncLinearMotionProfileController}} \&}
+\DoxyCodeLine{44   operator=(\mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller}{AsyncLinearMotionProfileController}} \&\&other) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller}{\string~AsyncLinearMotionProfileController}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aef2acba51417d929695ca38e309b0f6c}{generatePath}}(std::initializer\_list<QLength> iwaypoints, \textcolor{keyword}{const} std::string \&ipathId);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_ada94ccc2679082ea7fb2317458ca80d1}{generatePath}}(std::initializer\_list<QLength> iwaypoints,}
+\DoxyCodeLine{74                     \textcolor{keyword}{const} std::string \&ipathId,}
+\DoxyCodeLine{75                     \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_pathfinder_limits}{PathfinderLimits}} \&ilimits);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{85   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_acebf5db475871566e1c8f34c179b00be}{removePath}}(\textcolor{keyword}{const} std::string \&ipathId);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{92   std::vector<std::string> \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_ac8495348b177b54bc2978c8b2a27dd4e}{getPaths}}();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a18e3ba77f08cb5dd93a9cba23d4c2a1e}{setTarget}}(std::string ipathId) \textcolor{keyword}{override};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a7b1aa345da6264a6bd76ab106ade2a56}{setTarget}}(std::string ipathId, \textcolor{keywordtype}{bool} ibackwards);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{117   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a45b62483002333a2d99deea8de2af43e}{controllerSet}}(std::string ivalue) \textcolor{keyword}{override};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{124   std::string \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_afc9a1b30a5fd499c38455e8b05982be9}{getTarget}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{131   \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a04c402a19c1e37ce818df37b167d7e59}{getTarget}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{138   std::string \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a1d35cbee910816a1e9c10e77e5effe31}{getProcessValue}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{144   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_ad2609e435baad67b73b86b48730fdc9c}{waitUntilSettled}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{154   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_ab721150111976222636c3591840bfa13}{moveTo}}(\textcolor{keyword}{const} QLength \&iposition, \textcolor{keyword}{const} QLength \&itarget, \textcolor{keywordtype}{bool} ibackwards = \textcolor{keyword}{false});}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{165   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_afe90cebb82ac0f61e45b3726506e2685}{moveTo}}(\textcolor{keyword}{const} QLength \&iposition,}
+\DoxyCodeLine{166               \textcolor{keyword}{const} QLength \&itarget,}
+\DoxyCodeLine{167               \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_pathfinder_limits}{PathfinderLimits}} \&ilimits,}
+\DoxyCodeLine{168               \textcolor{keywordtype}{bool} ibackwards = \textcolor{keyword}{false});}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{176   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a31057c2bb8cface61147b1edd0d97ce5}{getError}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{186   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aecfed2c6a0ead2c38253250e26ce17d4}{isSettled}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{192   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a925381153aeda65c448489a8f2c3803c}{reset}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{198   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a56b05f978f2a98c2183fdae0f13466e7}{flipDisable}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{206   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a3072d7ac1e5d0f387f739657e9f82fd8}{flipDisable}}(\textcolor{keywordtype}{bool} iisDisabled) \textcolor{keyword}{override};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{213   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a99ae2e378cc88745c82a08b6ddf52ee4}{isDisabled}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{219   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a6cfe67f9e4db556fbed1f2c4c4252b0a}{tarePosition}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{227   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aaeecb68c5bfdc32a7d50b9f1691a0c9c}{setMaxVelocity}}(std::int32\_t imaxVelocity) \textcolor{keyword}{override};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{233   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a6b9c0bc4fc13623225f0c02b992b3ed6}{startThread}}();}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{240   \mbox{\hyperlink{class_crossplatform_thread}{CrossplatformThread}} *\mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a944e0c5f2dfa054ccfc554c8440f4aef}{getThread}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{248   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a59582a155943d96d5f6be9c06cfbf704}{forceRemovePath}}(\textcolor{keyword}{const} std::string \&ipathId);}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{251   std::shared\_ptr<Logger> logger;}
+\DoxyCodeLine{252   std::map<std::string, std::vector<squiggles::ProfilePoint>> paths\{\};}
+\DoxyCodeLine{253   \mbox{\hyperlink{structokapi_1_1_pathfinder_limits}{PathfinderLimits}} limits;}
+\DoxyCodeLine{254   std::shared\_ptr<ControllerOutput<double>> output;}
+\DoxyCodeLine{255   QLength diameter;}
+\DoxyCodeLine{256   \mbox{\hyperlink{structokapi_1_1_abstract_motor_1_1_gearset_ratio_pair}{AbstractMotor::GearsetRatioPair}} pair;}
+\DoxyCodeLine{257   \textcolor{keywordtype}{double} currentProfilePosition\{0\};}
+\DoxyCodeLine{258   TimeUtil timeUtil;}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260   \textcolor{comment}{// This must be locked when accessing the current path}}
+\DoxyCodeLine{261   \mbox{\hyperlink{class_crossplatform_mutex}{CrossplatformMutex}} currentPathMutex;}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263   std::string currentPath\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{264   std::atomic\_bool isRunning\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{265   std::atomic\_int direction\{1\};}
+\DoxyCodeLine{266   std::atomic\_bool disabled\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{267   std::atomic\_bool dtorCalled\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{268   \mbox{\hyperlink{class_crossplatform_thread}{CrossplatformThread}} *task\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270   \textcolor{keyword}{static} \textcolor{keywordtype}{void} trampoline(\textcolor{keywordtype}{void} *context);}
+\DoxyCodeLine{271   \textcolor{keywordtype}{void} loop();}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{276   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_ad2e3c8ac743516aea36baa12329eaaab}{executeSinglePath}}(\textcolor{keyword}{const} std::vector<squiggles::ProfilePoint> \&path,}
+\DoxyCodeLine{277                                  std::unique\_ptr<AbstractRate> rate);}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{285   QAngularSpeed \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a3b2473f949bab83f6837b8d448b198cb}{convertLinearToRotational}}(QSpeed linear) \textcolor{keyword}{const};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287   std::string getPathErrorMessage(\textcolor{keyword}{const} std::vector<PathfinderPoint> \&points,}
+\DoxyCodeLine{288                                   \textcolor{keyword}{const} std::string \&ipathId,}
+\DoxyCodeLine{289                                   \textcolor{keywordtype}{int} length);}
+\DoxyCodeLine{290 \};}
+\DoxyCodeLine{291 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

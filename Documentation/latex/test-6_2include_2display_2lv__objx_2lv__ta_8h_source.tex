@@ -1,0 +1,214 @@
+\hypertarget{test-6_2include_2display_2lv__objx_2lv__ta_8h_source}{}\doxysection{lv\+\_\+ta.\+h}
+\label{test-6_2include_2display_2lv__objx_2lv__ta_8h_source}\index{Pros/test-\/6/include/display/lv\_objx/lv\_ta.h@{Pros/test-\/6/include/display/lv\_objx/lv\_ta.h}}
+\mbox{\hyperlink{test-6_2include_2display_2lv__objx_2lv__ta_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_TA\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_TA\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_TA != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_PAGE == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_ta: lv\_page is required. Enable it in lv\_conf.h (USE\_LV\_PAGE  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#if USE\_LV\_LABEL == 0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#error "{}lv\_ta: lv\_label is required. Enable it in lv\_conf.h (USE\_LV\_LABEL  1) "{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}lv\_page.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}lv\_label.h"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{38 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{39 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define LV\_TA\_CURSOR\_LAST (0x7FFF) }\textcolor{comment}{/*Put the cursor after the last character*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{43 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{44 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{47     LV\_CURSOR\_NONE,}
+\DoxyCodeLine{48     LV\_CURSOR\_LINE,}
+\DoxyCodeLine{49     LV\_CURSOR\_BLOCK,}
+\DoxyCodeLine{50     LV\_CURSOR\_OUTLINE,}
+\DoxyCodeLine{51     LV\_CURSOR\_UNDERLINE,}
+\DoxyCodeLine{52     LV\_CURSOR\_HIDDEN = 0x08,    \textcolor{comment}{/*Or it to any value to hide the cursor temporally*/}}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} uint8\_t lv\_cursor\_type\_t;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{/*Data of text area*/}}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     lv\_page\_ext\_t page; \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{60     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{61     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * label;           \textcolor{comment}{/*Label of the text area*/}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{char} * pwd\_tmp;             \textcolor{comment}{/*Used to store the original text in password mode*/}}
+\DoxyCodeLine{63     \textcolor{keyword}{const} \textcolor{keywordtype}{char} * accapted\_chars;\textcolor{comment}{/*Only these characters will be accepted. NULL: accept all*/}}
+\DoxyCodeLine{64     uint16\_t max\_length;        \textcolor{comment}{/*The max. number of characters. 0: no limit*/}}
+\DoxyCodeLine{65     uint8\_t pwd\_mode :1;        \textcolor{comment}{/*Replace characters with '*' */}}
+\DoxyCodeLine{66     uint8\_t one\_line :1;        \textcolor{comment}{/*One line mode (ignore line breaks)*/}}
+\DoxyCodeLine{67     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{68         \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style;      \textcolor{comment}{/*Style of the cursor (NULL to use label's style)*/}}
+\DoxyCodeLine{69         lv\_coord\_t valid\_x;     \textcolor{comment}{/*Used when stepping up/down in text area when stepping to a shorter line. (Handled by the library)*/}}
+\DoxyCodeLine{70         uint16\_t pos;           \textcolor{comment}{/*The current cursor position (0: before 1. letter; 1: before 2. letter etc.)*/}}
+\DoxyCodeLine{71         \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} area;         \textcolor{comment}{/*Cursor area relative to the Text Area*/}}
+\DoxyCodeLine{72         uint16\_t txt\_byte\_pos;  \textcolor{comment}{/*Byte index of the letter after (on) the cursor*/}}
+\DoxyCodeLine{73         lv\_cursor\_type\_t type:4;  \textcolor{comment}{/*Shape of the cursor*/}}
+\DoxyCodeLine{74         uint8\_t state :1;       \textcolor{comment}{/*Indicates that the cursor is visible now or not (Handled by the library)*/}}
+\DoxyCodeLine{75     \} cursor;}
+\DoxyCodeLine{76 \} lv\_ta\_ext\_t;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{79     LV\_TA\_STYLE\_BG,}
+\DoxyCodeLine{80     LV\_TA\_STYLE\_SB,}
+\DoxyCodeLine{81     LV\_TA\_STYLE\_EDGE\_FLASH,}
+\DoxyCodeLine{82     LV\_TA\_STYLE\_CURSOR,}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 \textcolor{keyword}{typedef} uint8\_t lv\_ta\_style\_t;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{87 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{88 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{97 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_ta\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{101 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{102 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{110 \textcolor{keywordtype}{void} lv\_ta\_add\_char(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, uint32\_t c);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{117 \textcolor{keywordtype}{void} lv\_ta\_add\_text(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * txt);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} lv\_ta\_del\_char(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{126 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{127 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{134 \textcolor{keywordtype}{void} lv\_ta\_set\_text(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * txt);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{143 \textcolor{keywordtype}{void} lv\_ta\_set\_cursor\_pos(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, int16\_t pos);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{150 \textcolor{keywordtype}{void} lv\_ta\_set\_cursor\_type(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, lv\_cursor\_type\_t cur\_type);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{157 \textcolor{keywordtype}{void} lv\_ta\_set\_pwd\_mode(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{164 \textcolor{keywordtype}{void} lv\_ta\_set\_one\_line(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{void} lv\_ta\_set\_text\_align(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, lv\_label\_align\_t align);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{180 \textcolor{keywordtype}{void} lv\_ta\_set\_accepted\_chars(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * list);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{187 \textcolor{keywordtype}{void} lv\_ta\_set\_max\_length(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, uint16\_t num);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{194 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_ta\_set\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, lv\_action\_t action)}
+\DoxyCodeLine{195 \{}
+\DoxyCodeLine{196     lv\_page\_set\_rel\_action(ta, action);}
+\DoxyCodeLine{197 \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{204 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_ta\_set\_sb\_mode(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, lv\_sb\_mode\_t mode)}
+\DoxyCodeLine{205 \{}
+\DoxyCodeLine{206     lv\_page\_set\_sb\_mode(ta, mode);}
+\DoxyCodeLine{207 \}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{214 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_ta\_set\_scroll\_propagation(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, \textcolor{keywordtype}{bool} en)}
+\DoxyCodeLine{215 \{}
+\DoxyCodeLine{216     lv\_page\_set\_scroll\_propagation(ta, en);}
+\DoxyCodeLine{217 \}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{224 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_ta\_set\_edge\_flash(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta, \textcolor{keywordtype}{bool} en)}
+\DoxyCodeLine{225 \{}
+\DoxyCodeLine{226     lv\_page\_set\_edge\_flash(ta, en);}
+\DoxyCodeLine{227 \}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{235 \textcolor{keywordtype}{void} lv\_ta\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *ta, lv\_ta\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{238 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{239 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{246 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * lv\_ta\_get\_text(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{253 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_ta\_get\_label(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{260 uint16\_t lv\_ta\_get\_cursor\_pos(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{267 \textcolor{comment}{//bool lv\_ta\_get\_cursor\_show(const lv\_obj\_t * ta);}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{274 lv\_cursor\_type\_t lv\_ta\_get\_cursor\_type(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{281 \textcolor{keywordtype}{bool} lv\_ta\_get\_pwd\_mode(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{288 \textcolor{keywordtype}{bool} lv\_ta\_get\_one\_line(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{295 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * lv\_ta\_get\_accepted\_chars(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{302 uint16\_t lv\_ta\_get\_max\_length(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{309 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_action\_t lv\_ta\_get\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta)}
+\DoxyCodeLine{310 \{}
+\DoxyCodeLine{311     \textcolor{keywordflow}{return} lv\_page\_get\_rel\_action(ta);}
+\DoxyCodeLine{312 \}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{319 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_sb\_mode\_t lv\_ta\_get\_sb\_mode(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta)}
+\DoxyCodeLine{320 \{}
+\DoxyCodeLine{321     \textcolor{keywordflow}{return} lv\_page\_get\_sb\_mode(ta);}
+\DoxyCodeLine{322 \}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{329 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_ta\_get\_scroll\_propagation(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta)}
+\DoxyCodeLine{330 \{}
+\DoxyCodeLine{331     \textcolor{keywordflow}{return} lv\_page\_get\_scroll\_propagation(ta);}
+\DoxyCodeLine{332 \}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{339 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_ta\_get\_edge\_flash(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta)}
+\DoxyCodeLine{340 \{}
+\DoxyCodeLine{341     \textcolor{keywordflow}{return} lv\_page\_get\_edge\_flash(ta);}
+\DoxyCodeLine{342 \}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{350 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_ta\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *ta, lv\_ta\_style\_t type);}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{353 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{354 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{360 \textcolor{keywordtype}{void} lv\_ta\_cursor\_right(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{366 \textcolor{keywordtype}{void} lv\_ta\_cursor\_left(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{372 \textcolor{keywordtype}{void} lv\_ta\_cursor\_down(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{378 \textcolor{keywordtype}{void} lv\_ta\_cursor\_up(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ta);}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{381 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{382 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_TA\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{387 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_TA\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,172 @@
+\hypertarget{test-5_2include_2display_2lv__objx_2lv__btn_8h_source}{}\doxysection{lv\+\_\+btn.\+h}
+\label{test-5_2include_2display_2lv__objx_2lv__btn_8h_source}\index{Pros/test-\/5/include/display/lv\_objx/lv\_btn.h@{Pros/test-\/5/include/display/lv\_objx/lv\_btn.h}}
+\mbox{\hyperlink{test-5_2include_2display_2lv__objx_2lv__btn_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_BTN\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_BTN\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_BTN != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_CONT == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_btn: lv\_cont is required. Enable it in lv\_conf.h (USE\_LV\_CONT  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}lv\_cont.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_indev.h"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{34 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{37 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{38 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* Button states}}
+\DoxyCodeLine{41 \textcolor{comment}{ * It can be used not only by buttons but other button-\/like objects too*/}}
+\DoxyCodeLine{42 \textcolor{keyword}{enum}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     LV\_BTN\_STATE\_REL,}
+\DoxyCodeLine{45     LV\_BTN\_STATE\_PR,}
+\DoxyCodeLine{46     LV\_BTN\_STATE\_TGL\_REL,}
+\DoxyCodeLine{47     LV\_BTN\_STATE\_TGL\_PR,}
+\DoxyCodeLine{48     LV\_BTN\_STATE\_INA,}
+\DoxyCodeLine{49     LV\_BTN\_STATE\_NUM,}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} uint8\_t lv\_btn\_state\_t;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{enum}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     LV\_BTN\_ACTION\_CLICK,}
+\DoxyCodeLine{56     LV\_BTN\_ACTION\_PR,}
+\DoxyCodeLine{57     LV\_BTN\_ACTION\_LONG\_PR,}
+\DoxyCodeLine{58     LV\_BTN\_ACTION\_LONG\_PR\_REPEAT,}
+\DoxyCodeLine{59     LV\_BTN\_ACTION\_NUM,}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} uint8\_t lv\_btn\_action\_t;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/*Data of button*/}}
+\DoxyCodeLine{65 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{66 \{}
+\DoxyCodeLine{67     lv\_cont\_ext\_t cont; \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{68     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{69     lv\_action\_t actions[LV\_BTN\_ACTION\_NUM];}
+\DoxyCodeLine{70     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * styles[LV\_BTN\_STATE\_NUM];        \textcolor{comment}{/*Styles in each state*/}}
+\DoxyCodeLine{71     lv\_btn\_state\_t state;                         \textcolor{comment}{/*Current state of the button from 'lv\_btn\_state\_t' enum*/}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#if LV\_BTN\_INK\_EFFECT}}
+\DoxyCodeLine{73     uint16\_t ink\_in\_time;                         \textcolor{comment}{/*[ms] Time of ink fill effect (0: disable ink effect)*/}}
+\DoxyCodeLine{74     uint16\_t ink\_wait\_time;                       \textcolor{comment}{/*[ms] Wait before the ink disappears */}}
+\DoxyCodeLine{75     uint16\_t ink\_out\_time;                        \textcolor{comment}{/*[ms] Time of ink disappearing*/}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{77     uint8\_t toggle :1;                            \textcolor{comment}{/*1: Toggle enabled*/}}
+\DoxyCodeLine{78     uint8\_t long\_pr\_action\_executed :1;           \textcolor{comment}{/*1: Long press action executed (Handled by the library)*/}}
+\DoxyCodeLine{79 \} lv\_btn\_ext\_t;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{/*Styles*/}}
+\DoxyCodeLine{82 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{83     LV\_BTN\_STYLE\_REL,}
+\DoxyCodeLine{84     LV\_BTN\_STYLE\_PR,}
+\DoxyCodeLine{85     LV\_BTN\_STYLE\_TGL\_REL,}
+\DoxyCodeLine{86     LV\_BTN\_STYLE\_TGL\_PR,}
+\DoxyCodeLine{87     LV\_BTN\_STYLE\_INA,}
+\DoxyCodeLine{88 \};}
+\DoxyCodeLine{89 \textcolor{keyword}{typedef} uint8\_t lv\_btn\_style\_t;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{92 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{93 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{101 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_btn\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{104 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{105 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} lv\_btn\_set\_toggle(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, \textcolor{keywordtype}{bool} tgl);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{119 \textcolor{keywordtype}{void} lv\_btn\_set\_state(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, lv\_btn\_state\_t state);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} lv\_btn\_toggle(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{132 \textcolor{keywordtype}{void} lv\_btn\_set\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, lv\_btn\_action\_t type, lv\_action\_t action);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{139 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_btn\_set\_layout(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, lv\_layout\_t layout)}
+\DoxyCodeLine{140 \{}
+\DoxyCodeLine{141     lv\_cont\_set\_layout(btn, layout);}
+\DoxyCodeLine{142 \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{151 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_btn\_set\_fit(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, \textcolor{keywordtype}{bool} hor\_en, \textcolor{keywordtype}{bool} ver\_en)}
+\DoxyCodeLine{152 \{}
+\DoxyCodeLine{153     lv\_cont\_set\_fit(btn, hor\_en, ver\_en);}
+\DoxyCodeLine{154 \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{161 \textcolor{keywordtype}{void} lv\_btn\_set\_ink\_in\_time(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, uint16\_t time);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{168 \textcolor{keywordtype}{void} lv\_btn\_set\_ink\_wait\_time(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, uint16\_t time);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{175 \textcolor{keywordtype}{void} lv\_btn\_set\_ink\_out\_time(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, uint16\_t time);}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{183 \textcolor{keywordtype}{void} lv\_btn\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, lv\_btn\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{186 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{187 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{194 lv\_btn\_state\_t lv\_btn\_get\_state(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{201 \textcolor{keywordtype}{bool} lv\_btn\_get\_toggle(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{208 lv\_action\_t lv\_btn\_get\_action(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, lv\_btn\_action\_t type);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{215 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_layout\_t lv\_btn\_get\_layout(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn)}
+\DoxyCodeLine{216 \{}
+\DoxyCodeLine{217     \textcolor{keywordflow}{return} lv\_cont\_get\_layout(btn);}
+\DoxyCodeLine{218 \}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{225 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_btn\_get\_hor\_fit(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn)}
+\DoxyCodeLine{226 \{}
+\DoxyCodeLine{227     \textcolor{keywordflow}{return} lv\_cont\_get\_hor\_fit(btn);}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{235 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_btn\_get\_ver\_fit(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn)}
+\DoxyCodeLine{236 \{}
+\DoxyCodeLine{237     \textcolor{keywordflow}{return} lv\_cont\_get\_ver\_fit(btn);}
+\DoxyCodeLine{238 \}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{245 uint16\_t lv\_btn\_get\_ink\_in\_time(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{252 uint16\_t lv\_btn\_get\_ink\_wait\_time(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{259 uint16\_t lv\_btn\_get\_ink\_out\_time(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{267 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_btn\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn, lv\_btn\_style\_t type);}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{270 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{271 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_BUTTON*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{276 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_BTN\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

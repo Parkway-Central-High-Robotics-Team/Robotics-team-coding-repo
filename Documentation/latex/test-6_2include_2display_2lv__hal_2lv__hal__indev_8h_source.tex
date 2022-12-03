@@ -1,0 +1,144 @@
+\hypertarget{test-6_2include_2display_2lv__hal_2lv__hal__indev_8h_source}{}\doxysection{lv\+\_\+hal\+\_\+indev.\+h}
+\label{test-6_2include_2display_2lv__hal_2lv__hal__indev_8h_source}\index{Pros/test-\/6/include/display/lv\_hal/lv\_hal\_indev.h@{Pros/test-\/6/include/display/lv\_hal/lv\_hal\_indev.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef HAL\_INDEV\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define HAL\_INDEV\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{12 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{16 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{17 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}lv\_hal.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_area.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{25 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{26 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{29 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{30 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*Possible input device types*/}}
+\DoxyCodeLine{33 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{34     LV\_INDEV\_TYPE\_NONE,        \textcolor{comment}{/*Show uninitialized state*/}}
+\DoxyCodeLine{35     LV\_INDEV\_TYPE\_POINTER,     \textcolor{comment}{/*Touch pad, mouse, external button*/}}
+\DoxyCodeLine{36     LV\_INDEV\_TYPE\_KEYPAD,      \textcolor{comment}{/*Keypad or keyboard*/}}
+\DoxyCodeLine{37     LV\_INDEV\_TYPE\_BUTTON,      \textcolor{comment}{/*External (hardware button) which is assinged to a specific point of the screen*/}}
+\DoxyCodeLine{38     LV\_INDEV\_TYPE\_ENCODER,     \textcolor{comment}{/*Encoder with only Left, Right turn and a Button*/}}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} uint8\_t lv\_hal\_indev\_type\_t;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/*States for input devices*/}}
+\DoxyCodeLine{43 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{44     LV\_INDEV\_STATE\_REL = 0,}
+\DoxyCodeLine{45     LV\_INDEV\_STATE\_PR}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} uint8\_t lv\_indev\_state\_t;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/*Data type when an input device is read */}}
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{51     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{52         \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} point;      \textcolor{comment}{/*For LV\_INDEV\_TYPE\_POINTER the currently pressed point*/}}
+\DoxyCodeLine{53         uint32\_t key;          \textcolor{comment}{/*For LV\_INDEV\_TYPE\_KEYPAD the currently pressed key*/}}
+\DoxyCodeLine{54         uint32\_t btn;          \textcolor{comment}{/*For LV\_INDEV\_TYPE\_BUTTON the currently pressed button*/}}
+\DoxyCodeLine{55         int16\_t enc\_diff;      \textcolor{comment}{/*For LV\_INDEV\_TYPE\_ENCODER number of steps since the previous read*/}}
+\DoxyCodeLine{56     \};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} *user\_data;           \textcolor{comment}{/*'lv\_indev\_drv\_t.priv' for this driver*/}}
+\DoxyCodeLine{58     lv\_indev\_state\_t state;    \textcolor{comment}{/*LV\_INDEV\_STATE\_REL or LV\_INDEV\_STATE\_PR*/}}
+\DoxyCodeLine{59 \} \mbox{\hyperlink{structlv__indev__data__t}{lv\_indev\_data\_t}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{/*Initialized by the user and registered by 'lv\_indev\_add()'*/}}
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{63     lv\_hal\_indev\_type\_t type;                   \textcolor{comment}{/*Input device type*/}}
+\DoxyCodeLine{64     bool (*read)(\mbox{\hyperlink{structlv__indev__data__t}{lv\_indev\_data\_t}} *data);        \textcolor{comment}{/*Function pointer to read data. Return 'true' if there is still data to be read (buffered)*/}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} *user\_data;                            \textcolor{comment}{/*Pointer to user defined data, passed in 'lv\_indev\_data\_t' on read*/}}
+\DoxyCodeLine{66 \} \mbox{\hyperlink{structlv__indev__drv__t}{lv\_indev\_drv\_t}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__obj__t}{\_lv\_obj\_t}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{/*Run time data of input devices*/}}
+\DoxyCodeLine{71 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__indev__proc__t}{\_lv\_indev\_proc\_t}} \{}
+\DoxyCodeLine{72     lv\_indev\_state\_t state;}
+\DoxyCodeLine{73     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{74         \textcolor{keyword}{struct }\{    \textcolor{comment}{/*Pointer and button data*/}}
+\DoxyCodeLine{75             \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} act\_point;}
+\DoxyCodeLine{76             \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} last\_point;}
+\DoxyCodeLine{77             \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} vect;}
+\DoxyCodeLine{78             \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} drag\_sum;                \textcolor{comment}{/*Count the dragged pixels to check LV\_INDEV\_DRAG\_LIMIT*/}}
+\DoxyCodeLine{79             \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__obj__t}{\_lv\_obj\_t}} * act\_obj;}
+\DoxyCodeLine{80             \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__obj__t}{\_lv\_obj\_t}} * last\_obj;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82             \textcolor{comment}{/*Flags*/}}
+\DoxyCodeLine{83             uint8\_t drag\_range\_out      :1;}
+\DoxyCodeLine{84             uint8\_t drag\_in\_prog        :1;}
+\DoxyCodeLine{85             uint8\_t wait\_unil\_release   :1;}
+\DoxyCodeLine{86         \};}
+\DoxyCodeLine{87         \textcolor{keyword}{struct }\{    \textcolor{comment}{/*Keypad data*/}}
+\DoxyCodeLine{88             lv\_indev\_state\_t last\_state;}
+\DoxyCodeLine{89             uint32\_t last\_key;}
+\DoxyCodeLine{90         \};}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     uint32\_t pr\_timestamp;          \textcolor{comment}{/*Pressed time stamp*/}}
+\DoxyCodeLine{94     uint32\_t longpr\_rep\_timestamp;  \textcolor{comment}{/*Long press repeat time stamp*/}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{/*Flags*/}}
+\DoxyCodeLine{97     uint8\_t long\_pr\_sent        :1;}
+\DoxyCodeLine{98     uint8\_t reset\_query         :1;}
+\DoxyCodeLine{99     uint8\_t disabled            :1;}
+\DoxyCodeLine{100 \} \mbox{\hyperlink{struct__lv__indev__proc__t}{lv\_indev\_proc\_t}};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__indev__t}{\_lv\_indev\_t}};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{typedef} void (*lv\_indev\_feedback\_t)(\textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__indev__t}{\_lv\_indev\_t}} *, lv\_signal\_t);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__obj__t}{\_lv\_obj\_t}};}
+\DoxyCodeLine{107 \textcolor{keyword}{struct }\_lv\_group\_t;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/*The main input device descriptor with driver, runtime data ('proc') and some additional information*/}}
+\DoxyCodeLine{110 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__indev__t}{\_lv\_indev\_t}} \{}
+\DoxyCodeLine{111     \mbox{\hyperlink{structlv__indev__drv__t}{lv\_indev\_drv\_t}} driver;}
+\DoxyCodeLine{112     \mbox{\hyperlink{struct__lv__indev__proc__t}{lv\_indev\_proc\_t}} proc;}
+\DoxyCodeLine{113     lv\_indev\_feedback\_t feedback;}
+\DoxyCodeLine{114     uint32\_t last\_activity\_time;}
+\DoxyCodeLine{115     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{116         \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__obj__t}{\_lv\_obj\_t}} *cursor;       \textcolor{comment}{/*Cursor for LV\_INPUT\_TYPE\_POINTER*/}}
+\DoxyCodeLine{117         \textcolor{keyword}{struct }\_lv\_group\_t *group;      \textcolor{comment}{/*Keypad destination group*/}}
+\DoxyCodeLine{118         \textcolor{keyword}{const} \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} * btn\_points;      \textcolor{comment}{/*Array points assigned to the button ()screen will be pressed here by the buttons*/}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \};}
+\DoxyCodeLine{121     \textcolor{keyword}{struct }\mbox{\hyperlink{struct__lv__indev__t}{\_lv\_indev\_t}} *next;}
+\DoxyCodeLine{122 \} \mbox{\hyperlink{struct__lv__indev__t}{lv\_indev\_t}};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{125 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{126 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{134 \textcolor{keywordtype}{void} lv\_indev\_drv\_init(\mbox{\hyperlink{structlv__indev__drv__t}{lv\_indev\_drv\_t}} *driver);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{141 \mbox{\hyperlink{struct__lv__indev__t}{lv\_indev\_t}} * lv\_indev\_drv\_register(\mbox{\hyperlink{structlv__indev__drv__t}{lv\_indev\_drv\_t}} *driver);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{148 \mbox{\hyperlink{struct__lv__indev__t}{lv\_indev\_t}} * lv\_indev\_next(\mbox{\hyperlink{struct__lv__indev__t}{lv\_indev\_t}} * indev);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{bool} lv\_indev\_read(\mbox{\hyperlink{struct__lv__indev__t}{lv\_indev\_t}} * indev, \mbox{\hyperlink{structlv__indev__data__t}{lv\_indev\_data\_t}} *data);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{159 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{160 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{163 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

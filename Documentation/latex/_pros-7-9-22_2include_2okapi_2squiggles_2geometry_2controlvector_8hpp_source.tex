@@ -1,0 +1,50 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2squiggles_2geometry_2controlvector_8hpp_source}{}\doxysection{controlvector.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2squiggles_2geometry_2controlvector_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/squiggles/geometry/controlvector.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/squiggles/geometry/controlvector.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_GEOMETRY\_CONTROL\_VECTOR\_HPP\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_GEOMETRY\_CONTROL\_VECTOR\_HPP\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}pose.hpp"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesquiggles}{squiggles}} \{}
+\DoxyCodeLine{16 \textcolor{keyword}{class }ControlVector \{}
+\DoxyCodeLine{17   \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classsquiggles_1_1_control_vector_a12c8fb523e52cd93ae272a01564d77af}{ControlVector}}(\mbox{\hyperlink{classsquiggles_1_1_pose}{Pose}} ipose,}
+\DoxyCodeLine{27                 \textcolor{keywordtype}{double} ivel = std::nan(\textcolor{stringliteral}{"{}"{}}),}
+\DoxyCodeLine{28                 \textcolor{keywordtype}{double} iaccel = 0.0,}
+\DoxyCodeLine{29                 \textcolor{keywordtype}{double} ijerk = 0.0)}
+\DoxyCodeLine{30     : pose(ipose), vel(ivel), accel(iaccel), jerk(ijerk) \{\}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \mbox{\hyperlink{classsquiggles_1_1_control_vector}{ControlVector}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{39   std::string \mbox{\hyperlink{classsquiggles_1_1_control_vector_a524c764f919505a433c80118d4193fb1}{to\_string}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{40     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ControlVector: \{"{}} + pose.\mbox{\hyperlink{classsquiggles_1_1_pose_a95ff06d82f856e3aaa1d6dc435501e38}{to\_string}}() +}
+\DoxyCodeLine{41            \textcolor{stringliteral}{"{}, v: "{}} + std::to\_string(vel) + \textcolor{stringliteral}{"{}, a: "{}} + std::to\_string(accel) +}
+\DoxyCodeLine{42            \textcolor{stringliteral}{"{}, j: "{}} + std::to\_string(jerk) + \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{43   \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   std::string to\_csv()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{46     \textcolor{keywordflow}{return} pose.to\_csv() + \textcolor{stringliteral}{"{},"{}} + std::to\_string(vel) + \textcolor{stringliteral}{"{},"{}} +}
+\DoxyCodeLine{47            std::to\_string(accel) + \textcolor{stringliteral}{"{},"{}} + std::to\_string(jerk);}
+\DoxyCodeLine{48   \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} ControlVector\& other)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{return} pose == other.pose \&\& nearly\_equal(vel, other.vel) \&\&}
+\DoxyCodeLine{52            nearly\_equal(accel, other.accel) \&\& nearly\_equal(jerk, other.jerk);}
+\DoxyCodeLine{53   \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   Pose pose;}
+\DoxyCodeLine{56   \textcolor{keywordtype}{double} vel;}
+\DoxyCodeLine{57   \textcolor{keywordtype}{double} accel;}
+\DoxyCodeLine{58   \textcolor{keywordtype}{double} jerk;}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 \} \textcolor{comment}{// namespace squiggles}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,168 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__objx_2lv__win_8h_source}{}\doxysection{lv\+\_\+win.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__objx_2lv__win_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_win.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_win.h}}
+\mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__objx_2lv__win_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_WIN\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_WIN\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_WIN != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_BTN == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_win: lv\_btn is required. Enable it in lv\_conf.h (USE\_LV\_BTN  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#if USE\_LV\_LABEL == 0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#error "{}lv\_win: lv\_label is required. Enable it in lv\_conf.h (USE\_LV\_LABEL  1) "{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#if USE\_LV\_IMG == 0}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#error "{}lv\_win: lv\_img is required. Enable it in lv\_conf.h (USE\_LV\_IMG  1) "{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#if USE\_LV\_PAGE == 0}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#error "{}lv\_win: lv\_page is required. Enable it in lv\_conf.h (USE\_LV\_PAGE  1) "{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}lv\_cont.h"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}lv\_btn.h"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}lv\_label.h"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}lv\_img.h"{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}lv\_page.h"{}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{50 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{51 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{54 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{55 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{/*Data of window*/}}
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60     \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{61     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{62     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page;                \textcolor{comment}{/*Pointer to a page which holds the content*/}}
+\DoxyCodeLine{63     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * header;              \textcolor{comment}{/*Pointer to the header container of the window*/}}
+\DoxyCodeLine{64     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * title;               \textcolor{comment}{/*Pointer to the title label of the window*/}}
+\DoxyCodeLine{65     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_header;      \textcolor{comment}{/*Style of the header container*/}}
+\DoxyCodeLine{66     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_btn\_rel;    \textcolor{comment}{/*Control button releases style*/}}
+\DoxyCodeLine{67     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_btn\_pr;     \textcolor{comment}{/*Control button pressed style*/}}
+\DoxyCodeLine{68     lv\_coord\_t btn\_size;               \textcolor{comment}{/*Size of the control buttons (square)*/}}
+\DoxyCodeLine{69 \} lv\_win\_ext\_t;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{72     LV\_WIN\_STYLE\_BG,}
+\DoxyCodeLine{73     LV\_WIN\_STYLE\_CONTENT\_BG,}
+\DoxyCodeLine{74     LV\_WIN\_STYLE\_CONTENT\_SCRL,}
+\DoxyCodeLine{75     LV\_WIN\_STYLE\_SB,}
+\DoxyCodeLine{76     LV\_WIN\_STYLE\_HEADER,}
+\DoxyCodeLine{77     LV\_WIN\_STYLE\_BTN\_REL,}
+\DoxyCodeLine{78     LV\_WIN\_STYLE\_BTN\_PR,}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 \textcolor{keyword}{typedef} uint8\_t lv\_win\_style\_t;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{83 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{84 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{92 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_win\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} lv\_win\_clean(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *obj);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{101 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{102 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{111 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_win\_add\_btn(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * img\_src, lv\_action\_t rel\_action);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{114 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{115 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{122 lv\_res\_t lv\_win\_close\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{129 \textcolor{keywordtype}{void} lv\_win\_set\_title(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * title);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{136 \textcolor{keywordtype}{void} lv\_win\_set\_btn\_size(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win, lv\_coord\_t size);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{143 \textcolor{keywordtype}{void} lv\_win\_set\_layout(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win, lv\_layout\_t layout);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{150 \textcolor{keywordtype}{void} lv\_win\_set\_sb\_mode(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win, lv\_sb\_mode\_t sb\_mode);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{158 \textcolor{keywordtype}{void} lv\_win\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win, lv\_win\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{165 \textcolor{keywordtype}{void} lv\_win\_set\_drag(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{168 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{169 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{176 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * lv\_win\_get\_title(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win);}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{183 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_win\_get\_content(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win);}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{190 lv\_coord\_t lv\_win\_get\_btn\_size(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{198 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_win\_get\_from\_btn(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ctrl\_btn);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{205 lv\_layout\_t lv\_win\_get\_layout(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{212 lv\_sb\_mode\_t lv\_win\_get\_sb\_mode(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{219 lv\_coord\_t lv\_win\_get\_width(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win);}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{227 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_win\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win, lv\_win\_style\_t type);}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{234 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_win\_get\_drag(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *win)}
+\DoxyCodeLine{235 \{}
+\DoxyCodeLine{236     \textcolor{keywordflow}{return} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a1d3e216562fa5dc093cf1f368566470b}{lv\_obj\_get\_drag}}(win);}
+\DoxyCodeLine{237 \}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{240 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{241 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{249 \textcolor{keywordtype}{void} lv\_win\_focus(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win, \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * obj, uint16\_t anim\_time);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{256 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_win\_scroll\_hor(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win, lv\_coord\_t dist)}
+\DoxyCodeLine{257 \{}
+\DoxyCodeLine{258     lv\_win\_ext\_t * ext = (lv\_win\_ext\_t *)\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2b359fd5032703e11944f5715b325c2d}{lv\_obj\_get\_ext\_attr}}(win);}
+\DoxyCodeLine{259     lv\_page\_scroll\_hor(ext-\/>page, dist);}
+\DoxyCodeLine{260 \}}
+\DoxyCodeLine{266 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_win\_scroll\_ver(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * win, lv\_coord\_t dist)}
+\DoxyCodeLine{267 \{}
+\DoxyCodeLine{268     lv\_win\_ext\_t * ext = (lv\_win\_ext\_t *)\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a2b359fd5032703e11944f5715b325c2d}{lv\_obj\_get\_ext\_attr}}(win);}
+\DoxyCodeLine{269     lv\_page\_scroll\_ver(ext-\/>page, dist);}
+\DoxyCodeLine{270 \}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{273 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{274 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*USE\_LV\_WIN*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{279 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*LV\_WIN\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

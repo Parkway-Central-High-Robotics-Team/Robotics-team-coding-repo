@@ -1,0 +1,93 @@
+\hypertarget{test-6_2include_2display_2lv__core_2lv__vdb_8h_source}{}\doxysection{lv\+\_\+vdb.\+h}
+\label{test-6_2include_2display_2lv__core_2lv__vdb_8h_source}\index{Pros/test-\/6/include/display/lv\_core/lv\_vdb.h@{Pros/test-\/6/include/display/lv\_core/lv\_vdb.h}}
+\mbox{\hyperlink{test-6_2include_2display_2lv__core_2lv__vdb_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_VDB\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_VDB\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if LV\_VDB\_SIZE != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_color.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_area.h"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{28 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{29 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{30 \textcolor{comment}{/*Can be used in `lv\_conf.h` the set an invalid address for the VDB. It should be replaced later by a valid address using `lv\_vdb\_set\_adr()`*/}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define LV\_VDB\_ADR\_INV  8       }\textcolor{comment}{/*8 is still too small to be valid but it's aligned on 64 bit machines as well*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef LV\_VDB\_PX\_BPP}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define LV\_VDB\_PX\_BPP LV\_COLOR\_SIZE     }\textcolor{comment}{/* Default is LV\_COLOR\_SIZE */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#if LV\_VDB\_TRUE\_DOUBLE\_BUFFERED \&\& (LV\_VDB\_SIZE != LV\_HOR\_RES * LV\_VER\_RES || LV\_VDB\_DOUBLE == 0)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#error "{}With LV\_VDB\_TRUE\_DOUBLE\_BUFFERED: (LV\_VDB\_SIZE = LV\_HOR\_RES * LV\_VER\_RES and LV\_VDB\_DOUBLE = 1 is required"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/* The size of VDB in bytes.}}
+\DoxyCodeLine{44 \textcolor{comment}{ * (LV\_VDB\_SIZE * LV\_VDB\_PX\_BPP) >> 3): just divide by 8 to convert bits to bytes}}
+\DoxyCodeLine{45 \textcolor{comment}{ * (((LV\_VDB\_SIZE * LV\_VDB\_PX\_BPP) \& 0x7) ? 1 : 0): add an extra byte to round up.}}
+\DoxyCodeLine{46 \textcolor{comment}{ *    E.g. if LV\_VDB\_SIZE = 10 and LV\_VDB\_PX\_BPP = 1 -\/> 10 bits -\/> 2 bytes*/}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define LV\_VDB\_SIZE\_IN\_BYTES ((LV\_VDB\_SIZE * LV\_VDB\_PX\_BPP) >> 3) + (((LV\_VDB\_SIZE * LV\_VDB\_PX\_BPP) \& 0x7) ? 1 : 0)}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{50 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{51 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} area;}
+\DoxyCodeLine{56     lv\_color\_t *buf;}
+\DoxyCodeLine{57 \} lv\_vdb\_t;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{60 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{61 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67 lv\_vdb\_t * lv\_vdb\_get(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{72 \textcolor{keywordtype}{void} lv\_vdb\_flush(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{80 \textcolor{keywordtype}{void} lv\_vdb\_set\_adr(\textcolor{keywordtype}{void} * buf1, \textcolor{keywordtype}{void} * buf2);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{85 \textcolor{keywordtype}{void} lv\_flush\_ready(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91 lv\_vdb\_t * lv\_vdb\_get\_active(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{97 lv\_vdb\_t * lv\_vdb\_get\_inactive(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{103 \textcolor{keywordtype}{bool} lv\_vdb\_is\_flushing(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{106 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{107 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#else }\textcolor{comment}{/*LV\_VDB\_SIZE != 0*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{/*Just for compatibility*/}}
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} lv\_flush\_ready(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{116 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*LV\_VDB\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

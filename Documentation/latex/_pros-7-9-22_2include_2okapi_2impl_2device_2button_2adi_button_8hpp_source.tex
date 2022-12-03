@@ -1,0 +1,30 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2impl_2device_2button_2adi_button_8hpp_source}{}\doxysection{adi\+Button.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2impl_2device_2button_2adi_button_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/impl/device/button/adiButton.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/impl/device/button/adiButton.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}api.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/device/button/buttonBase.hpp"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{12 \textcolor{keyword}{class }ADIButton : \textcolor{keyword}{public} ButtonBase \{}
+\DoxyCodeLine{13   \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classokapi_1_1_a_d_i_button_a84065174f1fd89bfb1aba7634c4c36d9}{ADIButton}}(std::uint8\_t iport, \textcolor{keywordtype}{bool} iinverted = \textcolor{keyword}{false});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{42   \mbox{\hyperlink{classokapi_1_1_a_d_i_button_a7aa0948bc9de4ce07e84295c18049cf4}{ADIButton}}(std::pair<std::uint8\_t, std::uint8\_t> iports, \textcolor{keywordtype}{bool} iinverted = \textcolor{keyword}{false});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{45   std::uint8\_t smartPort;}
+\DoxyCodeLine{46   std::uint8\_t port;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} currentlyPressed() \textcolor{keyword}{override};}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

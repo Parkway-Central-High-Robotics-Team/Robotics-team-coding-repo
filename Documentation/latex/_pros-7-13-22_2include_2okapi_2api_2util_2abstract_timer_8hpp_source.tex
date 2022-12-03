@@ -1,0 +1,57 @@
+\hypertarget{_pros-7-13-22_2include_2okapi_2api_2util_2abstract_timer_8hpp_source}{}\doxysection{abstract\+Timer.\+hpp}
+\label{_pros-7-13-22_2include_2okapi_2api_2util_2abstract_timer_8hpp_source}\index{Pros/Pros-\/7-\/13-\/22/include/okapi/api/util/abstractTimer.hpp@{Pros/Pros-\/7-\/13-\/22/include/okapi/api/util/abstractTimer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/units/QFrequency.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/units/QTime.hpp"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{12 \textcolor{keyword}{class }AbstractTimer \{}
+\DoxyCodeLine{13   \textcolor{keyword}{public}:}
+\DoxyCodeLine{19   \textcolor{keyword}{explicit} \mbox{\hyperlink{classokapi_1_1_abstract_timer_aec03f7e11e25f300ec1fd44aaff3596f}{AbstractTimer}}(QTime ifirstCalled);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_abstract_timer}{\string~AbstractTimer}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_a6871e119f74d8b6a8c928244e837e762}{millis}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_aaeb8bf1697373e0859a97f155b208858}{getDt}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_a74dcd9eacaf8af4e7b081be79cfd52f2}{readDt}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_ac632b81415f8d4199a8778190827a9bd}{getStartingTime}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_a83effaff55fce03c3768f930fe6f0284}{getDtFromStart}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_abstract_timer_a15a00f0f80448174de5f364d72e56e4a}{placeMark}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_a7d951e2e7324dcb82ba5058f3301b7d3}{clearMark}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_abstract_timer_af2f7d6fbeff539101689c629b76a709e}{placeHardMark}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_ae93ed3379b54cf8e6133f89a42209690}{clearHardMark}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{89   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_a729e4e24a907e17cf87957d892cd2977}{getDtFromMark}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{96   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_abstract_timer_a747c5062af748b44f511f76b893486c5}{getDtFromHardMark}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{106   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_abstract_timer_ab7dfed8f4b5ef61c79bd987630a18b8c}{repeat}}(QTime time);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{116   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_abstract_timer_afb8713308cdd1ab9e5438208333d5820}{repeat}}(QFrequency frequency);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{119   QTime firstCalled;}
+\DoxyCodeLine{120   QTime lastCalled;}
+\DoxyCodeLine{121   QTime mark;}
+\DoxyCodeLine{122   QTime hardMark;}
+\DoxyCodeLine{123   QTime repeatMark;}
+\DoxyCodeLine{124 \};}
+\DoxyCodeLine{125 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

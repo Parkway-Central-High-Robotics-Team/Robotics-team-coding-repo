@@ -1,0 +1,127 @@
+\hypertarget{test-3_2include_2okapi_2api_2util_2math_util_8hpp_source}{}\doxysection{math\+Util.\+hpp}
+\label{test-3_2include_2okapi_2api_2util_2math_util_8hpp_source}\index{Pros/test-\/3/include/okapi/api/util/mathUtil.hpp@{Pros/test-\/3/include/okapi/api/util/mathUtil.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/device/motor/abstractMotor.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{18 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} inchToMM = 25.4;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{23 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} mmToInch = 0.0393700787;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} degreeToRadian = 0.01745329252;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} radianToDegree = 57.2957795;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} imeTorqueTPR = 627.2;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::int32\_t imeSpeedTPR = 392;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{48 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} imeTurboTPR = 261.333;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} ime269TPR = 240.448;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{58 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::int32\_t imev5RedTPR = 1800;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{63 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::int32\_t imev5GreenTPR = 900;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{68 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::int32\_t imev5BlueTPR = 300;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{73 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::int32\_t quadEncoderTPR = 360;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{78 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} pi = 3.1415926535897932;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{83 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} pi2 = 1.5707963267948966;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{88 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} gravity = 9.80665;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{93 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} OKAPI\_PROS\_ERR = INT32\_MAX;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{98 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} OKAPI\_PROS\_ERR\_F = INFINITY;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{103 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} v5MotorMaxVoltage = 12000;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{108 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::int8\_t motorUpdateRate = 10;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{113 \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::int8\_t adiUpdateRate = 10;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{122 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} ipow(\textcolor{keyword}{const} \textcolor{keywordtype}{double} base, \textcolor{keyword}{const} \textcolor{keywordtype}{int} expo) \{}
+\DoxyCodeLine{123   \textcolor{keywordflow}{return} (expo == 0) ? 1}
+\DoxyCodeLine{124          : expo == 1 ? base}
+\DoxyCodeLine{125          : expo > 1  ? ((expo \& 1) ? base * ipow(base, expo -\/ 1)}
+\DoxyCodeLine{126                                    : ipow(base, expo / 2) * ipow(base, expo / 2))}
+\DoxyCodeLine{127                      : 1 / ipow(base, -\/expo);}
+\DoxyCodeLine{128 \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{139 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} cutRange(\textcolor{keyword}{const} \textcolor{keywordtype}{double} value, \textcolor{keyword}{const} \textcolor{keywordtype}{double} min, \textcolor{keyword}{const} \textcolor{keywordtype}{double} max) \{}
+\DoxyCodeLine{140   \textcolor{keyword}{const} \textcolor{keywordtype}{double} middle = max -\/ ((max -\/ min) / 2);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142   \textcolor{keywordflow}{if} (value > min \&\& value < middle) \{}
+\DoxyCodeLine{143     \textcolor{keywordflow}{return} min;}
+\DoxyCodeLine{144   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (value <= max \&\& value >= middle) \{}
+\DoxyCodeLine{145     \textcolor{keywordflow}{return} max;}
+\DoxyCodeLine{146   \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148   \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{149 \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{160 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} deadband(\textcolor{keyword}{const} \textcolor{keywordtype}{double} value, \textcolor{keyword}{const} \textcolor{keywordtype}{double} min, \textcolor{keyword}{const} \textcolor{keywordtype}{double} max) \{}
+\DoxyCodeLine{161   \textcolor{keywordflow}{return} std::clamp(value, min, max) == value ? 0 : value;}
+\DoxyCodeLine{162 \}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{174 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} remapRange(\textcolor{keyword}{const} \textcolor{keywordtype}{double} value,}
+\DoxyCodeLine{175                             \textcolor{keyword}{const} \textcolor{keywordtype}{double} oldMin,}
+\DoxyCodeLine{176                             \textcolor{keyword}{const} \textcolor{keywordtype}{double} oldMax,}
+\DoxyCodeLine{177                             \textcolor{keyword}{const} \textcolor{keywordtype}{double} newMin,}
+\DoxyCodeLine{178                             \textcolor{keyword}{const} \textcolor{keywordtype}{double} newMax) \{}
+\DoxyCodeLine{179   \textcolor{keywordflow}{return} (value -\/ oldMin) * ((newMax -\/ newMin) / (oldMax -\/ oldMin)) + newMin;}
+\DoxyCodeLine{180 \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{188 \textcolor{keyword}{template} <\textcolor{keyword}{typename} E> \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} toUnderlyingType(\textcolor{keyword}{const} E e) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{189   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}std::underlying\_type\_t<E>\textcolor{keyword}{>}(e);}
+\DoxyCodeLine{190 \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{198 \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} boolToSign(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} b) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{199   \textcolor{keywordflow}{return} b ? 1 : -\/1;}
+\DoxyCodeLine{200 \}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{210 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{long} modulus(\textcolor{keyword}{const} \textcolor{keywordtype}{long} lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{long} rhs) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{211   \textcolor{keywordflow}{return} ((lhs \% rhs) + rhs) \% rhs;}
+\DoxyCodeLine{212 \}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{220 \textcolor{keyword}{constexpr} std::int32\_t gearsetToTPR(\textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{AbstractMotor::gearset}} igearset) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{221   \textcolor{keywordflow}{switch} (igearset) \{}
+\DoxyCodeLine{222   \textcolor{keywordflow}{case} \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5abda9643ac6601722a28f238714274da4}{AbstractMotor::gearset::red}}:}
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} imev5RedTPR;}
+\DoxyCodeLine{224   \textcolor{keywordflow}{case} \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5a9f27410725ab8cc8854a2769c7a516b8}{AbstractMotor::gearset::green}}:}
+\DoxyCodeLine{225     \textcolor{keywordflow}{return} imev5GreenTPR;}
+\DoxyCodeLine{226   \textcolor{keywordflow}{case} \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5a48d6215903dff56238e52e8891380c8f}{AbstractMotor::gearset::blue}}:}
+\DoxyCodeLine{227   \textcolor{keywordflow}{case} AbstractMotor::gearset::invalid:}
+\DoxyCodeLine{228   \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{229     \textcolor{keywordflow}{return} imev5BlueTPR;}
+\DoxyCodeLine{230   \}}
+\DoxyCodeLine{231 \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{246 \textcolor{keyword}{constexpr} std::int8\_t transformADIPort(\textcolor{keyword}{const} std::int8\_t port) \{}
+\DoxyCodeLine{247   \textcolor{keywordflow}{if} (port >= \textcolor{charliteral}{'a'} \&\& port <= \textcolor{charliteral}{'h'}) \{}
+\DoxyCodeLine{248     \textcolor{keywordflow}{return} port -\/ (\textcolor{charliteral}{'a'} -\/ 1);}
+\DoxyCodeLine{249   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (port >= \textcolor{charliteral}{'A'} \&\& port <= \textcolor{charliteral}{'H'}) \{}
+\DoxyCodeLine{250     \textcolor{keywordflow}{return} port -\/ (\textcolor{charliteral}{'A'} -\/ 1);}
+\DoxyCodeLine{251   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{252     \textcolor{keywordflow}{return} port;}
+\DoxyCodeLine{253   \}}
+\DoxyCodeLine{254 \}}
+\DoxyCodeLine{255 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

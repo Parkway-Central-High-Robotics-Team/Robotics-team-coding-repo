@@ -1,0 +1,130 @@
+\hypertarget{_pros-7-13-22_2include_2display_2lv__objx_2lv__mbox_8h_source}{}\doxysection{lv\+\_\+mbox.\+h}
+\label{_pros-7-13-22_2include_2display_2lv__objx_2lv__mbox_8h_source}\index{Pros/Pros-\/7-\/13-\/22/include/display/lv\_objx/lv\_mbox.h@{Pros/Pros-\/7-\/13-\/22/include/display/lv\_objx/lv\_mbox.h}}
+\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__objx_2lv__mbox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_MBOX\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_MBOX\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_MBOX != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_CONT == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_mbox: lv\_cont is required. Enable it in lv\_conf.h (USE\_LV\_CONT  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#if USE\_LV\_BTNM == 0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#error "{}lv\_mbox: lv\_btnm is required. Enable it in lv\_conf.h (USE\_LV\_BTNM  1) "{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#if USE\_LV\_LABEL == 0}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#error "{}lv\_mbox: lv\_label is required. Enable it in lv\_conf.h (USE\_LV\_LABEL  1) "{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}lv\_cont.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}lv\_btnm.h"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}lv\_label.h"{}}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{44 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{45 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{48 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{49 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{/*Data of message box*/}}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     lv\_cont\_ext\_t bg; \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{55     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{56     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *text;             \textcolor{comment}{/*Text of the message box*/}}
+\DoxyCodeLine{57     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *btnm;            \textcolor{comment}{/*Button matrix for the buttons*/}}
+\DoxyCodeLine{58     uint16\_t anim\_time;         \textcolor{comment}{/*Duration of close animation [ms] (0: no animation)*/}}
+\DoxyCodeLine{59 \} lv\_mbox\_ext\_t;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{62     LV\_MBOX\_STYLE\_BG,}
+\DoxyCodeLine{63     LV\_MBOX\_STYLE\_BTN\_BG,}
+\DoxyCodeLine{64     LV\_MBOX\_STYLE\_BTN\_REL,}
+\DoxyCodeLine{65     LV\_MBOX\_STYLE\_BTN\_PR,}
+\DoxyCodeLine{66     LV\_MBOX\_STYLE\_BTN\_TGL\_REL,}
+\DoxyCodeLine{67     LV\_MBOX\_STYLE\_BTN\_TGL\_PR,}
+\DoxyCodeLine{68     LV\_MBOX\_STYLE\_BTN\_INA,}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} uint8\_t lv\_mbox\_style\_t;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{73 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{74 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{82 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_mbox\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{85 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{86 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{95 \textcolor{keywordtype}{void} lv\_mbox\_add\_btns(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox, \textcolor{keyword}{const} \textcolor{keywordtype}{char} **btn\_map, lv\_btnm\_action\_t action);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{98 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{99 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} lv\_mbox\_set\_text(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * txt);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{113 \textcolor{keywordtype}{void} lv\_mbox\_set\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox, lv\_btnm\_action\_t action);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} lv\_mbox\_set\_anim\_time(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox, uint16\_t anim\_time);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} lv\_mbox\_start\_auto\_close(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox, uint16\_t delay);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{133 \textcolor{keywordtype}{void} lv\_mbox\_stop\_auto\_close(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{141 \textcolor{keywordtype}{void} lv\_mbox\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *mbox, lv\_mbox\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{148 \textcolor{keywordtype}{void} lv\_mbox\_set\_recolor(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{151 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{152 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{159 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * lv\_mbox\_get\_text(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{167 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_mbox\_get\_from\_btn(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * btn);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{174 uint16\_t lv\_mbox\_get\_anim\_time(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{183 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_mbox\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *mbox, lv\_mbox\_style\_t type);}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{190 \textcolor{keywordtype}{bool} lv\_mbox\_get\_recolor(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * mbox);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{193 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{194 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_MBOX*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{200 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_MBOX\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

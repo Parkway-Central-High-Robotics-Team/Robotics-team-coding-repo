@@ -1,0 +1,2910 @@
+\hypertarget{classokapi_1_1_h_drive_model}{}\doxysection{okapi\+::HDrive\+Model Class Reference}
+\label{classokapi_1_1_h_drive_model}\index{okapi::HDriveModel@{okapi::HDriveModel}}
+Inheritance diagram for okapi\+::HDrive\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.954625cm]{classokapi_1_1_h_drive_model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}{HDrive\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ imiddle\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ imiddle\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}{h\+Arcade}} (double iright\+Speed, double iforward\+Speed, double iyaw, double ithreshold=0)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}{h\+Curvature}} (double iright\+Speed, double iforward\+Speed, double icurvature, double ithreshold=0)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}{right}} (double ispeed) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}{middle}} (double ispeed)
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}{get\+Right\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}{get\+Middle\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}{HDrive\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ imiddle\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ imiddle\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}{h\+Arcade}} (double iright\+Speed, double iforward\+Speed, double iyaw, double ithreshold=0)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}{h\+Curvature}} (double iright\+Speed, double iforward\+Speed, double icurvature, double ithreshold=0)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}{right}} (double ispeed) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}{middle}} (double ispeed)
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}{get\+Right\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}{get\+Middle\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}{HDrive\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ imiddle\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ imiddle\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}{h\+Arcade}} (double iright\+Speed, double iforward\+Speed, double iyaw, double ithreshold=0)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}{h\+Curvature}} (double iright\+Speed, double iforward\+Speed, double icurvature, double ithreshold=0)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}{right}} (double ispeed) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}{middle}} (double ispeed)
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}{get\+Right\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}{get\+Middle\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}{HDrive\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ imiddle\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ imiddle\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}{h\+Arcade}} (double iright\+Speed, double iforward\+Speed, double iyaw, double ithreshold=0)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}{h\+Curvature}} (double iright\+Speed, double iforward\+Speed, double icurvature, double ithreshold=0)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}{right}} (double ispeed) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}{middle}} (double ispeed)
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}{get\+Right\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}{get\+Middle\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}{HDrive\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ imiddle\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ imiddle\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}{h\+Arcade}} (double iright\+Speed, double iforward\+Speed, double iyaw, double ithreshold=0)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}{h\+Curvature}} (double iright\+Speed, double iforward\+Speed, double icurvature, double ithreshold=0)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}{right}} (double ispeed) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}{middle}} (double ispeed)
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}{get\+Right\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}{get\+Middle\+Motor}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}{HDrive\+Model}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ ileft\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ iright\+Side\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ imiddle\+Motor, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ ileft\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ iright\+Enc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ imiddle\+Enc, double imax\+Velocity, double imax\+Voltage)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}{forward}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}{drive\+Vector}} (double iy\+Speed, double iz\+Rotation) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}{drive\+Vector\+Voltage}} (double iforward\+Speed, double iyaw) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}{rotate}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}{stop}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}{tank}} (double ileft\+Speed, double iright\+Speed, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}{arcade}} (double iforward\+Speed, double iyaw, double ithreshold=0) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}{curvature}} (double iforward\+Speed, double icurvature, double ithreshold=0) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}{h\+Arcade}} (double iright\+Speed, double iforward\+Speed, double iyaw, double ithreshold=0)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}{h\+Curvature}} (double iright\+Speed, double iforward\+Speed, double icurvature, double ithreshold=0)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}{left}} (double ispeed) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}{right}} (double ispeed) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}{middle}} (double ispeed)
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}{reset\+Sensors}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} mode) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} units) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} gearset) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}{set\+Max\+Velocity}} (double imax\+Velocity) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}{get\+Max\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}{set\+Max\+Voltage}} (double imax\+Voltage) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}{get\+Max\+Voltage}} () const override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}{get\+Left\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}{get\+Right\+Side\+Motor}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \mbox{\hyperlink{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}{get\+Middle\+Motor}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a3a19401cd90e2c1f8165b7b9ed6bac72}\label{classokapi_1_1_h_drive_model_a3a19401cd90e2c1f8165b7b9ed6bac72}} 
+double {\bfseries max\+Velocity}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a55856a21efd0c24c7aa551d0fb67bc7f}\label{classokapi_1_1_h_drive_model_a55856a21efd0c24c7aa551d0fb67bc7f}} 
+double {\bfseries max\+Voltage}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ac972876f2199ed0f775ea0105e50cd99}\label{classokapi_1_1_h_drive_model_ac972876f2199ed0f775ea0105e50cd99}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ {\bfseries left\+Side\+Motor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a6b8f12f54398006cf65a4f60d0ab10f0}\label{classokapi_1_1_h_drive_model_a6b8f12f54398006cf65a4f60d0ab10f0}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ {\bfseries right\+Side\+Motor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a87ff1d94f9a879c47c211fbd409d6ba3}\label{classokapi_1_1_h_drive_model_a87ff1d94f9a879c47c211fbd409d6ba3}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ {\bfseries middle\+Motor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a867c1024fc5578c195ea5db3f10983df}\label{classokapi_1_1_h_drive_model_a867c1024fc5578c195ea5db3f10983df}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ {\bfseries left\+Sensor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a0028a297bf42f770c80731b87903cf8a}\label{classokapi_1_1_h_drive_model_a0028a297bf42f770c80731b87903cf8a}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ {\bfseries right\+Sensor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_aea63326f3a79155c58c74d259736941e}\label{classokapi_1_1_h_drive_model_aea63326f3a79155c58c74d259736941e}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ {\bfseries middle\+Sensor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}\label{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!HDriveModel@{HDriveModel}}
+\index{HDriveModel@{HDriveModel}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{HDriveModel()}{HDriveModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily okapi\+::\+HDrive\+Model\+::\+HDrive\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{imiddle\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{imiddle\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for an h-\/drive (wheels parallel with robot\textquotesingle{}s direction of motion, with an additional wheel perpendicular to those). When the left and right side motors are powered +100\%, the robot should move forward in a straight line. When the middle motor is powered +100\%, the robot should strafe right in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em imiddle\+Motor} & The middle (perpendicular) motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+{\em imiddle\+Enc} & The middle encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}\label{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!HDriveModel@{HDriveModel}}
+\index{HDriveModel@{HDriveModel}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{HDriveModel()}{HDriveModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily okapi\+::\+HDrive\+Model\+::\+HDrive\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{imiddle\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{imiddle\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for an h-\/drive (wheels parallel with robot\textquotesingle{}s direction of motion, with an additional wheel perpendicular to those). When the left and right side motors are powered +100\%, the robot should move forward in a straight line. When the middle motor is powered +100\%, the robot should strafe right in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em imiddle\+Motor} & The middle (perpendicular) motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+{\em imiddle\+Enc} & The middle encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}\label{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!HDriveModel@{HDriveModel}}
+\index{HDriveModel@{HDriveModel}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{HDriveModel()}{HDriveModel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily okapi\+::\+HDrive\+Model\+::\+HDrive\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{imiddle\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{imiddle\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for an h-\/drive (wheels parallel with robot\textquotesingle{}s direction of motion, with an additional wheel perpendicular to those). When the left and right side motors are powered +100\%, the robot should move forward in a straight line. When the middle motor is powered +100\%, the robot should strafe right in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em imiddle\+Motor} & The middle (perpendicular) motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+{\em imiddle\+Enc} & The middle encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}\label{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!HDriveModel@{HDriveModel}}
+\index{HDriveModel@{HDriveModel}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{HDriveModel()}{HDriveModel()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily okapi\+::\+HDrive\+Model\+::\+HDrive\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{imiddle\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{imiddle\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for an h-\/drive (wheels parallel with robot\textquotesingle{}s direction of motion, with an additional wheel perpendicular to those). When the left and right side motors are powered +100\%, the robot should move forward in a straight line. When the middle motor is powered +100\%, the robot should strafe right in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em imiddle\+Motor} & The middle (perpendicular) motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+{\em imiddle\+Enc} & The middle encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}\label{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!HDriveModel@{HDriveModel}}
+\index{HDriveModel@{HDriveModel}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{HDriveModel()}{HDriveModel()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily okapi\+::\+HDrive\+Model\+::\+HDrive\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{imiddle\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{imiddle\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for an h-\/drive (wheels parallel with robot\textquotesingle{}s direction of motion, with an additional wheel perpendicular to those). When the left and right side motors are powered +100\%, the robot should move forward in a straight line. When the middle motor is powered +100\%, the robot should strafe right in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em imiddle\+Motor} & The middle (perpendicular) motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+{\em imiddle\+Enc} & The middle encoder. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}\label{classokapi_1_1_h_drive_model_ab5d8e77089ce64743b00e9529fb72070}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!HDriveModel@{HDriveModel}}
+\index{HDriveModel@{HDriveModel}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{HDriveModel()}{HDriveModel()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily okapi\+::\+HDrive\+Model\+::\+HDrive\+Model (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{ileft\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{iright\+Side\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$}]{imiddle\+Motor,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{ileft\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{iright\+Enc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$}]{imiddle\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})}
+
+Model for an h-\/drive (wheels parallel with robot\textquotesingle{}s direction of motion, with an additional wheel perpendicular to those). When the left and right side motors are powered +100\%, the robot should move forward in a straight line. When the middle motor is powered +100\%, the robot should strafe right in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & The left side motor. \\
+\hline
+{\em iright\+Side\+Motor} & The right side motor. \\
+\hline
+{\em imiddle\+Motor} & The middle (perpendicular) motor. \\
+\hline
+{\em ileft\+Enc} & The left side encoder. \\
+\hline
+{\em iright\+Enc} & The right side encoder. \\
+\hline
+{\em imiddle\+Enc} & The middle encoder. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}\label{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}\label{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}\label{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}\label{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}\label{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}\label{classokapi_1_1_h_drive_model_a4674d5741fc65eb5625d0a37dc2a6073}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!arcade@{arcade}}
+\index{arcade@{arcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::arcade (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a632d4c0b74747ab3b9c5a159a36bdd03}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}\label{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}\label{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}\label{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}\label{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}\label{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}\label{classokapi_1_1_h_drive_model_adb6f15eb2635677962f1c870d4072430}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!curvature@{curvature}}
+\index{curvature@{curvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{curvature()}{curvature()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::curvature (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a curvature drive layout. The robot drives in constant radius turns where you control the curvature (inverse of radius) you drive in. This is advantageous because the forward speed will not affect the rate of turning. The algorithm switches to arcade if the forward speed is 0. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2459ac1128c26c5911fa1696bd185c63}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}\label{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}\label{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}\label{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}\label{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}\label{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}\label{classokapi_1_1_h_drive_model_aa5a977373efdabedc0d9ab015485f27a}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVector@{driveVector}}
+\index{driveVector@{driveVector}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVector()}{driveVector()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector (\begin{DoxyParamCaption}\item[{double}]{iy\+Speed,  }\item[{double}]{iz\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = y\+Speed + z\+Rotation right\+Power = y\+Speed -\/ z\+Rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em iy\+Speed} & speed on y axis (forward) \\
+\hline
+{\em iz\+Rotation} & speed around z axis (up) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa621ce62c2bc336e41b859e2cb10dda5}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}\label{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}\label{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}\label{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}\label{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}\label{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}\label{classokapi_1_1_h_drive_model_af1b6aa5dab2cbd5cf7f0e839415595e8}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!driveVectorVoltage@{driveVectorVoltage}}
+\index{driveVectorVoltage@{driveVectorVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{driveVectorVoltage()}{driveVectorVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::drive\+Vector\+Voltage (\begin{DoxyParamCaption}\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot in an arc. Uses voltage mode. Sets the middle motor to zero velocity.
+
+The algorithm is (approximately)\+: left\+Power = forward\+Speed + yaw right\+Power = forward\+Speed -\/ yaw
+
+
+\begin{DoxyParams}{Parameters}
+{\em iforwad\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a69115758be9e29888dce34f317d57150}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}\label{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!forward@{forward}}
+\index{forward@{forward}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}\label{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!forward@{forward}}
+\index{forward@{forward}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}\label{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!forward@{forward}}
+\index{forward@{forward}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}\label{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!forward@{forward}}
+\index{forward@{forward}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}\label{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!forward@{forward}}
+\index{forward@{forward}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}\label{classokapi_1_1_h_drive_model_a1905331fdd17dd115f8624e168bc7353}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!forward@{forward}}
+\index{forward@{forward}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::forward (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot forwards (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae39e8ccd15b6f84e32cd21fe99bdd6c9}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}\label{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}\label{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}\label{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}\label{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}\label{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}\label{classokapi_1_1_h_drive_model_a8f04d3562d3cd89754f2c7251d87008c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getLeftSideMotor@{getLeftSideMotor}}
+\index{getLeftSideMotor@{getLeftSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getLeftSideMotor()}{getLeftSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Left\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}\label{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}\label{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}\label{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}\label{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}\label{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}\label{classokapi_1_1_h_drive_model_a584730c4c2c9731dcbb610d785b65424}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVelocity@{getMaxVelocity}}
+\index{getMaxVelocity@{getMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVelocity()}{getMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The current maximum velocity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ab45dd7430636ed1c1dee25dae6df5d46}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}\label{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}\label{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}\label{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}\label{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}\label{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}\label{classokapi_1_1_h_drive_model_a05cdf10d156528e7417358a070ef2dfd}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMaxVoltage@{getMaxVoltage}}
+\index{getMaxVoltage@{getMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMaxVoltage()}{getMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily double okapi\+::\+HDrive\+Model\+::get\+Max\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a3ced2121524ae523592db64733c69472}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}\label{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMiddleMotor@{getMiddleMotor}}
+\index{getMiddleMotor@{getMiddleMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMiddleMotor()}{getMiddleMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Middle\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The middle motor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}\label{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMiddleMotor@{getMiddleMotor}}
+\index{getMiddleMotor@{getMiddleMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMiddleMotor()}{getMiddleMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Middle\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The middle motor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}\label{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMiddleMotor@{getMiddleMotor}}
+\index{getMiddleMotor@{getMiddleMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMiddleMotor()}{getMiddleMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Middle\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The middle motor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}\label{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMiddleMotor@{getMiddleMotor}}
+\index{getMiddleMotor@{getMiddleMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMiddleMotor()}{getMiddleMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Middle\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The middle motor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}\label{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMiddleMotor@{getMiddleMotor}}
+\index{getMiddleMotor@{getMiddleMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMiddleMotor()}{getMiddleMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Middle\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The middle motor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}\label{classokapi_1_1_h_drive_model_a130b7aaf22b197749e68d32e42a15aee}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getMiddleMotor@{getMiddleMotor}}
+\index{getMiddleMotor@{getMiddleMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getMiddleMotor()}{getMiddleMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Middle\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The middle motor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}\label{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}\label{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}\label{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}\label{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}\label{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}\label{classokapi_1_1_h_drive_model_a254bd9533b39292cc3c1e70c0ea40bb3}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getRightSideMotor@{getRightSideMotor}}
+\index{getRightSideMotor@{getRightSideMotor}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getRightSideMotor()}{getRightSideMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ okapi\+::\+HDrive\+Model\+::get\+Right\+Side\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the left side motor.
+
+\begin{DoxyReturn}{Returns}
+the left side motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}\label{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+HDrive\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right, middle\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}\label{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+HDrive\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right, middle\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}\label{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+HDrive\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right, middle\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}\label{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+HDrive\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right, middle\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}\label{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+HDrive\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right, middle\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}\label{classokapi_1_1_h_drive_model_af012e2a409063ee07d139ffff81555e9}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::valarray$<$ std\+::int32\+\_\+t $>$ okapi\+::\+HDrive\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right, middle\} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_read_only_chassis_model_a0deefc2a37fe37259e93a82591857e2a}{okapi\+::\+Read\+Only\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}\label{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hArcade@{hArcade}}
+\index{hArcade@{hArcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hArcade()}{hArcade()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Arcade (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}\label{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hArcade@{hArcade}}
+\index{hArcade@{hArcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hArcade()}{hArcade()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Arcade (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}\label{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hArcade@{hArcade}}
+\index{hArcade@{hArcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hArcade()}{hArcade()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Arcade (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}\label{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hArcade@{hArcade}}
+\index{hArcade@{hArcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hArcade()}{hArcade()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Arcade (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}\label{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hArcade@{hArcade}}
+\index{hArcade@{hArcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hArcade()}{hArcade()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Arcade (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}\label{classokapi_1_1_h_drive_model_a9ce5c15a66e4633a9a368f70d748fc2d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hArcade@{hArcade}}
+\index{hArcade@{hArcade}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hArcade()}{hArcade()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Arcade (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{iyaw,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an arcade drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em iyaw} & speed around the vertical axis \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}\label{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hCurvature@{hCurvature}}
+\index{hCurvature@{hCurvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hCurvature()}{hCurvature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Curvature (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an curvature drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}\label{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hCurvature@{hCurvature}}
+\index{hCurvature@{hCurvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hCurvature()}{hCurvature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Curvature (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an curvature drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}\label{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hCurvature@{hCurvature}}
+\index{hCurvature@{hCurvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hCurvature()}{hCurvature()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Curvature (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an curvature drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}\label{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hCurvature@{hCurvature}}
+\index{hCurvature@{hCurvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hCurvature()}{hCurvature()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Curvature (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an curvature drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}\label{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hCurvature@{hCurvature}}
+\index{hCurvature@{hCurvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hCurvature()}{hCurvature()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Curvature (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an curvature drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}\label{classokapi_1_1_h_drive_model_a660cee86ffd963e38a24cf33d63ca305}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!hCurvature@{hCurvature}}
+\index{hCurvature@{hCurvature}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{hCurvature()}{hCurvature()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::h\+Curvature (\begin{DoxyParamCaption}\item[{double}]{iright\+Speed,  }\item[{double}]{iforward\+Speed,  }\item[{double}]{icurvature,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drive the robot with an curvature drive layout. Uses voltage mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iright\+Speed} & speed to the right \\
+\hline
+{\em iforward\+Speed} & speed in the forward direction \\
+\hline
+{\em icurvature} & curvature (inverse of radius) to drive in \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}\label{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!left@{left}}
+\index{left@{left}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}\label{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!left@{left}}
+\index{left@{left}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}\label{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!left@{left}}
+\index{left@{left}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}\label{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!left@{left}}
+\index{left@{left}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}\label{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!left@{left}}
+\index{left@{left}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}\label{classokapi_1_1_h_drive_model_a7d92c1f2384ed4a3d1af675ee6996d8b}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!left@{left}}
+\index{left@{left}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::left (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the left side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_aa2008856c169eb64c6648bc64c31c504}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}\label{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!middle@{middle}}
+\index{middle@{middle}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{middle()}{middle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::middle (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Power the middle motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}\label{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!middle@{middle}}
+\index{middle@{middle}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{middle()}{middle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::middle (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Power the middle motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}\label{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!middle@{middle}}
+\index{middle@{middle}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{middle()}{middle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::middle (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Power the middle motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}\label{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!middle@{middle}}
+\index{middle@{middle}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{middle()}{middle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::middle (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Power the middle motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}\label{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!middle@{middle}}
+\index{middle@{middle}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{middle()}{middle()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::middle (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Power the middle motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}\label{classokapi_1_1_h_drive_model_ab99542fc09142f069fe8dd2092106975}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!middle@{middle}}
+\index{middle@{middle}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{middle()}{middle()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void okapi\+::\+HDrive\+Model\+::middle (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Power the middle motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}\label{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}\label{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}\label{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}\label{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}\label{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}\label{classokapi_1_1_h_drive_model_a2079fa1d5c5ecb8fe2c5841ed86bc1da}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a6bd7e6bb60d41d3f1f5a5a129acfe1b6}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}\label{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!right@{right}}
+\index{right@{right}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}\label{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!right@{right}}
+\index{right@{right}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}\label{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!right@{right}}
+\index{right@{right}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}\label{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!right@{right}}
+\index{right@{right}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}\label{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!right@{right}}
+\index{right@{right}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}\label{classokapi_1_1_h_drive_model_a2aaa385477bac948564c621d7ebe534c}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!right@{right}}
+\index{right@{right}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::right (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Power the right side motors. Uses velocity mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & The motor power. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a282fcf947aea9630cadd2c673eb5f7e3}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}\label{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}\label{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}\label{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}\label{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}\label{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}\label{classokapi_1_1_h_drive_model_a01528ba61c3c54440edaa816727a3c07}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!rotate@{rotate}}
+\index{rotate@{rotate}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::rotate (\begin{DoxyParamCaption}\item[{double}]{ispeed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Turn the robot clockwise (using open-\/loop control). Uses velocity mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ispeed} & motor power \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_af13aa5281c762eb61a444f0b35176014}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}\label{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}\label{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}\label{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}\label{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}\label{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}\label{classokapi_1_1_h_drive_model_a11f0ba1f62220df080bbdbd32281bb7d}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the brake mode for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new brake mode \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a20e3cde96d536e6c722aa5686e5cc8e8}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}\label{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}\label{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}\label{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}\label{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}\label{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}\label{classokapi_1_1_h_drive_model_ac243f860ff15e046ebf84f74c310c009}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the encoder units for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em units} & new motor encoder units \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae8ba9a72bf827af4c6feffaac99b33ee}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}\label{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}\label{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}\label{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}\label{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}\label{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}\label{classokapi_1_1_h_drive_model_a2cea6c82b3c0edf6b25ab569810a6fb7}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{gearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the gearset for each motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gearset} & new motor gearset \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a960d6ce2f21e5832fce1d7566408cb61}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}\label{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}\label{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}\label{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}\label{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}\label{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}\label{classokapi_1_1_h_drive_model_ad920da7dec56904f7e5f4a71fedbd4f4}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVelocity@{setMaxVelocity}}
+\index{setMaxVelocity@{setMaxVelocity}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocity()}{setMaxVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Velocity (\begin{DoxyParamCaption}\item[{double}]{imax\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum velocity in RPM. The usable maximum depends on the maximum velocity of the currently installed gearset. If the configured maximum velocity is greater than the attainable maximum velocity from the currently installed gearset, the \mbox{\hyperlink{classokapi_1_1_chassis_model}{Chassis\+Model}} will still scale to that velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Velocity} & The new maximum velocity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ae7fcb4cc95fdd7fd3c8f8388b4a698b2}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}\label{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}\label{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}\label{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}\label{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}\label{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}\label{classokapi_1_1_h_drive_model_a8f036e8c794e8b886a7e45461d597c53}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!setMaxVoltage@{setMaxVoltage}}
+\index{setMaxVoltage@{setMaxVoltage}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{setMaxVoltage()}{setMaxVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::set\+Max\+Voltage (\begin{DoxyParamCaption}\item[{double}]{imax\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets a new maximum voltage in mV in the range {\ttfamily \mbox{[}0-\/12000\mbox{]}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Voltage} & The new maximum voltage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a2fb261636b79e118f22530cc3fce4f41}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}\label{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!stop@{stop}}
+\index{stop@{stop}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}\label{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!stop@{stop}}
+\index{stop@{stop}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}\label{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!stop@{stop}}
+\index{stop@{stop}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}\label{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!stop@{stop}}
+\index{stop@{stop}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}\label{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!stop@{stop}}
+\index{stop@{stop}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}\label{classokapi_1_1_h_drive_model_a30604feb5e8003519a1d28850dbcbbc5}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!stop@{stop}}
+\index{stop@{stop}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the robot (set all the motors to 0). Uses velocity mode. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_ad67ad9abae41c5441c2a2d671d0c8a55}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}\label{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!tank@{tank}}
+\index{tank@{tank}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}\label{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!tank@{tank}}
+\index{tank@{tank}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}\label{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!tank@{tank}}
+\index{tank@{tank}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}\label{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!tank@{tank}}
+\index{tank@{tank}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}\label{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!tank@{tank}}
+\index{tank@{tank}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}\label{classokapi_1_1_h_drive_model_a7af809d9875a3c04fc2570cdbe189de0}} 
+\index{okapi::HDriveModel@{okapi::HDriveModel}!tank@{tank}}
+\index{tank@{tank}!okapi::HDriveModel@{okapi::HDriveModel}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+HDrive\+Model\+::tank (\begin{DoxyParamCaption}\item[{double}]{ileft\+Speed,  }\item[{double}]{iright\+Speed,  }\item[{double}]{ithreshold = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Drive the robot with a tank drive layout. Uses voltage mode. Sets the middle motor to zero velocity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Speed} & left side speed \\
+\hline
+{\em iright\+Speed} & right side speed \\
+\hline
+{\em ithreshold} & deadband on joystick values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_chassis_model_a185a667048f84c3a0fced6882c5f7980}{okapi\+::\+Chassis\+Model}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pros/\+Pros-\/6-\/25-\/22/include/okapi/api/chassis/model/h\+Drive\+Model.\+hpp\item 
+Pros/\+Pros-\/7-\/13-\/22/include/okapi/api/chassis/model/h\+Drive\+Model.\+hpp\item 
+Pros/\+Pros-\/7-\/9-\/22/include/okapi/api/chassis/model/h\+Drive\+Model.\+hpp\item 
+Pros/test-\/3/include/okapi/api/chassis/model/h\+Drive\+Model.\+hpp\item 
+Pros/test-\/5/include/okapi/api/chassis/model/h\+Drive\+Model.\+hpp\item 
+Pros/test-\/6/include/okapi/api/chassis/model/h\+Drive\+Model.\+hpp\end{DoxyCompactItemize}

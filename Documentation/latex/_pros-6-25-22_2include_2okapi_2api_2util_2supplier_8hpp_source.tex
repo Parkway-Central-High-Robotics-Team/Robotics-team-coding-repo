@@ -1,0 +1,31 @@
+\hypertarget{_pros-6-25-22_2include_2okapi_2api_2util_2supplier_8hpp_source}{}\doxysection{supplier.\+hpp}
+\label{_pros-6-25-22_2include_2okapi_2api_2util_2supplier_8hpp_source}\index{Pros/Pros-\/6-\/25-\/22/include/okapi/api/util/supplier.hpp@{Pros/Pros-\/6-\/25-\/22/include/okapi/api/util/supplier.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{16 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keyword}{class }\mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}} \{}
+\DoxyCodeLine{17   \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \textcolor{keyword}{explicit} \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}(std::function<T(\textcolor{keywordtype}{void})> ifunc) : func(ifunc) \{}
+\DoxyCodeLine{19   \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_supplier}{\string~Supplier}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{27   T \mbox{\hyperlink{classokapi_1_1_supplier_a38d76d4c3dcc19fd74f5349660199efe}{get}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} func();}
+\DoxyCodeLine{29   \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{32   std::function<T(\textcolor{keywordtype}{void})> func;}
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

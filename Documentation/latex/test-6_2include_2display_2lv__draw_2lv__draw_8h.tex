@@ -1,0 +1,41 @@
+\hypertarget{test-6_2include_2display_2lv__draw_2lv__draw_8h}{}\doxysection{Pros/test-\/6/include/display/lv\+\_\+draw/lv\+\_\+draw.h File Reference}
+\label{test-6_2include_2display_2lv__draw_2lv__draw_8h}\index{Pros/test-\/6/include/display/lv\_draw/lv\_draw.h@{Pros/test-\/6/include/display/lv\_draw/lv\_draw.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+core/lv\+\_\+style.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+txt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+draw\+\_\+rect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+draw\+\_\+label.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+draw\+\_\+img.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+draw\+\_\+line.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+draw\+\_\+triangle.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-6_2include_2display_2lv__draw_2lv__draw_8h_a4a47e194ccb92c2d8bc70fa9e3655413}\label{test-6_2include_2display_2lv__draw_2lv__draw_8h_a4a47e194ccb92c2d8bc70fa9e3655413}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+img\+\_\+src\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-6_2include_2display_2lv__draw_2lv__draw_8h_adab0c4467b3c6f365e87d0316a74bf64}\label{test-6_2include_2display_2lv__draw_2lv__draw_8h_adab0c4467b3c6f365e87d0316a74bf64}} 
+enum \{ {\bfseries LV\+\_\+\+IMG\+\_\+\+SRC\+\_\+\+VARIABLE}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+SRC\+\_\+\+FILE}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+SRC\+\_\+\+SYMBOL}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+SRC\+\_\+\+UNKNOWN}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-6_2include_2display_2lv__draw_2lv__draw_8h_a3ddd9425309536538b16678e2b2aa412}\label{test-6_2include_2display_2lv__draw_2lv__draw_8h_a3ddd9425309536538b16678e2b2aa412}} 
+void($\ast$const {\bfseries px\+\_\+fp} )(lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask, lv\+\_\+color\+\_\+t color, lv\+\_\+opa\+\_\+t opa)
+\item 
+\mbox{\Hypertarget{test-6_2include_2display_2lv__draw_2lv__draw_8h_a46e4758d2080d0124e22933925509447}\label{test-6_2include_2display_2lv__draw_2lv__draw_8h_a46e4758d2080d0124e22933925509447}} 
+void($\ast$const {\bfseries fill\+\_\+fp} )(const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$coords, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask, lv\+\_\+color\+\_\+t color, lv\+\_\+opa\+\_\+t opa)
+\item 
+\mbox{\Hypertarget{test-6_2include_2display_2lv__draw_2lv__draw_8h_af1cdfd39a140bdcbf41c239b1b981de2}\label{test-6_2include_2display_2lv__draw_2lv__draw_8h_af1cdfd39a140bdcbf41c239b1b981de2}} 
+void($\ast$const {\bfseries letter\+\_\+fp} )(const \mbox{\hyperlink{structlv__point__t}{lv\+\_\+point\+\_\+t}} $\ast$pos\+\_\+p, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask, const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font\+\_\+p, uint32\+\_\+t letter, lv\+\_\+color\+\_\+t color, lv\+\_\+opa\+\_\+t opa)
+\item 
+\mbox{\Hypertarget{test-6_2include_2display_2lv__draw_2lv__draw_8h_a4cb5f0153420fb112ece04791e2e8b15}\label{test-6_2include_2display_2lv__draw_2lv__draw_8h_a4cb5f0153420fb112ece04791e2e8b15}} 
+void($\ast$const {\bfseries map\+\_\+fp} )(const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$cords\+\_\+p, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask\+\_\+p, const uint8\+\_\+t $\ast$map\+\_\+p, lv\+\_\+opa\+\_\+t opa, bool chroma\+\_\+key, bool alpha\+\_\+byte, lv\+\_\+color\+\_\+t recolor, lv\+\_\+opa\+\_\+t recolor\+\_\+opa)
+\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__ll_8h_source}{}\doxysection{lv\+\_\+ll.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__ll_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_misc/lv\_ll.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_misc/lv\_ll.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_LL\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_LL\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{15 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{16 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{test-6_2include_2display_2lv__misc_2lv__mem_8h}{lv\_mem.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <stddef.h>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{22 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{23 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{26 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{27 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{/*Dummy type to make handling easier*/}}
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} uint8\_t lv\_ll\_node\_t;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*Description of a linked list*/}}
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     uint32\_t n\_size;}
+\DoxyCodeLine{36     lv\_ll\_node\_t* head;}
+\DoxyCodeLine{37     lv\_ll\_node\_t* tail;}
+\DoxyCodeLine{38 \} \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{41 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{42 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} lv\_ll\_init(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p, uint32\_t node\_size);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} * lv\_ll\_ins\_head(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} * lv\_ll\_ins\_prev(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p, \textcolor{keywordtype}{void} * n\_act);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} * lv\_ll\_ins\_tail(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{79 \textcolor{keywordtype}{void} lv\_ll\_rem(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}}  * ll\_p, \textcolor{keywordtype}{void} * node\_p);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{85 \textcolor{keywordtype}{void} lv\_ll\_clear(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{93 \textcolor{keywordtype}{void} lv\_ll\_chg\_list(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_ori\_p, \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_new\_p, \textcolor{keywordtype}{void} * node);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{100 \textcolor{keywordtype}{void} * lv\_ll\_get\_head(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} * lv\_ll\_get\_tail(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{115 \textcolor{keywordtype}{void} * lv\_ll\_get\_next(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * n\_act);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} * lv\_ll\_get\_prev(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * n\_act);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{131 \textcolor{keywordtype}{void} lv\_ll\_move\_before(\mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} * ll\_p, \textcolor{keywordtype}{void} * n\_act, \textcolor{keywordtype}{void} * n\_after);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{134 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{135 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define LL\_READ(list, i) for(i = lv\_ll\_get\_head(\&list); i != NULL; i = lv\_ll\_get\_next(\&list, i))}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define LL\_READ\_BACK(list, i) for(i = lv\_ll\_get\_tail(\&list); i != NULL; i = lv\_ll\_get\_prev(\&list, i))}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{142 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

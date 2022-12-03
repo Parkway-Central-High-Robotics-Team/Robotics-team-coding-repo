@@ -1,0 +1,55 @@
+\hypertarget{test-3_2include_2display_2lv__misc_2lv__math_8h_source}{}\doxysection{lv\+\_\+math.\+h}
+\label{test-3_2include_2display_2lv__misc_2lv__math_8h_source}\index{Pros/test-\/3/include/display/lv\_misc/lv\_math.h@{Pros/test-\/3/include/display/lv\_misc/lv\_math.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_MATH\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_MATH\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{15 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{16 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{20 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{21 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define LV\_MATH\_MIN(a,b) ((a) < (b) ? (a) : (b))}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define LV\_MATH\_MAX(a,b) ((a) > (b) ? (a) : (b))}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define LV\_MATH\_ABS(x) ((x) > 0 ? (x) : (-\/(x)))}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define LV\_TRIGO\_SIN\_MAX    32767}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define LV\_TRIGO\_SHIFT      15      }\textcolor{comment}{/* >> LV\_TRIGO\_SHIFT to normalize*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define LV\_BEZIER\_VAL\_MAX       1024    }\textcolor{comment}{/*Max time in Bezier functions (not [0..1] to use integers) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define LV\_BEZIER\_VAL\_SHIFT     10      }\textcolor{comment}{/*log2(LV\_BEZIER\_VAL\_MAX): used to normalize up scaled values*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{34 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{37 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{38 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{45 \textcolor{keywordtype}{char} * lv\_math\_num\_to\_str(int32\_t num, \textcolor{keywordtype}{char} * buf);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52 int16\_t lv\_trigo\_sin(int16\_t angle);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{63 int32\_t lv\_bezier3(uint32\_t t, int32\_t u0, int32\_t u1, int32\_t u2, int32\_t u3);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{66 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{67 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{70 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

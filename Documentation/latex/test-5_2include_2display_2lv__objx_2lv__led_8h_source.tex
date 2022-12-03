@@ -1,0 +1,80 @@
+\hypertarget{test-5_2include_2display_2lv__objx_2lv__led_8h_source}{}\doxysection{lv\+\_\+led.\+h}
+\label{test-5_2include_2display_2lv__objx_2lv__led_8h_source}\index{Pros/test-\/5/include/display/lv\_objx/lv\_led.h@{Pros/test-\/5/include/display/lv\_objx/lv\_led.h}}
+\mbox{\hyperlink{test-5_2include_2display_2lv__objx_2lv__led_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_LED\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_LED\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_LED != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{27 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{28 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{31 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{32 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{/*Data of led*/}}
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     \textcolor{comment}{/*No inherited ext.*/}}
+\DoxyCodeLine{38     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{39     uint8\_t bright;         \textcolor{comment}{/*Current brightness of the LED (0..255)*/}}
+\DoxyCodeLine{40 \} lv\_led\_ext\_t;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{43 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{44 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{52 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_led\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} lv\_led\_set\_bright(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * led, uint8\_t bright);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65 \textcolor{keywordtype}{void} lv\_led\_on(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * led);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} lv\_led\_off(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * led);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{77 \textcolor{keywordtype}{void} lv\_led\_toggle(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * led);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_led\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *led, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style)}
+\DoxyCodeLine{85 \{}
+\DoxyCodeLine{86     \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ac9c62dbb12ae34560d7075baf987cdb2}{lv\_obj\_set\_style}}(led, style);}
+\DoxyCodeLine{87 \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{94 uint8\_t lv\_led\_get\_bright(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * led);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{101 \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}}* lv\_led\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *led)}
+\DoxyCodeLine{102 \{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a610bcf1bdb3303bd8e8791875a08132a}{lv\_obj\_get\_style}}(led);}
+\DoxyCodeLine{104 \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{107 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{108 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_LED*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{113 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_LED\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

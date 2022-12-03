@@ -1,0 +1,372 @@
+\hypertarget{classokapi_1_1_rate}{}\doxysection{okapi\+::Rate Class Reference}
+\label{classokapi_1_1_rate}\index{okapi::Rate@{okapi::Rate}}
+Inheritance diagram for okapi\+::Rate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.458333cm]{classokapi_1_1_rate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}{delay}} (QFrequency ihz) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}{delay\+Until}} (QTime itime) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}{delay\+Until}} (uint32\+\_\+t ims) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}{delay}} (QFrequency ihz) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}{delay\+Until}} (QTime itime) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}{delay\+Until}} (uint32\+\_\+t ims) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}{delay}} (QFrequency ihz) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}{delay\+Until}} (QTime itime) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}{delay\+Until}} (uint32\+\_\+t ims) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}{delay}} (QFrequency ihz) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}{delay\+Until}} (QTime itime) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}{delay\+Until}} (uint32\+\_\+t ims) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}{delay}} (QFrequency ihz) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}{delay\+Until}} (QTime itime) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}{delay\+Until}} (uint32\+\_\+t ims) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}{delay}} (QFrequency ihz) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}{delay\+Until}} (QTime itime) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}{delay\+Until}} (uint32\+\_\+t ims) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_rate_aec1dbde3c1139531b48a035e9041e61b}\label{classokapi_1_1_rate_aec1dbde3c1139531b48a035e9041e61b}} 
+std\+::uint32\+\_\+t {\bfseries last\+Time} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}\label{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}} 
+\index{okapi::Rate@{okapi::Rate}!delay@{delay}}
+\index{delay@{delay}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay (\begin{DoxyParamCaption}\item[{QFrequency}]{ihz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task such that it runs at the given frequency. The first delay will run for 1000/(ihz). Subsequent delays will adjust according to the previous runtime of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ihz} & the frequency \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_ab1abf71d6cf3184abeed1d3556d39d4f}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}\label{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}} 
+\index{okapi::Rate@{okapi::Rate}!delay@{delay}}
+\index{delay@{delay}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay (\begin{DoxyParamCaption}\item[{QFrequency}]{ihz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task such that it runs at the given frequency. The first delay will run for 1000/(ihz). Subsequent delays will adjust according to the previous runtime of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ihz} & the frequency \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_ab1abf71d6cf3184abeed1d3556d39d4f}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}\label{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}} 
+\index{okapi::Rate@{okapi::Rate}!delay@{delay}}
+\index{delay@{delay}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay (\begin{DoxyParamCaption}\item[{QFrequency}]{ihz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task such that it runs at the given frequency. The first delay will run for 1000/(ihz). Subsequent delays will adjust according to the previous runtime of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ihz} & the frequency \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_ab1abf71d6cf3184abeed1d3556d39d4f}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}\label{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}} 
+\index{okapi::Rate@{okapi::Rate}!delay@{delay}}
+\index{delay@{delay}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay (\begin{DoxyParamCaption}\item[{QFrequency}]{ihz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task such that it runs at the given frequency. The first delay will run for 1000/(ihz). Subsequent delays will adjust according to the previous runtime of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ihz} & the frequency \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_ab1abf71d6cf3184abeed1d3556d39d4f}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}\label{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}} 
+\index{okapi::Rate@{okapi::Rate}!delay@{delay}}
+\index{delay@{delay}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay (\begin{DoxyParamCaption}\item[{QFrequency}]{ihz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task such that it runs at the given frequency. The first delay will run for 1000/(ihz). Subsequent delays will adjust according to the previous runtime of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ihz} & the frequency \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_ab1abf71d6cf3184abeed1d3556d39d4f}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}\label{classokapi_1_1_rate_ad066b6b32b6d43f4ccbb66617018e1fc}} 
+\index{okapi::Rate@{okapi::Rate}!delay@{delay}}
+\index{delay@{delay}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay (\begin{DoxyParamCaption}\item[{QFrequency}]{ihz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task such that it runs at the given frequency. The first delay will run for 1000/(ihz). Subsequent delays will adjust according to the previous runtime of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ihz} & the frequency \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_ab1abf71d6cf3184abeed1d3556d39d4f}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}\label{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{QTime}]{itime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until itime has passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itime} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a53a15074ca3bd0787ce34d30c068d9b2}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}\label{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{QTime}]{itime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until itime has passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itime} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a53a15074ca3bd0787ce34d30c068d9b2}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}\label{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{QTime}]{itime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until itime has passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itime} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a53a15074ca3bd0787ce34d30c068d9b2}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}\label{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{QTime}]{itime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until itime has passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itime} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a53a15074ca3bd0787ce34d30c068d9b2}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}\label{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{QTime}]{itime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until itime has passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itime} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a53a15074ca3bd0787ce34d30c068d9b2}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}\label{classokapi_1_1_rate_a9244a301c81388054954076b739cec50}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{QTime}]{itime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until itime has passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itime} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a53a15074ca3bd0787ce34d30c068d9b2}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}\label{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until ims milliseconds have passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ims} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a3faf54ea2951ae5e0567cd50ddba0227}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}\label{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until ims milliseconds have passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ims} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a3faf54ea2951ae5e0567cd50ddba0227}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}\label{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until ims milliseconds have passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ims} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a3faf54ea2951ae5e0567cd50ddba0227}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}\label{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until ims milliseconds have passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ims} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a3faf54ea2951ae5e0567cd50ddba0227}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}\label{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until ims milliseconds have passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ims} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a3faf54ea2951ae5e0567cd50ddba0227}{okapi\+::\+Abstract\+Rate}}.
+
+\mbox{\Hypertarget{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}\label{classokapi_1_1_rate_a0d31416c85408d63830cceaa07aff1e0}} 
+\index{okapi::Rate@{okapi::Rate}!delayUntil@{delayUntil}}
+\index{delayUntil@{delayUntil}!okapi::Rate@{okapi::Rate}}
+\doxysubsubsection{\texorpdfstring{delayUntil()}{delayUntil()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily void okapi\+::\+Rate\+::delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Delay the current task until ims milliseconds have passed. This method can be used by periodic tasks to ensure a consistent execution frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ims} & the time period \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_rate_a3faf54ea2951ae5e0567cd50ddba0227}{okapi\+::\+Abstract\+Rate}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pros/\+Pros-\/6-\/25-\/22/include/okapi/impl/util/rate.\+hpp\item 
+Pros/\+Pros-\/7-\/13-\/22/include/okapi/impl/util/rate.\+hpp\item 
+Pros/\+Pros-\/7-\/9-\/22/include/okapi/impl/util/rate.\+hpp\item 
+Pros/test-\/3/include/okapi/impl/util/rate.\+hpp\item 
+Pros/test-\/5/include/okapi/impl/util/rate.\+hpp\item 
+Pros/test-\/6/include/okapi/impl/util/rate.\+hpp\end{DoxyCompactItemize}

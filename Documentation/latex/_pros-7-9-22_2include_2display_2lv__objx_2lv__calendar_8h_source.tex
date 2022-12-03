@@ -1,0 +1,157 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__objx_2lv__calendar_8h_source}{}\doxysection{lv\+\_\+calendar.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__objx_2lv__calendar_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_calendar.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_calendar.h}}
+\mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__objx_2lv__calendar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_CALENDAR\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_CALENDAR\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_CALENDAR != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{27 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{28 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{31 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{32 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{35     uint16\_t year;}
+\DoxyCodeLine{36     int8\_t month;}
+\DoxyCodeLine{37     int8\_t day;}
+\DoxyCodeLine{38 \} lv\_calendar\_date\_t;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{enum}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42     LV\_CALENDAR\_ACTION\_CLICK,}
+\DoxyCodeLine{43     LV\_CALENDAR\_ACTION\_PR,}
+\DoxyCodeLine{44     LV\_CALENDAR\_ACTION\_LONG\_PR,}
+\DoxyCodeLine{45     LV\_CALENDAR\_ACTION\_LONG\_PR\_REPEAT,}
+\DoxyCodeLine{46     LV\_CALENDAR\_ACTION\_NUM,}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} uint8\_t lv\_calendar\_action\_t;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{/*Data of calendar*/}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{52     \textcolor{comment}{/*None*/} \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{53     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{54     lv\_calendar\_date\_t today;          \textcolor{comment}{/*Date of today*/}}
+\DoxyCodeLine{55     lv\_calendar\_date\_t showed\_date;   \textcolor{comment}{/*Currently visible month (day is ignored)*/}}
+\DoxyCodeLine{56     lv\_calendar\_date\_t * highlighted\_dates;  \textcolor{comment}{/*Apply different style on these days (pointer to an array defined by the user)*/}}
+\DoxyCodeLine{57     uint8\_t highlighted\_dates\_num;           \textcolor{comment}{/*Number of elements in `highlighted\_days`*/}}
+\DoxyCodeLine{58     int8\_t btn\_pressing;                    \textcolor{comment}{/*-\/1: prev month pressing, +1 next month pressing on the header*/}}
+\DoxyCodeLine{59     lv\_calendar\_date\_t pressed\_date;}
+\DoxyCodeLine{60     \textcolor{keyword}{const} \textcolor{keywordtype}{char} ** day\_names;            \textcolor{comment}{/*Pointer to an array with the name of the days (NULL: use default names)*/}}
+\DoxyCodeLine{61     \textcolor{keyword}{const} \textcolor{keywordtype}{char} ** month\_names;          \textcolor{comment}{/*Pointer to an array with the name of the month (NULL. use default names)*/}}
+\DoxyCodeLine{62     lv\_action\_t actions[LV\_CALENDAR\_ACTION\_NUM];}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{/*Styles*/}}
+\DoxyCodeLine{65     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_header;}
+\DoxyCodeLine{66     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_header\_pr;}
+\DoxyCodeLine{67     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_day\_names;}
+\DoxyCodeLine{68     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_highlighted\_days;}
+\DoxyCodeLine{69     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_inactive\_days;}
+\DoxyCodeLine{70     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_week\_box;}
+\DoxyCodeLine{71     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style\_today\_box;}
+\DoxyCodeLine{72 \} lv\_calendar\_ext\_t;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{/*Styles*/}}
+\DoxyCodeLine{75 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{76     LV\_CALENDAR\_STYLE\_BG,       \textcolor{comment}{/*Also the style of the "{}normal"{} date numbers*/}}
+\DoxyCodeLine{77     LV\_CALENDAR\_STYLE\_HEADER,}
+\DoxyCodeLine{78     LV\_CALENDAR\_STYLE\_HEADER\_PR,}
+\DoxyCodeLine{79     LV\_CALENDAR\_STYLE\_DAY\_NAMES,}
+\DoxyCodeLine{80     LV\_CALENDAR\_STYLE\_HIGHLIGHTED\_DAYS,}
+\DoxyCodeLine{81     LV\_CALENDAR\_STYLE\_INACTIVE\_DAYS,}
+\DoxyCodeLine{82     LV\_CALENDAR\_STYLE\_WEEK\_BOX,}
+\DoxyCodeLine{83     LV\_CALENDAR\_STYLE\_TODAY\_BOX,}
+\DoxyCodeLine{84 \};}
+\DoxyCodeLine{85 \textcolor{keyword}{typedef} uint8\_t lv\_calendar\_style\_t;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{91 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{92 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{100 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_calendar\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{103 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{104 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{108 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{109 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{115 \textcolor{keywordtype}{void} lv\_calendar\_set\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, lv\_calendar\_action\_t type, lv\_action\_t action);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{122 \textcolor{keywordtype}{void} lv\_calendar\_set\_today\_date(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, lv\_calendar\_date\_t * today);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{129 \textcolor{keywordtype}{void} lv\_calendar\_set\_showed\_date(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, lv\_calendar\_date\_t * showed);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{137 \textcolor{keywordtype}{void} lv\_calendar\_set\_highlighted\_dates(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, lv\_calendar\_date\_t * highlighted, uint16\_t date\_num);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{146 \textcolor{keywordtype}{void} lv\_calendar\_set\_day\_names(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, \textcolor{keyword}{const} \textcolor{keywordtype}{char} ** day\_names);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{154 \textcolor{keywordtype}{void} lv\_calendar\_set\_month\_names(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, \textcolor{keyword}{const} \textcolor{keywordtype}{char} ** day\_names);}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{162 \textcolor{keywordtype}{void} lv\_calendar\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, lv\_calendar\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{165 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{166 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{172 lv\_action\_t lv\_calendar\_get\_action(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, lv\_calendar\_action\_t type);}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{179 lv\_calendar\_date\_t * lv\_calendar\_get\_today\_date(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{186 lv\_calendar\_date\_t * lv\_calendar\_get\_showed\_date(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{193 lv\_calendar\_date\_t * lv\_calendar\_get\_pressed\_date(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{200 lv\_calendar\_date\_t * lv\_calendar\_get\_highlighted\_dates(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar);}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{207 uint16\_t lv\_calendar\_get\_highlighted\_dates\_num(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{215 \textcolor{keyword}{const} \textcolor{keywordtype}{char} ** lv\_calendar\_get\_day\_names(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{222 \textcolor{keyword}{const} \textcolor{keywordtype}{char} ** lv\_calendar\_get\_month\_names(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{230 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_calendar\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * calendar, lv\_calendar\_style\_t type);}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{233 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{234 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{237 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{238 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_CALENDAR*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{243 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_CALENDAR\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

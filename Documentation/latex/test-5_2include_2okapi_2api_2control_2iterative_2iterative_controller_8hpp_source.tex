@@ -1,0 +1,37 @@
+\hypertarget{test-5_2include_2okapi_2api_2control_2iterative_2iterative_controller_8hpp_source}{}\doxysection{iterative\+Controller.\+hpp}
+\label{test-5_2include_2okapi_2api_2control_2iterative_2iterative_controller_8hpp_source}\index{Pros/test-\/5/include/okapi/api/control/iterative/iterativeController.hpp@{Pros/test-\/5/include/okapi/api/control/iterative/iterativeController.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/control/closedLoopController.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/units/QTime.hpp"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{18 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Input, \textcolor{keyword}{typename} Output>}
+\DoxyCodeLine{19 \textcolor{keyword}{class }IterativeController : \textcolor{keyword}{public} ClosedLoopController<Input, Output> \{}
+\DoxyCodeLine{20   \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_iterative_controller_a751bcad1407099e629e3ffbe395daf2b}{step}}(Input ireading) = 0;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_iterative_controller_a83e0aac640804974f0e06936b9f7898a}{getOutput}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_controller_ae1a7d9bd29d176a26bcc70c741f0d50f}{setOutputLimits}}(Output imax, Output imin) = 0;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_controller_a7c514b702b78be6c45c03b718edce035}{setControllerSetTargetLimits}}(Output itargetMax, Output itargetMin) = 0;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_iterative_controller_a09bdba3a6d7854d943ed5401210b0595}{getMaxOutput}}() = 0;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_iterative_controller_a4d271df97caeedbcc807b714a48eaa30}{getMinOutput}}() = 0;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_controller_ac4cfb1b37a3c707b2fc8f2fbda526f3e}{setSampleTime}}(QTime isampleTime) = 0;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} QTime \mbox{\hyperlink{classokapi_1_1_iterative_controller_a48cd86626af7036db4f36b4124df4f98}{getSampleTime}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{78 \};}
+\DoxyCodeLine{79 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

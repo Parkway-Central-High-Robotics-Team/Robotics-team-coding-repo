@@ -1,0 +1,76 @@
+\hypertarget{_pros-6-25-22_2include_2okapi_2api_2control_2util_2flywheel_simulator_8hpp_source}{}\doxysection{flywheel\+Simulator.\+hpp}
+\label{_pros-6-25-22_2include_2okapi_2api_2control_2util_2flywheel_simulator_8hpp_source}\index{Pros/Pros-\/6-\/25-\/22/include/okapi/api/control/util/flywheelSimulator.hpp@{Pros/Pros-\/6-\/25-\/22/include/okapi/api/control/util/flywheelSimulator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classokapi_1_1_flywheel_simulator}{FlywheelSimulator}} \{}
+\DoxyCodeLine{12   \textcolor{keyword}{public}:}
+\DoxyCodeLine{17   \textcolor{keyword}{explicit} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a8c7b4a6d86c64b3a5ec7e95b82b3486d}{FlywheelSimulator}}(\textcolor{keywordtype}{double} imass = 0.01,}
+\DoxyCodeLine{18                              \textcolor{keywordtype}{double} ilinkLen = 1,}
+\DoxyCodeLine{19                              \textcolor{keywordtype}{double} imuStatic = 0.1,}
+\DoxyCodeLine{20                              \textcolor{keywordtype}{double} imuDynamic = 0.9,}
+\DoxyCodeLine{21                              \textcolor{keywordtype}{double} itimestep = 0.01);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator}{\string~FlywheelSimulator}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a05ea33d225b636b14c7c8aab9ffb7fa8}{step}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a5da369045882dc962b1aff79eeaf1905}{step}}(\textcolor{keywordtype}{double} itorque);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a288c47223f4e558c0081c91db1180430}{setExternalTorqueFunction}}(}
+\DoxyCodeLine{52     std::function<\textcolor{keywordtype}{double}(\textcolor{keywordtype}{double} angle, \textcolor{keywordtype}{double} mass, \textcolor{keywordtype}{double} linkLength)> itorqueFunc);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a0e26fda9b8d46a12942a7ed5b8a0e399}{setTorque}}(\textcolor{keywordtype}{double} itorque);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a3b7178f2680fa6533e1056db8f6b1656}{setMaxTorque}}(\textcolor{keywordtype}{double} imaxTorque);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_ad9decd27371e9058f97a49944f06b4a1}{setAngle}}(\textcolor{keywordtype}{double} iangle);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a0a4b88f87de82603f49e49610fee1eb6}{setMass}}(\textcolor{keywordtype}{double} imass);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a54ebeed8e7eefd19b0d476a3215b18e7}{setLinkLength}}(\textcolor{keywordtype}{double} ilinkLen);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{94   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a60d44d13592af17e4490245868e8db5a}{setStaticFriction}}(\textcolor{keywordtype}{double} imuStatic);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_abc346f1446a476dc0c3571deabc79581}{setDynamicFriction}}(\textcolor{keywordtype}{double} imuDynamic);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_aba93a3606887d59536c47b0a1b1c6c6e}{setTimestep}}(\textcolor{keywordtype}{double} itimestep);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{115   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a506f126c88bf66759d2d31844b7f50e6}{getAngle}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{122   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a27636d62f018187f5858f2244d2b3f82}{getOmega}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{129   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_af7ce5da6fcafa314cb2372d6e6a98e28}{getAcceleration}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{136   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_flywheel_simulator_a028341fbfce013426a70fe74a7b0b584}{getMaxTorque}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{139   \textcolor{keywordtype}{double} inputTorque = 0;    \textcolor{comment}{// N*m}}
+\DoxyCodeLine{140   \textcolor{keywordtype}{double} maxTorque = 0.5649; \textcolor{comment}{// N*m}}
+\DoxyCodeLine{141   \textcolor{keywordtype}{double} angle = 0;          \textcolor{comment}{// rad}}
+\DoxyCodeLine{142   \textcolor{keywordtype}{double} omega = 0;          \textcolor{comment}{// rad / sec}}
+\DoxyCodeLine{143   \textcolor{keywordtype}{double} accel = 0;          \textcolor{comment}{// rad / sec\string^2}}
+\DoxyCodeLine{144   \textcolor{keywordtype}{double} mass;               \textcolor{comment}{// kg}}
+\DoxyCodeLine{145   \textcolor{keywordtype}{double} linkLen;            \textcolor{comment}{// m}}
+\DoxyCodeLine{146   \textcolor{keywordtype}{double} muStatic;           \textcolor{comment}{// N*m}}
+\DoxyCodeLine{147   \textcolor{keywordtype}{double} muDynamic;          \textcolor{comment}{// N*m}}
+\DoxyCodeLine{148   \textcolor{keywordtype}{double} timestep;           \textcolor{comment}{// sec}}
+\DoxyCodeLine{149   \textcolor{keywordtype}{double} I = 0;              \textcolor{comment}{// moment of inertia}}
+\DoxyCodeLine{150   std::function<double(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double})> torqueFunc;}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152   \textcolor{keyword}{const} \textcolor{keywordtype}{double} minTimestep = 0.000001; \textcolor{comment}{// 1 us}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154   \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} stepImpl();}
+\DoxyCodeLine{155 \};}
+\DoxyCodeLine{156 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

@@ -1,0 +1,34 @@
+\hypertarget{test-3_2include_2okapi_2api_2units_2_q_volume_8hpp_source}{}\doxysection{QVolume.\+hpp}
+\label{test-3_2include_2okapi_2api_2units_2_q_volume_8hpp_source}\index{Pros/test-\/3/include/okapi/api/units/QVolume.hpp@{Pros/test-\/3/include/okapi/api/units/QVolume.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This code is a modified version of Benjamin Jurke's work in 2015. You can read his blog post}}
+\DoxyCodeLine{3 \textcolor{comment}{ * here:}}
+\DoxyCodeLine{4 \textcolor{comment}{ * https://benjaminjurke.com/content/articles/2015/compile-\/time-\/numerical-\/unit-\/dimension-\/checking/}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{7 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{8 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{9 \textcolor{comment}{ */}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}okapi/api/units/QArea.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}okapi/api/units/QLength.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}okapi/api/units/RQuantity.hpp"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{17 QUANTITY\_TYPE(0, 3, 0, 0, QVolume)}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{constexpr} QVolume kilometer3 = kilometer2 * kilometer;}
+\DoxyCodeLine{20 \textcolor{keyword}{constexpr} QVolume meter3 = meter2 * meter;}
+\DoxyCodeLine{21 \textcolor{keyword}{constexpr} QVolume decimeter3 = decimeter2 * decimeter;}
+\DoxyCodeLine{22 \textcolor{keyword}{constexpr} QVolume centimeter3 = centimeter2 * centimeter;}
+\DoxyCodeLine{23 \textcolor{keyword}{constexpr} QVolume millimeter3 = millimeter2 * millimeter;}
+\DoxyCodeLine{24 \textcolor{keyword}{constexpr} QVolume inch3 = inch2 * inch;}
+\DoxyCodeLine{25 \textcolor{keyword}{constexpr} QVolume foot3 = foot2 * foot;}
+\DoxyCodeLine{26 \textcolor{keyword}{constexpr} QVolume mile3 = mile2 * mile;}
+\DoxyCodeLine{27 \textcolor{keyword}{constexpr} QVolume litre = decimeter3;}
+\DoxyCodeLine{28 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

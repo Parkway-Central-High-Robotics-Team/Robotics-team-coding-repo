@@ -1,0 +1,36 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2api_2odometry_2odom_state_8hpp_source}{}\doxysection{odom\+State.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2api_2odometry_2odom_state_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/api/odometry/odomState.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/api/odometry/odomState.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/units/QAngle.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/units/QLength.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/units/RQuantityName.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{14 \textcolor{keyword}{struct }OdomState \{}
+\DoxyCodeLine{15   QLength x\{0\_m\};}
+\DoxyCodeLine{16   QLength y\{0\_m\};}
+\DoxyCodeLine{17   QAngle theta\{0\_deg\};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{32   std::string \mbox{\hyperlink{structokapi_1_1_odom_state_a5c7103ec3764cf944a704e977fe1398c}{str}}(QLength idistanceUnit, QAngle iangleUnit) \textcolor{keyword}{const};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{48   std::string \mbox{\hyperlink{structokapi_1_1_odom_state_a0feae04e9707999ce72e6b948c1cbe64}{str}}(QLength idistanceUnit = meter,}
+\DoxyCodeLine{49                   std::string distUnitName = \textcolor{stringliteral}{"{}\_m"{}},}
+\DoxyCodeLine{50                   QAngle iangleUnit = degree,}
+\DoxyCodeLine{51                   std::string angleUnitName = \textcolor{stringliteral}{"{}\_deg"{}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

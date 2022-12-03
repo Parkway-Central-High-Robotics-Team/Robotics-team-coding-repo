@@ -1,0 +1,149 @@
+\hypertarget{_pros-7-13-22_2include_2display_2lv__fonts_2lv__font__builtin_8h_source}{}\doxysection{lv\+\_\+font\+\_\+builtin.\+h}
+\label{_pros-7-13-22_2include_2display_2lv__fonts_2lv__font__builtin_8h_source}\index{Pros/Pros-\/7-\/13-\/22/include/display/lv\_fonts/lv\_font\_builtin.h@{Pros/Pros-\/7-\/13-\/22/include/display/lv\_fonts/lv\_font\_builtin.h}}
+\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__fonts_2lv__font__builtin_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_FONT\_BUILTIN\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_FONT\_BUILTIN\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *     INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_font.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{25 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{26 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{29 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{30 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{33 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{34 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39 \textcolor{keywordtype}{void} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__fonts_2lv__font__builtin_8h_ab0030b11e27065db64f435ddcbe2ef02}{lv\_font\_builtin\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{42 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{43 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{46 \textcolor{comment}{ *  FONT DECLARATIONS}}
+\DoxyCodeLine{47 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/*10 px */}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_10}}
+\DoxyCodeLine{51 LV\_FONT\_DECLARE(lv\_font\_dejavu\_10);}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_10\_LATIN\_SUP}}
+\DoxyCodeLine{55 LV\_FONT\_DECLARE(lv\_font\_dejavu\_10\_latin\_sup);}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_10\_CYRILLIC}}
+\DoxyCodeLine{59 LV\_FONT\_DECLARE(lv\_font\_dejavu\_10\_cyrillic);}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_SYMBOL\_10}}
+\DoxyCodeLine{63 LV\_FONT\_DECLARE(lv\_font\_symbol\_10);}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/*20 px */}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_20}}
+\DoxyCodeLine{68 LV\_FONT\_DECLARE(lv\_font\_dejavu\_20);}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_20\_LATIN\_SUP}}
+\DoxyCodeLine{72 LV\_FONT\_DECLARE(lv\_font\_dejavu\_20\_latin\_sup);}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_20\_CYRILLIC}}
+\DoxyCodeLine{76 LV\_FONT\_DECLARE(lv\_font\_dejavu\_20\_cyrillic);}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_SYMBOL\_20}}
+\DoxyCodeLine{80 LV\_FONT\_DECLARE(lv\_font\_symbol\_20);}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{comment}{/*30 px */}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_30}}
+\DoxyCodeLine{85 LV\_FONT\_DECLARE(lv\_font\_dejavu\_30);}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_30\_LATIN\_SUP}}
+\DoxyCodeLine{89 LV\_FONT\_DECLARE(lv\_font\_dejavu\_30\_latin\_sup);}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_30\_CYRILLIC}}
+\DoxyCodeLine{93 LV\_FONT\_DECLARE(lv\_font\_dejavu\_30\_cyrillic);}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_SYMBOL\_30}}
+\DoxyCodeLine{97 LV\_FONT\_DECLARE(lv\_font\_symbol\_30);}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{/*40 px */}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_40}}
+\DoxyCodeLine{102 LV\_FONT\_DECLARE(lv\_font\_dejavu\_40);}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_40\_LATIN\_SUP}}
+\DoxyCodeLine{106 LV\_FONT\_DECLARE(lv\_font\_dejavu\_40\_latin\_sup);}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_DEJAVU\_40\_CYRILLIC}}
+\DoxyCodeLine{110 LV\_FONT\_DECLARE(lv\_font\_dejavu\_40\_cyrillic);}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_SYMBOL\_40}}
+\DoxyCodeLine{114 LV\_FONT\_DECLARE(lv\_font\_symbol\_40);}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#if USE\_LV\_FONT\_MONOSPACE\_8}}
+\DoxyCodeLine{118 LV\_FONT\_DECLARE(lv\_font\_monospace\_8);}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_10}}
+\DoxyCodeLine{122 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_10);}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_10\_LATIN\_SUP}}
+\DoxyCodeLine{125 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_10\_latin\_sup);}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_20}}
+\DoxyCodeLine{128 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_20);}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_20\_LATIN\_SUP}}
+\DoxyCodeLine{131 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_20\_latin\_sup);}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_30}}
+\DoxyCodeLine{134 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_30);}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_30\_LATIN\_SUP}}
+\DoxyCodeLine{137 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_30\_latin\_sup);}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_40}}
+\DoxyCodeLine{140 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_40);}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#if USE\_PROS\_FONT\_DEJAVU\_MONO\_40\_LATIN\_SUP}}
+\DoxyCodeLine{143 LV\_FONT\_DECLARE(pros\_font\_dejavu\_mono\_40\_latin\_sup);}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{147 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*LV\_FONT\_BUILTIN\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+\hypertarget{_pros-7-13-22_2include_2okapi_2squiggles_2constraints_8hpp_source}{}\doxysection{constraints.\+hpp}
+\label{_pros-7-13-22_2include_2okapi_2squiggles_2constraints_8hpp_source}\index{Pros/Pros-\/7-\/13-\/22/include/okapi/squiggles/constraints.hpp@{Pros/Pros-\/7-\/13-\/22/include/okapi/squiggles/constraints.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_SQUIGGLES\_CONSTRAINTS\_HPP\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_SQUIGGLES\_CONSTRAINTS\_HPP\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesquiggles}{squiggles}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{struct }Constraints \{}
+\DoxyCodeLine{30   \mbox{\hyperlink{structsquiggles_1_1_constraints_aabba931956d0fcc406711b57c7e95831}{Constraints}}(\textcolor{keywordtype}{double} imax\_vel,}
+\DoxyCodeLine{31               \textcolor{keywordtype}{double} imax\_accel = std::numeric\_limits<double>::max(),}
+\DoxyCodeLine{32               \textcolor{keywordtype}{double} imax\_jerk = std::numeric\_limits<double>::max(),}
+\DoxyCodeLine{33               \textcolor{keywordtype}{double} imax\_curvature = 1000,}
+\DoxyCodeLine{34               \textcolor{keywordtype}{double} imin\_accel = std::nan(\textcolor{stringliteral}{"{}"{}}))}
+\DoxyCodeLine{35     : max\_vel(imax\_vel),}
+\DoxyCodeLine{36       max\_accel(imax\_accel),}
+\DoxyCodeLine{37       max\_jerk(imax\_jerk),}
+\DoxyCodeLine{38       max\_curvature(imax\_curvature) \{}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} (imax\_accel == std::numeric\_limits<double>::max()) \{}
+\DoxyCodeLine{40       min\_accel = std::numeric\_limits<double>::lowest();}
+\DoxyCodeLine{41     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{42       min\_accel = std::isnan(imin\_accel) ? -\/imax\_accel : imin\_accel;}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44   \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51   std::string \mbox{\hyperlink{structsquiggles_1_1_constraints_a7da4a97b03ccff1d056d077763b4c913}{to\_string}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Constraints: \{max\_vel: "{}} + std::to\_string(max\_vel) +}
+\DoxyCodeLine{53            \textcolor{stringliteral}{"{}, max\_accel: "{}} + std::to\_string(max\_accel) +}
+\DoxyCodeLine{54            \textcolor{stringliteral}{"{}, max\_jerk: "{}} + std::to\_string(max\_jerk) +}
+\DoxyCodeLine{55            \textcolor{stringliteral}{"{}, min\_accel: "{}} + std::to\_string(min\_accel) + \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{56   \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{double} max\_vel;}
+\DoxyCodeLine{59   \textcolor{keywordtype}{double} max\_accel;}
+\DoxyCodeLine{60   \textcolor{keywordtype}{double} max\_jerk;}
+\DoxyCodeLine{61   \textcolor{keywordtype}{double} min\_accel;}
+\DoxyCodeLine{62   \textcolor{keywordtype}{double} max\_curvature;}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 \} \textcolor{comment}{// namespace squiggles}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

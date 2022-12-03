@@ -1,0 +1,358 @@
+\hypertarget{classokapi_1_1_median_filter}{}\doxysection{okapi\+::Median\+Filter\texorpdfstring{$<$}{<} n \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classokapi_1_1_median_filter}\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+
+
+{\ttfamily \#include $<$median\+Filter.\+hpp$>$}
+
+Inheritance diagram for okapi\+::Median\+Filter\texorpdfstring{$<$}{<} n \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.181435cm]{classokapi_1_1_median_filter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}{filter}} (const double ireading) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}{get\+Output}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}{filter}} (const double ireading) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}{get\+Output}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}{filter}} (const double ireading) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}{get\+Output}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}{filter}} (const double ireading) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}{get\+Output}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}{filter}} (const double ireading) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}{get\+Output}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}{filter}} (const double ireading) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}{get\+Output}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\+\_\+smallset}} ()
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\+\_\+smallset}} ()
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\+\_\+smallset}} ()
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\+\_\+smallset}} ()
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\+\_\+smallset}} ()
+\item 
+double \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\+\_\+smallset}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a9caf9d4373c845b7242fd2b733ed364e}\label{classokapi_1_1_median_filter_a9caf9d4373c845b7242fd2b733ed364e}} 
+std\+::array$<$ double, n $>$ {\bfseries data} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_median_filter_af5188b3df2e2f5cffed1b8b903ce1ef9}\label{classokapi_1_1_median_filter_af5188b3df2e2f5cffed1b8b903ce1ef9}} 
+std\+::size\+\_\+t {\bfseries index} = 0
+\item 
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a1cd7af575ee6be29f36a6b920277ef21}\label{classokapi_1_1_median_filter_a1cd7af575ee6be29f36a6b920277ef21}} 
+double {\bfseries output} = 0
+\item 
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a0730bda4e8ae740fc21ed98441d58fb2}\label{classokapi_1_1_median_filter_a0730bda4e8ae740fc21ed98441d58fb2}} 
+const size\+\_\+t {\bfseries middle\+Index}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t n$>$\newline
+class okapi\+::\+Median\+Filter$<$ n $>$}
+A filter which returns the median value of list of values.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em n} & number of taps in the filter \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}\label{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!filter@{filter}}
+\index{filter@{filter}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::filter (\begin{DoxyParamCaption}\item[{const double}]{ireading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Filters a value, like a sensor reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ireading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered result 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a7c2ea0b64b37b688900189856d58da15}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}\label{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!filter@{filter}}
+\index{filter@{filter}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::filter (\begin{DoxyParamCaption}\item[{const double}]{ireading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Filters a value, like a sensor reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ireading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered result 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a7c2ea0b64b37b688900189856d58da15}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}\label{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!filter@{filter}}
+\index{filter@{filter}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::filter (\begin{DoxyParamCaption}\item[{const double}]{ireading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Filters a value, like a sensor reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ireading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered result 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a7c2ea0b64b37b688900189856d58da15}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}\label{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!filter@{filter}}
+\index{filter@{filter}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::filter (\begin{DoxyParamCaption}\item[{const double}]{ireading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Filters a value, like a sensor reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ireading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered result 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a7c2ea0b64b37b688900189856d58da15}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}\label{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!filter@{filter}}
+\index{filter@{filter}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::filter (\begin{DoxyParamCaption}\item[{const double}]{ireading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Filters a value, like a sensor reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ireading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered result 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a7c2ea0b64b37b688900189856d58da15}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}\label{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!filter@{filter}}
+\index{filter@{filter}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::filter (\begin{DoxyParamCaption}\item[{const double}]{ireading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Filters a value, like a sensor reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ireading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered result 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a7c2ea0b64b37b688900189856d58da15}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}\label{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the previous output from filter.
+
+\begin{DoxyReturn}{Returns}
+the previous output from filter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a3469cd4bc108f8accf300d9f5cc9f42f}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}\label{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the previous output from filter.
+
+\begin{DoxyReturn}{Returns}
+the previous output from filter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a3469cd4bc108f8accf300d9f5cc9f42f}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}\label{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the previous output from filter.
+
+\begin{DoxyReturn}{Returns}
+the previous output from filter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a3469cd4bc108f8accf300d9f5cc9f42f}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}\label{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the previous output from filter.
+
+\begin{DoxyReturn}{Returns}
+the previous output from filter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a3469cd4bc108f8accf300d9f5cc9f42f}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}\label{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the previous output from filter.
+
+\begin{DoxyReturn}{Returns}
+the previous output from filter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a3469cd4bc108f8accf300d9f5cc9f42f}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}\label{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the previous output from filter.
+
+\begin{DoxyReturn}{Returns}
+the previous output from filter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_filter_a3469cd4bc108f8accf300d9f5cc9f42f}{okapi\+::\+Filter}}.
+
+\mbox{\Hypertarget{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}\label{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!kth\_smallset@{kth\_smallset}}
+\index{kth\_smallset@{kth\_smallset}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{kth\_smallset()}{kth\_smallset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::kth\+\_\+smallset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Algorithm from N. Wirth’s book, implementation by N. Devillard. \mbox{\Hypertarget{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}\label{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!kth\_smallset@{kth\_smallset}}
+\index{kth\_smallset@{kth\_smallset}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{kth\_smallset()}{kth\_smallset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::kth\+\_\+smallset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Algorithm from N. Wirth’s book, implementation by N. Devillard. \mbox{\Hypertarget{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}\label{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!kth\_smallset@{kth\_smallset}}
+\index{kth\_smallset@{kth\_smallset}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{kth\_smallset()}{kth\_smallset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::kth\+\_\+smallset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Algorithm from N. Wirth’s book, implementation by N. Devillard. \mbox{\Hypertarget{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}\label{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!kth\_smallset@{kth\_smallset}}
+\index{kth\_smallset@{kth\_smallset}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{kth\_smallset()}{kth\_smallset()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::kth\+\_\+smallset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Algorithm from N. Wirth’s book, implementation by N. Devillard. \mbox{\Hypertarget{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}\label{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!kth\_smallset@{kth\_smallset}}
+\index{kth\_smallset@{kth\_smallset}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{kth\_smallset()}{kth\_smallset()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::kth\+\_\+smallset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Algorithm from N. Wirth’s book, implementation by N. Devillard. \mbox{\Hypertarget{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}\label{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}} 
+\index{okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}!kth\_smallset@{kth\_smallset}}
+\index{kth\_smallset@{kth\_smallset}!okapi::MedianFilter$<$ n $>$@{okapi::MedianFilter$<$ n $>$}}
+\doxysubsubsection{\texorpdfstring{kth\_smallset()}{kth\_smallset()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t n$>$ \\
+double \mbox{\hyperlink{classokapi_1_1_median_filter}{okapi\+::\+Median\+Filter}}$<$ n $>$\+::kth\+\_\+smallset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Algorithm from N. Wirth’s book, implementation by N. Devillard. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pros/\+Pros-\/6-\/25-\/22/include/okapi/api/filter/median\+Filter.\+hpp\item 
+Pros/\+Pros-\/7-\/13-\/22/include/okapi/api/filter/median\+Filter.\+hpp\item 
+Pros/\+Pros-\/7-\/9-\/22/include/okapi/api/filter/median\+Filter.\+hpp\item 
+Pros/test-\/3/include/okapi/api/filter/median\+Filter.\+hpp\item 
+Pros/test-\/5/include/okapi/api/filter/median\+Filter.\+hpp\item 
+Pros/test-\/6/include/okapi/api/filter/median\+Filter.\+hpp\end{DoxyCompactItemize}

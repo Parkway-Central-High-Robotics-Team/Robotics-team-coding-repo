@@ -1,0 +1,52 @@
+\hypertarget{test-5_2include_2pros_2serial_8hpp_source}{}\doxysection{serial.\+hpp}
+\label{test-5_2include_2pros_2serial_8hpp_source}\index{Pros/test-\/5/include/pros/serial.hpp@{Pros/test-\/5/include/pros/serial.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef \_PROS\_SERIAL\_HPP\_}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define \_PROS\_SERIAL\_HPP\_}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}pros/serial.h"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{26 \textcolor{keyword}{class }Serial \{}
+\DoxyCodeLine{27     \textcolor{keyword}{public}:}
+\DoxyCodeLine{41     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpros_1_1_serial_a20b7c3c88af816af3078939b048dcf4b}{Serial}}(std::uint8\_t port, std::int32\_t baudrate);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpros_1_1_serial}{Serial}}(std::uint8\_t port);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{49 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{65     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_ab8c6d804852e6689d6c92c6b2c439824}{set\_baudrate}}(std::int32\_t baudrate) \textcolor{keyword}{const};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{87     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_a4d897c6f3f83636f4d4627ab02c10e76}{flush}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{104     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_aca502997319088ea71cf870fbbca7eb8}{get\_read\_avail}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{120     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_a08daf4a3df3e3c4924d66d0b2eb91538}{get\_write\_free}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{127     std::uint8\_t \mbox{\hyperlink{classpros_1_1_serial_a74560cbf9ec7bc3f49cbf54aadb049a9}{get\_port}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{140     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_a5ec51db5a7726f2220723971c1999881}{peek\_byte}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{153     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_a59c62f236867ec160668389a47d09a5e}{read\_byte}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{175     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_a0d42f31fa7a5bd936010a346167c1946}{read}}(std::uint8\_t* buffer, std::int32\_t length) \textcolor{keyword}{const};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{195     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_a16477199d136d4f2ccbc73281d03965b}{write\_byte}}(std::uint8\_t buffer) \textcolor{keyword}{const};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{218     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_serial_a865313d3b482d9ffdd380edc36273b24}{write}}(std::uint8\_t* buffer, std::int32\_t length) \textcolor{keyword}{const};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220     \textcolor{keyword}{private}:}
+\DoxyCodeLine{221     \textcolor{keyword}{const} std::uint8\_t \_port;}
+\DoxyCodeLine{222 \};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224 \textcolor{keyword}{namespace }literals \{}
+\DoxyCodeLine{225 \textcolor{keyword}{const} \mbox{\hyperlink{classpros_1_1_serial}{pros::Serial}} \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_ser(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} m);}
+\DoxyCodeLine{226 \}  \textcolor{comment}{// namespace literals}}
+\DoxyCodeLine{227 \}  \textcolor{comment}{// namespace pros}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_PROS\_SERIAL\_HPP\_}}
+
+\end{DoxyCode}

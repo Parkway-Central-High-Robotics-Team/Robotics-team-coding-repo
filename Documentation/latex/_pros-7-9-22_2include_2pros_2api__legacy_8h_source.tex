@@ -1,0 +1,80 @@
+\hypertarget{_pros-7-9-22_2include_2pros_2api__legacy_8h_source}{}\doxysection{api\+\_\+legacy.\+h}
+\label{_pros-7-9-22_2include_2pros_2api__legacy_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/pros/api\_legacy.h@{Pros/Pros-\/7-\/9-\/22/include/pros/api\_legacy.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef \_PROS\_API\_LEGACY\_H\_}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define \_PROS\_API\_LEGACY\_H\_}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}api.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define \_NAMESPACE pros::}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define \_CNAMESPACE pros::c::}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define \_NAMESPACE}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define \_CNAMESPACE}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define analogCalibrate(port) adi\_analog\_calibrate(port)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define analogRead(port) adi\_analog\_read(port)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define analogReadCalibrated(port) adi\_analog\_read\_calibrated(port)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define analogReadCalibratedHR(port) adi\_analog\_read\_calibrated\_HR(port)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define digitalRead(port) adi\_digital\_read(port)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define digitalWrite(port, value) adi\_digital\_write(port, value)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define pinMode(port, mode) adi\_pin\_mode(port, mode)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define adiMotorSet(port, speed) adi\_motor\_set(port, speed)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define adiMotorGet(port) adi\_motor\_get(port)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define adiMotorStop(port) adi\_motor\_stop(port)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define encoderGet(enc) adi\_encoder\_get(enc)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define encoderInit(portTop, portBottom, reverse) adi\_encoder\_init(portTop, portBottom, reverse)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define encoderShutdown(enc) adi\_encoder\_shutdown(enc)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define ultrasonicGet(ult) adi\_ultrasonic\_get(ult)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define ultrasonicInit(portEcho, portPing) adi\_ultrasonic\_init(portEcho, portPing)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define ultrasonicShutdown(ult) adi\_ultrasonic\_shutdown(ult)}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} \_CNAMESPACE adi\_encoder\_t Encoder;}
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \_CNAMESPACE adi\_ultrasonic\_t Ultrasonic;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define lcdInit lcd\_initialize}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define lcdReadButtons lcd\_read\_buttons}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define lcdClear lcd\_clear}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define lcdClearLine lcd\_clear\_line}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define lcdShutdown lcd\_shutdown}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define lcdPrint(line, fmt, ...) lcd\_print(line, fmt, \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define lcdSetText(line, text) lcd\_set\_text(line, text)}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define isEnabled() (!competition\_is\_disabled())}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define isAutonomous competition\_is\_autonomous}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define isOnline competition\_is\_connected}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define isJoystickConnected(id) controller\_is\_connected(id)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define joystickGetAnalog(id, channel) controller\_get\_analog(id, channel)}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define taskCreate(taskCode, stackDepth, parameters, priority) \(\backslash\)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{    task\_create(taskCode, parameters, priority, stackDepth, "{}"{}})}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define taskDelete(task) task\_delete(task)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define taskDelay task\_delay}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define taskDelayUntil(previousWakeTime, cycleTime) task\_delay\_until(previousWakeTime, cycleTime)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define taskPriorityGet(task) task\_get\_priority(task)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define taskPrioritySet(task, newPriority) task\_priority\_set(task, newPriority)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define taskGetState(task) task\_get\_state(task)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define taskSuspend(task) task\_suspend(task)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define taskResume(task) task\_resume(task)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define taskGetCount task\_get\_count}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define mutexCreate mutex\_create}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define mutexTake(mutex, blockTime) mutex\_take(mutex, blockTime)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define mutexGive(mutex) mutex\_give(mutex)}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} \_NAMESPACE task\_t TaskHandle;}
+\DoxyCodeLine{96 \textcolor{keyword}{typedef} \_NAMESPACE mutex\_t Mutex;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define motorSet(port, speed) motor\_move(port, speed)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define motorGet(port) motor\_get\_voltage(port)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define motorStop(port) motor\_move(port, 0)}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#undef \_NAMESPACE}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#undef \_CNAMESPACE}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_PROS\_API\_LEGACY\_H\_}}
+
+\end{DoxyCode}

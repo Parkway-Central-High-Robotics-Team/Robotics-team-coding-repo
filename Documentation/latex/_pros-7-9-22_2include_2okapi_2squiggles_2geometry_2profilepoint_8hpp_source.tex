@@ -1,0 +1,85 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2squiggles_2geometry_2profilepoint_8hpp_source}{}\doxysection{profilepoint.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2squiggles_2geometry_2profilepoint_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/squiggles/geometry/profilepoint.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/squiggles/geometry/profilepoint.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_GEOMETRY\_PROFILE\_POINT\_HPP\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_GEOMETRY\_PROFILE\_POINT\_HPP\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}controlvector.hpp"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}math/utils.hpp"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesquiggles}{squiggles}} \{}
+\DoxyCodeLine{18 \textcolor{keyword}{struct }ProfilePoint \{}
+\DoxyCodeLine{30   \mbox{\hyperlink{structsquiggles_1_1_profile_point_a941c83e707983842dbbe57634c00e4ea}{ProfilePoint}}(\mbox{\hyperlink{classsquiggles_1_1_control_vector}{ControlVector}} ivector,}
+\DoxyCodeLine{31                std::vector<double> iwheel\_velocities,}
+\DoxyCodeLine{32                \textcolor{keywordtype}{double} icurvature,}
+\DoxyCodeLine{33                \textcolor{keywordtype}{double} itime)}
+\DoxyCodeLine{34     : vector(ivector),}
+\DoxyCodeLine{35       wheel\_velocities(iwheel\_velocities),}
+\DoxyCodeLine{36       curvature(icurvature),}
+\DoxyCodeLine{37       time(itime) \{\}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \mbox{\hyperlink{structsquiggles_1_1_profile_point}{ProfilePoint}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46   std::string \mbox{\hyperlink{structsquiggles_1_1_profile_point_a293aa38cefd3e45768e5e8a606cffda2}{to\_string}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{47     std::string wheels = \textcolor{stringliteral}{"{}\{"{}};}
+\DoxyCodeLine{48     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& w : wheel\_velocities) \{}
+\DoxyCodeLine{49       wheels += std::to\_string(w);}
+\DoxyCodeLine{50       wheels += \textcolor{stringliteral}{"{}, "{}};}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     wheels += \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{53     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ProfilePoint: \{"{}} + vector.\mbox{\hyperlink{classsquiggles_1_1_control_vector_a524c764f919505a433c80118d4193fb1}{to\_string}}() + \textcolor{stringliteral}{"{}, wheels: "{}} + wheels +}
+\DoxyCodeLine{54            \textcolor{stringliteral}{"{}, k: "{}} + std::to\_string(curvature) +}
+\DoxyCodeLine{55            \textcolor{stringliteral}{"{}, t: "{}} + std::to\_string(time) + \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{56   \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   std::string to\_csv()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{59     std::string wheels = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{60     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& w : wheel\_velocities) \{}
+\DoxyCodeLine{61       wheels += \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{62       wheels += std::to\_string(w);}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} vector.to\_csv() + \textcolor{stringliteral}{"{},"{}} + std::to\_string(curvature) + \textcolor{stringliteral}{"{},"{}} +}
+\DoxyCodeLine{65            std::to\_string(time) + wheels;}
+\DoxyCodeLine{66   \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} ProfilePoint\& other)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < wheel\_velocities.size(); ++i) \{}
+\DoxyCodeLine{70       \textcolor{keywordflow}{if} (!nearly\_equal(wheel\_velocities[i], other.wheel\_velocities[i])) \{}
+\DoxyCodeLine{71         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{72       \}}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} vector == other.vector \&\& nearly\_equal(curvature, other.curvature) \&\&}
+\DoxyCodeLine{75            nearly\_equal(time, other.time);}
+\DoxyCodeLine{76   \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& os, \textcolor{keyword}{const} ProfilePoint\& p) \{}
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} os << \textcolor{stringliteral}{"{}ProfilePoint(ControlVector(Pose("{}} +}
+\DoxyCodeLine{80                    std::to\_string(p.vector.pose.x) + \textcolor{stringliteral}{"{},"{}} +}
+\DoxyCodeLine{81                    std::to\_string(p.vector.pose.y) + \textcolor{stringliteral}{"{},"{}} +}
+\DoxyCodeLine{82                    std::to\_string(p.vector.pose.yaw) + \textcolor{stringliteral}{"{}),"{}} +}
+\DoxyCodeLine{83                    std::to\_string(p.vector.vel) + \textcolor{stringliteral}{"{},"{}} +}
+\DoxyCodeLine{84                    std::to\_string(p.vector.accel) + \textcolor{stringliteral}{"{},"{}} +}
+\DoxyCodeLine{85                    std::to\_string(p.vector.jerk) + \textcolor{stringliteral}{"{}),\{"{}} +}
+\DoxyCodeLine{86                    std::to\_string(p.wheel\_velocities[0]) + \textcolor{stringliteral}{"{},"{}} +}
+\DoxyCodeLine{87                    std::to\_string(p.wheel\_velocities[1]) + \textcolor{stringliteral}{"{}\},"{}} +}
+\DoxyCodeLine{88                    std::to\_string(p.curvature) + \textcolor{stringliteral}{"{},"{}} + std::to\_string(p.time) +}
+\DoxyCodeLine{89                    \textcolor{stringliteral}{"{}),"{}};}
+\DoxyCodeLine{90     \textcolor{comment}{// return os << p.to\_string();}}
+\DoxyCodeLine{91   \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   ControlVector vector;}
+\DoxyCodeLine{94   std::vector<double> wheel\_velocities;}
+\DoxyCodeLine{95   \textcolor{keywordtype}{double} curvature;}
+\DoxyCodeLine{96   \textcolor{keywordtype}{double} time;}
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 \} \textcolor{comment}{// namespace squiggles}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

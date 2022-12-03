@@ -1,0 +1,46 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2api_2filter_2average_filter_8hpp_source}{}\doxysection{average\+Filter.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2api_2filter_2average_filter_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/api/filter/averageFilter.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/api/filter/averageFilter.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/filter/filter.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{18 \textcolor{keyword}{template} <std::\textcolor{keywordtype}{size\_t} n> \textcolor{keyword}{class }AverageFilter : \textcolor{keyword}{public} Filter \{}
+\DoxyCodeLine{19   \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classokapi_1_1_average_filter_a21483cccbe9d9aa49200c3b4b6d8a878}{AverageFilter}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{31   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_average_filter_a6030d718df73a9a1d7a99c104c3e564e}{filter}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} ireading)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{32     data[index++] = ireading;}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if} (index >= n) \{}
+\DoxyCodeLine{34       index = 0;}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     output = 0.0;}
+\DoxyCodeLine{38     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < n; i++)}
+\DoxyCodeLine{39       output += data[i];}
+\DoxyCodeLine{40     output /= (double)n;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{43   \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_average_filter_a2ee104dfc880e779079dc8e1e242a44b}{getOutput}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{52   \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55   std::array<double, n> data\{0\};}
+\DoxyCodeLine{56   std::size\_t index = 0;}
+\DoxyCodeLine{57   \textcolor{keywordtype}{double} output = 0;}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

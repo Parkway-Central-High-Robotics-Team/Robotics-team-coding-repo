@@ -1,0 +1,96 @@
+\hypertarget{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_source}{}\doxysection{lv\+\_\+area.\+h}
+\label{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_source}\index{Pros/Pros-\/7-\/13-\/22/include/display/lv\_misc/lv\_area.h@{Pros/Pros-\/7-\/13-\/22/include/display/lv\_misc/lv\_area.h}}
+\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_AREA\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_AREA\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{15 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{16 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{22 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{23 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define LV\_COORD\_MAX     (16383)    }\textcolor{comment}{/*To avoid overflow don't let the max [-\/32,32k] range */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define LV\_COORD\_MIN     (-\/16384)}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{28 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{29 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} int16\_t lv\_coord\_t;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     lv\_coord\_t x;}
+\DoxyCodeLine{35     lv\_coord\_t y;}
+\DoxyCodeLine{36 \} \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     lv\_coord\_t x1;}
+\DoxyCodeLine{41     lv\_coord\_t y1;}
+\DoxyCodeLine{42     lv\_coord\_t x2;}
+\DoxyCodeLine{43     lv\_coord\_t y2;}
+\DoxyCodeLine{44 \} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{47 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{48 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{58 \textcolor{keywordtype}{void} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_a8a6f63df40693641307a31d39f44101d}{lv\_area\_set}}(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * area\_p, lv\_coord\_t x1, lv\_coord\_t y1, lv\_coord\_t x2, lv\_coord\_t y2);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{65 \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} lv\_area\_copy(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * dest, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * src)}
+\DoxyCodeLine{66 \{}
+\DoxyCodeLine{67     memcpy(dest, src, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}}));}
+\DoxyCodeLine{68 \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{75 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_coord\_t lv\_area\_get\_width(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * area\_p)}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77     \textcolor{keywordflow}{return} area\_p-\/>x2 -\/ area\_p-\/>x1 + 1;}
+\DoxyCodeLine{78 \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{85 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_coord\_t lv\_area\_get\_height(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * area\_p)}
+\DoxyCodeLine{86 \{}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} area\_p-\/>y2 -\/ area\_p-\/>y1 + 1;}
+\DoxyCodeLine{88 \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{95 \textcolor{keywordtype}{void} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_a7cd8866c2312050e4541d5cdd862ed4a}{lv\_area\_set\_width}}(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * area\_p, lv\_coord\_t w);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_a092d265b43760f45dded850e64c175c7}{lv\_area\_set\_height}}(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * area\_p, lv\_coord\_t h);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{110 \textcolor{keywordtype}{void} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_aa746f39b483e5368cabd6c56ea9f5736}{lv\_area\_set\_pos}}(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * area\_p, lv\_coord\_t x, lv\_coord\_t y);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{117 uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_a71b2b35191f41ba629245399ce5aaf39}{lv\_area\_get\_size}}(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * area\_p);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{126 \textcolor{keywordtype}{bool} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_aebf8be947f901f46693b4c2956a805a0}{lv\_area\_intersect}}(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * res\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a1\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a2\_p);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{134 \textcolor{keywordtype}{void} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_a5624f73deeed656fe3d830694f1095df}{lv\_area\_join}}(\mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a\_res\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a1\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a2\_p);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{142 \textcolor{keywordtype}{bool} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_a5d63e038e924a898118c841d61d2a9f7}{lv\_area\_is\_point\_on}}(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} * p\_p);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{150 \textcolor{keywordtype}{bool} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_aa2a98c824a46cad50e1b5fa75fbaee10}{lv\_area\_is\_on}}(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a1\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * a2\_p);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{158 \textcolor{keywordtype}{bool} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__misc_2lv__area_8h_aca2cfda730417164f24a6120ca80cbc3}{lv\_area\_is\_in}}(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * ain\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * aholder\_p);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{161 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{162 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{165 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

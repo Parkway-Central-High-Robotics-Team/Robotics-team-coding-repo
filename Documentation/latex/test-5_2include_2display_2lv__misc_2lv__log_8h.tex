@@ -1,0 +1,43 @@
+\hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h}{}\doxysection{Pros/test-\/5/include/display/lv\+\_\+misc/lv\+\_\+log.h File Reference}
+\label{test-5_2include_2display_2lv__misc_2lv__log_8h}\index{Pros/test-\/5/include/display/lv\_misc/lv\_log.h@{Pros/test-\/5/include/display/lv\_misc/lv\_log.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a45b27a0d26b24c8252df9604df41f6b1}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a45b27a0d26b24c8252df9604df41f6b1}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE}~0     /$\ast$A lot of logs to give detailed information$\ast$/
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a417a9a24eb689145dd63beb910e55931}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a417a9a24eb689145dd63beb910e55931}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+INFO}~1     /$\ast$Log important events$\ast$/
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_abf1c7a8b781d8749e83aa9bc539d9bf7}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_abf1c7a8b781d8749e83aa9bc539d9bf7}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+WARN}~2     /$\ast$Log if something unwanted happened but didn\textquotesingle{}t caused problem$\ast$/
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a0a7ce4fc77f8c28bf18db50894942961}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a0a7ce4fc77f8c28bf18db50894942961}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+ERROR}~3     /$\ast$Only critical issue, when the system may fail$\ast$/
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a9860403b37b82c8a267fc673cb724dc6}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a9860403b37b82c8a267fc673cb724dc6}} 
+\#define {\bfseries \+\_\+\+LV\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+NUM}~4
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a79e8e4c6380e4bd2ace6a31936ee814f}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a79e8e4c6380e4bd2ace6a31936ee814f}} 
+\#define {\bfseries lv\+\_\+log\+\_\+add}(level,  file,  line,  dsc)~\{;\}
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a524d5f1e3687502a6c288bb5c136cf0c}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a524d5f1e3687502a6c288bb5c136cf0c}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+TRACE}(dsc)~\{;\}
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a016d37adec3fad7bc3358b32a895f944}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a016d37adec3fad7bc3358b32a895f944}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+INFO}(dsc)~\{;\}
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a232c937133a815f441846f086f6aeb9b}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a232c937133a815f441846f086f6aeb9b}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+WARN}(dsc)~\{;\}
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a291a729353a147746ce478ed8b588b75}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a291a729353a147746ce478ed8b588b75}} 
+\#define {\bfseries LV\+\_\+\+LOG\+\_\+\+ERROR}(dsc)~\{;\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__log_8h_a197d0f37f70d0d25b7fb8a12bf5394cf}\label{test-5_2include_2display_2lv__misc_2lv__log_8h_a197d0f37f70d0d25b7fb8a12bf5394cf}} 
+typedef int8\+\_\+t {\bfseries lv\+\_\+log\+\_\+level\+\_\+t}
+\end{DoxyCompactItemize}

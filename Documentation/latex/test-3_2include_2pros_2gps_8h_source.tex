@@ -1,0 +1,72 @@
+\hypertarget{test-3_2include_2pros_2gps_8h_source}{}\doxysection{gps.\+h}
+\label{test-3_2include_2pros_2gps_8h_source}\index{Pros/test-\/3/include/pros/gps.h@{Pros/test-\/3/include/pros/gps.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef \_PROS\_GPS\_H\_}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define \_PROS\_GPS\_H\_}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{26 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{28 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_\_attribute\_\_((\_\_packed\_\_)) gps\_status\_s \{}
+\DoxyCodeLine{32     \textcolor{keywordtype}{double} x;      }
+\DoxyCodeLine{33     \textcolor{keywordtype}{double} y;      }
+\DoxyCodeLine{34     \textcolor{keywordtype}{double} pitch;  }
+\DoxyCodeLine{35     \textcolor{keywordtype}{double} roll;   }
+\DoxyCodeLine{36     \textcolor{keywordtype}{double} yaw;    }
+\DoxyCodeLine{37 \} gps\_status\_s\_t;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{struct }\mbox{\hyperlink{structgps__raw__s}{gps\_raw\_s}} \{}
+\DoxyCodeLine{40     \textcolor{keywordtype}{double} x;  }
+\DoxyCodeLine{41     \textcolor{keywordtype}{double} y;  }
+\DoxyCodeLine{42     \textcolor{keywordtype}{double} z;  }
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structgps__raw__s}{gps\_raw\_s}} \mbox{\hyperlink{structgps__raw__s}{gps\_accel\_s\_t}};}
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structgps__raw__s}{gps\_raw\_s}} \mbox{\hyperlink{structgps__raw__s}{gps\_gyro\_s\_t}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{73 int32\_t gps\_initialize\_full(uint8\_t port, \textcolor{keywordtype}{double} xInitial, \textcolor{keywordtype}{double} yInitial, \textcolor{keywordtype}{double} headingInitial, \textcolor{keywordtype}{double} xOffset,}
+\DoxyCodeLine{74                             \textcolor{keywordtype}{double} yOffset);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{94 int32\_t gps\_set\_offset(uint8\_t port, \textcolor{keywordtype}{double} xOffset, \textcolor{keywordtype}{double} yOffset);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{114 int32\_t gps\_get\_offset(uint8\_t port, \textcolor{keywordtype}{double}* xOffset, \textcolor{keywordtype}{double}* yOffset);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{136 int32\_t gps\_set\_position(uint8\_t port, \textcolor{keywordtype}{double} xInitial, \textcolor{keywordtype}{double} yInitial, \textcolor{keywordtype}{double} headingInitial);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{154 int32\_t gps\_set\_data\_rate(uint8\_t port, uint32\_t rate);}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{171 \textcolor{keywordtype}{double} gps\_get\_error(uint8\_t port);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{189 gps\_status\_s\_t gps\_get\_status(uint8\_t port);}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{206 \textcolor{keywordtype}{double} gps\_get\_heading(uint8\_t port);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{223 \textcolor{keywordtype}{double} gps\_get\_heading\_raw(uint8\_t port);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{239 \textcolor{keywordtype}{double} gps\_get\_rotation(uint8\_t port);}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{257 int32\_t gps\_set\_rotation(uint8\_t port, \textcolor{keywordtype}{double} target);}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{273 int32\_t gps\_tare\_rotation(uint8\_t port);}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{289 \mbox{\hyperlink{structgps__raw__s}{gps\_gyro\_s\_t}} gps\_get\_gyro\_rate(uint8\_t port);}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{305 \mbox{\hyperlink{structgps__raw__s}{gps\_accel\_s\_t}} gps\_get\_accel(uint8\_t port);}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{308 \}}
+\DoxyCodeLine{309 \}}
+\DoxyCodeLine{310 \}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

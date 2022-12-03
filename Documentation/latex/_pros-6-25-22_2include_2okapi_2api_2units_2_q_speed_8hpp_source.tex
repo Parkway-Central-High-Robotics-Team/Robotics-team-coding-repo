@@ -1,0 +1,49 @@
+\hypertarget{_pros-6-25-22_2include_2okapi_2api_2units_2_q_speed_8hpp_source}{}\doxysection{QSpeed.\+hpp}
+\label{_pros-6-25-22_2include_2okapi_2api_2units_2_q_speed_8hpp_source}\index{Pros/Pros-\/6-\/25-\/22/include/okapi/api/units/QSpeed.hpp@{Pros/Pros-\/6-\/25-\/22/include/okapi/api/units/QSpeed.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This code is a modified version of Benjamin Jurke's work in 2015. You can read his blog post}}
+\DoxyCodeLine{3 \textcolor{comment}{ * here:}}
+\DoxyCodeLine{4 \textcolor{comment}{ * https://benjaminjurke.com/content/articles/2015/compile-\/time-\/numerical-\/unit-\/dimension-\/checking/}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{7 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{8 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{9 \textcolor{comment}{ */}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}okapi/api/units/QLength.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}okapi/api/units/QTime.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}okapi/api/units/RQuantity.hpp"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{17 QUANTITY\_TYPE(0, 1, -\/1, 0, QSpeed)}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{constexpr} QSpeed mps = meter / second;}
+\DoxyCodeLine{20 \textcolor{keyword}{constexpr} QSpeed miph = mile / hour;}
+\DoxyCodeLine{21 \textcolor{keyword}{constexpr} QSpeed kmph = kilometer / hour;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{inline} \textcolor{keyword}{namespace }literals \{}
+\DoxyCodeLine{24 \textcolor{keyword}{constexpr} QSpeed \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_mps(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} x) \{}
+\DoxyCodeLine{25   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(x) * mps;}
+\DoxyCodeLine{26 \}}
+\DoxyCodeLine{27 \textcolor{keyword}{constexpr} QSpeed \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_miph(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} x) \{}
+\DoxyCodeLine{28   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(x) * mile / hour;}
+\DoxyCodeLine{29 \}}
+\DoxyCodeLine{30 \textcolor{keyword}{constexpr} QSpeed \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_kmph(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} x) \{}
+\DoxyCodeLine{31   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(x) * kilometer / hour;}
+\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33 \textcolor{keyword}{constexpr} QSpeed \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_mps(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} x) \{}
+\DoxyCodeLine{34   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(x) * mps;}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 \textcolor{keyword}{constexpr} QSpeed \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_miph(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} x) \{}
+\DoxyCodeLine{37   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(x) * mile / hour;}
+\DoxyCodeLine{38 \}}
+\DoxyCodeLine{39 \textcolor{keyword}{constexpr} QSpeed \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_kmph(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} x) \{}
+\DoxyCodeLine{40   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(x) * kilometer / hour;}
+\DoxyCodeLine{41 \}}
+\DoxyCodeLine{42 \} \textcolor{comment}{// namespace literals}}
+\DoxyCodeLine{43 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

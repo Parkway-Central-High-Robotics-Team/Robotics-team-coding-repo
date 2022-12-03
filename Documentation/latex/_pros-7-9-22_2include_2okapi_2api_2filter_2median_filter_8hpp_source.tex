@@ -1,0 +1,81 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2api_2filter_2median_filter_8hpp_source}{}\doxysection{median\+Filter.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2api_2filter_2median_filter_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/api/filter/medianFilter.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/api/filter/medianFilter.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Uses the median filter algorithm from N. Wirth’s book, implementation by N. Devillard.}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{5 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{6 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{7 \textcolor{comment}{ */}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/filter/filter.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{21 \textcolor{keyword}{template} <std::\textcolor{keywordtype}{size\_t} n> \textcolor{keyword}{class }MedianFilter : \textcolor{keyword}{public} Filter \{}
+\DoxyCodeLine{22   \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   MedianFilter() : middleIndex((((n)\&1) ? ((n) / 2) : (((n) / 2) -\/ 1))) \{}
+\DoxyCodeLine{24   \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{32   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_median_filter_a91e4104c4862082cd17ab92b43c02fab}{filter}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} ireading)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{33     data[index++] = ireading;}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if} (index >= n) \{}
+\DoxyCodeLine{35       index = 0;}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     output = \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\_smallset}}();}
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{40   \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_median_filter_ac38e6d04879eaeb98b853a24cb26e28c}{getOutput}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{48     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{49   \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{52   std::array<double, n> data\{0\};}
+\DoxyCodeLine{53   std::size\_t index = 0;}
+\DoxyCodeLine{54   \textcolor{keywordtype}{double} output = 0;}
+\DoxyCodeLine{55   \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} middleIndex;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_median_filter_afe9b963e054b89cbdc13ea1acaaa900b}{kth\_smallset}}() \{}
+\DoxyCodeLine{61     std::array<double, n> dataCopy = data;}
+\DoxyCodeLine{62     \textcolor{keywordtype}{size\_t} j, l, m;}
+\DoxyCodeLine{63     l = 0;}
+\DoxyCodeLine{64     m = n -\/ 1;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordflow}{while} (l < m) \{}
+\DoxyCodeLine{67       \textcolor{keywordtype}{double} x = dataCopy[middleIndex];}
+\DoxyCodeLine{68       \textcolor{keywordtype}{size\_t} i = l;}
+\DoxyCodeLine{69       j = m;}
+\DoxyCodeLine{70       \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{71         \textcolor{keywordflow}{while} (dataCopy[i] < x) \{}
+\DoxyCodeLine{72           i++;}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74         \textcolor{keywordflow}{while} (x < dataCopy[j]) \{}
+\DoxyCodeLine{75           j-\/-\/;}
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77         \textcolor{keywordflow}{if} (i <= j) \{}
+\DoxyCodeLine{78           \textcolor{keyword}{const} \textcolor{keywordtype}{double} t = dataCopy[i];}
+\DoxyCodeLine{79           dataCopy[i] = dataCopy[j];}
+\DoxyCodeLine{80           dataCopy[j] = t;}
+\DoxyCodeLine{81           i++;}
+\DoxyCodeLine{82           j-\/-\/;}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84       \} \textcolor{keywordflow}{while} (i <= j);}
+\DoxyCodeLine{85       \textcolor{keywordflow}{if} (j < middleIndex)}
+\DoxyCodeLine{86         l = i;}
+\DoxyCodeLine{87       \textcolor{keywordflow}{if} (middleIndex < i)}
+\DoxyCodeLine{88         m = j;}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordflow}{return} dataCopy[middleIndex];}
+\DoxyCodeLine{92   \}}
+\DoxyCodeLine{93 \};}
+\DoxyCodeLine{94 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

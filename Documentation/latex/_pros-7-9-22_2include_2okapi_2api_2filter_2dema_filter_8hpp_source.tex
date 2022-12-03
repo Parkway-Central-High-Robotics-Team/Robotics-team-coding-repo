@@ -1,0 +1,35 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2api_2filter_2dema_filter_8hpp_source}{}\doxysection{dema\+Filter.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2api_2filter_2dema_filter_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/api/filter/demaFilter.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/api/filter/demaFilter.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/filter/filter.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <ratio>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{12 \textcolor{keyword}{class }DemaFilter : \textcolor{keyword}{public} Filter \{}
+\DoxyCodeLine{13   \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \mbox{\hyperlink{classokapi_1_1_dema_filter_ad5027a998ad5864b890c4aa04d6d54c3}{DemaFilter}}(\textcolor{keywordtype}{double} ialpha, \textcolor{keywordtype}{double} ibeta);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_dema_filter_a2d0eb2feae37ceacc865023ac4997ff1}{filter}}(\textcolor{keywordtype}{double} ireading) \textcolor{keyword}{override};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_dema_filter_a2dba33231bb71e16d13adbcefefed425}{getOutput}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_dema_filter_a7a8f5d93ec9e923f431676b71d250dbc}{setGains}}(\textcolor{keywordtype}{double} ialpha, \textcolor{keywordtype}{double} ibeta);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46   \textcolor{keywordtype}{double} alpha, beta;}
+\DoxyCodeLine{47   \textcolor{keywordtype}{double} outputS = 0;}
+\DoxyCodeLine{48   \textcolor{keywordtype}{double} lastOutputS = 0;}
+\DoxyCodeLine{49   \textcolor{keywordtype}{double} outputB = 0;}
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} lastOutputB = 0;}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

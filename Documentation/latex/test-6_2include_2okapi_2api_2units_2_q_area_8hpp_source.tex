@@ -1,0 +1,32 @@
+\hypertarget{test-6_2include_2okapi_2api_2units_2_q_area_8hpp_source}{}\doxysection{QArea.\+hpp}
+\label{test-6_2include_2okapi_2api_2units_2_q_area_8hpp_source}\index{Pros/test-\/6/include/okapi/api/units/QArea.hpp@{Pros/test-\/6/include/okapi/api/units/QArea.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This code is a modified version of Benjamin Jurke's work in 2015. You can read his blog post}}
+\DoxyCodeLine{3 \textcolor{comment}{ * here:}}
+\DoxyCodeLine{4 \textcolor{comment}{ * https://benjaminjurke.com/content/articles/2015/compile-\/time-\/numerical-\/unit-\/dimension-\/checking/}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{7 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{8 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{9 \textcolor{comment}{ */}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}okapi/api/units/QLength.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}okapi/api/units/RQuantity.hpp"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{16 QUANTITY\_TYPE(0, 2, 0, 0, QArea)}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{constexpr} QArea kilometer2 = kilometer * kilometer;}
+\DoxyCodeLine{19 \textcolor{keyword}{constexpr} QArea meter2 = meter * meter;}
+\DoxyCodeLine{20 \textcolor{keyword}{constexpr} QArea decimeter2 = decimeter * decimeter;}
+\DoxyCodeLine{21 \textcolor{keyword}{constexpr} QArea centimeter2 = centimeter * centimeter;}
+\DoxyCodeLine{22 \textcolor{keyword}{constexpr} QArea millimeter2 = millimeter * millimeter;}
+\DoxyCodeLine{23 \textcolor{keyword}{constexpr} QArea inch2 = inch * inch;}
+\DoxyCodeLine{24 \textcolor{keyword}{constexpr} QArea foot2 = foot * foot;}
+\DoxyCodeLine{25 \textcolor{keyword}{constexpr} QArea mile2 = mile * mile;}
+\DoxyCodeLine{26 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

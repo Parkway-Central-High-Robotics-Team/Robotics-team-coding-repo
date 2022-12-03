@@ -1,0 +1,39 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2impl_2device_2adi_ultrasonic_8hpp_source}{}\doxysection{adi\+Ultrasonic.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2impl_2device_2adi_ultrasonic_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/impl/device/adiUltrasonic.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/impl/device/adiUltrasonic.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}api.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/control/controllerInput.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/filter/passthroughFilter.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{14 \textcolor{keyword}{class }ADIUltrasonic : \textcolor{keyword}{public} ControllerInput<double> \{}
+\DoxyCodeLine{15   \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classokapi_1_1_a_d_i_ultrasonic_aaa0b61d7e4d5657c4f1c6ce4925ee8e4}{ADIUltrasonic}}(std::uint8\_t iportPing,}
+\DoxyCodeLine{31                 std::uint8\_t iportEcho,}
+\DoxyCodeLine{32                 std::unique\_ptr<Filter> ifilter = std::make\_unique<PassthroughFilter>());}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{49   \mbox{\hyperlink{classokapi_1_1_a_d_i_ultrasonic_a9aa5d5cadc5148f82d7743ad36e611cb}{ADIUltrasonic}}(std::tuple<std::uint8\_t, std::uint8\_t, std::uint8\_t> iports,}
+\DoxyCodeLine{50                 std::unique\_ptr<Filter> ifilter = std::make\_unique<PassthroughFilter>());}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_a_d_i_ultrasonic}{\string~ADIUltrasonic}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_a_d_i_ultrasonic_aebebefc0e59ee82788d7766ab44f3d49}{get}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_a_d_i_ultrasonic_ae8b090dfb116c1486fc605edcb668789}{controllerGet}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{68   pros::c::ext\_adi\_ultrasonic\_t ultra;}
+\DoxyCodeLine{69   std::unique\_ptr<Filter> filter;}
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

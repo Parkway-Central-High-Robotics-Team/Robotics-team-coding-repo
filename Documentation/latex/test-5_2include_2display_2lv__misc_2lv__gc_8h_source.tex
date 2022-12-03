@@ -1,0 +1,79 @@
+\hypertarget{test-5_2include_2display_2lv__misc_2lv__gc_8h_source}{}\doxysection{lv\+\_\+gc.\+h}
+\label{test-5_2include_2display_2lv__misc_2lv__gc_8h_source}\index{Pros/test-\/5/include/display/lv\_misc/lv\_gc.h@{Pros/test-\/5/include/display/lv\_misc/lv\_gc.h}}
+\mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__gc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_GC\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_GC\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{test-6_2include_2display_2lv__misc_2lv__mem_8h}{lv\_mem.h}}"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}lv\_ll.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{29 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{30 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define LV\_GC\_ROOTS(prefix) \(\backslash\)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    prefix lv\_ll\_t \_lv\_task\_ll;      }\textcolor{comment}{/*Linked list to store the lv\_tasks*/}\textcolor{preprocessor}{ \(\backslash\)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    prefix lv\_ll\_t \_lv\_scr\_ll;          }\textcolor{comment}{/*Linked list of screens*/}\textcolor{preprocessor}{ \(\backslash\)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{    prefix lv\_ll\_t \_lv\_drv\_ll;\(\backslash\)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{    prefix lv\_ll\_t \_lv\_file\_ll;\(\backslash\)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{    prefix lv\_ll\_t \_lv\_anim\_ll;\(\backslash\)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{    prefix void * \_lv\_def\_scr;\(\backslash\)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    prefix void * \_lv\_act\_scr;\(\backslash\)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{    prefix void * \_lv\_top\_layer;\(\backslash\)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{    prefix void * \_lv\_sys\_layer;\(\backslash\)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{    prefix void * \_lv\_task\_act;\(\backslash\)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{    prefix void * \_lv\_indev\_list;\(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{    prefix void * \_lv\_disp\_list;\(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{    }}
+\DoxyCodeLine{46     }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define LV\_NO\_PREFIX}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define LV\_ROOTS LV\_GC\_ROOTS(LV\_NO\_PREFIX)}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if LV\_ENABLE\_GC == 1}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#   if LV\_MEM\_CUSTOM != 1}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#       error "{}GC requires CUSTOM\_MEM"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#   endif }\textcolor{comment}{/* LV\_MEM\_CUSTOM */}\textcolor{preprocessor}{    }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* LV\_ENABLE\_GC */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#   define LV\_GC\_ROOT(x) x}}
+\DoxyCodeLine{56     LV\_GC\_ROOTS(\textcolor{keyword}{extern})}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* LV\_ENABLE\_GC */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{61 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{62 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{65 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{66 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{69 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{70 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{74 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*LV\_GC\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

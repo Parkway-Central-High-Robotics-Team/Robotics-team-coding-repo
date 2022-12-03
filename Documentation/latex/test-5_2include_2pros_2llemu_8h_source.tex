@@ -1,0 +1,98 @@
+\hypertarget{test-5_2include_2pros_2llemu_8h_source}{}\doxysection{llemu.\+h}
+\label{test-5_2include_2pros_2llemu_8h_source}\index{Pros/test-\/5/include/pros/llemu.h@{Pros/test-\/5/include/pros/llemu.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * \(\backslash\)file pros/llemu.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Legacy LCD Emulator}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * This file defines a high-\/level API for emulating the three-\/button, UART-\/based}}
+\DoxyCodeLine{7 \textcolor{comment}{ * VEX LCD, containing a set of functions that facilitate the use of a software-\/}}
+\DoxyCodeLine{8 \textcolor{comment}{ * emulated version of the classic VEX LCD module.}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Visit https://pros.cs.purdue.edu/v5/tutorials/topical/llemu.html to learn}}
+\DoxyCodeLine{11 \textcolor{comment}{ * more.}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ * This file should not be modified by users, since it gets replaced whenever}}
+\DoxyCodeLine{14 \textcolor{comment}{ * a kernel upgrade occurs.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * Copyright (c) 2017-\/2022, Purdue University ACM SIGBots.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{19 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{20 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{21 \textcolor{comment}{ */}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifndef \_PROS\_LLEMU\_H\_}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define \_PROS\_LLEMU\_H\_}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <errno.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#pragma GCC diagnostic push}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wunused-\/parameter"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wignored-\/qualifiers"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}display/lvgl.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#pragma GCC diagnostic pop}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{36 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} void (*lcd\_btn\_cb\_fn\_t)(void);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define LCD\_BTN\_LEFT 4}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define LCD\_BTN\_CENTER 2}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define LCD\_BTN\_RIGHT 1}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structlcd__s}{lcd\_s}} \{}
+\DoxyCodeLine{47     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}}* frame;}
+\DoxyCodeLine{48     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}}* screen;}
+\DoxyCodeLine{49     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}}* lcd\_text[8];}
+\DoxyCodeLine{50     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}}* btn\_container;}
+\DoxyCodeLine{51     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}}* btns[3];             \textcolor{comment}{// < 0 => left; 1 => center; 2 => right}}
+\DoxyCodeLine{52     lcd\_btn\_cb\_fn\_t callbacks[3];  \textcolor{comment}{// < 0 => left; 1 => center; 2 => right}}
+\DoxyCodeLine{53     \textcolor{keyword}{volatile} uint8\_t touch\_bits;   \textcolor{comment}{// < 4 => left; 2 => center; 1 => right (no}}
+\DoxyCodeLine{54                                    \textcolor{comment}{// multitouch support)}}
+\DoxyCodeLine{55 \} \mbox{\hyperlink{structlcd__s}{lcd\_s\_t}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{58 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66 \textcolor{keywordtype}{bool} lcd\_is\_initialized(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{74 \textcolor{keywordtype}{bool} lcd\_initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{89 \textcolor{keywordtype}{bool} lcd\_shutdown(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{109 \textcolor{keywordtype}{bool} lcd\_print(int16\_t line, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{127 \textcolor{keywordtype}{bool} lcd\_set\_text(int16\_t line, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{140 \textcolor{keywordtype}{bool} lcd\_clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{bool} lcd\_clear\_line(int16\_t line);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{174 \textcolor{keywordtype}{bool} lcd\_register\_btn0\_cb(lcd\_btn\_cb\_fn\_t cb);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{192 \textcolor{keywordtype}{bool} lcd\_register\_btn1\_cb(lcd\_btn\_cb\_fn\_t cb);}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{210 \textcolor{keywordtype}{bool} lcd\_register\_btn2\_cb(lcd\_btn\_cb\_fn\_t cb);}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{226 uint8\_t lcd\_read\_buttons(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{237 \textcolor{keywordtype}{void} lcd\_set\_background\_color(lv\_color\_t color);}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{248 \textcolor{keywordtype}{void} lcd\_set\_text\_color(lv\_color\_t color);}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{251 \}  \textcolor{comment}{// namespace c}}
+\DoxyCodeLine{252 \}  \textcolor{comment}{// namespace pros}}
+\DoxyCodeLine{253 \}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_PROS\_LLEMU\_H\_}}
+
+\end{DoxyCode}

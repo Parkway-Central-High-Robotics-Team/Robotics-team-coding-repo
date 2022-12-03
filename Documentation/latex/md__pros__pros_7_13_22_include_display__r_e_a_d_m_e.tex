@@ -1,0 +1,62 @@
+
+
+Littlev\+GL provides everything you need to create a Graphical User Interface (GUI) on embedded systems with easy-\/to-\/use graphical elements, beautiful visual effects and low memory footprint.
+
+Homepage\+: \href{https://littlevgl.com}{\texttt{ https\+://littlevgl.\+com}}\hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{Table Of Content}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Key features
+\item Porting
+\item Project set-\/up
+\item PC simulator
+\item Screenshots
+\item Contributing
+\item Donate
+\end{DoxyItemize}\hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Key features}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Powerful building blocks buttons, charts, lists, sliders, images etc
+\item Advanced graphics with animations, anti-\/aliasing, opacity, smooth scrolling
+\item Various input devices touch pad, mouse, keyboard, encoder, buttons etc
+\item Multi language support with UTF-\/8 decoding
+\item Fully customizable graphical elements
+\item Hardware independent to use with any microcontroller or display
+\item Scalable to operate with few memory (50 kB Flash, 10 kB RAM)
+\item OS, External memory and GPU supported but not required
+\item Single frame buffer operation even with advances graphical effects
+\item Written in C for maximal compatibility
+\item Simulator to develop on PC without embedded hardware
+\item Tutorials, examples, themes for rapid development
+\item Documentation and API references online
+\end{DoxyItemize}\hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Porting}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md3}
+In the most sime case you need 4 things\+:
+\begin{DoxyEnumerate}
+\item Call {\ttfamily lv\+\_\+tick\+\_\+inc(1)} in every millisecods in a Timer or Task
+\item Register a function which can {\bfseries{copy a pixel array}} to an area of the screen
+\item Register a function which can {\bfseries{read an input device}}. (E.\+g. touch pad)
+\item Call {\ttfamily lv\+\_\+task\+\_\+handler()} periodically in every few milliseconds For more information visit \href{https://littlevgl.com/porting}{\texttt{ https\+://littlevgl.\+com/porting}}
+\end{DoxyEnumerate}\hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Project set-\/up}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Clone}} or \href{https://littlevgl.com/download}{\texttt{ Download}} the lvgl repository\+: {\ttfamily git clone \href{https://github.com/littlevgl/lvgl.git}{\texttt{ https\+://github.\+com/littlevgl/lvgl.\+git}}}
+\item {\bfseries{Create project}} with your preferred IDE and add the {\itshape lvgl} folder
+\item Copy {\bfseries{lvgl/lv\+\_\+conf\+\_\+templ.\+h}} as {\bfseries{lv\+\_\+conf.\+h}} next to the {\itshape lvgl} folder
+\item In the lv\+\_\+conf.\+h delete the first {\ttfamily \#if 0} and its {\ttfamily \#endif}. Let the default configurations at first.
+\item In your {\itshape main.\+c}\+: \#include \char`\"{}lvgl/lvgl.\+h\char`\"{}
+\item In your {\itshape main function}\+:
+\begin{DoxyItemize}
+\item lvgl\+\_\+init();
+\item tick, display and input device initialization (see above)
+\end{DoxyItemize}
+\item To {\bfseries{test}} create a label\+: {\ttfamily lv\+\_\+obj\+\_\+t $\ast$ label = lv\+\_\+label\+\_\+create(lv\+\_\+scr\+\_\+act(), NULL);}
+\item In the main {\itshape while(1)} call {\ttfamily lv\+\_\+task\+\_\+handler();} and make a few milliseconds delay (e.\+g. {\ttfamily my\+\_\+delay\+\_\+ms(5);})
+\item Compile the code and load it to your embedded hardware
+\end{DoxyEnumerate}\hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md5}{}\doxysection{PC Simulator}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md5}
+If you don\textquotesingle{}t have got an embedded hardware you can test the graphics library in a PC simulator. The simulator uses \href{https://www.libsdl.org/}{\texttt{ SDL2}} to emulate a display on your monitor and a touch pad with your mouse.
+
+There is a pre-\/configured PC project for {\bfseries{Eclipse CDT}} in this repository\+: \href{https://github.com/littlevgl/pc_simulator}{\texttt{ https\+://github.\+com/littlevgl/pc\+\_\+simulator}}\hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md6}{}\doxysection{Screenshots}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md6}
+   \hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md7}{}\doxysection{Contributing}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md7}
+See \href{https://github.com/littlevgl/lvgl/blob/master/docs/CONTRIBUTING.md}{\texttt{ CONTRIBUTING.\+md}}\hypertarget{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md8}{}\doxysection{Donate}\label{md__pros__pros_7_13_22_include_display__r_e_a_d_m_e_autotoc_md8}
+If you are pleased with the graphics library, found it useful or be happy with the support you got, please help its further development\+:
+
+\href{https://littlevgl.com/donate}{\texttt{ }} 

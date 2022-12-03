@@ -1,0 +1,54 @@
+\hypertarget{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h}{}\doxysection{Pros/test-\/6/include/display/lv\+\_\+hal/lv\+\_\+hal\+\_\+tick.h File Reference}
+\label{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h}\index{Pros/test-\/6/include/display/lv\_hal/lv\_hal\_tick.h@{Pros/test-\/6/include/display/lv\_hal/lv\_hal\_tick.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+LV\+\_\+\+ATTRIBUTE\+\_\+\+TICK\+\_\+\+INC void \mbox{\hyperlink{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a9e26999086dd60626e8a03aca21143a7}{lv\+\_\+tick\+\_\+inc}} (uint32\+\_\+t tick\+\_\+period)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a051c47bcfb48282a75834d8dd0a8470c}{lv\+\_\+tick\+\_\+get}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a632b8bf9b03d3a809d053508c06dc6d9}{lv\+\_\+tick\+\_\+elaps}} (uint32\+\_\+t prev\+\_\+tick)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide access to the system tick with 1 millisecond resolution 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a632b8bf9b03d3a809d053508c06dc6d9}\label{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a632b8bf9b03d3a809d053508c06dc6d9}} 
+\index{lv\_hal\_tick.h@{lv\_hal\_tick.h}!lv\_tick\_elaps@{lv\_tick\_elaps}}
+\index{lv\_tick\_elaps@{lv\_tick\_elaps}!lv\_hal\_tick.h@{lv\_hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{lv\_tick\_elaps()}{lv\_tick\_elaps()}}
+{\footnotesize\ttfamily uint32\+\_\+t lv\+\_\+tick\+\_\+elaps (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{prev\+\_\+tick }\end{DoxyParamCaption})}
+
+Get the elapsed milliseconds since a previous time stamp 
+\begin{DoxyParams}{Parameters}
+{\em prev\+\_\+tick} & a previous time stamp (return value of systick\+\_\+get() ) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the elapsed milliseconds since \textquotesingle{}prev\+\_\+tick\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a051c47bcfb48282a75834d8dd0a8470c}\label{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a051c47bcfb48282a75834d8dd0a8470c}} 
+\index{lv\_hal\_tick.h@{lv\_hal\_tick.h}!lv\_tick\_get@{lv\_tick\_get}}
+\index{lv\_tick\_get@{lv\_tick\_get}!lv\_hal\_tick.h@{lv\_hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{lv\_tick\_get()}{lv\_tick\_get()}}
+{\footnotesize\ttfamily uint32\+\_\+t lv\+\_\+tick\+\_\+get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get the elapsed milliseconds since start up \begin{DoxyReturn}{Returns}
+the elapsed milliseconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a9e26999086dd60626e8a03aca21143a7}\label{test-6_2include_2display_2lv__hal_2lv__hal__tick_8h_a9e26999086dd60626e8a03aca21143a7}} 
+\index{lv\_hal\_tick.h@{lv\_hal\_tick.h}!lv\_tick\_inc@{lv\_tick\_inc}}
+\index{lv\_tick\_inc@{lv\_tick\_inc}!lv\_hal\_tick.h@{lv\_hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{lv\_tick\_inc()}{lv\_tick\_inc()}}
+{\footnotesize\ttfamily LV\+\_\+\+ATTRIBUTE\+\_\+\+TICK\+\_\+\+INC void lv\+\_\+tick\+\_\+inc (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{tick\+\_\+period }\end{DoxyParamCaption})}
+
+You have to call this function periodically 
+\begin{DoxyParams}{Parameters}
+{\em tick\+\_\+period} & the call period of this function in milliseconds \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,213 @@
+\hypertarget{test-5_2include_2display_2lv__objx_2lv__page_8h_source}{}\doxysection{lv\+\_\+page.\+h}
+\label{test-5_2include_2display_2lv__objx_2lv__page_8h_source}\index{Pros/test-\/5/include/display/lv\_objx/lv\_page.h@{Pros/test-\/5/include/display/lv\_objx/lv\_page.h}}
+\mbox{\hyperlink{test-5_2include_2display_2lv__objx_2lv__page_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_PAGE\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_PAGE\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_PAGE != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_CONT == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_page: lv\_cont is required. Enable it in lv\_conf.h (USE\_LV\_CONT  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}lv\_cont.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_indev.h"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{34 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{37 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{38 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/*Scrollbar modes: shows when should the scrollbars be visible*/}}
+\DoxyCodeLine{41 \textcolor{keyword}{enum}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43     LV\_SB\_MODE\_OFF  = 0x0,      \textcolor{comment}{/*Never show scrollbars*/}}
+\DoxyCodeLine{44     LV\_SB\_MODE\_ON   = 0x1,      \textcolor{comment}{/*Always show scrollbars*/}}
+\DoxyCodeLine{45     LV\_SB\_MODE\_DRAG = 0x2,      \textcolor{comment}{/*Show scrollbars when page is being dragged*/}}
+\DoxyCodeLine{46     LV\_SB\_MODE\_AUTO = 0x3,      \textcolor{comment}{/*Show scrollbars when the scrollable container is large enough to be scrolled*/}}
+\DoxyCodeLine{47     LV\_SB\_MODE\_HIDE = 0x4,      \textcolor{comment}{/*Hide the scroll bar temporally*/}}
+\DoxyCodeLine{48     LV\_SB\_MODE\_UNHIDE = 0x5,    \textcolor{comment}{/*Unhide the previously hidden scrollbar. Recover it's type too*/}}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} uint8\_t lv\_sb\_mode\_t;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{/*Data of page*/}}
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     lv\_cont\_ext\_t bg; \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{56     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{57     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * scrl;            \textcolor{comment}{/*The scrollable object on the background*/}}
+\DoxyCodeLine{58     lv\_action\_t rel\_action;     \textcolor{comment}{/*Function to call when the page is released*/}}
+\DoxyCodeLine{59     lv\_action\_t pr\_action;      \textcolor{comment}{/*Function to call when the page is pressed*/}}
+\DoxyCodeLine{60     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{61         \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style;          \textcolor{comment}{/*Style of scrollbars*/}}
+\DoxyCodeLine{62         \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} hor\_area;            \textcolor{comment}{/*Horizontal scrollbar area relative to the page. (Handled by the library) */}}
+\DoxyCodeLine{63         \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} ver\_area;            \textcolor{comment}{/*Vertical scrollbar area relative to the page (Handled by the library)*/}}
+\DoxyCodeLine{64         uint8\_t hor\_draw :1;        \textcolor{comment}{/*1: horizontal scrollbar is visible now (Handled by the library)*/}}
+\DoxyCodeLine{65         uint8\_t ver\_draw :1;        \textcolor{comment}{/*1: vertical scrollbar is visible now (Handled by the library)*/}}
+\DoxyCodeLine{66         lv\_sb\_mode\_t mode:3;        \textcolor{comment}{/*Scrollbar visibility from 'lv\_page\_sb\_mode\_t'*/}}
+\DoxyCodeLine{67     \} sb;}
+\DoxyCodeLine{68     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{69         uint16\_t state;  \textcolor{comment}{/*Store the current size of the edge flash effect*/}}
+\DoxyCodeLine{70         \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style;    \textcolor{comment}{/*Style of edge flash effect (usually homogeneous circle)*/}}
+\DoxyCodeLine{71         uint8\_t enabled    :1;     \textcolor{comment}{/*1: Show a flash animation on the edge*/}}
+\DoxyCodeLine{72         uint8\_t top\_ip     :1;     \textcolor{comment}{/*Used internally to show that top most position is reached (flash is In Progress)*/}}
+\DoxyCodeLine{73         uint8\_t bottom\_ip  :1;     \textcolor{comment}{/*Used internally to show that bottom most position is reached (flash is In Progress)*/}}
+\DoxyCodeLine{74         uint8\_t right\_ip   :1;     \textcolor{comment}{/*Used internally to show that right most position is reached (flash is In Progress)*/}}
+\DoxyCodeLine{75         uint8\_t left\_ip    :1;     \textcolor{comment}{/*Used internally to show that left most position is reached (flash is In Progress)*/}}
+\DoxyCodeLine{76     \}edge\_flash;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     uint8\_t arrow\_scroll   :1;        \textcolor{comment}{/*1: Enable scrolling with LV\_GROUP\_KEY\_LEFT/RIGHT/UP/DOWN*/}}
+\DoxyCodeLine{79     uint8\_t scroll\_prop    :1;        \textcolor{comment}{/*1: Propagate the scrolling the the parent if the edge is reached*/}}
+\DoxyCodeLine{80     uint8\_t scroll\_prop\_ip :1;        \textcolor{comment}{/*1: Scroll propagation is in progress (used by the library)*/}}
+\DoxyCodeLine{81 \} lv\_page\_ext\_t;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{84     LV\_PAGE\_STYLE\_BG,}
+\DoxyCodeLine{85     LV\_PAGE\_STYLE\_SCRL,}
+\DoxyCodeLine{86     LV\_PAGE\_STYLE\_SB,}
+\DoxyCodeLine{87     LV\_PAGE\_STYLE\_EDGE\_FLASH,}
+\DoxyCodeLine{88 \};}
+\DoxyCodeLine{89 \textcolor{keyword}{typedef} uint8\_t lv\_page\_style\_t;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{92 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{93 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{101 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_page\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} lv\_page\_clean(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *obj);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{114 lv\_action\_t lv\_page\_get\_pr\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{121 lv\_action\_t lv\_page\_get\_rel\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{128 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_page\_get\_scrl(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{131 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{132 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{139 \textcolor{keywordtype}{void} lv\_page\_set\_rel\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, lv\_action\_t rel\_action);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{146 \textcolor{keywordtype}{void} lv\_page\_set\_pr\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, lv\_action\_t pr\_action);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{void} lv\_page\_set\_sb\_mode(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, lv\_sb\_mode\_t sb\_mode);}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{160 \textcolor{keywordtype}{void} lv\_page\_set\_arrow\_scroll(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{167 \textcolor{keywordtype}{void} lv\_page\_set\_scroll\_propagation(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{174 \textcolor{keywordtype}{void} lv\_page\_set\_edge\_flash(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{184 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_page\_set\_scrl\_fit(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *page, \textcolor{keywordtype}{bool} hor\_en, \textcolor{keywordtype}{bool} ver\_en)}
+\DoxyCodeLine{185 \{}
+\DoxyCodeLine{186     lv\_cont\_set\_fit(lv\_page\_get\_scrl(page), hor\_en, ver\_en);}
+\DoxyCodeLine{187 \}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{194 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_page\_set\_scrl\_width(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *page, lv\_coord\_t w)}
+\DoxyCodeLine{195 \{}
+\DoxyCodeLine{196     \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a63d809001264dd8510fa9fe0f9aaced3}{lv\_obj\_set\_width}}(lv\_page\_get\_scrl(page), w);}
+\DoxyCodeLine{197 \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{204 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_page\_set\_scrl\_height(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *page, lv\_coord\_t h)}
+\DoxyCodeLine{205 \{}
+\DoxyCodeLine{206     \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a0d3e5fba894449938df0b10c9f442537}{lv\_obj\_set\_height}}(lv\_page\_get\_scrl(page), h);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 \}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{215 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_page\_set\_scrl\_layout(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, lv\_layout\_t layout)}
+\DoxyCodeLine{216 \{}
+\DoxyCodeLine{217     lv\_cont\_set\_layout(lv\_page\_get\_scrl(page), layout);}
+\DoxyCodeLine{218 \}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{226 \textcolor{keywordtype}{void} lv\_page\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *page, lv\_page\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{229 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{230 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{237 lv\_sb\_mode\_t lv\_page\_get\_sb\_mode(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{245 \textcolor{keywordtype}{bool} lv\_page\_get\_arrow\_scroll(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{252 \textcolor{keywordtype}{bool} lv\_page\_get\_scroll\_propagation(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{259 \textcolor{keywordtype}{bool} lv\_page\_get\_edge\_flash(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{266 lv\_coord\_t lv\_page\_get\_fit\_width(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{273 lv\_coord\_t lv\_page\_get\_fit\_height(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{280 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_coord\_t lv\_page\_get\_scrl\_width(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *page)}
+\DoxyCodeLine{281 \{}
+\DoxyCodeLine{282     \textcolor{keywordflow}{return} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a118b18e487255be1d8729239e9ddbee1}{lv\_obj\_get\_width}}(lv\_page\_get\_scrl(page));}
+\DoxyCodeLine{283 \}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{290 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_coord\_t lv\_page\_get\_scrl\_height(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *page)}
+\DoxyCodeLine{291 \{}
+\DoxyCodeLine{292     \textcolor{keywordflow}{return} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_aada555bdfd06f2673714a7c6fd8a3b58}{lv\_obj\_get\_height}}(lv\_page\_get\_scrl(page));}
+\DoxyCodeLine{293 \}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{300 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_layout\_t lv\_page\_get\_scrl\_layout(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page)}
+\DoxyCodeLine{301 \{}
+\DoxyCodeLine{302     \textcolor{keywordflow}{return} lv\_cont\_get\_layout(lv\_page\_get\_scrl(page));}
+\DoxyCodeLine{303 \}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{310 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_page\_get\_scrl\_hor\_fit(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page)}
+\DoxyCodeLine{311 \{}
+\DoxyCodeLine{312     \textcolor{keywordflow}{return} lv\_cont\_get\_hor\_fit(lv\_page\_get\_scrl(page));}
+\DoxyCodeLine{313 \}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{320 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_page\_get\_scrl\_fit\_ver(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page)}
+\DoxyCodeLine{321 \{}
+\DoxyCodeLine{322     \textcolor{keywordflow}{return} lv\_cont\_get\_ver\_fit(lv\_page\_get\_scrl(page));}
+\DoxyCodeLine{323 \}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{331 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_page\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *page, lv\_page\_style\_t type);}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{334 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{335 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{342 \textcolor{keywordtype}{void} lv\_page\_glue\_obj(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * obj, \textcolor{keywordtype}{bool} glue);}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{350 \textcolor{keywordtype}{void} lv\_page\_focus(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * obj, uint16\_t anim\_time);}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{357 \textcolor{keywordtype}{void} lv\_page\_scroll\_hor(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, lv\_coord\_t dist);}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{364 \textcolor{keywordtype}{void} lv\_page\_scroll\_ver(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page, lv\_coord\_t dist);}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{371 \textcolor{keywordtype}{void} lv\_page\_start\_edge\_flash(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * page);}
+\DoxyCodeLine{372 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{373 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{374 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_PAGE*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{379 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_PAGE\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

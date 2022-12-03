@@ -1,0 +1,45 @@
+\hypertarget{test-3_2include_2okapi_2api_2chassis_2controller_2chassis_scales_8hpp_source}{}\doxysection{chassis\+Scales.\+hpp}
+\label{test-3_2include_2okapi_2api_2chassis_2controller_2chassis_scales_8hpp_source}\index{Pros/test-\/3/include/okapi/api/chassis/controller/chassisScales.hpp@{Pros/test-\/3/include/okapi/api/chassis/controller/chassisScales.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/units/QAngle.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/units/QLength.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/units/RQuantity.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}okapi/api/util/logging.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <initializer\_list>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{17 \textcolor{keyword}{class }ChassisScales \{}
+\DoxyCodeLine{18   \textcolor{keyword}{public}:}
+\DoxyCodeLine{55   \mbox{\hyperlink{classokapi_1_1_chassis_scales_a7e35f22518d4f74105ffa741b40dcb17}{ChassisScales}}(\textcolor{keyword}{const} std::initializer\_list<QLength> \&idimensions,}
+\DoxyCodeLine{56                 \textcolor{keywordtype}{double} itpr,}
+\DoxyCodeLine{57                 \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{72   \mbox{\hyperlink{classokapi_1_1_chassis_scales_a6971d5b0850bb9762f0046bd6b5c306a}{ChassisScales}}(\textcolor{keyword}{const} std::initializer\_list<double> \&iscales,}
+\DoxyCodeLine{73                 \textcolor{keywordtype}{double} itpr,}
+\DoxyCodeLine{74                 \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   QLength wheelDiameter;}
+\DoxyCodeLine{77   QLength wheelTrack;}
+\DoxyCodeLine{78   QLength middleWheelDistance;}
+\DoxyCodeLine{79   QLength middleWheelDiameter;}
+\DoxyCodeLine{80   \textcolor{keywordtype}{double} straight;}
+\DoxyCodeLine{81   \textcolor{keywordtype}{double} turn;}
+\DoxyCodeLine{82   \textcolor{keywordtype}{double} middle;}
+\DoxyCodeLine{83   \textcolor{keywordtype}{double} tpr;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{86   \textcolor{keyword}{static} \textcolor{keywordtype}{void} validateInputSize(std::size\_t inputSize, \textcolor{keyword}{const} std::shared\_ptr<Logger> \&logger);}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

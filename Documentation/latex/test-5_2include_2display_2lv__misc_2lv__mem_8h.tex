@@ -1,0 +1,123 @@
+\hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h}{}\doxysection{Pros/test-\/5/include/display/lv\+\_\+misc/lv\+\_\+mem.h File Reference}
+\label{test-5_2include_2display_2lv__misc_2lv__mem_8h}\index{Pros/test-\/5/include/display/lv\_misc/lv\_mem.h@{Pros/test-\/5/include/display/lv\_misc/lv\_mem.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+log.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlv__mem__monitor__t}{lv\+\_\+mem\+\_\+monitor\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_a2600d9be0e0cffe1a8899ab69660c428}{lv\+\_\+mem\+\_\+assert}}(p)~\{if(p == NULL) while(1); \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_ab6a1069ab1e16cca811cd4203cd97ccc}{lv\+\_\+mem\+\_\+init}} (void)
+\item 
+void $\ast$ \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_a7d7d51b3e2ca4c467be3babf803e6ed6}{lv\+\_\+mem\+\_\+alloc}} (uint32\+\_\+t size)
+\item 
+void \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_a4261e9d9b586a46a528a138d4c82b0ec}{lv\+\_\+mem\+\_\+free}} (const void $\ast$data)
+\item 
+void $\ast$ \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_ad3483ef8e0501108506d37d4e1da7d76}{lv\+\_\+mem\+\_\+realloc}} (void $\ast$data\+\_\+p, uint32\+\_\+t new\+\_\+size)
+\item 
+void \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_a4f285c9101196fcf34987bf46f4ce163}{lv\+\_\+mem\+\_\+defrag}} (void)
+\item 
+void \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_a870e4824ad667a372cbe58b2614892a2}{lv\+\_\+mem\+\_\+monitor}} (\mbox{\hyperlink{structlv__mem__monitor__t}{lv\+\_\+mem\+\_\+monitor\+\_\+t}} $\ast$mon\+\_\+p)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{test-5_2include_2display_2lv__misc_2lv__mem_8h_a0d33857fa0e11d790ce4c6bf48b2b990}{lv\+\_\+mem\+\_\+get\+\_\+size}} (const void $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_a2600d9be0e0cffe1a8899ab69660c428}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_a2600d9be0e0cffe1a8899ab69660c428}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_assert@{lv\_mem\_assert}}
+\index{lv\_mem\_assert@{lv\_mem\_assert}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_assert}{lv\_mem\_assert}}
+{\footnotesize\ttfamily \#define lv\+\_\+mem\+\_\+assert(\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})~\{if(p == NULL) while(1); \}}
+
+Halt on NULL pointer p pointer to a memory 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_a7d7d51b3e2ca4c467be3babf803e6ed6}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_a7d7d51b3e2ca4c467be3babf803e6ed6}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_alloc@{lv\_mem\_alloc}}
+\index{lv\_mem\_alloc@{lv\_mem\_alloc}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_alloc()}{lv\_mem\_alloc()}}
+{\footnotesize\ttfamily void $\ast$ lv\+\_\+mem\+\_\+alloc (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Allocate a memory dynamically 
+\begin{DoxyParams}{Parameters}
+{\em size} & size of the memory to allocate in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the allocated memory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_a4f285c9101196fcf34987bf46f4ce163}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_a4f285c9101196fcf34987bf46f4ce163}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_defrag@{lv\_mem\_defrag}}
+\index{lv\_mem\_defrag@{lv\_mem\_defrag}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_defrag()}{lv\_mem\_defrag()}}
+{\footnotesize\ttfamily void lv\+\_\+mem\+\_\+defrag (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Join the adjacent free memory blocks \mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_a4261e9d9b586a46a528a138d4c82b0ec}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_a4261e9d9b586a46a528a138d4c82b0ec}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_free@{lv\_mem\_free}}
+\index{lv\_mem\_free@{lv\_mem\_free}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_free()}{lv\_mem\_free()}}
+{\footnotesize\ttfamily void lv\+\_\+mem\+\_\+free (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Free an allocated data 
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to an allocated memory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_a0d33857fa0e11d790ce4c6bf48b2b990}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_a0d33857fa0e11d790ce4c6bf48b2b990}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_get\_size@{lv\_mem\_get\_size}}
+\index{lv\_mem\_get\_size@{lv\_mem\_get\_size}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_get\_size()}{lv\_mem\_get\_size()}}
+{\footnotesize\ttfamily uint32\+\_\+t lv\+\_\+mem\+\_\+get\+\_\+size (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Give the size of an allocated memory 
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to an allocated memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of data memory in bytes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_ab6a1069ab1e16cca811cd4203cd97ccc}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_ab6a1069ab1e16cca811cd4203cd97ccc}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_init@{lv\_mem\_init}}
+\index{lv\_mem\_init@{lv\_mem\_init}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_init()}{lv\_mem\_init()}}
+{\footnotesize\ttfamily void lv\+\_\+mem\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initiaize the dyn\+\_\+mem module (work memory and other variables) \mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_a870e4824ad667a372cbe58b2614892a2}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_a870e4824ad667a372cbe58b2614892a2}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_monitor@{lv\_mem\_monitor}}
+\index{lv\_mem\_monitor@{lv\_mem\_monitor}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_monitor()}{lv\_mem\_monitor()}}
+{\footnotesize\ttfamily void lv\+\_\+mem\+\_\+monitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlv__mem__monitor__t}{lv\+\_\+mem\+\_\+monitor\+\_\+t}} $\ast$}]{mon\+\_\+p }\end{DoxyParamCaption})}
+
+Give information about the work memory of dynamic allocation 
+\begin{DoxyParams}{Parameters}
+{\em mon\+\_\+p} & pointer to a dm\+\_\+mon\+\_\+p variable, the result of the analysis will be stored here \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test-5_2include_2display_2lv__misc_2lv__mem_8h_ad3483ef8e0501108506d37d4e1da7d76}\label{test-5_2include_2display_2lv__misc_2lv__mem_8h_ad3483ef8e0501108506d37d4e1da7d76}} 
+\index{lv\_mem.h@{lv\_mem.h}!lv\_mem\_realloc@{lv\_mem\_realloc}}
+\index{lv\_mem\_realloc@{lv\_mem\_realloc}!lv\_mem.h@{lv\_mem.h}}
+\doxysubsubsection{\texorpdfstring{lv\_mem\_realloc()}{lv\_mem\_realloc()}}
+{\footnotesize\ttfamily void $\ast$ lv\+\_\+mem\+\_\+realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{data\+\_\+p,  }\item[{uint32\+\_\+t}]{new\+\_\+size }\end{DoxyParamCaption})}
+
+Reallocate a memory with a new size. The old content will be kept. 
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to an allocated memory. Its content will be copied to the new memory block and freed \\
+\hline
+{\em new\+\_\+size} & the desired new size in byte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new memory 
+\end{DoxyReturn}

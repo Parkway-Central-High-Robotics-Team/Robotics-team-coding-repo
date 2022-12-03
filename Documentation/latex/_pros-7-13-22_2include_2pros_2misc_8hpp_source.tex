@@ -1,0 +1,84 @@
+\hypertarget{_pros-7-13-22_2include_2pros_2misc_8hpp_source}{}\doxysection{misc.\+hpp}
+\label{_pros-7-13-22_2include_2pros_2misc_8hpp_source}\index{Pros/Pros-\/7-\/13-\/22/include/pros/misc.hpp@{Pros/Pros-\/7-\/13-\/22/include/pros/misc.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef \_PROS\_MISC\_HPP\_}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define \_PROS\_MISC\_HPP\_}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}pros/misc.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classpros_1_1_controller}{Controller}} \{}
+\DoxyCodeLine{31     \textcolor{keyword}{public}:}
+\DoxyCodeLine{39     \mbox{\hyperlink{classpros_1_1_controller_ae9d9ead11894048b383e9e82ef46d5ad}{Controller}}(controller\_id\_e\_t \textcolor{keywordtype}{id});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{51     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a1a013e9cf1979487f2daabcd729d3ecb}{is\_connected}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{69     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_ace3038684aa3cf14f06279c54eeb1105}{get\_analog}}(controller\_analog\_e\_t channel);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{81     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a7d85ecacfd46161ddb2be08d856ca130}{get\_battery\_capacity}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{93     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a8fd8b131f13f2f7702b5299dab82fdaf}{get\_battery\_level}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{111     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_aec180b0f1700915007de2b7855070c80}{get\_digital}}(controller\_digital\_e\_t button);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{136     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a9dc7dc6028431d3f8f9aff0fc7a4bed6}{get\_digital\_new\_press}}(controller\_digital\_e\_t button);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#pragma GCC diagnostic push}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wunused-\/function"{}}}
+\DoxyCodeLine{140     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{141     T convert\_args(T arg) \{}
+\DoxyCodeLine{142         \textcolor{keywordflow}{return} arg;}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* convert\_args(\textcolor{keyword}{const} std::string\& arg) \{}
+\DoxyCodeLine{145         \textcolor{keywordflow}{return} arg.c\_str();}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#pragma GCC diagnostic pop}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{172     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Params>}
+\DoxyCodeLine{173     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a4a301df3d34578661271f9b400da1176}{print}}(std::uint8\_t line, std::uint8\_t col, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, Params... args) \{}
+\DoxyCodeLine{174         \textcolor{keywordflow}{return} pros::c::controller\_print(\_id, line, col, fmt, convert\_args(args)...);}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{198     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a2ec84a072d09a4bb39253956662604cd}{set\_text}}(std::uint8\_t line, std::uint8\_t col, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str);}
+\DoxyCodeLine{199     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a2ec84a072d09a4bb39253956662604cd}{set\_text}}(std::uint8\_t line, std::uint8\_t col, \textcolor{keyword}{const} std::string\& str);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{218     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a9f65f6c26d55619a658aa103d3532583}{clear\_line}}(std::uint8\_t line);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{239     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_ac2436bc570bdce79da5954eb895fd234}{rumble}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* rumble\_pattern);}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{256     std::int32\_t \mbox{\hyperlink{classpros_1_1_controller_a49a332fe032c3aaf94e24bb3a51945e1}{clear}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keyword}{private}:}
+\DoxyCodeLine{259     controller\_id\_e\_t \_id;}
+\DoxyCodeLine{260 \};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{keyword}{namespace }battery \{}
+\DoxyCodeLine{272 \textcolor{keywordtype}{double} get\_capacity(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{283 int32\_t get\_current(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{294 \textcolor{keywordtype}{double} get\_temperature(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{305 int32\_t get\_voltage(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{306 \}  \textcolor{comment}{// namespace battery}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \textcolor{keyword}{namespace }competition \{}
+\DoxyCodeLine{315 std::uint8\_t get\_status(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{316 std::uint8\_t is\_autonomous(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{317 std::uint8\_t is\_connected(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{318 std::uint8\_t is\_disabled(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{319 \}  \textcolor{comment}{// namespace competition}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{keyword}{namespace }usd \{}
+\DoxyCodeLine{327 std::int32\_t is\_installed(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{328 \}  \textcolor{comment}{// namespace usd}}
+\DoxyCodeLine{329 \}  \textcolor{comment}{// namespace pros}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_PROS\_MISC\_HPP\_}}
+
+\end{DoxyCode}

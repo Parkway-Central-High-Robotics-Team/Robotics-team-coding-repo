@@ -1,0 +1,133 @@
+\hypertarget{test-3_2include_2display_2lv__core_2lv__group_8h_source}{}\doxysection{lv\+\_\+group.\+h}
+\label{test-3_2include_2display_2lv__core_2lv__group_8h_source}\index{Pros/test-\/3/include/display/lv\_core/lv\_group.h@{Pros/test-\/3/include/display/lv\_core/lv\_group.h}}
+\mbox{\hyperlink{test-3_2include_2display_2lv__core_2lv__group_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_GROUP\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_GROUP\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{test-6_2include_2display_2lv__core_2lv__obj_8h}{lv\_obj.h}}"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{25 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{26 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{27 \textcolor{comment}{/*Predefined keys to control the focused object via lv\_group\_send(group, c)*/}}
+\DoxyCodeLine{28 \textcolor{comment}{/*For compatibility in signal function define the keys regardless to LV\_GROUP*/}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_UP             17      }\textcolor{comment}{/*0x11*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_DOWN           18      }\textcolor{comment}{/*0x12*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_RIGHT          19      }\textcolor{comment}{/*0x13*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_LEFT           20      }\textcolor{comment}{/*0x14*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_ESC            27      }\textcolor{comment}{/*0x1B*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_DEL            127     }\textcolor{comment}{/*0x7F*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_BACKSPACE      8       }\textcolor{comment}{/*0x08*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_ENTER          10      }\textcolor{comment}{/*0x0A, '\(\backslash\)n'*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_NEXT           9       }\textcolor{comment}{/*0x09, '\(\backslash\)t'*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define LV\_GROUP\_KEY\_PREV           11      }\textcolor{comment}{/*0x0B, '*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if USE\_LV\_GROUP  != 0}}
+\DoxyCodeLine{41 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{42 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{43 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{44 \textcolor{keyword}{struct }\_lv\_group\_t;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} void (*lv\_group\_style\_mod\_func\_t)(\mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *);}
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} void (*lv\_group\_focus\_cb\_t)(\textcolor{keyword}{struct }\_lv\_group\_t *);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_lv\_group\_t}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51     \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} obj\_ll;                         \textcolor{comment}{/*Linked list to store the objects in the group */}}
+\DoxyCodeLine{52     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} ** obj\_focus;                  \textcolor{comment}{/*The object in focus*/}}
+\DoxyCodeLine{53     lv\_group\_style\_mod\_func\_t style\_mod;    \textcolor{comment}{/*A function which modifies the style of the focused object*/}}
+\DoxyCodeLine{54     lv\_group\_style\_mod\_func\_t style\_mod\_edit;\textcolor{comment}{/*A function which modifies the style of the focused object*/}}
+\DoxyCodeLine{55     lv\_group\_focus\_cb\_t focus\_cb;           \textcolor{comment}{/*A function to call when a new object is focused (optional)*/}}
+\DoxyCodeLine{56     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} style\_tmp;                   \textcolor{comment}{/*Stores the modified style of the focused object */}}
+\DoxyCodeLine{57     uint8\_t frozen          :1;             \textcolor{comment}{/*1: can't focus to new object*/}}
+\DoxyCodeLine{58     uint8\_t editing         :1;             \textcolor{comment}{/*1: Edit mode, 0: Navigate mode*/}}
+\DoxyCodeLine{59     uint8\_t click\_focus     :1;             \textcolor{comment}{/*1: If an object in a group is clicked by an indev then it will be focused */}}
+\DoxyCodeLine{60     uint8\_t refocus\_policy  :1;             \textcolor{comment}{/*1: Focus prev if focused on deletion. 0: Focus prev if focused on deletion.*/}}
+\DoxyCodeLine{61     uint8\_t wrap            :1;             \textcolor{comment}{/*1: Focus next/prev can wrap at end of list. 0: Focus next/prev stops at end of list.*/}}
+\DoxyCodeLine{62 \} lv\_group\_t;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \_lv\_group\_refocus\_policy\_t \{}
+\DoxyCodeLine{65     LV\_GROUP\_REFOCUS\_POLICY\_NEXT = 0,}
+\DoxyCodeLine{66     LV\_GROUP\_REFOCUS\_POLICY\_PREV = 1}
+\DoxyCodeLine{67 \} lv\_group\_refocus\_policy\_t;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{70 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{71 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{77 lv\_group\_t * lv\_group\_create(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} lv\_group\_del(lv\_group\_t * group);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} lv\_group\_add\_obj(lv\_group\_t * group, \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * obj);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{96 \textcolor{keywordtype}{void} lv\_group\_remove\_obj(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * obj);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} lv\_group\_focus\_obj(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * obj);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{108 \textcolor{keywordtype}{void} lv\_group\_focus\_next(lv\_group\_t * group);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} lv\_group\_focus\_prev(lv\_group\_t * group);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} lv\_group\_focus\_freeze(lv\_group\_t * group, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{129 lv\_res\_t lv\_group\_send\_data(lv\_group\_t * group, uint32\_t c);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{136 \textcolor{keywordtype}{void} lv\_group\_set\_style\_mod\_cb(lv\_group\_t * group, lv\_group\_style\_mod\_func\_t style\_mod\_func);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{143 \textcolor{keywordtype}{void} lv\_group\_set\_style\_mod\_edit\_cb(lv\_group\_t * group, lv\_group\_style\_mod\_func\_t style\_mod\_func);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{150 \textcolor{keywordtype}{void} lv\_group\_set\_focus\_cb(lv\_group\_t * group, lv\_group\_focus\_cb\_t focus\_cb);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{157 \textcolor{keywordtype}{void} lv\_group\_set\_refocus\_policy(lv\_group\_t * group, lv\_group\_refocus\_policy\_t policy);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{164 \textcolor{keywordtype}{void} lv\_group\_set\_editing(lv\_group\_t * group, \textcolor{keywordtype}{bool} edit);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{171 \textcolor{keywordtype}{void} lv\_group\_set\_click\_focus(lv\_group\_t * group, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{178 \textcolor{keywordtype}{void} lv\_group\_set\_wrap(lv\_group\_t * group, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{186 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_group\_mod\_style(lv\_group\_t * group, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * style);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{193 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_group\_get\_focused(\textcolor{keyword}{const} lv\_group\_t * group);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{200 lv\_group\_style\_mod\_func\_t lv\_group\_get\_style\_mod\_cb(\textcolor{keyword}{const} lv\_group\_t * group);}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{207 lv\_group\_style\_mod\_func\_t lv\_group\_get\_style\_mod\_edit\_cb(\textcolor{keyword}{const} lv\_group\_t * group);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{214 lv\_group\_focus\_cb\_t lv\_group\_get\_focus\_cb(\textcolor{keyword}{const} lv\_group\_t * group);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{221 \textcolor{keywordtype}{bool} lv\_group\_get\_editing(\textcolor{keyword}{const} lv\_group\_t * group);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{228 \textcolor{keywordtype}{bool} lv\_group\_get\_click\_focus(\textcolor{keyword}{const} lv\_group\_t * group);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{235 \textcolor{keywordtype}{bool} lv\_group\_get\_wrap(lv\_group\_t * group);}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{238 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{239 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*USE\_LV\_GROUP != 0*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{244 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*LV\_GROUP\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

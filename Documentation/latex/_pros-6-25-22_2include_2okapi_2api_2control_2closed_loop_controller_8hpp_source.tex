@@ -1,0 +1,41 @@
+\hypertarget{_pros-6-25-22_2include_2okapi_2api_2control_2closed_loop_controller_8hpp_source}{}\doxysection{closed\+Loop\+Controller.\+hpp}
+\label{_pros-6-25-22_2include_2okapi_2api_2control_2closed_loop_controller_8hpp_source}\index{Pros/Pros-\/6-\/25-\/22/include/okapi/api/control/closedLoopController.hpp@{Pros/Pros-\/6-\/25-\/22/include/okapi/api/control/closedLoopController.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/control/controllerOutput.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/units/QTime.hpp"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{18 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Input, \textcolor{keyword}{typename} Output>}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classokapi_1_1_closed_loop_controller}{ClosedLoopController}} : \textcolor{keyword}{public} \mbox{\hyperlink{classokapi_1_1_controller_output}{ControllerOutput}}<Input> \{}
+\DoxyCodeLine{20   \textcolor{keyword}{public}:}
+\DoxyCodeLine{21   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_closed_loop_controller}{\string~ClosedLoopController}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{setTarget}}(Input itarget) = 0;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} Input \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{getTarget}}() = 0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} Input \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_abffaa2af6941299849e460e15c65080f}{getProcessValue}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} Output \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{getError}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{isSettled}}() = 0;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{reset}}() = 0;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{flipDisable}}() = 0;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{flipDisable}}(\textcolor{keywordtype}{bool} iisDisabled) = 0;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{isDisabled}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

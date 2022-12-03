@@ -1,0 +1,119 @@
+\hypertarget{test-3_2include_2okapi_2api_2control_2iterative_2iterative_vel_pid_controller_8hpp_source}{}\doxysection{iterative\+Vel\+Pid\+Controller.\+hpp}
+\label{test-3_2include_2okapi_2api_2control_2iterative_2iterative_vel_pid_controller_8hpp_source}\index{Pros/test-\/3/include/okapi/api/control/iterative/iterativeVelPidController.hpp@{Pros/test-\/3/include/okapi/api/control/iterative/iterativeVelPidController.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/control/iterative/iterativeVelocityController.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/control/util/settledUtil.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/filter/passthroughFilter.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}okapi/api/filter/velMath.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}okapi/api/util/logging.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}okapi/api/util/timeUtil.hpp"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{16 \textcolor{keyword}{class }IterativeVelPIDController : \textcolor{keyword}{public} IterativeVelocityController<double, double> \{}
+\DoxyCodeLine{17   \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \textcolor{keyword}{struct }Gains \{}
+\DoxyCodeLine{19     \textcolor{keywordtype}{double} kP\{0\};}
+\DoxyCodeLine{20     \textcolor{keywordtype}{double} kD\{0\};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{double} kF\{0\};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{double} kSF\{0\};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} Gains \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} Gains \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{26   \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{40   \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_afc4237f568ab87b15212462dc1e9155c}{IterativeVelPIDController}}(}
+\DoxyCodeLine{41     \textcolor{keywordtype}{double} ikP,}
+\DoxyCodeLine{42     \textcolor{keywordtype}{double} ikD,}
+\DoxyCodeLine{43     \textcolor{keywordtype}{double} ikF,}
+\DoxyCodeLine{44     \textcolor{keywordtype}{double} ikSF,}
+\DoxyCodeLine{45     std::unique\_ptr<VelMath> ivelMath,}
+\DoxyCodeLine{46     \textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_time_util}{TimeUtil}} \&itimeUtil,}
+\DoxyCodeLine{47     std::unique\_ptr<Filter> iderivativeFilter = std::make\_unique<PassthroughFilter>(),}
+\DoxyCodeLine{48     std::shared\_ptr<Logger> ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{59   \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a364914d3e0be9ad3164351419b765560}{IterativeVelPIDController}}(}
+\DoxyCodeLine{60     \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_iterative_vel_p_i_d_controller_1_1_gains}{Gains}} \&igains,}
+\DoxyCodeLine{61     std::unique\_ptr<VelMath> ivelMath,}
+\DoxyCodeLine{62     \textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_time_util}{TimeUtil}} \&itimeUtil,}
+\DoxyCodeLine{63     std::unique\_ptr<Filter> iderivativeFilter = std::make\_unique<PassthroughFilter>(),}
+\DoxyCodeLine{64     std::shared\_ptr<Logger> ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a7d75bb1622974daba25a9dec4df68325}{step}}(\textcolor{keywordtype}{double} inewReading) \textcolor{keyword}{override};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_ab4ec4344fa758ba8cce93633aa0851d2}{setTarget}}(\textcolor{keywordtype}{double} itarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a50c069752036261395871fbe175ae101}{controllerSet}}(\textcolor{keywordtype}{double} ivalue) \textcolor{keyword}{override};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{95   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a5f2bbad6e916345f8a3abf762609321c}{getTarget}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{102   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a557555049cabcda2301a7f438135305a}{getTarget}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_ab6a38ef2fabcf521cddac4a97578e113}{getProcessValue}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{112   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_ab3f4050524cb54b4e3df951a8d84ac57}{getOutput}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{119   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_acf26277c959a7fd03c918340e194a361}{getMaxOutput}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{126   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a0401715743d991c5ca9f3afa51a5a069}{getMinOutput}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{131   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a7e60b432a91d73db0a62c5d31759ed10}{getError}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{141   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a818347e199d8e7fd3e11f9f1aa369749}{isSettled}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{148   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_aef5ba457e81871d47519413551856bb8}{setSampleTime}}(QTime isampleTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{156   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a02efd865f97b0f2da3f826c1120ec07b}{setOutputLimits}}(\textcolor{keywordtype}{double} imax, \textcolor{keywordtype}{double} imin) \textcolor{keyword}{override};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{165   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a054d5bff10ba504b9f72db567ad45bfb}{setControllerSetTargetLimits}}(\textcolor{keywordtype}{double} itargetMax, \textcolor{keywordtype}{double} itargetMin) \textcolor{keyword}{override};}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{171   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a51607c29e072a672522a9e93bbd12410}{reset}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{177   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a9a575df2d0a53ca71a812a86d673b8fa}{flipDisable}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{185   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a6bd2a04813b0fd99f0904808ff963f28}{flipDisable}}(\textcolor{keywordtype}{bool} iisDisabled) \textcolor{keyword}{override};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{192   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a628a5093634f85d788015c4cc1353c54}{isDisabled}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{199   QTime \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_aa786680075677c2f43619d48cad0e154}{getSampleTime}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{207   \textcolor{keyword}{virtual} QAngularSpeed \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_add5783b19186944e74334e2fd72f1b02}{stepVel}}(\textcolor{keywordtype}{double} inewReading);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{214   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_ab63a87696b32060485f26a7be704f9de}{setGains}}(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_iterative_vel_p_i_d_controller_1_1_gains}{Gains}} \&igains);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{221   \mbox{\hyperlink{structokapi_1_1_iterative_vel_p_i_d_controller_1_1_gains}{Gains}} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_ad85bd2777d95c7de3b1fc7205ea3e396}{getGains}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{228   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a1b8daee60eb1d693efca174bf5a0351e}{setTicksPerRev}}(\textcolor{keywordtype}{double} tpr);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{233   \textcolor{keyword}{virtual} QAngularSpeed \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_affacdc23775f995fe61fb0667e6f098e}{getVel}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{236   std::shared\_ptr<Logger> logger;}
+\DoxyCodeLine{237   \textcolor{keywordtype}{double} kP, kD, kF, kSF;}
+\DoxyCodeLine{238   QTime sampleTime\{10\_ms\};}
+\DoxyCodeLine{239   \textcolor{keywordtype}{double} error\{0\};}
+\DoxyCodeLine{240   \textcolor{keywordtype}{double} derivative\{0\};}
+\DoxyCodeLine{241   \textcolor{keywordtype}{double} target\{0\};}
+\DoxyCodeLine{242   \textcolor{keywordtype}{double} outputSum\{0\};}
+\DoxyCodeLine{243   \textcolor{keywordtype}{double} output\{0\};}
+\DoxyCodeLine{244   \textcolor{keywordtype}{double} outputMax\{1\};}
+\DoxyCodeLine{245   \textcolor{keywordtype}{double} outputMin\{-\/1\};}
+\DoxyCodeLine{246   \textcolor{keywordtype}{double} controllerSetTargetMax\{1\};}
+\DoxyCodeLine{247   \textcolor{keywordtype}{double} controllerSetTargetMin\{-\/1\};}
+\DoxyCodeLine{248   \textcolor{keywordtype}{bool} controllerIsDisabled\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250   std::unique\_ptr<VelMath> velMath;}
+\DoxyCodeLine{251   std::unique\_ptr<Filter> derivativeFilter;}
+\DoxyCodeLine{252   std::unique\_ptr<AbstractTimer> loopDtTimer;}
+\DoxyCodeLine{253   std::unique\_ptr<SettledUtil> settledUtil;}
+\DoxyCodeLine{254 \};}
+\DoxyCodeLine{255 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

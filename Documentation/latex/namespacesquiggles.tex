@@ -1,0 +1,111 @@
+\hypertarget{namespacesquiggles}{}\doxysection{squiggles Namespace Reference}
+\label{namespacesquiggles}\index{squiggles@{squiggles}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsquiggles_1_1_constraints}{Constraints}}
+\item 
+class \mbox{\hyperlink{classsquiggles_1_1_control_vector}{Control\+Vector}}
+\item 
+class \mbox{\hyperlink{classsquiggles_1_1_passthrough_model}{Passthrough\+Model}}
+\item 
+class \mbox{\hyperlink{classsquiggles_1_1_physical_model}{Physical\+Model}}
+\item 
+class \mbox{\hyperlink{classsquiggles_1_1_pose}{Pose}}
+\item 
+struct \mbox{\hyperlink{structsquiggles_1_1_profile_point}{Profile\+Point}}
+\item 
+class \mbox{\hyperlink{classsquiggles_1_1_quintic_polynomial}{Quintic\+Polynomial}}
+\item 
+class \mbox{\hyperlink{classsquiggles_1_1_spline_generator}{Spline\+Generator}}
+\item 
+class \mbox{\hyperlink{classsquiggles_1_1_tank_model}{Tank\+Model}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacesquiggles_a650079e958fd5715f7b048b6d5f5a6b8}{serialize\+\_\+path}} (std\+::ostream \&out, std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1_profile_point}{Profile\+Point}} $>$ path)
+\item 
+std\+::optional$<$ std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1_profile_point}{Profile\+Point}} $>$ $>$ \mbox{\hyperlink{namespacesquiggles_a77a1dbaef6d228ea77abc8667065e071}{deserialize\+\_\+path}} (std\+::istream \&in)
+\item 
+std\+::optional$<$ std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1_profile_point}{Profile\+Point}} $>$ $>$ \mbox{\hyperlink{namespacesquiggles_aec1a5fe0748da3d3c0c4ac5e3e8f40e6}{deserialize\+\_\+pathfinder\+\_\+path}} (std\+::istream \&left, std\+::istream \&right)
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{namespacesquiggles_a7d5922fe40a5476e8b5a8a015bd2bac4}{sgn}} (T v)
+\item 
+\mbox{\Hypertarget{namespacesquiggles_af5e181b5b9049ada3c72439d7b883906}\label{namespacesquiggles_af5e181b5b9049ada3c72439d7b883906}} 
+bool {\bfseries nearly\+\_\+equal} (const double \&a, const double \&b, double epsilon=1e-\/5)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copyright 2020 Jonathan Bayless
+
+Use of this source code is governed by an MIT-\/style license that can be found in the LICENSE file or at \href{https://opensource.org/licenses/MIT}{\texttt{ https\+://opensource.\+org/licenses/\+MIT}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacesquiggles_a77a1dbaef6d228ea77abc8667065e071}\label{namespacesquiggles_a77a1dbaef6d228ea77abc8667065e071}} 
+\index{squiggles@{squiggles}!deserialize\_path@{deserialize\_path}}
+\index{deserialize\_path@{deserialize\_path}!squiggles@{squiggles}}
+\doxysubsubsection{\texorpdfstring{deserialize\_path()}{deserialize\_path()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1_profile_point}{Profile\+Point}} $>$ $>$ squiggles\+::deserialize\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+
+Converts CSV data into a path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The input stream containing the CSV data. This is usually a file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path specified by the CSV data or std\+::nullopt if de-\/serializing the path was unsuccessful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesquiggles_aec1a5fe0748da3d3c0c4ac5e3e8f40e6}\label{namespacesquiggles_aec1a5fe0748da3d3c0c4ac5e3e8f40e6}} 
+\index{squiggles@{squiggles}!deserialize\_pathfinder\_path@{deserialize\_pathfinder\_path}}
+\index{deserialize\_pathfinder\_path@{deserialize\_pathfinder\_path}!squiggles@{squiggles}}
+\doxysubsubsection{\texorpdfstring{deserialize\_pathfinder\_path()}{deserialize\_pathfinder\_path()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1_profile_point}{Profile\+Point}} $>$ $>$ squiggles\+::deserialize\+\_\+pathfinder\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{left,  }\item[{std\+::istream \&}]{right }\end{DoxyParamCaption})}
+
+Converts CSV data from the Pathfinder library\textquotesingle{}s format to a Squiggles path.
+
+NOTE\+: this code translates data from Jaci Brunning\textquotesingle{}s Pathfinder library. The source for that library can be found at\+: \href{https://github.com/JaciBrunning/Pathfinder/}{\texttt{ https\+://github.\+com/\+Jaci\+Brunning/\+Pathfinder/}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The input stream containing the left wheels\textquotesingle{} CSV data. This is usually a file. \\
+\hline
+{\em right} & The input stream containing the right wheels\textquotesingle{} CSV data. This is usually a file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path specified by the CSV data or std\+::nullopt if de-\/serializing the path was unsuccessful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesquiggles_a650079e958fd5715f7b048b6d5f5a6b8}\label{namespacesquiggles_a650079e958fd5715f7b048b6d5f5a6b8}} 
+\index{squiggles@{squiggles}!serialize\_path@{serialize\_path}}
+\index{serialize\_path@{serialize\_path}!squiggles@{squiggles}}
+\doxysubsubsection{\texorpdfstring{serialize\_path()}{serialize\_path()}}
+{\footnotesize\ttfamily int squiggles\+::serialize\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structsquiggles_1_1_profile_point}{Profile\+Point}} $>$}]{path }\end{DoxyParamCaption})}
+
+Writes the path data to a CSV file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to write the CSV data to. This is usually a file. \\
+\hline
+{\em path} & The path to serialized\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the path was serialized succesfully or -\/1 if an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesquiggles_a7d5922fe40a5476e8b5a8a015bd2bac4}\label{namespacesquiggles_a7d5922fe40a5476e8b5a8a015bd2bac4}} 
+\index{squiggles@{squiggles}!sgn@{sgn}}
+\index{sgn@{sgn}!squiggles@{squiggles}}
+\doxysubsubsection{\texorpdfstring{sgn()}{sgn()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int squiggles\+::sgn (\begin{DoxyParamCaption}\item[{T}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the sign value of the given value.
+
+\begin{DoxyReturn}{Returns}
+1 if the value is positive, -\/1 if the value is negative, and 0 if the value is 0. 
+\end{DoxyReturn}

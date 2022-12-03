@@ -1,0 +1,149 @@
+\hypertarget{test-5_2include_2display_2lv__objx_2lv__ddlist_8h_source}{}\doxysection{lv\+\_\+ddlist.\+h}
+\label{test-5_2include_2display_2lv__objx_2lv__ddlist_8h_source}\index{Pros/test-\/5/include/display/lv\_objx/lv\_ddlist.h@{Pros/test-\/5/include/display/lv\_objx/lv\_ddlist.h}}
+\mbox{\hyperlink{test-5_2include_2display_2lv__objx_2lv__ddlist_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_DDLIST\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_DDLIST\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_DDLIST != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_PAGE == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_ddlist: lv\_page is required. Enable it in lv\_conf.h (USE\_LV\_PAGE  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#if USE\_LV\_LABEL == 0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#error "{}lv\_ddlist: lv\_label is required. Enable it in lv\_conf.h (USE\_LV\_LABEL  1) "{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}display/lv\_objx/lv\_page.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}display/lv\_objx/lv\_label.h"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{38 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{39 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{42 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{43 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{44 \textcolor{comment}{/*Data of drop down list*/}}
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     lv\_page\_ext\_t page; \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{48     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{49     \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *label;                     \textcolor{comment}{/*Label for the options*/}}
+\DoxyCodeLine{50     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * sel\_style;              \textcolor{comment}{/*Style of the selected option*/}}
+\DoxyCodeLine{51     lv\_action\_t action;                  \textcolor{comment}{/*Pointer to function to call when an option is selected*/}}
+\DoxyCodeLine{52     uint16\_t option\_cnt;                 \textcolor{comment}{/*Number of options*/}}
+\DoxyCodeLine{53     uint16\_t sel\_opt\_id;                 \textcolor{comment}{/*Index of the current option*/}}
+\DoxyCodeLine{54     uint16\_t sel\_opt\_id\_ori;             \textcolor{comment}{/*Store the original index on focus*/}}
+\DoxyCodeLine{55     uint16\_t anim\_time;                  \textcolor{comment}{/*Open/Close animation time [ms]*/}}
+\DoxyCodeLine{56     uint8\_t opened :1;                   \textcolor{comment}{/*1: The list is opened (handled by the library)*/}}
+\DoxyCodeLine{57     uint8\_t draw\_arrow :1;               \textcolor{comment}{/*1: Draw arrow*/}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     lv\_coord\_t fix\_height;               \textcolor{comment}{/*Height of the ddlist when opened. (0: auto-\/size)*/}}
+\DoxyCodeLine{60 \} lv\_ddlist\_ext\_t;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{63     LV\_DDLIST\_STYLE\_BG,}
+\DoxyCodeLine{64     LV\_DDLIST\_STYLE\_SEL,}
+\DoxyCodeLine{65     LV\_DDLIST\_STYLE\_SB,}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 \textcolor{keyword}{typedef} uint8\_t lv\_ddlist\_style\_t;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{70 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{71 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{78 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_ddlist\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{81 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{82 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{89 \textcolor{keywordtype}{void} lv\_ddlist\_set\_draw\_arrow(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{96 \textcolor{keywordtype}{void} lv\_ddlist\_set\_options(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * options);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{103 \textcolor{keywordtype}{void} lv\_ddlist\_set\_selected(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, uint16\_t sel\_opt);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{110 \textcolor{keywordtype}{void} lv\_ddlist\_set\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, lv\_action\_t action);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} lv\_ddlist\_set\_fix\_height(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, lv\_coord\_t h);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} lv\_ddlist\_set\_hor\_fit(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{132 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_ddlist\_set\_sb\_mode(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, lv\_sb\_mode\_t mode)}
+\DoxyCodeLine{133 \{}
+\DoxyCodeLine{134     lv\_page\_set\_sb\_mode(ddlist, mode);}
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{142 \textcolor{keywordtype}{void} lv\_ddlist\_set\_anim\_time(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, uint16\_t anim\_time);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{151 \textcolor{keywordtype}{void} lv\_ddlist\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *ddlist, lv\_ddlist\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{158 \textcolor{keywordtype}{void} lv\_ddlist\_set\_align(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *ddlist, lv\_label\_align\_t align);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{161 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{162 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{168 \textcolor{keywordtype}{bool} lv\_ddlist\_get\_draw\_arrow(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{175 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * lv\_ddlist\_get\_options(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist);}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{182 uint16\_t lv\_ddlist\_get\_selected(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist);}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{189 \textcolor{keywordtype}{void} lv\_ddlist\_get\_selected\_str(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, \textcolor{keywordtype}{char} * buf);}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{196 lv\_action\_t lv\_ddlist\_get\_action(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist);}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{203 lv\_coord\_t lv\_ddlist\_get\_fix\_height(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist);}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{210 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_sb\_mode\_t lv\_ddlist\_get\_sb\_mode(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist)}
+\DoxyCodeLine{211 \{}
+\DoxyCodeLine{212     \textcolor{keywordflow}{return} lv\_page\_get\_sb\_mode(ddlist);}
+\DoxyCodeLine{213 \}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{220 uint16\_t lv\_ddlist\_get\_anim\_time(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist);}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{228 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_ddlist\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *ddlist, lv\_ddlist\_style\_t type);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{235 lv\_label\_align\_t lv\_ddlist\_get\_align(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *ddlist);}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{238 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{239 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{246 \textcolor{keywordtype}{void} lv\_ddlist\_open(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, \textcolor{keywordtype}{bool} anim\_en);}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{253 \textcolor{keywordtype}{void} lv\_ddlist\_close(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * ddlist, \textcolor{keywordtype}{bool} anim\_en);}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{256 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{257 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_DDLIST*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{262 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_DDLIST\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

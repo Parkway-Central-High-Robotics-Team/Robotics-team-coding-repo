@@ -1,0 +1,78 @@
+\hypertarget{test-6_2include_2okapi_2api_2chassis_2controller_2chassis_controller_integrated_8hpp_source}{}\doxysection{chassis\+Controller\+Integrated.\+hpp}
+\label{test-6_2include_2okapi_2api_2chassis_2controller_2chassis_controller_integrated_8hpp_source}\index{Pros/test-\/6/include/okapi/api/chassis/controller/chassisControllerIntegrated.hpp@{Pros/test-\/6/include/okapi/api/chassis/controller/chassisControllerIntegrated.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/chassis/controller/chassisController.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/control/async/asyncPosIntegratedController.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/util/logging.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}okapi/api/util/timeUtil.hpp"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{14 \textcolor{keyword}{class }ChassisControllerIntegrated : \textcolor{keyword}{public} ChassisController \{}
+\DoxyCodeLine{15   \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_ab78c2cf4add65a424b6bf31c9030f7b2}{ChassisControllerIntegrated}}(}
+\DoxyCodeLine{30     \textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_time_util}{TimeUtil}} \&itimeUtil,}
+\DoxyCodeLine{31     std::shared\_ptr<ChassisModel> imodel,}
+\DoxyCodeLine{32     std::unique\_ptr<AsyncPosIntegratedController> ileftController,}
+\DoxyCodeLine{33     std::unique\_ptr<AsyncPosIntegratedController> irightController,}
+\DoxyCodeLine{34     \textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_abstract_motor_1_1_gearset_ratio_pair}{AbstractMotor::GearsetRatioPair}} \&igearset = \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5a9f27410725ab8cc8854a2769c7a516b8}{AbstractMotor::gearset::green}},}
+\DoxyCodeLine{35     \textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_chassis_scales}{ChassisScales}} \&iscales = \mbox{\hyperlink{classokapi_1_1_chassis_scales}{ChassisScales}}(\{1, 1\}, imev5GreenTPR),}
+\DoxyCodeLine{36     std::shared\_ptr<Logger> ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_aa9af3fb56afdb940f92bd8016ef63925}{moveDistance}}(QLength itarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a5feffd32d60a2b56d07f0d97ad218a49}{moveRaw}}(\textcolor{keywordtype}{double} itarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_afc97bc450a090d91b57bc6353b4a6972}{moveDistanceAsync}}(QLength itarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a6a686449818623cb9a3bb0efef73872f}{moveRawAsync}}(\textcolor{keywordtype}{double} itarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{89   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a3c2ae782167fd9c6b27d637563e3a066}{turnAngle}}(QAngle idegTarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a42801c5f37d892f8410af8c672387da8}{turnRaw}}(\textcolor{keywordtype}{double} idegTarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a773a99fe7a1540da856ad6b6008ba24f}{turnAngleAsync}}(QAngle idegTarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{115   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a753e4fbe3ca152c5d1ba544e26c93e92}{turnRawAsync}}(\textcolor{keywordtype}{double} idegTarget) \textcolor{keyword}{override};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{122   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a37d538f92439644efa50a226c3cefd6d}{setTurnsMirrored}}(\textcolor{keywordtype}{bool} ishouldMirror) \textcolor{keyword}{override};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{129   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_aa1eb8a819454c89497432a846577053e}{isSettled}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{134   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a2af994f5ddc68a48d7692fd16ca590c0}{waitUntilSettled}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{139   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_aab2f5d5cfb8ad96bd32be26a5a4e7113}{stop}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{144   \mbox{\hyperlink{classokapi_1_1_chassis_scales}{ChassisScales}} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a6bbab5d22753736b0507d5fd4deb3982}{getChassisScales}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{149   \mbox{\hyperlink{structokapi_1_1_abstract_motor_1_1_gearset_ratio_pair}{AbstractMotor::GearsetRatioPair}} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a42cab9878235cdb4bea46e69f7ccd75d}{getGearsetRatioPair}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{154   std::shared\_ptr<ChassisModel> \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a60c9a11616a2a41400c17952c36a5b57}{getModel}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{159   \mbox{\hyperlink{classokapi_1_1_chassis_model}{ChassisModel}} \&\mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a726fc6cd37748b860e56ddb586b5555a}{model}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{166   \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_a9cf06cccbb0389607f953aac5a29238c}{setMaxVelocity}}(\textcolor{keywordtype}{double} imaxVelocity) \textcolor{keyword}{override};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{171   \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_chassis_controller_integrated_aa19ac09d42b09100e49e77c82ab1e05b}{getMaxVelocity}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{174   std::shared\_ptr<Logger> logger;}
+\DoxyCodeLine{175   \textcolor{keywordtype}{bool} normalTurns\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{176   std::shared\_ptr<ChassisModel> chassisModel;}
+\DoxyCodeLine{177   \mbox{\hyperlink{classokapi_1_1_time_util}{TimeUtil}} timeUtil;}
+\DoxyCodeLine{178   std::unique\_ptr<AsyncPosIntegratedController> leftController;}
+\DoxyCodeLine{179   std::unique\_ptr<AsyncPosIntegratedController> rightController;}
+\DoxyCodeLine{180   \textcolor{keywordtype}{int} lastTarget;}
+\DoxyCodeLine{181   \mbox{\hyperlink{classokapi_1_1_chassis_scales}{ChassisScales}} scales;}
+\DoxyCodeLine{182   \mbox{\hyperlink{structokapi_1_1_abstract_motor_1_1_gearset_ratio_pair}{AbstractMotor::GearsetRatioPair}} gearsetRatioPair;}
+\DoxyCodeLine{183 \};}
+\DoxyCodeLine{184 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

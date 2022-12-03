@@ -1,0 +1,102 @@
+\hypertarget{test-5_2include_2display_2lv__objx_2lv__bar_8h_source}{}\doxysection{lv\+\_\+bar.\+h}
+\label{test-5_2include_2display_2lv__objx_2lv__bar_8h_source}\index{Pros/test-\/5/include/display/lv\_objx/lv\_bar.h@{Pros/test-\/5/include/display/lv\_objx/lv\_bar.h}}
+\mbox{\hyperlink{test-5_2include_2display_2lv__objx_2lv__bar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_BAR\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_BAR\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_BAR != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}lv\_cont.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}lv\_btn.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}lv\_label.h"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{30 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{31 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{34 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{35 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/*Data of bar*/}}
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     \textcolor{comment}{/*No inherited ext*/}            \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{41     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{42     int16\_t cur\_value;              \textcolor{comment}{/*Current value of the bar*/}}
+\DoxyCodeLine{43     int16\_t min\_value;              \textcolor{comment}{/*Minimum value of the bar*/}}
+\DoxyCodeLine{44     int16\_t max\_value;              \textcolor{comment}{/*Maximum value of the bar*/}}
+\DoxyCodeLine{45     uint8\_t sym    :1;              \textcolor{comment}{/*Symmetric: means the center is around zero value*/}}
+\DoxyCodeLine{46     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style\_indic;        \textcolor{comment}{/*Style of the indicator*/}}
+\DoxyCodeLine{47 \} lv\_bar\_ext\_t;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{50     LV\_BAR\_STYLE\_BG,}
+\DoxyCodeLine{51     LV\_BAR\_STYLE\_INDIC,}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} uint8\_t lv\_bar\_style\_t;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{56 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{57 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{65 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_bar\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{68 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{69 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76 \textcolor{keywordtype}{void} lv\_bar\_set\_value(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar, int16\_t value);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{84 \textcolor{keywordtype}{void} lv\_bar\_set\_value\_anim(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar, int16\_t value, uint16\_t anim\_time);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{93 \textcolor{keywordtype}{void} lv\_bar\_set\_range(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar, int16\_t min, int16\_t max);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{100 \textcolor{keywordtype}{void} lv\_bar\_set\_sym(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar, \textcolor{keywordtype}{bool} en);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{108 \textcolor{keywordtype}{void} lv\_bar\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *bar, lv\_bar\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{111 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{112 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{119 int16\_t lv\_bar\_get\_value(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{126 int16\_t lv\_bar\_get\_min\_value(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{133 int16\_t lv\_bar\_get\_max\_value(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{140 \textcolor{keywordtype}{bool} lv\_bar\_get\_sym(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * bar);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{148 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_bar\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *bar, lv\_bar\_style\_t type);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{151 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{152 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_BAR*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{157 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*LV\_BAR\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

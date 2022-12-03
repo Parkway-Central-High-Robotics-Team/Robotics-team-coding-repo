@@ -1,0 +1,153 @@
+\hypertarget{_pros-7-13-22_2include_2pros_2motors_8hpp_source}{}\doxysection{motors.\+hpp}
+\label{_pros-7-13-22_2include_2pros_2motors_8hpp_source}\index{Pros/Pros-\/7-\/13-\/22/include/pros/motors.hpp@{Pros/Pros-\/7-\/13-\/22/include/pros/motors.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef \_PROS\_MOTORS\_HPP\_}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define \_PROS\_MOTORS\_HPP\_}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}pros/motors.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classpros_1_1_motor}{Motor}} \{}
+\DoxyCodeLine{28     \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpros_1_1_motor_a5be9a41f9877208c887d5e2c081bc72e}{Motor}}(\textcolor{keyword}{const} std::uint8\_t port, \textcolor{keyword}{const} motor\_gearset\_e\_t gearset, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} reverse,}
+\DoxyCodeLine{47                    \textcolor{keyword}{const} motor\_encoder\_units\_e\_t encoder\_units);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpros_1_1_motor}{Motor}}(\textcolor{keyword}{const} std::uint8\_t port, \textcolor{keyword}{const} motor\_gearset\_e\_t gearset, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} reverse);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpros_1_1_motor}{Motor}}(\textcolor{keyword}{const} std::uint8\_t port, \textcolor{keyword}{const} motor\_gearset\_e\_t gearset);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpros_1_1_motor}{Motor}}(\textcolor{keyword}{const} std::uint8\_t port, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} reverse);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpros_1_1_motor}{Motor}}(\textcolor{keyword}{const} std::uint8\_t port);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{    /****************************************************************************/}}
+\DoxyCodeLine{61 \textcolor{comment}{    /****************************************************************************/}}
+\DoxyCodeLine{79     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a4cf8a9518eb6cd268d27151f0df7fd38}{operator=}}(std::int32\_t voltage) \textcolor{keyword}{const};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{98     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a7ea9aedd4e12844be2584dc3f4b7a4bf}{move}}(std::int32\_t voltage) \textcolor{keyword}{const};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{122     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a7851ffa40c9803d75398a5be355de395}{move\_absolute}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} position, \textcolor{keyword}{const} std::int32\_t velocity) \textcolor{keyword}{const};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{147     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a96c09e169b5135d9001cec92fa2686c1}{move\_relative}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} position, \textcolor{keyword}{const} std::int32\_t velocity) \textcolor{keyword}{const};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{169     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a797de937c2d550c3fa199806db07dbcc}{move\_velocity}}(\textcolor{keyword}{const} std::int32\_t velocity) \textcolor{keyword}{const};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{186     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a3c79db57c20617fbbc49461c58612cfb}{move\_voltage}}(\textcolor{keyword}{const} std::int32\_t voltage) \textcolor{keyword}{const};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{203     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_ac56dca42bbddd3c7bc9fa382eab1fdf0}{brake}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{221     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a44f39232cec1caee6d668d8ff21dc28b}{modify\_profiled\_velocity}}(\textcolor{keyword}{const} std::int32\_t velocity) \textcolor{keyword}{const};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{233     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpros_1_1_motor_a7ad83a73bf15b94aaad8d10970bb254c}{get\_target\_position}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{245     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a8b8148a179cfadd579c8d4c82eb5873f}{get\_target\_velocity}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{comment}{    /****************************************************************************/}}
+\DoxyCodeLine{251 \textcolor{comment}{    /****************************************************************************/}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{263     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpros_1_1_motor_a696494a4e7c675f7007d41b947f9ea63}{get\_actual\_velocity}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{275     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a502eaf3859452721e2327e53ab3f34d8}{get\_current\_draw}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{287     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_acea42a96da651f72f138ea268c76217f}{get\_direction}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{303     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpros_1_1_motor_a6f0b39894abf612a1965a66224893c71}{get\_efficiency}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{316     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a2d34c92effccfbb4d2f45319bf4bd272}{is\_over\_current}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{332     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a884c19ae71a6c9f0b316520f09769be9}{is\_stopped}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{349     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a589a3cbb397ba065c30c1f16bb3f08a7}{get\_zero\_position\_flag}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{365     \textcolor{keyword}{virtual} std::uint32\_t \mbox{\hyperlink{classpros_1_1_motor_a66c6f6420485059af301a9c8a99b2045}{get\_faults}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{381     \textcolor{keyword}{virtual} std::uint32\_t \mbox{\hyperlink{classpros_1_1_motor_a7e24aa1c4363a131829e902f12e7364c}{get\_flags}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{398     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_ae82c57d590e18d7d90afec1e9cc3bb4e}{get\_raw\_position}}(std::uint32\_t* \textcolor{keyword}{const} timestamp) \textcolor{keyword}{const};}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{410     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a099d50ed35d73fa29a46b2beb151ce2b}{is\_over\_temp}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{422     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpros_1_1_motor_a70e725a94ec42dc7cbb3e460c36dcad3}{get\_position}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{434     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpros_1_1_motor_a51b75dc245257487116e64fa2904d521}{get\_power}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{446     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpros_1_1_motor_a9fd793251b91c2ac0091c65f290f740d}{get\_temperature}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{458     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpros_1_1_motor_a14e0c57c0ca7bde15f73414abf4c3c8e}{get\_torque}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{470     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_abe51732c37c2ec72a8bdceac7f6962cb}{get\_voltage}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 \textcolor{comment}{    /****************************************************************************/}}
+\DoxyCodeLine{476 \textcolor{comment}{    /****************************************************************************/}}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{494     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_af20c036c1d5d68eb5e762c12f9a4b7fe}{set\_zero\_position}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} position) \textcolor{keyword}{const};}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{506     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a5d67803a65fa699a169a4ed5a107a964}{tare\_position}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{521     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_ab51969169dc534537f79710261daa3dd}{set\_brake\_mode}}(\textcolor{keyword}{const} motor\_brake\_mode\_e\_t mode) \textcolor{keyword}{const};}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{536     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a4c496dfb0b33f989d7329a61b7b6d6ba}{set\_current\_limit}}(\textcolor{keyword}{const} std::int32\_t limit) \textcolor{keyword}{const};}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{551     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a2d2fea8d5967d1e41471111aa89afd84}{set\_encoder\_units}}(\textcolor{keyword}{const} motor\_encoder\_units\_e\_t units) \textcolor{keyword}{const};}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{566     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a3adf8b737ad2e4ebb5f000401c536fed}{set\_gearing}}(\textcolor{keyword}{const} motor\_gearset\_e\_t gearset) \textcolor{keyword}{const};}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{586     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]]}
+\DoxyCodeLine{587     \textcolor{keyword}{static} \mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s\_t}} \mbox{\hyperlink{classpros_1_1_motor_adca7af38b0357c254e81ed882a2283a0}{convert\_pid}}(\textcolor{keywordtype}{double} kf, \textcolor{keywordtype}{double} kp, \textcolor{keywordtype}{double} ki, \textcolor{keywordtype}{double} kd);}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{616     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]] }
+\DoxyCodeLine{617     \textcolor{keyword}{static} \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} \mbox{\hyperlink{classpros_1_1_motor_a2d8c9c462e47e989ebe64fa341be91c6}{convert\_pid\_full}}(\textcolor{keywordtype}{double} kf, \textcolor{keywordtype}{double} kp, \textcolor{keywordtype}{double} ki, \textcolor{keywordtype}{double} kd, \textcolor{keywordtype}{double} filter, \textcolor{keywordtype}{double} limit, \textcolor{keywordtype}{double} threshold,}
+\DoxyCodeLine{618                      \textcolor{keywordtype}{double} loopspeed);}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{637     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]]}
+\DoxyCodeLine{638     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a7a42563b94124faebb50e5731d5664ad}{set\_pos\_pid}}(\textcolor{keyword}{const} \mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s\_t}} pid) \textcolor{keyword}{const};}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{656     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]] }
+\DoxyCodeLine{657     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a67cff0666b34c3731e21e856414c2066}{set\_pos\_pid\_full}}(\textcolor{keyword}{const} \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} pid) \textcolor{keyword}{const};}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{676     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]] }
+\DoxyCodeLine{677     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a69169ae0cd2b7f68ee533648c7830397}{set\_vel\_pid}}(\textcolor{keyword}{const} \mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s\_t}} pid) \textcolor{keyword}{const};}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{695     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]] }
+\DoxyCodeLine{696     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a7fc8eefc04c8b8aaefad75437b49f30a}{set\_vel\_pid\_full}}(\textcolor{keyword}{const} \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} pid) \textcolor{keyword}{const};}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{713     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a44fcc6447ed1416e880232baa16a221e}{set\_reversed}}(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} reverse) \textcolor{keyword}{const};}
+\DoxyCodeLine{714 }
+\DoxyCodeLine{728     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a3cd7e4ca0714b533d873796cf8b74a81}{set\_voltage\_limit}}(\textcolor{keyword}{const} std::int32\_t limit) \textcolor{keyword}{const};}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{740     \textcolor{keyword}{virtual} motor\_brake\_mode\_e\_t \mbox{\hyperlink{classpros_1_1_motor_acc0c2225d2b713b73e1caee1a483a958}{get\_brake\_mode}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{754     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_ad2eafcdf16ed480ddcbb80a45b19c01a}{get\_current\_limit}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{755 }
+\DoxyCodeLine{766     \textcolor{keyword}{virtual} motor\_encoder\_units\_e\_t \mbox{\hyperlink{classpros_1_1_motor_a9fd37f3efa2f903bda8bf575b0052fd2}{get\_encoder\_units}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{767 }
+\DoxyCodeLine{778     \textcolor{keyword}{virtual} motor\_gearset\_e\_t \mbox{\hyperlink{classpros_1_1_motor_a3227bc4fbe531638472fff4dfb134333}{get\_gearing}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{779 }
+\DoxyCodeLine{795     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]] }
+\DoxyCodeLine{796     \textcolor{keyword}{virtual} \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} \mbox{\hyperlink{classpros_1_1_motor_a32193b8d020ad1b47e1cb9f0b74a6c7d}{get\_pos\_pid}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{797 }
+\DoxyCodeLine{813     [[deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}})]]}
+\DoxyCodeLine{814     \textcolor{keyword}{virtual} \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} \mbox{\hyperlink{classpros_1_1_motor_a2b939563c3b915d7b8ce3dd1dece6208}{get\_vel\_pid}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{815 }
+\DoxyCodeLine{826     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a5122faa60ef7745761eca847192560c5}{is\_reversed}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{827 }
+\DoxyCodeLine{841     \textcolor{keyword}{virtual} std::int32\_t \mbox{\hyperlink{classpros_1_1_motor_a2afbe15bed764ca6d21f1e7c6c8da700}{get\_voltage\_limit}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{842 }
+\DoxyCodeLine{848     \textcolor{keyword}{virtual} std::uint8\_t \mbox{\hyperlink{classpros_1_1_motor_a5b0e644c8af396a6af8142b41d1bc7b6}{get\_port}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{849 }
+\DoxyCodeLine{850     \textcolor{keyword}{private}:}
+\DoxyCodeLine{851     \textcolor{keyword}{const} std::uint8\_t \_port;}
+\DoxyCodeLine{852 \};}
+\DoxyCodeLine{853 }
+\DoxyCodeLine{854 \textcolor{keyword}{namespace }literals \{}
+\DoxyCodeLine{855 \textcolor{keyword}{const} \mbox{\hyperlink{classpros_1_1_motor}{pros::Motor}} \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_mtr(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} m);}
+\DoxyCodeLine{856 \textcolor{keyword}{const} \mbox{\hyperlink{classpros_1_1_motor}{pros::Motor}} \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}} \_rmtr(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} m);}
+\DoxyCodeLine{857 \}  \textcolor{comment}{// namespace literals}}
+\DoxyCodeLine{858 \}  \textcolor{comment}{// namespace pros}}
+\DoxyCodeLine{859 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_PROS\_MOTORS\_HPP\_}}
+
+\end{DoxyCode}

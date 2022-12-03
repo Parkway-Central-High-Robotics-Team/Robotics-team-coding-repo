@@ -1,0 +1,127 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__objx_2lv__slider_8h_source}{}\doxysection{lv\+\_\+slider.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__objx_2lv__slider_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_slider.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_slider.h}}
+\mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__objx_2lv__slider_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_SLIDER\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_SLIDER\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_SLIDER != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_BAR == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_slider: lv\_bar is required. Enable it in lv\_conf.h (USE\_LV\_BAR  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}lv\_bar.h"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{34 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{37 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{38 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{39 \textcolor{comment}{/*Data of slider*/}}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42     lv\_bar\_ext\_t bar;       \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{43     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{44     lv\_action\_t action;             \textcolor{comment}{/*Function to call when a new value is set*/}}
+\DoxyCodeLine{45     \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style\_knob;    \textcolor{comment}{/*Style of the knob*/}}
+\DoxyCodeLine{46     int16\_t drag\_value;          \textcolor{comment}{/*Store a temporal value during press until release (Handled by the library)*/}}
+\DoxyCodeLine{47     uint8\_t knob\_in     :1;     \textcolor{comment}{/*1: Draw the knob inside the bar*/}}
+\DoxyCodeLine{48 \} lv\_slider\_ext\_t;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{/*Built-\/in styles of slider*/}}
+\DoxyCodeLine{51 \textcolor{keyword}{enum}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53     LV\_SLIDER\_STYLE\_BG,}
+\DoxyCodeLine{54     LV\_SLIDER\_STYLE\_INDIC,}
+\DoxyCodeLine{55     LV\_SLIDER\_STYLE\_KNOB,}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} uint8\_t lv\_slider\_style\_t;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{60 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{61 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{69 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_slider\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{72 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{73 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{80 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_slider\_set\_value(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider, int16\_t value)}
+\DoxyCodeLine{81 \{}
+\DoxyCodeLine{82     lv\_bar\_set\_value(slider, value);}
+\DoxyCodeLine{83 \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{91 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_slider\_set\_value\_anim(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider, int16\_t value, uint16\_t anim\_time)}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     lv\_bar\_set\_value\_anim(slider, value, anim\_time);}
+\DoxyCodeLine{94 \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{102 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_slider\_set\_range(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *slider, int16\_t min, int16\_t max)}
+\DoxyCodeLine{103 \{}
+\DoxyCodeLine{104     lv\_bar\_set\_range(slider, min, max);}
+\DoxyCodeLine{105 \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} lv\_slider\_set\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider, lv\_action\_t action);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} lv\_slider\_set\_knob\_in(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider, \textcolor{keywordtype}{bool} in);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{128 \textcolor{keywordtype}{void} lv\_slider\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *slider, lv\_slider\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{131 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{132 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{139 int16\_t lv\_slider\_get\_value(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{146 \textcolor{keyword}{static} \textcolor{keyword}{inline} int16\_t lv\_slider\_get\_min\_value(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider)}
+\DoxyCodeLine{147 \{}
+\DoxyCodeLine{148     \textcolor{keywordflow}{return} lv\_bar\_get\_min\_value(slider);}
+\DoxyCodeLine{149 \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{156 \textcolor{keyword}{static} \textcolor{keyword}{inline} int16\_t lv\_slider\_get\_max\_value(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider)}
+\DoxyCodeLine{157 \{}
+\DoxyCodeLine{158     \textcolor{keywordflow}{return} lv\_bar\_get\_max\_value(slider);}
+\DoxyCodeLine{159 \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{166 lv\_action\_t lv\_slider\_get\_action(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{bool} lv\_slider\_is\_dragged(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{181 \textcolor{keywordtype}{bool} lv\_slider\_get\_knob\_in(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * slider);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{190 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_slider\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *slider, lv\_slider\_style\_t type);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{193 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{194 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_SLIDER*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{199 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_SLIDER\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

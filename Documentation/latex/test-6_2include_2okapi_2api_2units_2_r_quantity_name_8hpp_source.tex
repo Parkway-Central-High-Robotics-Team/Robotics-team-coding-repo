@@ -1,0 +1,44 @@
+\hypertarget{test-6_2include_2okapi_2api_2units_2_r_quantity_name_8hpp_source}{}\doxysection{RQuantity\+Name.\+hpp}
+\label{test-6_2include_2okapi_2api_2units_2_r_quantity_name_8hpp_source}\index{Pros/test-\/6/include/okapi/api/units/RQuantityName.hpp@{Pros/test-\/6/include/okapi/api/units/RQuantityName.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}okapi/api/units/QAngle.hpp"{}}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}okapi/api/units/QLength.hpp"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}okapi/api/units/QSpeed.hpp"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <typeindex>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{20 \textcolor{keyword}{template} <\textcolor{keyword}{class} QType> std::string getShortUnitName(QType q) \{}
+\DoxyCodeLine{21   \textcolor{keyword}{const} std::unordered\_map<std::type\_index, std::unordered\_map<double, const char *>> shortNameMap =}
+\DoxyCodeLine{22     \{\{\textcolor{keyword}{typeid}(meter),}
+\DoxyCodeLine{23       \{}
+\DoxyCodeLine{24         \{meter.getValue(), \textcolor{stringliteral}{"{}m"{}}\},}
+\DoxyCodeLine{25         \{decimeter.getValue(), \textcolor{stringliteral}{"{}dm"{}}\},}
+\DoxyCodeLine{26         \{centimeter.getValue(), \textcolor{stringliteral}{"{}cm"{}}\},}
+\DoxyCodeLine{27         \{millimeter.getValue(), \textcolor{stringliteral}{"{}mm"{}}\},}
+\DoxyCodeLine{28         \{kilometer.getValue(), \textcolor{stringliteral}{"{}km"{}}\},}
+\DoxyCodeLine{29         \{inch.getValue(), \textcolor{stringliteral}{"{}in"{}}\},}
+\DoxyCodeLine{30         \{foot.getValue(), \textcolor{stringliteral}{"{}ft"{}}\},}
+\DoxyCodeLine{31         \{yard.getValue(), \textcolor{stringliteral}{"{}yd"{}}\},}
+\DoxyCodeLine{32         \{mile.getValue(), \textcolor{stringliteral}{"{}mi"{}}\},}
+\DoxyCodeLine{33         \{tile.getValue(), \textcolor{stringliteral}{"{}tile"{}}\},}
+\DoxyCodeLine{34       \}\},}
+\DoxyCodeLine{35      \{\textcolor{keyword}{typeid}(degree), \{\{degree.getValue(), \textcolor{stringliteral}{"{}deg"{}}\}, \{radian.getValue(), \textcolor{stringliteral}{"{}rad"{}}\}\}\}\};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{38     \textcolor{keywordflow}{return} shortNameMap.at(\textcolor{keyword}{typeid}(q)).at(q.getValue());}
+\DoxyCodeLine{39   \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::out\_of\_range \&e) \{}
+\DoxyCodeLine{40     \textcolor{keywordflow}{throw} std::domain\_error(}
+\DoxyCodeLine{41       \textcolor{stringliteral}{"{}You have requested the shortname of an unknown unit somewhere (likely odometry strings). "{}}}
+\DoxyCodeLine{42       \textcolor{stringliteral}{"{}Shortname for provided unit is unspecified. You can override this function to add more "{}}}
+\DoxyCodeLine{43       \textcolor{stringliteral}{"{}names or manually specify the name instead."{}});}
+\DoxyCodeLine{44   \}}
+\DoxyCodeLine{45 \}}
+\DoxyCodeLine{46 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+\hypertarget{test-3_2include_2display_2lv__misc_2lv__gc_8h}{}\doxysection{Pros/test-\/3/include/display/lv\+\_\+misc/lv\+\_\+gc.h File Reference}
+\label{test-3_2include_2display_2lv__misc_2lv__gc_8h}\index{Pros/test-\/3/include/display/lv\_misc/lv\_gc.h@{Pros/test-\/3/include/display/lv\_misc/lv\_gc.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+mem.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+ll.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test-3_2include_2display_2lv__misc_2lv__gc_8h_a29528a3b3dab81b4885c786e4fbae990}{LV\+\_\+\+GC\+\_\+\+ROOTS}}(prefix)
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__misc_2lv__gc_8h_aa6393718b2ab1675e7b637c2f15ae096}\label{test-3_2include_2display_2lv__misc_2lv__gc_8h_aa6393718b2ab1675e7b637c2f15ae096}} 
+\#define {\bfseries LV\+\_\+\+NO\+\_\+\+PREFIX}
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__misc_2lv__gc_8h_a2c5e4193f9e82170b8f66a0a124ad7a1}\label{test-3_2include_2display_2lv__misc_2lv__gc_8h_a2c5e4193f9e82170b8f66a0a124ad7a1}} 
+\#define {\bfseries LV\+\_\+\+ROOTS}~LV\+\_\+\+GC\+\_\+\+ROOTS(LV\+\_\+\+NO\+\_\+\+PREFIX)
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__misc_2lv__gc_8h_a56ab4f084c8075b22e02e1c99491c4cd}\label{test-3_2include_2display_2lv__misc_2lv__gc_8h_a56ab4f084c8075b22e02e1c99491c4cd}} 
+\#define {\bfseries LV\+\_\+\+GC\+\_\+\+ROOT}(x)~x
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test-3_2include_2display_2lv__misc_2lv__gc_8h_a29528a3b3dab81b4885c786e4fbae990}\label{test-3_2include_2display_2lv__misc_2lv__gc_8h_a29528a3b3dab81b4885c786e4fbae990}} 
+\index{lv\_gc.h@{lv\_gc.h}!LV\_GC\_ROOTS@{LV\_GC\_ROOTS}}
+\index{LV\_GC\_ROOTS@{LV\_GC\_ROOTS}!lv\_gc.h@{lv\_gc.h}}
+\doxysubsubsection{\texorpdfstring{LV\_GC\_ROOTS}{LV\_GC\_ROOTS}}
+{\footnotesize\ttfamily \#define LV\+\_\+\+GC\+\_\+\+ROOTS(\begin{DoxyParamCaption}\item[{}]{prefix }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    prefix \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} \_lv\_task\_ll;      \textcolor{comment}{/*Linked list to store the lv\_tasks*/} \(\backslash\)}
+\DoxyCodeLine{    prefix \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} \_lv\_scr\_ll;          \textcolor{comment}{/*Linked list of screens*/} \(\backslash\)}
+\DoxyCodeLine{    prefix \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} \_lv\_drv\_ll;\(\backslash\)}
+\DoxyCodeLine{    prefix \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} \_lv\_file\_ll;\(\backslash\)}
+\DoxyCodeLine{    prefix \mbox{\hyperlink{structlv__ll__t}{lv\_ll\_t}} \_lv\_anim\_ll;\(\backslash\)}
+\DoxyCodeLine{    prefix \textcolor{keywordtype}{void} * \_lv\_def\_scr;\(\backslash\)}
+\DoxyCodeLine{    prefix \textcolor{keywordtype}{void} * \_lv\_act\_scr;\(\backslash\)}
+\DoxyCodeLine{    prefix \textcolor{keywordtype}{void} * \_lv\_top\_layer;\(\backslash\)}
+\DoxyCodeLine{    prefix \textcolor{keywordtype}{void} * \_lv\_sys\_layer;\(\backslash\)}
+\DoxyCodeLine{    prefix \textcolor{keywordtype}{void} * \_lv\_task\_act;\(\backslash\)}
+\DoxyCodeLine{    prefix \textcolor{keywordtype}{void} * \_lv\_indev\_list;\(\backslash\)}
+\DoxyCodeLine{    prefix \textcolor{keywordtype}{void} * \_lv\_disp\_list;\(\backslash\)}
+
+\end{DoxyCode}

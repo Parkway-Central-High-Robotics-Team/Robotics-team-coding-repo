@@ -1,0 +1,235 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h}{}\doxysection{Pros/\+Pros-\/7-\/9-\/22/include/display/lv\+\_\+misc/lv\+\_\+font.h File Reference}
+\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_misc/lv\_font.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_misc/lv\_font.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lv\+\_\+symbol\+\_\+def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+fonts/lv\+\_\+font\+\_\+builtin.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlv__font__glyph__dsc__t}{lv\+\_\+font\+\_\+glyph\+\_\+dsc\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structlv__font__unicode__map__t}{lv\+\_\+font\+\_\+unicode\+\_\+map\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct__lv__font__struct}{\+\_\+lv\+\_\+font\+\_\+struct}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a7b776ba2e672a202cf82eefddd9f1cac}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a7b776ba2e672a202cf82eefddd9f1cac}} 
+\#define {\bfseries LV\+\_\+\+FONT\+\_\+\+DECLARE}(font\+\_\+name)~extern \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} font\+\_\+name
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a80010b77563c3b8fd4b3b382f36d4931}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a80010b77563c3b8fd4b3b382f36d4931}} 
+typedef struct \mbox{\hyperlink{struct__lv__font__struct}{\+\_\+lv\+\_\+font\+\_\+struct}} {\bfseries lv\+\_\+font\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a14e0c57453397c27bf6d0354eb1b591a}{lv\+\_\+font\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a9aba1317c37bb22092c4a640e7292b39}{lv\+\_\+font\+\_\+add}} (\mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$child, \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$parent)
+\item 
+void \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_aafcd526547c9b23c9a37421cbcc6d3d1}{lv\+\_\+font\+\_\+remove}} (\mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$child, \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$parent)
+\item 
+bool \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_ad8bfcfba25bf49932e9fe2432900d2f9}{lv\+\_\+font\+\_\+is\+\_\+monospace}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font\+\_\+p, uint32\+\_\+t letter)
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a669e4ac7482fb849e0683a623441ed00}{lv\+\_\+font\+\_\+get\+\_\+bitmap}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font\+\_\+p, uint32\+\_\+t letter)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a9e02e2f3e5832a79237e4b1ae031bb29}{lv\+\_\+font\+\_\+get\+\_\+width}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font\+\_\+p, uint32\+\_\+t letter)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a646f568110692cbc95f51348a00cb7b0}{lv\+\_\+font\+\_\+get\+\_\+real\+\_\+width}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font\+\_\+p, uint32\+\_\+t letter)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a92fd36545ae82b41662d023790a32d7d}{lv\+\_\+font\+\_\+get\+\_\+bpp}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font, uint32\+\_\+t letter)
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a569825a3d8812485bdd23b192006abbd}{lv\+\_\+font\+\_\+get\+\_\+bitmap\+\_\+continuous}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font, uint32\+\_\+t unicode\+\_\+letter)
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a13b10208656a57cce8ad65c50cb1c62b}{lv\+\_\+font\+\_\+get\+\_\+bitmap\+\_\+sparse}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font, uint32\+\_\+t unicode\+\_\+letter)
+\item 
+int16\+\_\+t \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a8fd533cf0cab2151fb8ce3c33b9a2aa4}{lv\+\_\+font\+\_\+get\+\_\+width\+\_\+continuous}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font, uint32\+\_\+t unicode\+\_\+letter)
+\item 
+int16\+\_\+t \mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a5f286ece85a144f9aa77e763838b89cc}{lv\+\_\+font\+\_\+get\+\_\+width\+\_\+sparse}} (const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$font, uint32\+\_\+t unicode\+\_\+letter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a9aba1317c37bb22092c4a640e7292b39}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a9aba1317c37bb22092c4a640e7292b39}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_add@{lv\_font\_add}}
+\index{lv\_font\_add@{lv\_font\_add}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_add()}{lv\_font\_add()}}
+{\footnotesize\ttfamily void lv\+\_\+font\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{child,  }\item[{\mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+Add a font to an other to extend the character set. 
+\begin{DoxyParams}{Parameters}
+{\em child} & the font to add \\
+\hline
+{\em parent} & this font will be extended. Using it later will contain the characters from {\ttfamily child} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a669e4ac7482fb849e0683a623441ed00}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a669e4ac7482fb849e0683a623441ed00}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_bitmap@{lv\_font\_get\_bitmap}}
+\index{lv\_font\_get\_bitmap@{lv\_font\_get\_bitmap}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_bitmap()}{lv\_font\_get\_bitmap()}}
+{\footnotesize\ttfamily const uint8\+\_\+t $\ast$ lv\+\_\+font\+\_\+get\+\_\+bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font\+\_\+p,  }\item[{uint32\+\_\+t}]{letter }\end{DoxyParamCaption})}
+
+Return with the bitmap of a font. 
+\begin{DoxyParams}{Parameters}
+{\em font\+\_\+p} & pointer to a font \\
+\hline
+{\em letter} & an UNICODE character code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the bitmap of the letter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a569825a3d8812485bdd23b192006abbd}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a569825a3d8812485bdd23b192006abbd}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_bitmap\_continuous@{lv\_font\_get\_bitmap\_continuous}}
+\index{lv\_font\_get\_bitmap\_continuous@{lv\_font\_get\_bitmap\_continuous}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_bitmap\_continuous()}{lv\_font\_get\_bitmap\_continuous()}}
+{\footnotesize\ttfamily const uint8\+\_\+t $\ast$ lv\+\_\+font\+\_\+get\+\_\+bitmap\+\_\+continuous (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{uint32\+\_\+t}]{unicode\+\_\+letter }\end{DoxyParamCaption})}
+
+Generic bitmap get function used in \textquotesingle{}font-\/\texorpdfstring{$>$}{>}get\+\_\+bitmap\textquotesingle{} when the font contains all characters in the range 
+\begin{DoxyParams}{Parameters}
+{\em font} & pointer to font \\
+\hline
+{\em unicode\+\_\+letter} & an unicode letter which bitmap should be get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the bitmap or NULL if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a13b10208656a57cce8ad65c50cb1c62b}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a13b10208656a57cce8ad65c50cb1c62b}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_bitmap\_sparse@{lv\_font\_get\_bitmap\_sparse}}
+\index{lv\_font\_get\_bitmap\_sparse@{lv\_font\_get\_bitmap\_sparse}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_bitmap\_sparse()}{lv\_font\_get\_bitmap\_sparse()}}
+{\footnotesize\ttfamily const uint8\+\_\+t $\ast$ lv\+\_\+font\+\_\+get\+\_\+bitmap\+\_\+sparse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{uint32\+\_\+t}]{unicode\+\_\+letter }\end{DoxyParamCaption})}
+
+Generic bitmap get function used in \textquotesingle{}font-\/\texorpdfstring{$>$}{>}get\+\_\+bitmap\textquotesingle{} when the font NOT contains all characters in the range (sparse) 
+\begin{DoxyParams}{Parameters}
+{\em font} & pointer to font \\
+\hline
+{\em unicode\+\_\+letter} & an unicode letter which bitmap should be get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the bitmap or NULL if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a92fd36545ae82b41662d023790a32d7d}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a92fd36545ae82b41662d023790a32d7d}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_bpp@{lv\_font\_get\_bpp}}
+\index{lv\_font\_get\_bpp@{lv\_font\_get\_bpp}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_bpp()}{lv\_font\_get\_bpp()}}
+{\footnotesize\ttfamily uint8\+\_\+t lv\+\_\+font\+\_\+get\+\_\+bpp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{uint32\+\_\+t}]{letter }\end{DoxyParamCaption})}
+
+Get the bit-\/per-\/pixel of font 
+\begin{DoxyParams}{Parameters}
+{\em font} & pointer to font \\
+\hline
+{\em letter} & a letter from font (font extensions can have different bpp) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bpp of the font (or font extension) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a646f568110692cbc95f51348a00cb7b0}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a646f568110692cbc95f51348a00cb7b0}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_real\_width@{lv\_font\_get\_real\_width}}
+\index{lv\_font\_get\_real\_width@{lv\_font\_get\_real\_width}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_real\_width()}{lv\_font\_get\_real\_width()}}
+{\footnotesize\ttfamily uint8\+\_\+t lv\+\_\+font\+\_\+get\+\_\+real\+\_\+width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font\+\_\+p,  }\item[{uint32\+\_\+t}]{letter }\end{DoxyParamCaption})}
+
+Get the width of the letter without overwriting it with the {\ttfamily monospace} attribute 
+\begin{DoxyParams}{Parameters}
+{\em font\+\_\+p} & pointer to a font \\
+\hline
+{\em letter} & an UNICODE character code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the width of a letter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a9e02e2f3e5832a79237e4b1ae031bb29}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a9e02e2f3e5832a79237e4b1ae031bb29}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_width@{lv\_font\_get\_width}}
+\index{lv\_font\_get\_width@{lv\_font\_get\_width}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_width()}{lv\_font\_get\_width()}}
+{\footnotesize\ttfamily uint8\+\_\+t lv\+\_\+font\+\_\+get\+\_\+width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font\+\_\+p,  }\item[{uint32\+\_\+t}]{letter }\end{DoxyParamCaption})}
+
+Get the width of a letter in a font. If {\ttfamily monospace} is set then return with it. 
+\begin{DoxyParams}{Parameters}
+{\em font\+\_\+p} & pointer to a font \\
+\hline
+{\em letter} & an UNICODE character code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the width of a letter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a8fd533cf0cab2151fb8ce3c33b9a2aa4}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a8fd533cf0cab2151fb8ce3c33b9a2aa4}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_width\_continuous@{lv\_font\_get\_width\_continuous}}
+\index{lv\_font\_get\_width\_continuous@{lv\_font\_get\_width\_continuous}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_width\_continuous()}{lv\_font\_get\_width\_continuous()}}
+{\footnotesize\ttfamily int16\+\_\+t lv\+\_\+font\+\_\+get\+\_\+width\+\_\+continuous (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{uint32\+\_\+t}]{unicode\+\_\+letter }\end{DoxyParamCaption})}
+
+Generic glyph width get function used in \textquotesingle{}font-\/\texorpdfstring{$>$}{>}get\+\_\+width\textquotesingle{} when the font contains all characters in the range 
+\begin{DoxyParams}{Parameters}
+{\em font} & pointer to font \\
+\hline
+{\em unicode\+\_\+letter} & an unicode letter which width should be get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+width of the gylph or -\/1 if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a5f286ece85a144f9aa77e763838b89cc}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a5f286ece85a144f9aa77e763838b89cc}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_get\_width\_sparse@{lv\_font\_get\_width\_sparse}}
+\index{lv\_font\_get\_width\_sparse@{lv\_font\_get\_width\_sparse}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_get\_width\_sparse()}{lv\_font\_get\_width\_sparse()}}
+{\footnotesize\ttfamily int16\+\_\+t lv\+\_\+font\+\_\+get\+\_\+width\+\_\+sparse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{uint32\+\_\+t}]{unicode\+\_\+letter }\end{DoxyParamCaption})}
+
+Generic glyph width get function used in \textquotesingle{}font-\/\texorpdfstring{$>$}{>}get\+\_\+bitmap\textquotesingle{} when the font NOT contains all characters in the range (sparse) 
+\begin{DoxyParams}{Parameters}
+{\em font} & pointer to font \\
+\hline
+{\em unicode\+\_\+letter} & an unicode letter which width should be get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+width of the glyph or -\/1 if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a14e0c57453397c27bf6d0354eb1b591a}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_a14e0c57453397c27bf6d0354eb1b591a}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_init@{lv\_font\_init}}
+\index{lv\_font\_init@{lv\_font\_init}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_init()}{lv\_font\_init()}}
+{\footnotesize\ttfamily void lv\+\_\+font\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initialize the fonts \mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_ad8bfcfba25bf49932e9fe2432900d2f9}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_ad8bfcfba25bf49932e9fe2432900d2f9}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_is\_monospace@{lv\_font\_is\_monospace}}
+\index{lv\_font\_is\_monospace@{lv\_font\_is\_monospace}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_is\_monospace()}{lv\_font\_is\_monospace()}}
+{\footnotesize\ttfamily bool lv\+\_\+font\+\_\+is\+\_\+monospace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{font\+\_\+p,  }\item[{uint32\+\_\+t}]{letter }\end{DoxyParamCaption})}
+
+Tells if font which contains {\ttfamily letter} is monospace or not 
+\begin{DoxyParams}{Parameters}
+{\em font\+\_\+p} & point to font \\
+\hline
+{\em letter} & an UNICODE character code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: the letter is monospace; false not monospace 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_aafcd526547c9b23c9a37421cbcc6d3d1}\label{_pros-7-9-22_2include_2display_2lv__misc_2lv__font_8h_aafcd526547c9b23c9a37421cbcc6d3d1}} 
+\index{lv\_font.h@{lv\_font.h}!lv\_font\_remove@{lv\_font\_remove}}
+\index{lv\_font\_remove@{lv\_font\_remove}!lv\_font.h@{lv\_font.h}}
+\doxysubsubsection{\texorpdfstring{lv\_font\_remove()}{lv\_font\_remove()}}
+{\footnotesize\ttfamily void lv\+\_\+font\+\_\+remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{child,  }\item[{\mbox{\hyperlink{struct__lv__font__struct}{lv\+\_\+font\+\_\+t}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+Remove a font from a character set. 
+\begin{DoxyParams}{Parameters}
+{\em child} & the font to remove \\
+\hline
+{\em parent} & remove {\ttfamily child} from here \\
+\hline
+\end{DoxyParams}

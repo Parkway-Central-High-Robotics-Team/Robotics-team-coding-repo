@@ -1,0 +1,95 @@
+\hypertarget{test-6_2include_2pros_2screen_8hpp_source}{}\doxysection{screen.\+hpp}
+\label{test-6_2include_2pros_2screen_8hpp_source}\index{Pros/test-\/6/include/pros/screen.hpp@{Pros/test-\/6/include/pros/screen.hpp}}
+\mbox{\hyperlink{test-6_2include_2pros_2screen_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef \_PROS\_SCREEN\_HPP\_}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define \_PROS\_SCREEN\_HPP\_}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}pros/screen.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }screen \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#pragma GCC diagnostic push}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wunused-\/function"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{namespace }\{}
+\DoxyCodeLine{29 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{30 T convert\_args(T arg) \{}
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} arg;}
+\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33 \textcolor{keyword}{const} \textcolor{keywordtype}{char}* convert\_args(\textcolor{keyword}{const} std::string\& arg) \{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{return} arg.c\_str();}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 \}  \textcolor{comment}{// namespace}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#pragma GCC diagnostic pop}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{44 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{59     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_acf5d93452112748c9480e355a6b9d84d}{set\_pen}}(\textcolor{keyword}{const} std::uint32\_t color);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{74     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_aba559f124030115ae1e1bcd5d7ab12ee}{set\_eraser}}(\textcolor{keyword}{const} std::uint32\_t color);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{87     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a16f5bad9cbd8aaf1de2f747bf4c88139}{get\_pen}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{100     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_ac589639dcad1320da01239fa2ee91895}{get\_eraser}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{112     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_addc37523f02666234b4f87dd5683f2de}{erase}}();}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{127     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_ada1288989c095a51803f3c3ec32f63de}{scroll}}(\textcolor{keyword}{const} std::int16\_t start\_line, \textcolor{keyword}{const} std::int16\_t lines);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{149     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a54598658b4962091f0dd30474d3c579f}{scroll\_area}}(\textcolor{keyword}{const} std::int16\_t x0, \textcolor{keyword}{const} std::int16\_t y0, \textcolor{keyword}{const} std::int16\_t x1, \textcolor{keyword}{const} std::int16\_t y1, std::int16\_t lines);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{170     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_ac8b195fde29a483de7fe34156067a92c}{copy\_area}}(\textcolor{keyword}{const} std::int16\_t x0, \textcolor{keyword}{const} std::int16\_t y0, \textcolor{keyword}{const} std::int16\_t x1, \textcolor{keyword}{const} std::int16\_t y1, uint32\_t* buf, \textcolor{keyword}{const} std::int32\_t stride);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{184     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a5d4493bbada5ff871a44461f0bc71a7d}{draw\_pixel}}(\textcolor{keyword}{const} std::int16\_t x, \textcolor{keyword}{const} std::int16\_t y);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{198     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_ad0a321bd81d028d75feec7f6c1c13e49}{erase\_pixel}}(\textcolor{keyword}{const} std::int16\_t x, \textcolor{keyword}{const} std::int16\_t y);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{213     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_ae3bef1694428c775fd6dce977cbfa87b}{draw\_line}}(\textcolor{keyword}{const} std::int16\_t x0, \textcolor{keyword}{const} std::int16\_t y0, \textcolor{keyword}{const} std::int16\_t x1, \textcolor{keyword}{const} std::int16\_t y1);}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{228     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a22c2c2ac7ffe36b2946052170c526e7d}{erase\_line}}(\textcolor{keyword}{const} std::int16\_t x0, \textcolor{keyword}{const} std::int16\_t y0, \textcolor{keyword}{const} std::int16\_t x1, \textcolor{keyword}{const} std::int16\_t y1);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{243     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a02af0ec1e3430efbb5b66c4cfe92b735}{draw\_rect}}(\textcolor{keyword}{const} std::int16\_t x0, \textcolor{keyword}{const} std::int16\_t y0, \textcolor{keyword}{const} std::int16\_t x1, \textcolor{keyword}{const} std::int16\_t y1);}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{258     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a22199222d41fd80c81799fafe3fbec4e}{erase\_rect}}(\textcolor{keyword}{const} std::int16\_t x0, \textcolor{keyword}{const} std::int16\_t y0, \textcolor{keyword}{const} std::int16\_t x1, \textcolor{keyword}{const} std::int16\_t y1);}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{274     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a596ee2c64e8d5cb8abcdab741490b884}{fill\_rect}}(\textcolor{keyword}{const} std::int16\_t x0, \textcolor{keyword}{const} std::int16\_t y0, \textcolor{keyword}{const} std::int16\_t x1, \textcolor{keyword}{const} std::int16\_t y1);}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{289     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a53c5922a466814315bf0c0150838b799}{draw\_circle}}(\textcolor{keyword}{const} std::int16\_t x, \textcolor{keyword}{const} std::int16\_t y, \textcolor{keyword}{const} std::int16\_t radius);}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{304     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a3ab31a7257cb0d6d0fb776703b17ede3}{erase\_circle}}(\textcolor{keyword}{const} std::int16\_t x, \textcolor{keyword}{const} std::int16\_t y, \textcolor{keyword}{const} std::int16\_t radius);}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{320     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a7037d11afb655cb5e2d7547d94c5f91a}{fill\_circle}}(\textcolor{keyword}{const} std::int16\_t x, \textcolor{keyword}{const} std::int16\_t y, \textcolor{keyword}{const} std::int16\_t radius);}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{326 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{340     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Params>}
+\DoxyCodeLine{341     \textcolor{keywordtype}{void} print(pros::text\_format\_e\_t txt\_fmt, \textcolor{keyword}{const} std::int16\_t line, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, Params... args)\{}
+\DoxyCodeLine{342         pros::c::screen\_print(txt\_fmt, line, text, convert\_args(args)...);}
+\DoxyCodeLine{343     \}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Params>}
+\DoxyCodeLine{346     \textcolor{keywordtype}{void} print(pros::text\_format\_e\_t txt\_fmt, \textcolor{keyword}{const} std::int16\_t x, \textcolor{keyword}{const} std::int16\_t y, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, Params... args)\{}
+\DoxyCodeLine{347         pros::c::screen\_print\_at(txt\_fmt, x, y, text, convert\_args(args)...);}
+\DoxyCodeLine{348     \}}
+\DoxyCodeLine{349     }
+\DoxyCodeLine{350 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{355 \textcolor{comment}{    /******************************************************************************/}}
+\DoxyCodeLine{356     }
+\DoxyCodeLine{365     \mbox{\hyperlink{structscreen__touch__status__s}{screen\_touch\_status\_s\_t}} \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a4e473df306276304a64218f5cb1afad1}{touch\_status}}();}
+\DoxyCodeLine{366     }
+\DoxyCodeLine{380     std::uint32\_t \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8hpp_a8493a48e858cba5e4aa28f6889a79f54}{touch\_callback}}(touch\_event\_cb\_fn\_t cb, \mbox{\hyperlink{_pros-7-13-22_2include_2pros_2screen_8h_a8b8f74db7628fd14444f3da9505d333e}{last\_touch\_e\_t}} event\_type);}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \} \textcolor{comment}{//namespace screen}}
+\DoxyCodeLine{383 \} \textcolor{comment}{//namespace pros}}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//header guard}}
+
+\end{DoxyCode}

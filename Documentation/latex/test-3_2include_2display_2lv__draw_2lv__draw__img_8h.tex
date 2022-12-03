@@ -1,0 +1,196 @@
+\hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h}{}\doxysection{Pros/test-\/3/include/display/lv\+\_\+draw/lv\+\_\+draw\+\_\+img.h File Reference}
+\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h}\index{Pros/test-\/3/include/display/lv\_draw/lv\_draw\_img.h@{Pros/test-\/3/include/display/lv\_draw/lv\_draw\_img.h}}
+{\ttfamily \#include \char`\"{}lv\+\_\+draw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+core/lv\+\_\+obj.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlv__img__header__t}{lv\+\_\+img\+\_\+header\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structlv__img__dsc__t}{lv\+\_\+img\+\_\+dsc\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a3e9c7cc6fe68ca84ee31ba90ff08e5b1}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a3e9c7cc6fe68ca84ee31ba90ff08e5b1}} 
+\#define {\bfseries LV\+\_\+\+IMG\+\_\+\+DECODER\+\_\+\+OPEN\+\_\+\+FAIL}~((void$\ast$)(-\/1))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a3cd0b0d2269a76ecf35c65d5abc8fa2c}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a3cd0b0d2269a76ecf35c65d5abc8fa2c}} 
+typedef uint8\+\_\+t {\bfseries lv\+\_\+img\+\_\+cf\+\_\+t}
+\item 
+typedef lv\+\_\+res\+\_\+t($\ast$ \mbox{\hyperlink{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_ade0fb5a46d1ca49dfdbf4cfce37c1512}{lv\+\_\+img\+\_\+decoder\+\_\+info\+\_\+f\+\_\+t}}) (const void $\ast$src, \mbox{\hyperlink{structlv__img__header__t}{lv\+\_\+img\+\_\+header\+\_\+t}} $\ast$header)
+\item 
+typedef const uint8\+\_\+t $\ast$($\ast$ \mbox{\hyperlink{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a949e90e2903a0ce2b603b7171b15d8d7}{lv\+\_\+img\+\_\+decoder\+\_\+open\+\_\+f\+\_\+t}}) (const void $\ast$src, const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style)
+\item 
+typedef lv\+\_\+res\+\_\+t($\ast$ \mbox{\hyperlink{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a8a89ad645160bcf4482f2c1e5d8f5498}{lv\+\_\+img\+\_\+decoder\+\_\+read\+\_\+line\+\_\+f\+\_\+t}}) (lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, lv\+\_\+coord\+\_\+t len, uint8\+\_\+t $\ast$buf)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a572cf0e036cc9c8557997058fd8feaf0}{lv\+\_\+img\+\_\+decoder\+\_\+close\+\_\+f\+\_\+t}}) (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a0b887f38fa71033f0904f8e2330b6815}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a0b887f38fa71033f0904f8e2330b6815}} 
+enum \{ \newline
+{\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+UNKOWN} = 0
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+RAW}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+RAW\+\_\+\+ALPHA}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+RAW\+\_\+\+CHROMA\+\_\+\+KEYED}
+, \newline
+{\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+TRUE\+\_\+\+COLOR}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+TRUE\+\_\+\+COLOR\+\_\+\+ALPHA}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+TRUE\+\_\+\+COLOR\+\_\+\+CHROMA\+\_\+\+KEYED}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+INDEXED\+\_\+1\+BIT}
+, \newline
+{\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+INDEXED\+\_\+2\+BIT}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+INDEXED\+\_\+4\+BIT}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+INDEXED\+\_\+8\+BIT}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+ALPHA\+\_\+1\+BIT}
+, \newline
+{\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+ALPHA\+\_\+2\+BIT}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+ALPHA\+\_\+4\+BIT}
+, {\bfseries LV\+\_\+\+IMG\+\_\+\+CF\+\_\+\+ALPHA\+\_\+8\+BIT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a2033a392943823724cb5d9aa11545dc2}{lv\+\_\+draw\+\_\+img}} (const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$coords, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask, const void $\ast$src, const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style, lv\+\_\+opa\+\_\+t opa\+\_\+scale)
+\item 
+lv\+\_\+img\+\_\+src\+\_\+t \mbox{\hyperlink{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_ad1749598689c14b0b65ed7a81bc48148}{lv\+\_\+img\+\_\+src\+\_\+get\+\_\+type}} (const void $\ast$src)
+\item 
+void \mbox{\hyperlink{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_abf81bb4764262ec1f0d8e9d1a4788da3}{lv\+\_\+img\+\_\+decoder\+\_\+set\+\_\+custom}} (\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_ade0fb5a46d1ca49dfdbf4cfce37c1512}{lv\+\_\+img\+\_\+decoder\+\_\+info\+\_\+f\+\_\+t}} info\+\_\+fp, \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_a949e90e2903a0ce2b603b7171b15d8d7}{lv\+\_\+img\+\_\+decoder\+\_\+open\+\_\+f\+\_\+t}} open\+\_\+fp, \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_a8a89ad645160bcf4482f2c1e5d8f5498}{lv\+\_\+img\+\_\+decoder\+\_\+read\+\_\+line\+\_\+f\+\_\+t}} read\+\_\+fp, \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_a572cf0e036cc9c8557997058fd8feaf0}{lv\+\_\+img\+\_\+decoder\+\_\+close\+\_\+f\+\_\+t}} close\+\_\+fp)
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a694f88c0405aeeee8f74ee87f38eb8f9}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a694f88c0405aeeee8f74ee87f38eb8f9}} 
+lv\+\_\+res\+\_\+t {\bfseries lv\+\_\+img\+\_\+dsc\+\_\+get\+\_\+info} (const char $\ast$src, \mbox{\hyperlink{structlv__img__header__t}{lv\+\_\+img\+\_\+header\+\_\+t}} $\ast$header)
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a5ceadd85532c5241e2a0328a434094bb}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a5ceadd85532c5241e2a0328a434094bb}} 
+uint8\+\_\+t {\bfseries lv\+\_\+img\+\_\+color\+\_\+format\+\_\+get\+\_\+px\+\_\+size} (lv\+\_\+img\+\_\+cf\+\_\+t cf)
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a67102f00e9fc19daf341170b5039a99e}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a67102f00e9fc19daf341170b5039a99e}} 
+bool {\bfseries lv\+\_\+img\+\_\+color\+\_\+format\+\_\+is\+\_\+chroma\+\_\+keyed} (lv\+\_\+img\+\_\+cf\+\_\+t cf)
+\item 
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_abecb6b81d3d0ff80c050cce918435c0c}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_abecb6b81d3d0ff80c050cce918435c0c}} 
+bool {\bfseries lv\+\_\+img\+\_\+color\+\_\+format\+\_\+has\+\_\+alpha} (lv\+\_\+img\+\_\+cf\+\_\+t cf)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a572cf0e036cc9c8557997058fd8feaf0}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a572cf0e036cc9c8557997058fd8feaf0}} 
+\index{lv\_draw\_img.h@{lv\_draw\_img.h}!lv\_img\_decoder\_close\_f\_t@{lv\_img\_decoder\_close\_f\_t}}
+\index{lv\_img\_decoder\_close\_f\_t@{lv\_img\_decoder\_close\_f\_t}!lv\_draw\_img.h@{lv\_draw\_img.h}}
+\doxysubsubsection{\texorpdfstring{lv\_img\_decoder\_close\_f\_t}{lv\_img\_decoder\_close\_f\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ lv\+\_\+img\+\_\+decoder\+\_\+close\+\_\+f\+\_\+t) (void)}
+
+Close the pending decoding. Free resources etc. \mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_ade0fb5a46d1ca49dfdbf4cfce37c1512}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_ade0fb5a46d1ca49dfdbf4cfce37c1512}} 
+\index{lv\_draw\_img.h@{lv\_draw\_img.h}!lv\_img\_decoder\_info\_f\_t@{lv\_img\_decoder\_info\_f\_t}}
+\index{lv\_img\_decoder\_info\_f\_t@{lv\_img\_decoder\_info\_f\_t}!lv\_draw\_img.h@{lv\_draw\_img.h}}
+\doxysubsubsection{\texorpdfstring{lv\_img\_decoder\_info\_f\_t}{lv\_img\_decoder\_info\_f\_t}}
+{\footnotesize\ttfamily typedef lv\+\_\+res\+\_\+t($\ast$ lv\+\_\+img\+\_\+decoder\+\_\+info\+\_\+f\+\_\+t) (const void $\ast$src, \mbox{\hyperlink{structlv__img__header__t}{lv\+\_\+img\+\_\+header\+\_\+t}} $\ast$header)}
+
+Get info from an image and store in the {\ttfamily header} 
+\begin{DoxyParams}{Parameters}
+{\em src} & the image source. Can be a pointer to a C array or a file name (Use {\ttfamily lv\+\_\+img\+\_\+src\+\_\+get\+\_\+type} to determine the type) \\
+\hline
+{\em header} & store the info here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+LV\+\_\+\+RES\+\_\+\+OK\+: info written correctly; LV\+\_\+\+RES\+\_\+\+INV\+: failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a949e90e2903a0ce2b603b7171b15d8d7}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a949e90e2903a0ce2b603b7171b15d8d7}} 
+\index{lv\_draw\_img.h@{lv\_draw\_img.h}!lv\_img\_decoder\_open\_f\_t@{lv\_img\_decoder\_open\_f\_t}}
+\index{lv\_img\_decoder\_open\_f\_t@{lv\_img\_decoder\_open\_f\_t}!lv\_draw\_img.h@{lv\_draw\_img.h}}
+\doxysubsubsection{\texorpdfstring{lv\_img\_decoder\_open\_f\_t}{lv\_img\_decoder\_open\_f\_t}}
+{\footnotesize\ttfamily typedef const uint8\+\_\+t $\ast$($\ast$ lv\+\_\+img\+\_\+decoder\+\_\+open\+\_\+f\+\_\+t) (const void $\ast$src, const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style)}
+
+Open an image for decoding. Prepare it as it is required to read it later 
+\begin{DoxyParams}{Parameters}
+{\em src} & the image source. Can be a pointer to a C array or a file name (Use {\ttfamily lv\+\_\+img\+\_\+src\+\_\+get\+\_\+type} to determine the type) \\
+\hline
+{\em style} & the style of image (maybe it will be required to determine a color or something) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+there are 3 possible return values\+: 1) buffer with the decoded image 2) if can decode the whole image NULL. decoder\+\_\+read\+\_\+line will be called to read the image line-\/by-\/line 3) LV\+\_\+\+IMG\+\_\+\+DECODER\+\_\+\+OPEN\+\_\+\+FAIL if the image format is unknown to the decoder or an error occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a8a89ad645160bcf4482f2c1e5d8f5498}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a8a89ad645160bcf4482f2c1e5d8f5498}} 
+\index{lv\_draw\_img.h@{lv\_draw\_img.h}!lv\_img\_decoder\_read\_line\_f\_t@{lv\_img\_decoder\_read\_line\_f\_t}}
+\index{lv\_img\_decoder\_read\_line\_f\_t@{lv\_img\_decoder\_read\_line\_f\_t}!lv\_draw\_img.h@{lv\_draw\_img.h}}
+\doxysubsubsection{\texorpdfstring{lv\_img\_decoder\_read\_line\_f\_t}{lv\_img\_decoder\_read\_line\_f\_t}}
+{\footnotesize\ttfamily typedef lv\+\_\+res\+\_\+t($\ast$ lv\+\_\+img\+\_\+decoder\+\_\+read\+\_\+line\+\_\+f\+\_\+t) (lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, lv\+\_\+coord\+\_\+t len, uint8\+\_\+t $\ast$buf)}
+
+Decode {\ttfamily len} pixels starting from the given {\ttfamily x}, {\ttfamily y} coordinates and store them in {\ttfamily buf}. Required only if the \char`\"{}open\char`\"{} function can\textquotesingle{}t return with the whole decoded pixel array. 
+\begin{DoxyParams}{Parameters}
+{\em x} & start x coordinate \\
+\hline
+{\em y} & startt y coordinate \\
+\hline
+{\em len} & number of pixels to decode \\
+\hline
+{\em buf} & a buffer to store the decoded pixels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+LV\+\_\+\+RES\+\_\+\+OK\+: ok; LV\+\_\+\+RES\+\_\+\+INV\+: failed 
+\end{DoxyReturn}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a2033a392943823724cb5d9aa11545dc2}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_a2033a392943823724cb5d9aa11545dc2}} 
+\index{lv\_draw\_img.h@{lv\_draw\_img.h}!lv\_draw\_img@{lv\_draw\_img}}
+\index{lv\_draw\_img@{lv\_draw\_img}!lv\_draw\_img.h@{lv\_draw\_img.h}}
+\doxysubsubsection{\texorpdfstring{lv\_draw\_img()}{lv\_draw\_img()}}
+{\footnotesize\ttfamily void lv\+\_\+draw\+\_\+img (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{coords,  }\item[{const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{mask,  }\item[{const void $\ast$}]{src,  }\item[{const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{style,  }\item[{lv\+\_\+opa\+\_\+t}]{opa\+\_\+scale }\end{DoxyParamCaption})}
+
+Draw an image 
+\begin{DoxyParams}{Parameters}
+{\em coords} & the coordinates of the image \\
+\hline
+{\em mask} & the image will be drawn only in this area \\
+\hline
+{\em src} & pointer to a lv\+\_\+color\+\_\+t array which contains the pixels of the image \\
+\hline
+{\em style} & style of the image \\
+\hline
+{\em opa\+\_\+scale} & scale down all opacities by the factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_abf81bb4764262ec1f0d8e9d1a4788da3}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_abf81bb4764262ec1f0d8e9d1a4788da3}} 
+\index{lv\_draw\_img.h@{lv\_draw\_img.h}!lv\_img\_decoder\_set\_custom@{lv\_img\_decoder\_set\_custom}}
+\index{lv\_img\_decoder\_set\_custom@{lv\_img\_decoder\_set\_custom}!lv\_draw\_img.h@{lv\_draw\_img.h}}
+\doxysubsubsection{\texorpdfstring{lv\_img\_decoder\_set\_custom()}{lv\_img\_decoder\_set\_custom()}}
+{\footnotesize\ttfamily void lv\+\_\+img\+\_\+decoder\+\_\+set\+\_\+custom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_ade0fb5a46d1ca49dfdbf4cfce37c1512}{lv\+\_\+img\+\_\+decoder\+\_\+info\+\_\+f\+\_\+t}}}]{info\+\_\+fp,  }\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_a949e90e2903a0ce2b603b7171b15d8d7}{lv\+\_\+img\+\_\+decoder\+\_\+open\+\_\+f\+\_\+t}}}]{open\+\_\+fp,  }\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_a8a89ad645160bcf4482f2c1e5d8f5498}{lv\+\_\+img\+\_\+decoder\+\_\+read\+\_\+line\+\_\+f\+\_\+t}}}]{read\+\_\+fp,  }\item[{\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__draw_2lv__draw__img_8h_a572cf0e036cc9c8557997058fd8feaf0}{lv\+\_\+img\+\_\+decoder\+\_\+close\+\_\+f\+\_\+t}}}]{close\+\_\+fp }\end{DoxyParamCaption})}
+
+Set custom decoder functions. See the typdefs of the function typed above for more info about them 
+\begin{DoxyParams}{Parameters}
+{\em info\+\_\+fp} & info get function \\
+\hline
+{\em open\+\_\+fp} & open function \\
+\hline
+{\em read\+\_\+fp} & read line function \\
+\hline
+{\em close\+\_\+fp} & clode function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_ad1749598689c14b0b65ed7a81bc48148}\label{test-3_2include_2display_2lv__draw_2lv__draw__img_8h_ad1749598689c14b0b65ed7a81bc48148}} 
+\index{lv\_draw\_img.h@{lv\_draw\_img.h}!lv\_img\_src\_get\_type@{lv\_img\_src\_get\_type}}
+\index{lv\_img\_src\_get\_type@{lv\_img\_src\_get\_type}!lv\_draw\_img.h@{lv\_draw\_img.h}}
+\doxysubsubsection{\texorpdfstring{lv\_img\_src\_get\_type()}{lv\_img\_src\_get\_type()}}
+{\footnotesize\ttfamily lv\+\_\+img\+\_\+src\+\_\+t lv\+\_\+img\+\_\+src\+\_\+get\+\_\+type (\begin{DoxyParamCaption}\item[{const void $\ast$}]{src }\end{DoxyParamCaption})}
+
+Get the type of an image source 
+\begin{DoxyParams}{Parameters}
+{\em src} & pointer to an image source\+:
+\begin{DoxyItemize}
+\item pointer to an \textquotesingle{}lv\+\_\+img\+\_\+t\textquotesingle{} variable (image stored internally and compiled into the code)
+\item a path to a file (e.\+g. \char`\"{}\+S\+:/folder/image.\+bin\char`\"{})
+\item or a symbol (e.\+g. SYMBOL\+\_\+\+CLOSE) 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type of the image source LV\+\_\+\+IMG\+\_\+\+SRC\+\_\+\+VARIABLE/\+FILE/\+SYMBOL/\+UNKOWN 
+\end{DoxyReturn}

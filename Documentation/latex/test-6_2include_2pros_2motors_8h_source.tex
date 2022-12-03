@@ -1,0 +1,275 @@
+\hypertarget{test-6_2include_2pros_2motors_8h_source}{}\doxysection{motors.\+h}
+\label{test-6_2include_2pros_2motors_8h_source}\index{Pros/test-\/6/include/pros/motors.h@{Pros/test-\/6/include/pros/motors.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef \_PROS\_MOTORS\_H\_}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define \_PROS\_MOTORS\_H\_}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{26 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }pros \{}
+\DoxyCodeLine{28 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{35 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{57 int32\_t motor\_move(uint8\_t port, int32\_t voltage);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{78 int32\_t motor\_brake(uint8\_t port);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{104 int32\_t motor\_move\_absolute(uint8\_t port, \textcolor{keyword}{const} \textcolor{keywordtype}{double} position, \textcolor{keyword}{const} int32\_t velocity);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{132 int32\_t motor\_move\_relative(uint8\_t port, \textcolor{keyword}{const} \textcolor{keywordtype}{double} position, \textcolor{keyword}{const} int32\_t velocity);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{157 int32\_t motor\_move\_velocity(uint8\_t port, \textcolor{keyword}{const} int32\_t velocity);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{175 int32\_t motor\_move\_voltage(uint8\_t port, \textcolor{keyword}{const} int32\_t voltage);}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{196 int32\_t motor\_modify\_profiled\_velocity(uint8\_t port, \textcolor{keyword}{const} int32\_t velocity);}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{212 \textcolor{keywordtype}{double} motor\_get\_target\_position(uint8\_t port);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{228 int32\_t motor\_get\_target\_velocity(uint8\_t port);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{234 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{250 \textcolor{keywordtype}{double} motor\_get\_actual\_velocity(uint8\_t port);}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{266 int32\_t motor\_get\_current\_draw(uint8\_t port);}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{282 int32\_t motor\_get\_direction(uint8\_t port);}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{302 \textcolor{keywordtype}{double} motor\_get\_efficiency(uint8\_t port);}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{318 int32\_t motor\_is\_over\_current(uint8\_t port);}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{334 int32\_t motor\_is\_over\_temp(uint8\_t port);}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{349 int32\_t motor\_is\_stopped(uint8\_t port);}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{365 int32\_t motor\_get\_zero\_position\_flag(uint8\_t port);}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{368 \}  \textcolor{comment}{// namespace c}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} motor\_fault\_e \{}
+\DoxyCodeLine{372     E\_MOTOR\_FAULT\_NO\_FAULTS = 0x00,}
+\DoxyCodeLine{373     E\_MOTOR\_FAULT\_MOTOR\_OVER\_TEMP = 0x01,  \textcolor{comment}{// Analogous to motor\_is\_over\_temp()}}
+\DoxyCodeLine{374     E\_MOTOR\_FAULT\_DRIVER\_FAULT = 0x02,     \textcolor{comment}{// Indicates a motor h-\/bridge fault}}
+\DoxyCodeLine{375     E\_MOTOR\_FAULT\_OVER\_CURRENT = 0x04,     \textcolor{comment}{// Analogous to motor\_is\_over\_current()}}
+\DoxyCodeLine{376     E\_MOTOR\_FAULT\_DRV\_OVER\_CURRENT = 0x08  \textcolor{comment}{// Indicates an h-\/bridge over current}}
+\DoxyCodeLine{377 \} motor\_fault\_e\_t;}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#ifdef PROS\_USE\_SIMPLE\_NAMES}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_NO\_FAULTS pros::E\_MOTOR\_FAULT\_NO\_FAULTS}}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_MOTOR\_OVER\_TEMP pros::E\_MOTOR\_FAULT\_MOTOR\_OVER\_TEMP}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_DRIVER\_FAULT pros::E\_MOTOR\_FAULT\_DRIVER\_FAULT}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_OVER\_CURRENT pros::E\_MOTOR\_FAULT\_DRV\_OVER\_CURRENT}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_DRV\_OVER\_CURRENT pros::E\_MOTOR\_FAULT\_DRV\_OVER\_CURRENT}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_NO\_FAULTS E\_MOTOR\_FAULT\_NO\_FAULTS}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_MOTOR\_OVER\_TEMP E\_MOTOR\_FAULT\_MOTOR\_OVER\_TEMP}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_DRIVER\_FAULT E\_MOTOR\_FAULT\_DRIVER\_FAULT}}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_OVER\_CURRENT E\_MOTOR\_FAULT\_DRV\_OVER\_CURRENT}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define MOTOR\_FAULT\_DRV\_OVER\_CURRENT E\_MOTOR\_FAULT\_DRV\_OVER\_CURRENT}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{396 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{414 uint32\_t motor\_get\_faults(uint8\_t port);}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{417 \}  \textcolor{comment}{// namespace c}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} motor\_flag\_e \{}
+\DoxyCodeLine{421     E\_MOTOR\_FLAGS\_NONE = 0x00,}
+\DoxyCodeLine{422     E\_MOTOR\_FLAGS\_BUSY = 0x01,           \textcolor{comment}{// Cannot currently communicate to the motor}}
+\DoxyCodeLine{423     E\_MOTOR\_FLAGS\_ZERO\_VELOCITY = 0x02,  \textcolor{comment}{// Analogous to motor\_is\_stopped()}}
+\DoxyCodeLine{424     E\_MOTOR\_FLAGS\_ZERO\_POSITION = 0x04   \textcolor{comment}{// Analogous to motor\_get\_zero\_position\_flag()}}
+\DoxyCodeLine{425 \} motor\_flag\_e\_t;}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#ifdef PROS\_USE\_SIMPLE\_NAMES}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_NONE pros::E\_MOTOR\_FLAGS\_NONE}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_BUSY pros::E\_MOTOR\_FLAGS\_BUSY}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_ZERO\_VELOCITY pros::E\_MOTOR\_FLAGS\_ZERO\_VELOCITY}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_ZERO\_POSITION pros::E\_MOTOR\_FLAGS\_ZERO\_POSITION}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_NONE E\_MOTOR\_FLAGS\_NONE}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_BUSY E\_MOTOR\_FLAGS\_BUSY}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_ZERO\_VELOCITY E\_MOTOR\_FLAGS\_ZERO\_VELOCITY}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define MOTOR\_FLAGS\_ZERO\_POSITION E\_MOTOR\_FLAGS\_ZERO\_POSITION}}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{442 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{460 uint32\_t motor\_get\_flags(uint8\_t port);}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{480 int32\_t motor\_get\_raw\_position(uint8\_t port, uint32\_t* \textcolor{keyword}{const} timestamp);}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{496 \textcolor{keywordtype}{double} motor\_get\_position(uint8\_t port);}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{512 \textcolor{keywordtype}{double} motor\_get\_power(uint8\_t port);}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{528 \textcolor{keywordtype}{double} motor\_get\_temperature(uint8\_t port);}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{544 \textcolor{keywordtype}{double} motor\_get\_torque(uint8\_t port);}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{560 int32\_t motor\_get\_voltage(uint8\_t port);}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{566 \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{569 \}  \textcolor{comment}{// namespace c}}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{575 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} motor\_brake\_mode\_e \{}
+\DoxyCodeLine{576     E\_MOTOR\_BRAKE\_COAST = 0,  \textcolor{comment}{// Motor coasts when stopped, traditional behavior}}
+\DoxyCodeLine{577     E\_MOTOR\_BRAKE\_BRAKE = 1,  \textcolor{comment}{// Motor brakes when stopped}}
+\DoxyCodeLine{578     E\_MOTOR\_BRAKE\_HOLD = 2,   \textcolor{comment}{// Motor actively holds position when stopped}}
+\DoxyCodeLine{579     E\_MOTOR\_BRAKE\_INVALID = INT32\_MAX}
+\DoxyCodeLine{580 \} motor\_brake\_mode\_e\_t;}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{585 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} motor\_encoder\_units\_e \{}
+\DoxyCodeLine{586     E\_MOTOR\_ENCODER\_DEGREES = 0,    \textcolor{comment}{// Position is recorded as angle in degrees}}
+\DoxyCodeLine{587                                     \textcolor{comment}{// as a floating point number}}
+\DoxyCodeLine{588     E\_MOTOR\_ENCODER\_ROTATIONS = 1,  \textcolor{comment}{// Position is recorded as angle in rotations}}
+\DoxyCodeLine{589                                     \textcolor{comment}{// as a floating point number}}
+\DoxyCodeLine{590     E\_MOTOR\_ENCODER\_COUNTS = 2,     \textcolor{comment}{// Position is recorded as raw encoder ticks}}
+\DoxyCodeLine{591                                     \textcolor{comment}{// as a whole number}}
+\DoxyCodeLine{592     E\_MOTOR\_ENCODER\_INVALID = INT32\_MAX}
+\DoxyCodeLine{593 \} motor\_encoder\_units\_e\_t;}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{598 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} motor\_gearset\_e \{}
+\DoxyCodeLine{599     E\_MOTOR\_GEARSET\_36 = 0,  \textcolor{comment}{// 36:1, 100 RPM, Red gear set}}
+\DoxyCodeLine{600     E\_MOTOR\_GEARSET\_18 = 1,  \textcolor{comment}{// 18:1, 200 RPM, Green gear set}}
+\DoxyCodeLine{601     E\_MOTOR\_GEARSET\_06 = 2,  \textcolor{comment}{// 6:1, 600 RPM, Blue gear set}}
+\DoxyCodeLine{602     E\_MOTOR\_GEARSET\_INVALID = INT32\_MAX}
+\DoxyCodeLine{603 \} motor\_gearset\_e\_t;}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 \textcolor{preprocessor}{\#ifdef PROS\_USE\_SIMPLE\_NAMES}}
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_COAST pros::E\_MOTOR\_BRAKE\_COAST}}
+\DoxyCodeLine{608 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_BRAKE pros::E\_MOTOR\_BRAKE\_BRAKE}}
+\DoxyCodeLine{609 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_HOLD pros::E\_MOTOR\_BRAKE\_HOLD}}
+\DoxyCodeLine{610 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_INVALID pros::E\_MOTOR\_BRAKE\_INVALID}}
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_DEGREES pros::E\_MOTOR\_ENCODER\_DEGREES}}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_ROTATIONS pros::E\_MOTOR\_ENCODER\_ROTATIONS}}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_COUNTS pros::E\_MOTOR\_ENCODER\_COUNTS}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_INVALID pros::E\_MOTOR\_ENCODER\_INVALID}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_36 pros::E\_MOTOR\_GEARSET\_36}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_18 pros::E\_MOTOR\_GEARSET\_18}}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_06 pros::E\_MOTOR\_GEARSET\_06}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_6 pros::E\_MOTOR\_GEARSET\_06}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_INVALID pros::E\_MOTOR\_GEARSET\_INVALID}}
+\DoxyCodeLine{620 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_COAST E\_MOTOR\_BRAKE\_COAST}}
+\DoxyCodeLine{622 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_BRAKE E\_MOTOR\_BRAKE\_BRAKE}}
+\DoxyCodeLine{623 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_HOLD E\_MOTOR\_BRAKE\_HOLD}}
+\DoxyCodeLine{624 \textcolor{preprocessor}{\#define MOTOR\_BRAKE\_INVALID E\_MOTOR\_BRAKE\_INVALID}}
+\DoxyCodeLine{625 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_DEGREES E\_MOTOR\_ENCODER\_DEGREES}}
+\DoxyCodeLine{626 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_ROTATIONS E\_MOTOR\_ENCODER\_ROTATIONS}}
+\DoxyCodeLine{627 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_COUNTS E\_MOTOR\_ENCODER\_COUNTS}}
+\DoxyCodeLine{628 \textcolor{preprocessor}{\#define MOTOR\_ENCODER\_INVALID E\_MOTOR\_ENCODER\_INVALID}}
+\DoxyCodeLine{629 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_36 E\_MOTOR\_GEARSET\_36}}
+\DoxyCodeLine{630 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_18 E\_MOTOR\_GEARSET\_18}}
+\DoxyCodeLine{631 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_06 E\_MOTOR\_GEARSET\_06}}
+\DoxyCodeLine{632 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_6 E\_MOTOR\_GEARSET\_06}}
+\DoxyCodeLine{633 \textcolor{preprocessor}{\#define MOTOR\_GEARSET\_INVALID E\_MOTOR\_GEARSET\_INVALID}}
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{643 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s}} \{}
+\DoxyCodeLine{644     uint8\_t kf;         \textcolor{comment}{// The feedforward constant}}
+\DoxyCodeLine{645     uint8\_t kp;         \textcolor{comment}{// The proportional constant}}
+\DoxyCodeLine{646     uint8\_t ki;         \textcolor{comment}{// The integral constants}}
+\DoxyCodeLine{647     uint8\_t kd;         \textcolor{comment}{// The derivative constant}}
+\DoxyCodeLine{648     uint8\_t filter;     \textcolor{comment}{// A constant used for filtering the profile acceleration}}
+\DoxyCodeLine{649     uint16\_t limit;     \textcolor{comment}{// The integral limit}}
+\DoxyCodeLine{650     uint8\_t threshold;  \textcolor{comment}{// The threshold for determining if a position movement has}}
+\DoxyCodeLine{651                         \textcolor{comment}{// reached its goal. This has no effect for velocity PID}}
+\DoxyCodeLine{652                         \textcolor{comment}{// calculations.}}
+\DoxyCodeLine{653     uint8\_t loopspeed;  \textcolor{comment}{// The rate at which the PID computation is run in ms}}
+\DoxyCodeLine{654 \} \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}};}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{662 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s}} \{}
+\DoxyCodeLine{663     uint8\_t kf;  \textcolor{comment}{// The feedforward constant}}
+\DoxyCodeLine{664     uint8\_t kp;  \textcolor{comment}{// The proportional constant}}
+\DoxyCodeLine{665     uint8\_t ki;  \textcolor{comment}{// The integral constants}}
+\DoxyCodeLine{666     uint8\_t kd;  \textcolor{comment}{// The derivative constant}}
+\DoxyCodeLine{667 \} \mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s\_t}};}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{670 \textcolor{keyword}{namespace }c \{}
+\DoxyCodeLine{671 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{672 }
+\DoxyCodeLine{691 int32\_t motor\_set\_zero\_position(uint8\_t port, \textcolor{keyword}{const} \textcolor{keywordtype}{double} position);}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{707 int32\_t motor\_tare\_position(uint8\_t port);}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{725 int32\_t motor\_set\_brake\_mode(uint8\_t port, \textcolor{keyword}{const} motor\_brake\_mode\_e\_t mode);}
+\DoxyCodeLine{726 }
+\DoxyCodeLine{743 int32\_t motor\_set\_current\_limit(uint8\_t port, \textcolor{keyword}{const} int32\_t limit);}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{761 int32\_t motor\_set\_encoder\_units(uint8\_t port, \textcolor{keyword}{const} motor\_encoder\_units\_e\_t units);}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{779 int32\_t motor\_set\_gearing(uint8\_t port, \textcolor{keyword}{const} motor\_gearset\_e\_t gearset);}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{804 \mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s\_t}} \_\_attribute\_\_((deprecated(\textcolor{stringliteral}{"{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}}))) motor\_convert\_pid(\textcolor{keywordtype}{double} kf, \textcolor{keywordtype}{double} kp, \textcolor{keywordtype}{double} ki, \textcolor{keywordtype}{double} kd);}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{838 \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} \_\_attribute\_\_((deprecated("{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}))) motor\_convert\_pid\_full(\textcolor{keywordtype}{double} kf, \textcolor{keywordtype}{double} kp, \textcolor{keywordtype}{double} ki, \textcolor{keywordtype}{double} kd, \textcolor{keywordtype}{double} filter, \textcolor{keywordtype}{double} limit,}
+\DoxyCodeLine{839                                           \textcolor{keywordtype}{double} threshold, \textcolor{keywordtype}{double} loopspeed);}
+\DoxyCodeLine{840 }
+\DoxyCodeLine{863 int32\_t \_\_attribute\_\_((deprecated("{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}))) motor\_set\_pos\_pid(uint8\_t port, const \mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s\_t}} pid);}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{886 int32\_t \_\_attribute\_\_((deprecated("{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}))) motor\_set\_pos\_pid\_full(uint8\_t port, const \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} pid);}
+\DoxyCodeLine{887 }
+\DoxyCodeLine{910 int32\_t \_\_attribute\_\_((deprecated("{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}))) motor\_set\_vel\_pid(uint8\_t port, const \mbox{\hyperlink{structmotor__pid__s}{motor\_pid\_s\_t}} pid);}
+\DoxyCodeLine{911 }
+\DoxyCodeLine{933 int32\_t \_\_attribute\_\_((deprecated("{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}))) motor\_set\_vel\_pid\_full(uint8\_t port, const \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} pid);}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{953 int32\_t motor\_set\_reversed(uint8\_t port, const \textcolor{keywordtype}{bool} reverse);}
+\DoxyCodeLine{954 }
+\DoxyCodeLine{971 int32\_t motor\_set\_voltage\_limit(uint8\_t port, const int32\_t limit);}
+\DoxyCodeLine{972 }
+\DoxyCodeLine{987 motor\_brake\_mode\_e\_t motor\_get\_brake\_mode(uint8\_t port);}
+\DoxyCodeLine{988 }
+\DoxyCodeLine{1005 int32\_t motor\_get\_current\_limit(uint8\_t port);}
+\DoxyCodeLine{1006 }
+\DoxyCodeLine{1021 motor\_encoder\_units\_e\_t motor\_get\_encoder\_units(uint8\_t port);}
+\DoxyCodeLine{1022 }
+\DoxyCodeLine{1037 motor\_gearset\_e\_t motor\_get\_gearing(uint8\_t port);}
+\DoxyCodeLine{1038 }
+\DoxyCodeLine{1058 \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} \_\_attribute\_\_((deprecated("{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}))) motor\_get\_pos\_pid(uint8\_t port);}
+\DoxyCodeLine{1059 }
+\DoxyCodeLine{1079 \mbox{\hyperlink{structmotor__pid__full__s}{motor\_pid\_full\_s\_t}} \_\_attribute\_\_((deprecated("{}Changing these values is not supported by VEX and may lead to permanent motor damage."{}))) motor\_get\_vel\_pid(uint8\_t port);}
+\DoxyCodeLine{1080 }
+\DoxyCodeLine{1095 int32\_t motor\_is\_reversed(uint8\_t port);}
+\DoxyCodeLine{1096 }
+\DoxyCodeLine{1114 int32\_t motor\_get\_voltage\_limit(uint8\_t port);}
+\DoxyCodeLine{1115 }
+\DoxyCodeLine{1116 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1117 \}  \textcolor{comment}{// namespace c}}
+\DoxyCodeLine{1118 \}  \textcolor{comment}{// namespace pros}}
+\DoxyCodeLine{1119 \}}
+\DoxyCodeLine{1120 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1122 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_PROS\_MOTORS\_H\_}}
+
+\end{DoxyCode}

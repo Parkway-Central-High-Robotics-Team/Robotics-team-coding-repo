@@ -1,0 +1,59 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__core_2lv__lang_8h_source}{}\doxysection{lv\+\_\+lang.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__core_2lv__lang_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_core/lv\_lang.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_core/lv\_lang.h}}
+\mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__core_2lv__lang_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_LANG\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_LANG\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_MULTI\_LANG}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{27 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{28 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define LV\_LANG\_TXT\_ID\_NONE     0xFFFF }\textcolor{comment}{/*Used to not assign any text IDs for a multi-\/language object.*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{32 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{33 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{36 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{37 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{43 \textcolor{keywordtype}{void} lv\_lang\_set(uint8\_t lang\_id);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} lv\_lang\_set\_text\_func(\textcolor{keyword}{const} \textcolor{keywordtype}{void} * (*fp)(uint16\_t));}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56 \textcolor{keyword}{const} \textcolor{keywordtype}{void} * lv\_lang\_get\_text(uint16\_t txt\_id);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{62 uint8\_t lv\_lang\_act(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{65 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{66 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*USE\_LV\_MULTI\_LANG*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{71 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*LV\_LANG\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

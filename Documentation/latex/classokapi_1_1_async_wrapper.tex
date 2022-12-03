@@ -1,0 +1,2082 @@
+\hypertarget{classokapi_1_1_async_wrapper}{}\doxysection{okapi\+::Async\+Wrapper\texorpdfstring{$<$}{<} Input, Output \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classokapi_1_1_async_wrapper}\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+Inheritance diagram for okapi\+::Async\+Wrapper\texorpdfstring{$<$}{<} Input, Output \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.352657cm]{classokapi_1_1_async_wrapper}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}{Async\+Wrapper}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&ioutput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&icontroller, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&irate\+Supplier, const double iratio=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$ ilogger=\mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}())
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}\label{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}} 
+{\bfseries Async\+Wrapper} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}\label{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}} 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \& {\bfseries operator=} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}{set\+Target}} (const Input itarget) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set}} (const Input ivalue) override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}{get\+Target}} () override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}{get\+Process\+Value}} () const override
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}{get\+Output}} () const
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}{set\+Sample\+Time}} (const QTime \&isample\+Time)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}{set\+Output\+Limits}} (const Output imax, const Output imin)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}{set\+Controller\+Set\+Target\+Limits}} (double itarget\+Max, double itarget\+Min)
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}{get\+Max\+Output}} ()
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}{get\+Min\+Output}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}{flip\+Disable}} (const bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}{start\+Thread}} ()
+\item 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}{get\+Thread}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}{Async\+Wrapper}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&ioutput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&icontroller, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&irate\+Supplier, const double iratio=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$ ilogger=\mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}())
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}\label{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}} 
+{\bfseries Async\+Wrapper} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}\label{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}} 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \& {\bfseries operator=} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}{set\+Target}} (const Input itarget) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set}} (const Input ivalue) override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}{get\+Target}} () override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}{get\+Process\+Value}} () const override
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}{get\+Output}} () const
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}{set\+Sample\+Time}} (const QTime \&isample\+Time)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}{set\+Output\+Limits}} (const Output imax, const Output imin)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}{set\+Controller\+Set\+Target\+Limits}} (double itarget\+Max, double itarget\+Min)
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}{get\+Max\+Output}} ()
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}{get\+Min\+Output}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}{flip\+Disable}} (const bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}{start\+Thread}} ()
+\item 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}{get\+Thread}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}{Async\+Wrapper}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&ioutput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&icontroller, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&irate\+Supplier, const double iratio=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$ ilogger=\mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}())
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}\label{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}} 
+{\bfseries Async\+Wrapper} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}\label{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}} 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \& {\bfseries operator=} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}{set\+Target}} (const Input itarget) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set}} (const Input ivalue) override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}{get\+Target}} () override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}{get\+Process\+Value}} () const override
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}{get\+Output}} () const
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}{set\+Sample\+Time}} (const QTime \&isample\+Time)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}{set\+Output\+Limits}} (const Output imax, const Output imin)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}{set\+Controller\+Set\+Target\+Limits}} (double itarget\+Max, double itarget\+Min)
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}{get\+Max\+Output}} ()
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}{get\+Min\+Output}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}{flip\+Disable}} (const bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}{start\+Thread}} ()
+\item 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}{get\+Thread}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}{Async\+Wrapper}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&ioutput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&icontroller, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&irate\+Supplier, const double iratio=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$ ilogger=\mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}())
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}\label{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}} 
+{\bfseries Async\+Wrapper} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}\label{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}} 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \& {\bfseries operator=} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}{set\+Target}} (const Input itarget) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set}} (const Input ivalue) override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}{get\+Target}} () override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}{get\+Process\+Value}} () const override
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}{get\+Output}} () const
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}{set\+Sample\+Time}} (const QTime \&isample\+Time)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}{set\+Output\+Limits}} (const Output imax, const Output imin)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}{set\+Controller\+Set\+Target\+Limits}} (double itarget\+Max, double itarget\+Min)
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}{get\+Max\+Output}} ()
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}{get\+Min\+Output}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}{flip\+Disable}} (const bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}{start\+Thread}} ()
+\item 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}{get\+Thread}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}{Async\+Wrapper}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&ioutput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&icontroller, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&irate\+Supplier, const double iratio=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$ ilogger=\mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}())
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}\label{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}} 
+{\bfseries Async\+Wrapper} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}\label{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}} 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \& {\bfseries operator=} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}{set\+Target}} (const Input itarget) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set}} (const Input ivalue) override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}{get\+Target}} () override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}{get\+Process\+Value}} () const override
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}{get\+Output}} () const
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}{set\+Sample\+Time}} (const QTime \&isample\+Time)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}{set\+Output\+Limits}} (const Output imax, const Output imin)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}{set\+Controller\+Set\+Target\+Limits}} (double itarget\+Max, double itarget\+Min)
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}{get\+Max\+Output}} ()
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}{get\+Min\+Output}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}{flip\+Disable}} (const bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}{start\+Thread}} ()
+\item 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}{get\+Thread}} () const
+\item 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}{Async\+Wrapper}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&iinput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&ioutput, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&icontroller, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&irate\+Supplier, const double iratio=1, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$ ilogger=\mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}())
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}\label{classokapi_1_1_async_wrapper_a6824804fd4c85627d6af2a563ea9fcf0}} 
+{\bfseries Async\+Wrapper} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}\label{classokapi_1_1_async_wrapper_aa57dd14572f39f4278a4989e4189bca6}} 
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \& {\bfseries operator=} (\mbox{\hyperlink{classokapi_1_1_async_wrapper}{Async\+Wrapper}}$<$ Input, Output $>$ \&\&other)=delete
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}{set\+Target}} (const Input itarget) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set}} (const Input ivalue) override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}{get\+Target}} () override
+\item 
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}{get\+Process\+Value}} () const override
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}{get\+Output}} () const
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}{set\+Sample\+Time}} (const QTime \&isample\+Time)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}{set\+Output\+Limits}} (const Output imax, const Output imin)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}{set\+Controller\+Set\+Target\+Limits}} (double itarget\+Max, double itarget\+Min)
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}{get\+Max\+Output}} ()
+\item 
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}{get\+Min\+Output}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}{flip\+Disable}} (const bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}{start\+Thread}} ()
+\item 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}{get\+Thread}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}\label{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}} 
+void {\bfseries loop} ()
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}{resume\+Movement}} ()
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}\label{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}} 
+void {\bfseries loop} ()
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}{resume\+Movement}} ()
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}\label{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}} 
+void {\bfseries loop} ()
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}{resume\+Movement}} ()
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}\label{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}} 
+void {\bfseries loop} ()
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}{resume\+Movement}} ()
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}\label{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}} 
+void {\bfseries loop} ()
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}{resume\+Movement}} ()
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}\label{classokapi_1_1_async_wrapper_aebaec0e97543204889293256ba7bec4a}} 
+void {\bfseries loop} ()
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}{resume\+Movement}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}\label{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}} 
+static void {\bfseries trampoline} (void $\ast$context)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}\label{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}} 
+static void {\bfseries trampoline} (void $\ast$context)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}\label{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}} 
+static void {\bfseries trampoline} (void $\ast$context)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}\label{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}} 
+static void {\bfseries trampoline} (void $\ast$context)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}\label{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}} 
+static void {\bfseries trampoline} (void $\ast$context)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}\label{classokapi_1_1_async_wrapper_aa947c53d1f595ae6526f996da9b77ca9}} 
+static void {\bfseries trampoline} (void $\ast$context)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a7b684b6fa2c858279394d6b98ea22ce8}\label{classokapi_1_1_async_wrapper_a7b684b6fa2c858279394d6b98ea22ce8}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$ {\bfseries logger}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2acce414e387a5e2ce07e3660f01dfd8}\label{classokapi_1_1_async_wrapper_a2acce414e387a5e2ce07e3660f01dfd8}} 
+\mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ {\bfseries rate\+Supplier}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a62b730d764ea9c82bb124cc41add229b}\label{classokapi_1_1_async_wrapper_a62b730d764ea9c82bb124cc41add229b}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ {\bfseries input}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a86a81970eb9088dd5c703945a958cc5c}\label{classokapi_1_1_async_wrapper_a86a81970eb9088dd5c703945a958cc5c}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ {\bfseries output}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa92a66ad1286d3af40af5d3a0fabaf5e}\label{classokapi_1_1_async_wrapper_aa92a66ad1286d3af40af5d3a0fabaf5e}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ {\bfseries controller}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a75812fac3f252bf5e8d3d4e466d085b8}\label{classokapi_1_1_async_wrapper_a75812fac3f252bf5e8d3d4e466d085b8}} 
+bool {\bfseries has\+First\+Target} \{false\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ac5fe1a784c27377eb80a995fb229a349}\label{classokapi_1_1_async_wrapper_ac5fe1a784c27377eb80a995fb229a349}} 
+Input {\bfseries last\+Target}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2fbcaacada8d9de5111d7c420a4a4635}\label{classokapi_1_1_async_wrapper_a2fbcaacada8d9de5111d7c420a4a4635}} 
+double {\bfseries ratio}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aae007010b0b30b530f0b468ebe1d2aef}\label{classokapi_1_1_async_wrapper_aae007010b0b30b530f0b468ebe1d2aef}} 
+std\+::atomic\+\_\+bool {\bfseries dtor\+Called} \{false\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ab22a7df545c62987cb1829c95b336aca}\label{classokapi_1_1_async_wrapper_ab22a7df545c62987cb1829c95b336aca}} 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ {\bfseries task} \{nullptr\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}\label{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!AsyncWrapper@{AsyncWrapper}}
+\index{AsyncWrapper@{AsyncWrapper}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{AsyncWrapper()}{AsyncWrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::\+Async\+Wrapper (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&}]{ioutput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&}]{icontroller,  }\item[{const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&}]{irate\+Supplier,  }\item[{const double}]{iratio = {\ttfamily 1},  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A wrapper class that transforms an {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} into an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}} by running it in another task. The input controller will act like an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & controller input, passed to the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em ioutput} & controller output, written to from the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em icontroller} & the controller to use \\
+\hline
+{\em irate\+Supplier} & used for rates used in the main loop and in {\ttfamily wait\+Until\+Settled} \\
+\hline
+{\em iratio} & Any external gear ratio. \\
+\hline
+{\em ilogger} & The logger this instance will log to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}\label{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!AsyncWrapper@{AsyncWrapper}}
+\index{AsyncWrapper@{AsyncWrapper}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{AsyncWrapper()}{AsyncWrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::\+Async\+Wrapper (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&}]{ioutput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&}]{icontroller,  }\item[{const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&}]{irate\+Supplier,  }\item[{const double}]{iratio = {\ttfamily 1},  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A wrapper class that transforms an {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} into an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}} by running it in another task. The input controller will act like an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & controller input, passed to the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em ioutput} & controller output, written to from the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em icontroller} & the controller to use \\
+\hline
+{\em irate\+Supplier} & used for rates used in the main loop and in {\ttfamily wait\+Until\+Settled} \\
+\hline
+{\em iratio} & Any external gear ratio. \\
+\hline
+{\em ilogger} & The logger this instance will log to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}\label{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!AsyncWrapper@{AsyncWrapper}}
+\index{AsyncWrapper@{AsyncWrapper}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{AsyncWrapper()}{AsyncWrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::\+Async\+Wrapper (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&}]{ioutput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&}]{icontroller,  }\item[{const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&}]{irate\+Supplier,  }\item[{const double}]{iratio = {\ttfamily 1},  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A wrapper class that transforms an {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} into an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}} by running it in another task. The input controller will act like an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & controller input, passed to the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em ioutput} & controller output, written to from the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em icontroller} & the controller to use \\
+\hline
+{\em irate\+Supplier} & used for rates used in the main loop and in {\ttfamily wait\+Until\+Settled} \\
+\hline
+{\em iratio} & Any external gear ratio. \\
+\hline
+{\em ilogger} & The logger this instance will log to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}\label{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!AsyncWrapper@{AsyncWrapper}}
+\index{AsyncWrapper@{AsyncWrapper}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{AsyncWrapper()}{AsyncWrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::\+Async\+Wrapper (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&}]{ioutput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&}]{icontroller,  }\item[{const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&}]{irate\+Supplier,  }\item[{const double}]{iratio = {\ttfamily 1},  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A wrapper class that transforms an {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} into an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}} by running it in another task. The input controller will act like an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & controller input, passed to the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em ioutput} & controller output, written to from the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em icontroller} & the controller to use \\
+\hline
+{\em irate\+Supplier} & used for rates used in the main loop and in {\ttfamily wait\+Until\+Settled} \\
+\hline
+{\em iratio} & Any external gear ratio. \\
+\hline
+{\em ilogger} & The logger this instance will log to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}\label{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!AsyncWrapper@{AsyncWrapper}}
+\index{AsyncWrapper@{AsyncWrapper}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{AsyncWrapper()}{AsyncWrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::\+Async\+Wrapper (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&}]{ioutput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&}]{icontroller,  }\item[{const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&}]{irate\+Supplier,  }\item[{const double}]{iratio = {\ttfamily 1},  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A wrapper class that transforms an {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} into an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}} by running it in another task. The input controller will act like an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & controller input, passed to the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em ioutput} & controller output, written to from the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em icontroller} & the controller to use \\
+\hline
+{\em irate\+Supplier} & used for rates used in the main loop and in {\ttfamily wait\+Until\+Settled} \\
+\hline
+{\em iratio} & Any external gear ratio. \\
+\hline
+{\em ilogger} & The logger this instance will log to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}\label{classokapi_1_1_async_wrapper_ad5c4f7f5cb696854d97b915086f53db5}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!AsyncWrapper@{AsyncWrapper}}
+\index{AsyncWrapper@{AsyncWrapper}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{AsyncWrapper()}{AsyncWrapper()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::\+Async\+Wrapper (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_input}{Controller\+Input}}$<$ Input $>$ $>$ \&}]{iinput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ Output $>$ $>$ \&}]{ioutput,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}$<$ Input, Output $>$ $>$ \&}]{icontroller,  }\item[{const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ \&}]{irate\+Supplier,  }\item[{const double}]{iratio = {\ttfamily 1},  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $>$}]{ilogger = {\ttfamily \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger\+::get\+Default\+Logger}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A wrapper class that transforms an {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} into an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}} by running it in another task. The input controller will act like an {\ttfamily \mbox{\hyperlink{classokapi_1_1_async_controller}{Async\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iinput} & controller input, passed to the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em ioutput} & controller output, written to from the {\ttfamily \mbox{\hyperlink{classokapi_1_1_iterative_controller}{Iterative\+Controller}}} \\
+\hline
+{\em icontroller} & the controller to use \\
+\hline
+{\em irate\+Supplier} & used for rates used in the main loop and in {\ttfamily wait\+Until\+Settled} \\
+\hline
+{\em iratio} & Any external gear ratio. \\
+\hline
+{\em ilogger} & The logger this instance will log to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}\label{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::controller\+Set (\begin{DoxyParamCaption}\item[{const Input}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ Input $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}\label{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::controller\+Set (\begin{DoxyParamCaption}\item[{const Input}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ Input $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}\label{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::controller\+Set (\begin{DoxyParamCaption}\item[{const Input}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ Input $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}\label{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::controller\+Set (\begin{DoxyParamCaption}\item[{const Input}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ Input $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}\label{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::controller\+Set (\begin{DoxyParamCaption}\item[{const Input}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ Input $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}\label{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::controller\+Set (\begin{DoxyParamCaption}\item[{const Input}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ Input $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}\label{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}\label{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}\label{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}\label{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}\label{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}\label{classokapi_1_1_async_wrapper_afdf4d80b0f3eec3d77280a561b24f0b0}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}\label{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}\item[{const bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}\label{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}\item[{const bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}\label{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}\item[{const bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}\label{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}\item[{const bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}\label{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}\item[{const bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}\label{classokapi_1_1_async_wrapper_ab47f9a7ee52a5d699cb39b21b0926981}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::flip\+Disable (\begin{DoxyParamCaption}\item[{const bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}\label{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}\label{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}\label{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}\label{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}\label{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}\label{classokapi_1_1_async_wrapper_a64b690883ff7475375a6d08ad3fb62f9}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}\label{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMaxOutput@{getMaxOutput}}
+\index{getMaxOutput@{getMaxOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxOutput()}{getMaxOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Max\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the upper output bound.
+
+\begin{DoxyReturn}{Returns}
+the upper output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}\label{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMaxOutput@{getMaxOutput}}
+\index{getMaxOutput@{getMaxOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxOutput()}{getMaxOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Max\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the upper output bound.
+
+\begin{DoxyReturn}{Returns}
+the upper output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}\label{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMaxOutput@{getMaxOutput}}
+\index{getMaxOutput@{getMaxOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxOutput()}{getMaxOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Max\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the upper output bound.
+
+\begin{DoxyReturn}{Returns}
+the upper output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}\label{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMaxOutput@{getMaxOutput}}
+\index{getMaxOutput@{getMaxOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxOutput()}{getMaxOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Max\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the upper output bound.
+
+\begin{DoxyReturn}{Returns}
+the upper output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}\label{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMaxOutput@{getMaxOutput}}
+\index{getMaxOutput@{getMaxOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxOutput()}{getMaxOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Max\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the upper output bound.
+
+\begin{DoxyReturn}{Returns}
+the upper output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}\label{classokapi_1_1_async_wrapper_a95112bac1792ef04010cd97efa135998}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMaxOutput@{getMaxOutput}}
+\index{getMaxOutput@{getMaxOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxOutput()}{getMaxOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Max\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the upper output bound.
+
+\begin{DoxyReturn}{Returns}
+the upper output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}\label{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMinOutput@{getMinOutput}}
+\index{getMinOutput@{getMinOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMinOutput()}{getMinOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Min\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the lower output bound.
+
+\begin{DoxyReturn}{Returns}
+the lower output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}\label{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMinOutput@{getMinOutput}}
+\index{getMinOutput@{getMinOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMinOutput()}{getMinOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Min\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the lower output bound.
+
+\begin{DoxyReturn}{Returns}
+the lower output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}\label{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMinOutput@{getMinOutput}}
+\index{getMinOutput@{getMinOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMinOutput()}{getMinOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Min\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the lower output bound.
+
+\begin{DoxyReturn}{Returns}
+the lower output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}\label{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMinOutput@{getMinOutput}}
+\index{getMinOutput@{getMinOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMinOutput()}{getMinOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Min\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the lower output bound.
+
+\begin{DoxyReturn}{Returns}
+the lower output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}\label{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMinOutput@{getMinOutput}}
+\index{getMinOutput@{getMinOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMinOutput()}{getMinOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Min\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the lower output bound.
+
+\begin{DoxyReturn}{Returns}
+the lower output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}\label{classokapi_1_1_async_wrapper_a41ccefbf1da06cca1ec525d0ad80fa00}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getMinOutput@{getMinOutput}}
+\index{getMinOutput@{getMinOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getMinOutput()}{getMinOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Min\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the lower output bound.
+
+\begin{DoxyReturn}{Returns}
+the lower output bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}\label{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the last calculated output of the controller. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}\label{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the last calculated output of the controller. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}\label{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the last calculated output of the controller. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}\label{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the last calculated output of the controller. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}\label{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the last calculated output of the controller. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}\label{classokapi_1_1_async_wrapper_a6f3859f212f0348e73df98c83208f3c4}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Output \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the last calculated output of the controller. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}\label{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getProcessValue@{getProcessValue}}
+\index{getProcessValue@{getProcessValue}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getProcessValue()}{getProcessValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Process\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The most recent value of the process variable. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_abffaa2af6941299849e460e15c65080f}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}\label{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getProcessValue@{getProcessValue}}
+\index{getProcessValue@{getProcessValue}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getProcessValue()}{getProcessValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Process\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The most recent value of the process variable. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_abffaa2af6941299849e460e15c65080f}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}\label{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getProcessValue@{getProcessValue}}
+\index{getProcessValue@{getProcessValue}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getProcessValue()}{getProcessValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Process\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The most recent value of the process variable. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_abffaa2af6941299849e460e15c65080f}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}\label{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getProcessValue@{getProcessValue}}
+\index{getProcessValue@{getProcessValue}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getProcessValue()}{getProcessValue()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Process\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The most recent value of the process variable. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_abffaa2af6941299849e460e15c65080f}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}\label{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getProcessValue@{getProcessValue}}
+\index{getProcessValue@{getProcessValue}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getProcessValue()}{getProcessValue()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Process\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The most recent value of the process variable. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_abffaa2af6941299849e460e15c65080f}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}\label{classokapi_1_1_async_wrapper_ad1c7a4258eb5ad5127fe12d7b78ddb15}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getProcessValue@{getProcessValue}}
+\index{getProcessValue@{getProcessValue}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getProcessValue()}{getProcessValue()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Process\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+The most recent value of the process variable. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_abffaa2af6941299849e460e15c65080f}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}\label{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}\label{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}\label{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}\label{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}\label{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}\label{classokapi_1_1_async_wrapper_a2471c7b5f388d441db77fa9199db7b83}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+Input \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}\label{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getThread@{getThread}}
+\index{getThread@{getThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the underlying thread handle.
+
+\begin{DoxyReturn}{Returns}
+The underlying thread handle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}\label{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getThread@{getThread}}
+\index{getThread@{getThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the underlying thread handle.
+
+\begin{DoxyReturn}{Returns}
+The underlying thread handle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}\label{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getThread@{getThread}}
+\index{getThread@{getThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the underlying thread handle.
+
+\begin{DoxyReturn}{Returns}
+The underlying thread handle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}\label{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getThread@{getThread}}
+\index{getThread@{getThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the underlying thread handle.
+
+\begin{DoxyReturn}{Returns}
+The underlying thread handle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}\label{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getThread@{getThread}}
+\index{getThread@{getThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the underlying thread handle.
+
+\begin{DoxyReturn}{Returns}
+The underlying thread handle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}\label{classokapi_1_1_async_wrapper_a41b7503e92a977d8daaf4c191e9aec77}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!getThread@{getThread}}
+\index{getThread@{getThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the underlying thread handle.
+
+\begin{DoxyReturn}{Returns}
+The underlying thread handle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}\label{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}\label{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}\label{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}\label{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}\label{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}\label{classokapi_1_1_async_wrapper_a83d411851373f0483b5ae392560a180a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}\label{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}\label{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}\label{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}\label{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}\label{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}\label{classokapi_1_1_async_wrapper_a93343937a8bbe762aeb6460197a22dfe}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+bool \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}\label{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}\label{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}\label{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}\label{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}\label{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}\label{classokapi_1_1_async_wrapper_a9372a74580e5be429ecd65ec0e110c23}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}\label{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!resumeMovement@{resumeMovement}}
+\index{resumeMovement@{resumeMovement}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{resumeMovement()}{resumeMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::resume\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Resumes moving after the controller is reset. Should not cause movement if the controller is turned off, reset, and turned back on. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}\label{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!resumeMovement@{resumeMovement}}
+\index{resumeMovement@{resumeMovement}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{resumeMovement()}{resumeMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::resume\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Resumes moving after the controller is reset. Should not cause movement if the controller is turned off, reset, and turned back on. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}\label{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!resumeMovement@{resumeMovement}}
+\index{resumeMovement@{resumeMovement}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{resumeMovement()}{resumeMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::resume\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Resumes moving after the controller is reset. Should not cause movement if the controller is turned off, reset, and turned back on. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}\label{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!resumeMovement@{resumeMovement}}
+\index{resumeMovement@{resumeMovement}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{resumeMovement()}{resumeMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::resume\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Resumes moving after the controller is reset. Should not cause movement if the controller is turned off, reset, and turned back on. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}\label{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!resumeMovement@{resumeMovement}}
+\index{resumeMovement@{resumeMovement}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{resumeMovement()}{resumeMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::resume\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Resumes moving after the controller is reset. Should not cause movement if the controller is turned off, reset, and turned back on. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}\label{classokapi_1_1_async_wrapper_a67fa1bf10df9b8f3c280d8f2b136038a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!resumeMovement@{resumeMovement}}
+\index{resumeMovement@{resumeMovement}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{resumeMovement()}{resumeMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+virtual void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::resume\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Resumes moving after the controller is reset. Should not cause movement if the controller is turned off, reset, and turned back on. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}\label{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setControllerSetTargetLimits@{setControllerSetTargetLimits}}
+\index{setControllerSetTargetLimits@{setControllerSetTargetLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setControllerSetTargetLimits()}{setControllerSetTargetLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Controller\+Set\+Target\+Limits (\begin{DoxyParamCaption}\item[{double}]{itarget\+Max,  }\item[{double}]{itarget\+Min }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the (soft) limits for the target range that \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} scales into. The target computed by \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} is scaled into the range \mbox{[}-\/itarget\+Min, itarget\+Max\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget\+Max} & The new max target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+{\em itarget\+Min} & The new min target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}\label{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setControllerSetTargetLimits@{setControllerSetTargetLimits}}
+\index{setControllerSetTargetLimits@{setControllerSetTargetLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setControllerSetTargetLimits()}{setControllerSetTargetLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Controller\+Set\+Target\+Limits (\begin{DoxyParamCaption}\item[{double}]{itarget\+Max,  }\item[{double}]{itarget\+Min }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the (soft) limits for the target range that \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} scales into. The target computed by \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} is scaled into the range \mbox{[}-\/itarget\+Min, itarget\+Max\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget\+Max} & The new max target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+{\em itarget\+Min} & The new min target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}\label{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setControllerSetTargetLimits@{setControllerSetTargetLimits}}
+\index{setControllerSetTargetLimits@{setControllerSetTargetLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setControllerSetTargetLimits()}{setControllerSetTargetLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Controller\+Set\+Target\+Limits (\begin{DoxyParamCaption}\item[{double}]{itarget\+Max,  }\item[{double}]{itarget\+Min }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the (soft) limits for the target range that \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} scales into. The target computed by \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} is scaled into the range \mbox{[}-\/itarget\+Min, itarget\+Max\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget\+Max} & The new max target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+{\em itarget\+Min} & The new min target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}\label{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setControllerSetTargetLimits@{setControllerSetTargetLimits}}
+\index{setControllerSetTargetLimits@{setControllerSetTargetLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setControllerSetTargetLimits()}{setControllerSetTargetLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Controller\+Set\+Target\+Limits (\begin{DoxyParamCaption}\item[{double}]{itarget\+Max,  }\item[{double}]{itarget\+Min }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the (soft) limits for the target range that \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} scales into. The target computed by \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} is scaled into the range \mbox{[}-\/itarget\+Min, itarget\+Max\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget\+Max} & The new max target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+{\em itarget\+Min} & The new min target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}\label{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setControllerSetTargetLimits@{setControllerSetTargetLimits}}
+\index{setControllerSetTargetLimits@{setControllerSetTargetLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setControllerSetTargetLimits()}{setControllerSetTargetLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Controller\+Set\+Target\+Limits (\begin{DoxyParamCaption}\item[{double}]{itarget\+Max,  }\item[{double}]{itarget\+Min }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the (soft) limits for the target range that \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} scales into. The target computed by \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} is scaled into the range \mbox{[}-\/itarget\+Min, itarget\+Max\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget\+Max} & The new max target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+{\em itarget\+Min} & The new min target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}\label{classokapi_1_1_async_wrapper_a9cb3a50a27e7d3e1263ed3aa6c57bb82}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setControllerSetTargetLimits@{setControllerSetTargetLimits}}
+\index{setControllerSetTargetLimits@{setControllerSetTargetLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setControllerSetTargetLimits()}{setControllerSetTargetLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Controller\+Set\+Target\+Limits (\begin{DoxyParamCaption}\item[{double}]{itarget\+Max,  }\item[{double}]{itarget\+Min }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the (soft) limits for the target range that \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} scales into. The target computed by \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}} is scaled into the range \mbox{[}-\/itarget\+Min, itarget\+Max\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget\+Max} & The new max target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+{\em itarget\+Min} & The new min target for \mbox{\hyperlink{classokapi_1_1_async_wrapper_aec6d1a4214bad2151bee23dc5e8076e7}{controller\+Set()}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}\label{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setOutputLimits@{setOutputLimits}}
+\index{setOutputLimits@{setOutputLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setOutputLimits()}{setOutputLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Output\+Limits (\begin{DoxyParamCaption}\item[{const Output}]{imax,  }\item[{const Output}]{imin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set controller output bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax} & max output \\
+\hline
+{\em imin} & min output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}\label{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setOutputLimits@{setOutputLimits}}
+\index{setOutputLimits@{setOutputLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setOutputLimits()}{setOutputLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Output\+Limits (\begin{DoxyParamCaption}\item[{const Output}]{imax,  }\item[{const Output}]{imin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set controller output bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax} & max output \\
+\hline
+{\em imin} & min output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}\label{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setOutputLimits@{setOutputLimits}}
+\index{setOutputLimits@{setOutputLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setOutputLimits()}{setOutputLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Output\+Limits (\begin{DoxyParamCaption}\item[{const Output}]{imax,  }\item[{const Output}]{imin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set controller output bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax} & max output \\
+\hline
+{\em imin} & min output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}\label{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setOutputLimits@{setOutputLimits}}
+\index{setOutputLimits@{setOutputLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setOutputLimits()}{setOutputLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Output\+Limits (\begin{DoxyParamCaption}\item[{const Output}]{imax,  }\item[{const Output}]{imin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set controller output bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax} & max output \\
+\hline
+{\em imin} & min output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}\label{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setOutputLimits@{setOutputLimits}}
+\index{setOutputLimits@{setOutputLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setOutputLimits()}{setOutputLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Output\+Limits (\begin{DoxyParamCaption}\item[{const Output}]{imax,  }\item[{const Output}]{imin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set controller output bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax} & max output \\
+\hline
+{\em imin} & min output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}\label{classokapi_1_1_async_wrapper_a668c83b4a2b5bee7f2d072b57157d19a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setOutputLimits@{setOutputLimits}}
+\index{setOutputLimits@{setOutputLimits}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setOutputLimits()}{setOutputLimits()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Output\+Limits (\begin{DoxyParamCaption}\item[{const Output}]{imax,  }\item[{const Output}]{imin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set controller output bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax} & max output \\
+\hline
+{\em imin} & min output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}\label{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setSampleTime@{setSampleTime}}
+\index{setSampleTime@{setSampleTime}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleTime()}{setSampleTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Sample\+Time (\begin{DoxyParamCaption}\item[{const QTime \&}]{isample\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set time between loops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em isample\+Time} & time between loops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}\label{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setSampleTime@{setSampleTime}}
+\index{setSampleTime@{setSampleTime}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleTime()}{setSampleTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Sample\+Time (\begin{DoxyParamCaption}\item[{const QTime \&}]{isample\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set time between loops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em isample\+Time} & time between loops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}\label{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setSampleTime@{setSampleTime}}
+\index{setSampleTime@{setSampleTime}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleTime()}{setSampleTime()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Sample\+Time (\begin{DoxyParamCaption}\item[{const QTime \&}]{isample\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set time between loops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em isample\+Time} & time between loops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}\label{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setSampleTime@{setSampleTime}}
+\index{setSampleTime@{setSampleTime}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleTime()}{setSampleTime()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Sample\+Time (\begin{DoxyParamCaption}\item[{const QTime \&}]{isample\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set time between loops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em isample\+Time} & time between loops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}\label{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setSampleTime@{setSampleTime}}
+\index{setSampleTime@{setSampleTime}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleTime()}{setSampleTime()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Sample\+Time (\begin{DoxyParamCaption}\item[{const QTime \&}]{isample\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set time between loops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em isample\+Time} & time between loops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}\label{classokapi_1_1_async_wrapper_afe14fb6e7727c313bd40cf74d28f0a14}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setSampleTime@{setSampleTime}}
+\index{setSampleTime@{setSampleTime}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleTime()}{setSampleTime()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Sample\+Time (\begin{DoxyParamCaption}\item[{const QTime \&}]{isample\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set time between loops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em isample\+Time} & time between loops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}\label{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Target (\begin{DoxyParamCaption}\item[{const Input}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}\label{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Target (\begin{DoxyParamCaption}\item[{const Input}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}\label{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Target (\begin{DoxyParamCaption}\item[{const Input}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}\label{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Target (\begin{DoxyParamCaption}\item[{const Input}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}\label{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Target (\begin{DoxyParamCaption}\item[{const Input}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}\label{classokapi_1_1_async_wrapper_aa4b9a4ff29aff5047425e239b574c3c6}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::set\+Target (\begin{DoxyParamCaption}\item[{const Input}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}\label{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!startThread@{startThread}}
+\index{startThread@{startThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{startThread()}{startThread()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::start\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the internal thread. This should not be called by normal users. This method is called by the Async\+Controller\+Factory when making a new instance of this class. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}\label{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!startThread@{startThread}}
+\index{startThread@{startThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{startThread()}{startThread()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::start\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the internal thread. This should not be called by normal users. This method is called by the Async\+Controller\+Factory when making a new instance of this class. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}\label{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!startThread@{startThread}}
+\index{startThread@{startThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{startThread()}{startThread()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::start\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the internal thread. This should not be called by normal users. This method is called by the Async\+Controller\+Factory when making a new instance of this class. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}\label{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!startThread@{startThread}}
+\index{startThread@{startThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{startThread()}{startThread()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::start\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the internal thread. This should not be called by normal users. This method is called by the Async\+Controller\+Factory when making a new instance of this class. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}\label{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!startThread@{startThread}}
+\index{startThread@{startThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{startThread()}{startThread()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::start\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the internal thread. This should not be called by normal users. This method is called by the Async\+Controller\+Factory when making a new instance of this class. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}\label{classokapi_1_1_async_wrapper_a5225a6b4748da30bf17ddbda692cbf4a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!startThread@{startThread}}
+\index{startThread@{startThread}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{startThread()}{startThread()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::start\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the internal thread. This should not be called by normal users. This method is called by the Async\+Controller\+Factory when making a new instance of this class. \mbox{\Hypertarget{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}\label{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. Determining what settling means is implementation-\/dependent. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}\label{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. Determining what settling means is implementation-\/dependent. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}\label{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. Determining what settling means is implementation-\/dependent. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}\label{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. Determining what settling means is implementation-\/dependent. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}\label{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. Determining what settling means is implementation-\/dependent. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ Input, Output $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}\label{classokapi_1_1_async_wrapper_a23435c257ac2d6df59ab5d96408e608a}} 
+\index{okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncWrapper$<$ Input, Output $>$@{okapi::AsyncWrapper$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Input , typename Output $>$ \\
+void \mbox{\hyperlink{classokapi_1_1_async_wrapper}{okapi\+::\+Async\+Wrapper}}$<$ Input, Output $>$\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. Determining what settling means is implementation-\/dependent. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ Input, Output $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pros/\+Pros-\/6-\/25-\/22/include/okapi/api/control/async/async\+Wrapper.\+hpp\item 
+Pros/\+Pros-\/7-\/13-\/22/include/okapi/api/control/async/async\+Wrapper.\+hpp\item 
+Pros/\+Pros-\/7-\/9-\/22/include/okapi/api/control/async/async\+Wrapper.\+hpp\item 
+Pros/test-\/3/include/okapi/api/control/async/async\+Wrapper.\+hpp\item 
+Pros/test-\/5/include/okapi/api/control/async/async\+Wrapper.\+hpp\item 
+Pros/test-\/6/include/okapi/api/control/async/async\+Wrapper.\+hpp\end{DoxyCompactItemize}

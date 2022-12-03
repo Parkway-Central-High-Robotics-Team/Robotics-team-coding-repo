@@ -1,0 +1,67 @@
+\hypertarget{test-3_2include_2display_2lv__draw_2lv__draw__rbasic_8h_source}{}\doxysection{lv\+\_\+draw\+\_\+rbasic.\+h}
+\label{test-3_2include_2display_2lv__draw_2lv__draw__rbasic_8h_source}\index{Pros/test-\/3/include/display/lv\_draw/lv\_draw\_rbasic.h@{Pros/test-\/3/include/display/lv\_draw/lv\_draw\_rbasic.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_DRAW\_RBASIC\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_DRAW\_RBASIC\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_REAL\_DRAW != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_color.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_area.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_font.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{29 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{30 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{34 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{37 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{38 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keywordtype}{void} lv\_rpx(lv\_coord\_t x, lv\_coord\_t y, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * mask\_p, lv\_color\_t color, lv\_opa\_t opa);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} lv\_rfill(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * cords\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * mask\_p,}
+\DoxyCodeLine{50               lv\_color\_t color, lv\_opa\_t opa);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} lv\_rletter(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} * pos\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * mask\_p,}
+\DoxyCodeLine{62                 \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__font__struct}{lv\_font\_t}} * font\_p, uint32\_t letter,}
+\DoxyCodeLine{63                 lv\_color\_t color, lv\_opa\_t opa);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{69 \textcolor{keywordtype}{void} lv\_rletter\_set\_background(lv\_color\_t color);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} lv\_rmap(\textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * cords\_p, \textcolor{keyword}{const} \mbox{\hyperlink{structlv__area__t}{lv\_area\_t}} * mask\_p,}
+\DoxyCodeLine{84              \textcolor{keyword}{const} uint8\_t * map\_p, lv\_opa\_t opa, \textcolor{keywordtype}{bool} chroma\_key, \textcolor{keywordtype}{bool} alpha\_byte,}
+\DoxyCodeLine{85              lv\_color\_t recolor, lv\_opa\_t recolor\_opa);}
+\DoxyCodeLine{86 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{87 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{88 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_REAL\_DRAW*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{93 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_DRAW\_RBASIC\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

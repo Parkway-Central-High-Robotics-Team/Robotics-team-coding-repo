@@ -1,0 +1,32 @@
+\hypertarget{_pros-6-25-22_2include_2okapi_2impl_2device_2rotarysensor_2potentiometer_8hpp_source}{}\doxysection{potentiometer.\+hpp}
+\label{_pros-6-25-22_2include_2okapi_2impl_2device_2rotarysensor_2potentiometer_8hpp_source}\index{Pros/Pros-\/6-\/25-\/22/include/okapi/impl/device/rotarysensor/potentiometer.hpp@{Pros/Pros-\/6-\/25-\/22/include/okapi/impl/device/rotarysensor/potentiometer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}api.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/device/rotarysensor/rotarySensor.hpp"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classokapi_1_1_potentiometer}{Potentiometer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classokapi_1_1_rotary_sensor}{RotarySensor}} \{}
+\DoxyCodeLine{13   \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classokapi_1_1_potentiometer_a1e528bdba36d41f3698f3f451d2a2510}{Potentiometer}}(std::uint8\_t iport);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{36   \mbox{\hyperlink{classokapi_1_1_potentiometer_ad29caceddb0dc759232eca2691a05d9f}{Potentiometer}}(std::pair<std::uint8\_t, std::uint8\_t> iports);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_potentiometer_a01b14deaf2f6ceca7a6333d36fe196bb}{get}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classokapi_1_1_potentiometer_a101d54c5316fefece10636daf9f9c995}{controllerGet}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54   std::uint8\_t smartPort;}
+\DoxyCodeLine{55   std::uint8\_t port;}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\hypertarget{test-6_2include_2okapi_2impl_2filter_2vel_math_factory_8hpp_source}{}\doxysection{vel\+Math\+Factory.\+hpp}
+\label{test-6_2include_2okapi_2impl_2filter_2vel_math_factory_8hpp_source}\index{Pros/test-\/6/include/okapi/impl/filter/velMathFactory.hpp@{Pros/test-\/6/include/okapi/impl/filter/velMathFactory.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/filter/velMath.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{12 \textcolor{keyword}{class }VelMathFactory \{}
+\DoxyCodeLine{13   \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \textcolor{keyword}{static} \mbox{\hyperlink{classokapi_1_1_vel_math}{VelMath}} \mbox{\hyperlink{classokapi_1_1_vel_math_factory_a7e1aa74fab6bfda3ff62aa66206c24b0}{create}}(\textcolor{keywordtype}{double} iticksPerRev,}
+\DoxyCodeLine{23                         QTime isampleTime = 0\_ms,}
+\DoxyCodeLine{24                         \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{34   \textcolor{keyword}{static} std::unique\_ptr<VelMath>}
+\DoxyCodeLine{35   \mbox{\hyperlink{classokapi_1_1_vel_math_factory_a942f36fd50413d6816fc53c068317d1b}{createPtr}}(\textcolor{keywordtype}{double} iticksPerRev,}
+\DoxyCodeLine{36             QTime isampleTime = 0\_ms,}
+\DoxyCodeLine{37             \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{48   \textcolor{keyword}{static} \mbox{\hyperlink{classokapi_1_1_vel_math}{VelMath}} \mbox{\hyperlink{classokapi_1_1_vel_math_factory_acca3db8dc454b62e8956885ed8c68b49}{create}}(\textcolor{keywordtype}{double} iticksPerRev,}
+\DoxyCodeLine{49                         std::unique\_ptr<Filter> ifilter,}
+\DoxyCodeLine{50                         QTime isampleTime = 0\_ms,}
+\DoxyCodeLine{51                         \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{62   \textcolor{keyword}{static} std::unique\_ptr<VelMath>}
+\DoxyCodeLine{63   \mbox{\hyperlink{classokapi_1_1_vel_math_factory_ad3734c7d52bebd9ef6dcdce5e4992cb8}{createPtr}}(\textcolor{keywordtype}{double} iticksPerRev,}
+\DoxyCodeLine{64             std::unique\_ptr<Filter> ifilter,}
+\DoxyCodeLine{65             QTime isampleTime = 0\_ms,}
+\DoxyCodeLine{66             \textcolor{keyword}{const} std::shared\_ptr<Logger> \&ilogger = \mbox{\hyperlink{classokapi_1_1_logger_ac9dd2e38a412a692816f150b0ac3f0b4}{Logger::getDefaultLogger}}());}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

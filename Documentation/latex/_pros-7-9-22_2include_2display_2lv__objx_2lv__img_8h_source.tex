@@ -1,0 +1,129 @@
+\hypertarget{_pros-7-9-22_2include_2display_2lv__objx_2lv__img_8h_source}{}\doxysection{lv\+\_\+img.\+h}
+\label{_pros-7-9-22_2include_2display_2lv__objx_2lv__img_8h_source}\index{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_img.h@{Pros/Pros-\/7-\/9-\/22/include/display/lv\_objx/lv\_img.h}}
+\mbox{\hyperlink{_pros-7-9-22_2include_2display_2lv__objx_2lv__img_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_IMG\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_IMG\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_IMG != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_fs.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}display/lv\_misc/lv\_symbol\_def.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}lv\_label.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}display/lv\_draw/lv\_draw.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{31 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{32 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{35 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{36 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{37 \textcolor{comment}{/*Data of image*/}}
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     \textcolor{comment}{/*No inherited ext. because inherited from the base object*/} \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{41     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{42     \textcolor{keyword}{const} \textcolor{keywordtype}{void} * src;             \textcolor{comment}{/*Image source: Pointer to an array or a file or a symbol*/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     lv\_coord\_t w;               \textcolor{comment}{/*Width of the image (Handled by the library)*/}}
+\DoxyCodeLine{45     lv\_coord\_t h;               \textcolor{comment}{/*Height of the image (Handled by the library)*/}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#if USE\_LV\_MULTI\_LANG}}
+\DoxyCodeLine{47     uint16\_t lang\_txt\_id;       \textcolor{comment}{/*The ID of the image to display. */}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49     uint8\_t src\_type  :2;       \textcolor{comment}{/*See: lv\_img\_src\_t*/}}
+\DoxyCodeLine{50     uint8\_t auto\_size :1;       \textcolor{comment}{/*1: automatically set the object size to the image size*/}}
+\DoxyCodeLine{51     uint8\_t cf :5;              \textcolor{comment}{/*Color format from `lv\_img\_color\_format\_t`*/}}
+\DoxyCodeLine{52 \} lv\_img\_ext\_t;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{55 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{56 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{64 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_img\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{67 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{68 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} lv\_img\_set\_src(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * src\_img);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#if USE\_LV\_MULTI\_LANG}}
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} lv\_img\_set\_src\_id(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img, uint32\_t txt\_id);}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{92 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_img\_set\_file(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * fn)}
+\DoxyCodeLine{93 \{}
+\DoxyCodeLine{94     (void) img;}
+\DoxyCodeLine{95     (void) fn;}
+\DoxyCodeLine{96 \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} lv\_img\_set\_auto\_size(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img, \textcolor{keywordtype}{bool} autosize\_en);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{111 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_img\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *img, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style)}
+\DoxyCodeLine{112 \{}
+\DoxyCodeLine{113     \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_ac9c62dbb12ae34560d7075baf987cdb2}{lv\_obj\_set\_style}}(img, style);}
+\DoxyCodeLine{114 \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{121 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_img\_set\_upscale(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img, \textcolor{keywordtype}{bool} upcale)}
+\DoxyCodeLine{122 \{}
+\DoxyCodeLine{123     (void) img;}
+\DoxyCodeLine{124     (void) upcale;}
+\DoxyCodeLine{125 \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{128 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{129 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{136 \textcolor{keyword}{const} \textcolor{keywordtype}{void} * lv\_img\_get\_src(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{143 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * lv\_img\_get\_file\_name(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#if USE\_LV\_MULTI\_LANG}}
+\DoxyCodeLine{151 uint16\_t lv\_img\_get\_src\_id(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img);}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{159 \textcolor{keywordtype}{bool} lv\_img\_get\_auto\_size(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{166 \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}}* lv\_img\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} *img)}
+\DoxyCodeLine{167 \{}
+\DoxyCodeLine{168     \textcolor{keywordflow}{return} \mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__core_2lv__obj_8h_a610bcf1bdb3303bd8e8791875a08132a}{lv\_obj\_get\_style}}(img);}
+\DoxyCodeLine{169 \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{176 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_img\_get\_upscale(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * img)}
+\DoxyCodeLine{177 \{}
+\DoxyCodeLine{178     (void)img;}
+\DoxyCodeLine{179     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{180 \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{183 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{184 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{comment}{/*Use this macro to declare an image in a c file*/}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define LV\_IMG\_DECLARE(var\_name) extern const lv\_img\_dsc\_t var\_name;}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_IMG*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{192 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_IMG\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\hypertarget{_pros-7-9-22_2include_2okapi_2api_2odometry_2odometry_8hpp_source}{}\doxysection{odometry.\+hpp}
+\label{_pros-7-9-22_2include_2okapi_2api_2odometry_2odometry_8hpp_source}\index{Pros/Pros-\/7-\/9-\/22/include/okapi/api/odometry/odometry.hpp@{Pros/Pros-\/7-\/9-\/22/include/okapi/api/odometry/odometry.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This Source Code Form is subject to the terms of the Mozilla Public}}
+\DoxyCodeLine{3 \textcolor{comment}{ * License, v. 2.0. If a copy of the MPL was not distributed with this}}
+\DoxyCodeLine{4 \textcolor{comment}{ * file, You can obtain one at http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{5 \textcolor{comment}{ */}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}okapi/api/chassis/controller/chassisScales.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}okapi/api/chassis/model/readOnlyChassisModel.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}okapi/api/odometry/odomState.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}okapi/api/odometry/stateMode.hpp"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }okapi \{}
+\DoxyCodeLine{14 \textcolor{keyword}{class }Odometry \{}
+\DoxyCodeLine{15   \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \textcolor{keyword}{explicit} \mbox{\hyperlink{classokapi_1_1_odometry_a54bde3c9209f1bedc939a3cf14ee5432}{Odometry}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_odometry}{\string~Odometry}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_odometry_a7cdb2433a77e7dc8d72b451916a72666}{setScales}}(\textcolor{keyword}{const} \mbox{\hyperlink{classokapi_1_1_chassis_scales}{ChassisScales}} \&ichassisScales) = 0;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_odometry_a00d4dd37fe02d4f02fc8896a2a760331}{step}}() = 0;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \mbox{\hyperlink{classokapi_1_1_odometry_a9f595e68c1965a45e1447ec210b52574}{getState}}(\textcolor{keyword}{const} StateMode \&imode = StateMode::FRAME\_TRANSFORMATION) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classokapi_1_1_odometry_aeaf7ab429a1374da216718be2781b547}{setState}}(\textcolor{keyword}{const} \mbox{\hyperlink{structokapi_1_1_odom_state}{OdomState}} \&istate,}
+\DoxyCodeLine{49                         \textcolor{keyword}{const} StateMode \&imode = StateMode::FRAME\_TRANSFORMATION) = 0;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} std::shared\_ptr<ReadOnlyChassisModel> \mbox{\hyperlink{classokapi_1_1_odometry_a6b8f30cf8490c1b23da4cfccd7d358ae}{getModel}}() = 0;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \mbox{\hyperlink{classokapi_1_1_chassis_scales}{ChassisScales}} \mbox{\hyperlink{classokapi_1_1_odometry_ad56be218dc1810a1801823766604729a}{getScales}}() = 0;}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 \} \textcolor{comment}{// namespace okapi}}
+
+\end{DoxyCode}

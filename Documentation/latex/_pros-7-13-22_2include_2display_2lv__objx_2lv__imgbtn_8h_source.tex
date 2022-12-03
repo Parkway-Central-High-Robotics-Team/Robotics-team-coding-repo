@@ -1,0 +1,160 @@
+\hypertarget{_pros-7-13-22_2include_2display_2lv__objx_2lv__imgbtn_8h_source}{}\doxysection{lv\+\_\+imgbtn.\+h}
+\label{_pros-7-13-22_2include_2display_2lv__objx_2lv__imgbtn_8h_source}\index{Pros/Pros-\/7-\/13-\/22/include/display/lv\_objx/lv\_imgbtn.h@{Pros/Pros-\/7-\/13-\/22/include/display/lv\_objx/lv\_imgbtn.h}}
+\mbox{\hyperlink{_pros-7-13-22_2include_2display_2lv__objx_2lv__imgbtn_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef LV\_IMGBTN\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define LV\_IMGBTN\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *      INCLUDES}}
+\DoxyCodeLine{15 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifdef LV\_CONF\_INCLUDE\_SIMPLE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}lv\_conf.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}display/lv\_conf.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if USE\_LV\_IMGBTN != 0}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*Testing of dependencies*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if USE\_LV\_BTN == 0}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#error "{}lv\_imgbtn: lv\_btn is required. Enable it in lv\_conf.h (USE\_LV\_BTN  1) "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}display/lv\_core/lv\_obj.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}lv\_btn.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}display/lv\_draw/lv\_draw\_img.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/*********************}}
+\DoxyCodeLine{34 \textcolor{comment}{ *      DEFINES}}
+\DoxyCodeLine{35 \textcolor{comment}{ *********************/}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{38 \textcolor{comment}{ *      TYPEDEFS}}
+\DoxyCodeLine{39 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{40 \textcolor{comment}{/*Data of image button*/}}
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{42     lv\_btn\_ext\_t btn; \textcolor{comment}{/*Ext. of ancestor*/}}
+\DoxyCodeLine{43     \textcolor{comment}{/*New data for this type */}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#if LV\_IMGBTN\_TILED == 0}}
+\DoxyCodeLine{45     \textcolor{keyword}{const} \textcolor{keywordtype}{void} * img\_src[LV\_BTN\_STATE\_NUM];       \textcolor{comment}{/*Store images to each state*/}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{47     \textcolor{keyword}{const} \textcolor{keywordtype}{void} * img\_src\_left[LV\_BTN\_STATE\_NUM];       \textcolor{comment}{/*Store left side images to each state*/}}
+\DoxyCodeLine{48     \textcolor{keyword}{const} \textcolor{keywordtype}{void} * img\_src\_mid[LV\_BTN\_STATE\_NUM];        \textcolor{comment}{/*Store center images to each state*/}}
+\DoxyCodeLine{49     \textcolor{keyword}{const} \textcolor{keywordtype}{void} * img\_src\_right[LV\_BTN\_STATE\_NUM];      \textcolor{comment}{/*Store right side images to each state*/}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51     lv\_img\_cf\_t act\_cf;           \textcolor{comment}{/*Color format of the currently active image*/}}
+\DoxyCodeLine{52 \} lv\_imgbtn\_ext\_t;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/*Styles*/}}
+\DoxyCodeLine{56 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{57     LV\_IMGBTN\_STYLE\_REL,}
+\DoxyCodeLine{58     LV\_IMGBTN\_STYLE\_PR,}
+\DoxyCodeLine{59     LV\_IMGBTN\_STYLE\_TGL\_REL,}
+\DoxyCodeLine{60     LV\_IMGBTN\_STYLE\_TGL\_PR,}
+\DoxyCodeLine{61     LV\_IMGBTN\_STYLE\_INA,}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} uint8\_t lv\_imgbtn\_style\_t;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{67 \textcolor{comment}{ * GLOBAL PROTOTYPES}}
+\DoxyCodeLine{68 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{76 \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * lv\_imgbtn\_create(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * par, \textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * copy);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{/*======================}}
+\DoxyCodeLine{79 \textcolor{comment}{ * Add/remove functions}}
+\DoxyCodeLine{80 \textcolor{comment}{ *=====================*/}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{84 \textcolor{comment}{ * Setter functions}}
+\DoxyCodeLine{85 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#if LV\_IMGBTN\_TILED == 0}}
+\DoxyCodeLine{94 \textcolor{keywordtype}{void} lv\_imgbtn\_set\_src(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_state\_t state, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * src);}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} lv\_imgbtn\_set\_src(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_state\_t state, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * src\_left, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * src\_mid, \textcolor{keyword}{const} \textcolor{keywordtype}{void} * src\_right);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{113 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_imgbtn\_set\_toggle(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, \textcolor{keywordtype}{bool} tgl)}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115     lv\_btn\_set\_toggle(imgbtn, tgl);}
+\DoxyCodeLine{116 \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{123 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_imgbtn\_set\_state(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_state\_t state)}
+\DoxyCodeLine{124 \{}
+\DoxyCodeLine{125     lv\_btn\_set\_state(imgbtn, state);}
+\DoxyCodeLine{126 \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{132 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_imgbtn\_toggle(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn)}
+\DoxyCodeLine{133 \{}
+\DoxyCodeLine{134     lv\_btn\_toggle(imgbtn);}
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{142 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} lv\_imgbtn\_set\_action(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_action\_t type, lv\_action\_t action)}
+\DoxyCodeLine{143 \{}
+\DoxyCodeLine{144     lv\_btn\_set\_action(imgbtn, type, action);}
+\DoxyCodeLine{145 \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{void} lv\_imgbtn\_set\_style(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_imgbtn\_style\_t type, \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} *style);}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{156 \textcolor{comment}{ * Getter functions}}
+\DoxyCodeLine{157 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#if LV\_IMGBTN\_TILED == 0}}
+\DoxyCodeLine{167 \textcolor{keyword}{const} \textcolor{keywordtype}{void} * lv\_imgbtn\_get\_src(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_state\_t state);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{177 \textcolor{keyword}{const} \textcolor{keywordtype}{void} * lv\_imgbtn\_get\_src\_left(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_state\_t state);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{185 \textcolor{keyword}{const} \textcolor{keywordtype}{void} * lv\_imgbtn\_get\_src\_middle(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_state\_t state);}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{193 \textcolor{keyword}{const} \textcolor{keywordtype}{void} * lv\_imgbtn\_get\_src\_right(\mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_state\_t state);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{201 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_btn\_state\_t lv\_imgbtn\_get\_state(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn)}
+\DoxyCodeLine{202 \{}
+\DoxyCodeLine{203     \textcolor{keywordflow}{return} lv\_btn\_get\_state(imgbtn);}
+\DoxyCodeLine{204 \}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{211 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} lv\_imgbtn\_get\_toggle(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn)}
+\DoxyCodeLine{212 \{}
+\DoxyCodeLine{213     \textcolor{keywordflow}{return} lv\_btn\_get\_toggle(imgbtn);}
+\DoxyCodeLine{214 \}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{221 \textcolor{keyword}{static} \textcolor{keyword}{inline} lv\_action\_t lv\_imgbtn\_get\_action(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_btn\_action\_t type)}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} lv\_btn\_get\_action(imgbtn, type);}
+\DoxyCodeLine{224 \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{232 \mbox{\hyperlink{structlv__style__t}{lv\_style\_t}} * lv\_imgbtn\_get\_style(\textcolor{keyword}{const} \mbox{\hyperlink{struct__lv__obj__t}{lv\_obj\_t}} * imgbtn, lv\_imgbtn\_style\_t type);}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{comment}{/*=====================}}
+\DoxyCodeLine{235 \textcolor{comment}{ * Other functions}}
+\DoxyCodeLine{236 \textcolor{comment}{ *====================*/}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{comment}{/**********************}}
+\DoxyCodeLine{239 \textcolor{comment}{ *      MACROS}}
+\DoxyCodeLine{240 \textcolor{comment}{ **********************/}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*USE\_LV\_IMGBTN*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{245 \} \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*LV\_IMGBTN\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
