@@ -66,13 +66,13 @@ void spinnerPos(void) {
     if(!redExist && blueExist){
       intake.stop(brakeType::hold);
     }else {
-      intake.spin(forward, 35, velocityUnits::pct);
+      intake.spin(forward, 25, velocityUnits::pct);
     }
   }else if (side == blueSide) {
     if(redExist && !blueExist){
       intake.stop(brakeType::hold);
     }else {
-      intake.spin(forward, 35, velocityUnits::pct);
+      intake.spin(forward, 25, velocityUnits::pct);
     }
   }
 }
