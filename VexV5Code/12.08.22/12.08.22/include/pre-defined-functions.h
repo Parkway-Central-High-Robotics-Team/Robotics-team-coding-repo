@@ -7,6 +7,7 @@ void intakeIn(int vel);
 void intakeInTime(int msc, int vel);
 void intakeInDeg(int deg, int vel);
 
+void intakeStop(void);
 void intakeOut(int vel);
 void intakeOutTime(int msc, int vel);
 void intakeOutDeg(int deg, int vel);

@@ -73,6 +73,10 @@ void strafeRightDis(int inch, int vel){
   StrafeBGroup.stop();
 }
 
+void intakeStop(void) {
+  intake.stop();
+}
+
 void intakeIn(int vel){
   intake.spin(forward, vel, velocityUnits::pct);
 }
