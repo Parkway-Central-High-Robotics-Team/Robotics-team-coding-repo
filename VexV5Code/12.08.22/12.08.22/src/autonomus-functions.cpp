@@ -2,37 +2,60 @@
 #include "autonomous-functions.h"
 
 using namespace vex;
-void moveForward(int milliseconds){
-  LeftDriveSmart.spinFor(forward, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
-  RightDriveSmart.spinFor(forward,milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+void moveForward(int x){
+  Drivetrain.drive(fwd, 100, velocityUnits::pct);
+  wait(x, timeUnits::msec);
+  Drivetrain.stop(brake);
+  //wait(milliseconds, timeUnits::msec);
+  
 }
 
-void moveBackward(int milliseconds){
-  LeftDriveSmart.spinFor(reverse, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
-  LeftDriveSmart.spinFor(reverse, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+void moveBackward(int x){
+  Drivetrain.drive(reverse, 100, velocityUnits::pct);
+  wait(x, timeUnits::msec);
+  Drivetrain.stop(brake);
+}
+  
+
+void turnRight(int x){
+  Drivetrain.turn(right);
+  wait(x, timeUnits::msec);
+  Drivetrain.stop(brake);
 }
 
-void turnRight(int milliseconds){
-  LeftDriveSmart.spinFor(forward, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
-  RightDriveSmart.spinFor(reverse,milliseconds, timeUnits::msec, 100, velocityUnits::pct);
-}
-
-void turnLeft(int milliseconds){
-  LeftDriveSmart.spinFor(reverse, milliseconds, timeUnits::msec, 100, velocityUnits::pct);
-  RightDriveSmart.spinFor(forward,milliseconds, timeUnits::msec, 100, velocityUnits::pct);
+void turnLeft(int x){
+  Drivetrain.turn(left);
+  wait(x, timeUnits::msec);
+  Drivetrain.stop(brake);
 }
 
 void expansion(void){
   //enter in pneumatic code from "pneumaticstestv3"
+
+}
+
+void roller(int x){
+  intake.spinFor(forward, x, timeUnits::msec, 100, velocityUnits::pct);
+ 
 }
 
 
 void auton_function_test(void) {
   //roller first
-
+  roller(500);
+  //wait(100, timeUnits::msec);
   // go forward, turn right, move backward
-  moveForward(1000);
-  turnRight(1000);
+  moveForward(700);
+  turnRight(1450);
+  moveBackward(780);
+  roller(500);
+  moveForward(300);
+  turnRight(2000);
+
+
+
+  
+  /*turnRight(1000);
   moveBackward(1000);
   // roller 
   //turn right until parallel with divison
@@ -47,5 +70,10 @@ void auton_function_test(void) {
   turnRight(1000);
   // roller
   //move out and expand
+  */
+
+}
+
+void auton_skills(void){
 
 }

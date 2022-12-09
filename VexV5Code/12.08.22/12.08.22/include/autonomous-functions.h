@@ -5,3 +5,4 @@
 
 void auton_function_test(void);
 void TrackWithLargeFunction(void);
+void auton_skills(void);

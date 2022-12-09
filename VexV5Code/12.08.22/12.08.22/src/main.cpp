@@ -64,6 +64,8 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   auton_function_test();
+  //Drivetrain.drive(fwd, 100, velocityUnits::pct);
+  //wait(1000, timeUnits::msec);
   // ..........................................................................
 }
 
