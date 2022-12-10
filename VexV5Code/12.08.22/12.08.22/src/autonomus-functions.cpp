@@ -51,13 +51,25 @@ void auton_function_test(void) {
   roller(500);
   //wait(100, timeUnits::msec);
   // go forward, turn right, move backward
-  moveForward(600);
-  turnRight(1500);
-  moveBackward(780);
+  moveForward(1000);
+  turnRight(2190);
+  moveBackward(1125);
   roller(500);
   moveForward(500);
-  turnRight(3500);
-
+  turnRight(3000);
+  moveBackward(6050);
+  turnLeft(1300);
+  moveBackward(1250);
+  roller(500);
+  moveForward(1250);
+  turnRight(2000);
+  moveBackward(1300);
+  roller(500);
+  moveForward(1000);
+  turnRight(100);
+  //wait();
+  //expansion();
+  
 
 
   

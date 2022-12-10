@@ -123,7 +123,7 @@ int rc_auto_loop_function_Controller1() {
       }
       //SPIN MOTORS BUTTONS
       if (Controller1.ButtonL1.pressing()) {
-        spinMtrs.spin(forward, 100, velocityUnits::pct);
+        spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
