@@ -99,14 +99,20 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.spin(forward);
       }
       // check if the value is inside of the deadband range
+      Pneumatics.set(false);
+      if(Pneumatics.value() == 0){
+        if(Controller1.ButtonUp.pressing()){
+          Pneumatics.set(true);
+          Brain.Screen.print("L1 is Pressing");
+    }
+      else if(Pneumatics.value() == 1){
+        if(Controller1.ButtonDown.pressing()){
+          Pneumatics.set(false);
+          Brain.Screen.print("L1 is Pressing");
+    }
+    }
+    }
 
-      if (Controller1.ButtonUp.pressing()) {
-        Controller1UpDownButtonsControlMotorsStopped = false;
-      } if (Controller1.ButtonDown.pressing()) {
-        visionTest();
-        //TrackWithLargeFunction();
-        Controller1UpDownButtonsControlMotorsStopped = false;
-      }
       //INTAKE BUTTONS
       if(Controller1.ButtonR1.pressing()){
         intake.spin(forward, 100, velocityUnits::pct);
