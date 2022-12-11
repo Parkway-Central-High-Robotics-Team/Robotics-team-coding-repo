@@ -96,3 +96,15 @@ void regular_auton(void) {
   intakeStop();
   stopFlyWheel();
 }
+
+void shootLowerGoal(void) {
+  //intake.spinFor(forward, 15, rotationUnits::deg, 15, velocityUnits::pct);
+  Drivetrain.driveFor(forward, 5, distanceUnits::in, 50, velocityUnits::pct);
+  Drivetrain.turnFor(right, 90, rotationUnits::deg, 50, velocityUnits::pct);
+  startFlyWheel(100);
+  wait(500, msec);
+  intakeIn(100);
+  wait(3000, msec);
+  intakeStop();
+  stopFlyWheel();
+}
