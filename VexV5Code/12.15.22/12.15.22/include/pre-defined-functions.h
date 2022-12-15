@@ -26,3 +26,4 @@ void strafeRightDis(int inch, int vel);
 void visionTest(void);
 void pneumaticsFunction(void);
 void TrackWithLargeFunction(void);
+void visionaim(void);

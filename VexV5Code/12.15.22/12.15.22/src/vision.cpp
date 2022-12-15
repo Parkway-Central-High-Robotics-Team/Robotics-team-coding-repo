@@ -11,15 +11,13 @@ using namespace vex;
 int redSide = 0;
 int blueSide = 1;
 int side = redSide;
-
-vex::vision::signature SIGTYPE = SIG_BLUE;
 ////////////////////
 
 ////////////////////
 // vision rotation code
 void TrackWithLargeFunction() {
   Vision1.setBrightness(50);
-	Vision1.setSignature(SIGTYPE);
+	Vision1.setSignature(SIG_BLUE);
 	//#endregion config_init
 	
     //camera image is 316 pixels wide, so the center is 316/2
@@ -30,7 +28,7 @@ void TrackWithLargeFunction() {
     Drivetrain.setTurnVelocity(10,vex::velocityUnits::pct);
     if(not linedup) {
         //snap a picture
-        Vision1.takeSnapshot(SIGTYPE);
+        Vision1.takeSnapshot(SIG_BLUE);
         //did we see anything?
         if(Vision1.objectCount > 0) {
             //where was the largest thing?
@@ -45,6 +43,44 @@ void TrackWithLargeFunction() {
                 linedup = true;
                 Drivetrain.stop(coast);
             }
+        } else {
+            //saw nothing, relax
+            Drivetrain.stop(coast);
+        }
+    }
+}
+
+void visionaim(void){
+  	//#region config_init
+	Vision1.setBrightness(50);
+	Vision1.setSignature(SIG_BLUE);
+	//#endregion config_init
+	
+    //camera image is 316 pixels wide, so the center is 316/2
+    int screen_middle_x = 316 / 2;
+    bool linedup = false;
+    //take it slow
+    Drivetrain.setDriveVelocity(10,vex::velocityUnits::pct);
+    Drivetrain.setTurnVelocity(10,vex::velocityUnits::pct);
+    while(not linedup) {
+        //snap a picture
+        Vision1.takeSnapshot(SIG_BLUE);
+        //did we see anything?
+        if(Vision1.objectCount > 0) {
+          if(Vision1.largestObject.width >= 30){
+            //where was the largest thing?
+            if(Vision1.largestObject.centerX < screen_middle_x - 5) {
+                //on the left, turn left
+                Drivetrain.turn(turnType::left);
+            } else if (Vision1.largestObject.centerX > screen_middle_x + 5) {
+                //on the right, turn right
+                Drivetrain.turn(turnType::right);
+            } else {
+                //in the middle, we're done lining up
+                linedup = true;
+                Drivetrain.stop(coast);
+            }
+          }
         } else {
             //saw nothing, relax
             Drivetrain.stop(coast);
