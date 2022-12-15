@@ -51,13 +51,25 @@ void auton_function_test(void) {
   roller(500);
   //wait(100, timeUnits::msec);
   // go forward, turn right, move backward
-  moveForward(700);
-  turnRight(1450);
-  moveBackward(780);
+  moveForward(1000);
+  turnRight(2190);
+  moveBackward(1125);
   roller(500);
-  moveForward(300);
+  moveForward(500);
+  turnRight(3000);
+  moveBackward(6050);
+  turnLeft(1300);
+  moveBackward(1250);
+  roller(500);
+  moveForward(1250);
   turnRight(2000);
-
+  moveBackward(1300);
+  roller(500);
+  moveForward(1000);
+  turnRight(100);
+  //wait();
+  //expansion();
+  
 
 
   
@@ -91,18 +103,6 @@ void regular_auton(void) {
   Drivetrain.driveFor(forward, 50, distanceUnits::in, 50, velocityUnits::pct);
   startFlyWheel(100);
   Drivetrain.turnFor(right, 90, rotationUnits::deg, 50, velocityUnits::pct);
-  intakeIn(100);
-  wait(3000, msec);
-  intakeStop();
-  stopFlyWheel();
-}
-
-void shootLowerGoal(void) {
-  //intake.spinFor(forward, 15, rotationUnits::deg, 15, velocityUnits::pct);
-  Drivetrain.driveFor(forward, 5, distanceUnits::in, 50, velocityUnits::pct);
-  Drivetrain.turnFor(right, 90, rotationUnits::deg, 50, velocityUnits::pct);
-  startFlyWheel(100);
-  wait(500, msec);
   intakeIn(100);
   wait(3000, msec);
   intakeStop();

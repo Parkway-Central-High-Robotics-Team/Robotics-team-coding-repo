@@ -47,10 +47,6 @@ bool rightBackWheelNeedsToBeStopped_Controller1 = true;
 
 bool buttonBState = false;
 bool driveBool = true;
-int lastPress = 0;
-int timeThreshold = 500;
-
-int numPress = 0;
 
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
@@ -103,11 +99,8 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.spin(forward);
       }
       // check if the value is inside of the deadband range
+
       if (Controller1.ButtonUp.pressing()) {
-        if ((lastPress - vex::timer().time()) < timeThreshold) {
-          intake.spin(forward);
-        }
-        lastPress = vex::timer().time();
         Controller1UpDownButtonsControlMotorsStopped = false;
       } if (Controller1.ButtonDown.pressing()) {
         visionTest();
@@ -130,7 +123,7 @@ int rc_auto_loop_function_Controller1() {
       }
       //SPIN MOTORS BUTTONS
       if (Controller1.ButtonL1.pressing()) {
-        spinMtrs.spin(forward, 100, velocityUnits::pct);
+        spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
