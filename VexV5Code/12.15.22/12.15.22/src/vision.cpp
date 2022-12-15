@@ -28,7 +28,7 @@ void TrackWithLargeFunction() {
     //take it slow
     Drivetrain.setDriveVelocity(10,vex::velocityUnits::pct);
     Drivetrain.setTurnVelocity(10,vex::velocityUnits::pct);
-    while(not linedup) {
+    if(not linedup) {
         //snap a picture
         Vision1.takeSnapshot(SIGTYPE);
         //did we see anything?
