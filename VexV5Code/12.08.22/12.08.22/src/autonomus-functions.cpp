@@ -41,9 +41,11 @@ void expansion(void){
 }
 
 void roller(int x){
-  intake.spinFor(forward, x, timeUnits::msec, 100, velocityUnits::pct);
+  intake.spinFor(reverse, x, timeUnits::msec, 100, velocityUnits::pct);
  
 }
+
+
 
 
 void auton_function_test(void) {
@@ -66,9 +68,8 @@ void auton_function_test(void) {
   moveBackward(1300);
   roller(500);
   moveForward(1000);
-  turnRight(100);
-  //wait();
-  //expansion();
+  turnRight(1000);
+  expansion();
   
 
 
@@ -93,7 +94,8 @@ void auton_function_test(void) {
 }
 
 void auton_skills(void){
-
+  roller(250);
+  //expansion(); 
 }
 
 void regular_auton(void) {
@@ -107,4 +109,8 @@ void regular_auton(void) {
   wait(3000, msec);
   intakeStop();
   stopFlyWheel();
+}
+
+void roller2(void){
+  roller(250);
 }

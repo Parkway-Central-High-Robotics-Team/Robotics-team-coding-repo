@@ -99,7 +99,6 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.spin(forward);
       }
       // check if the value is inside of the deadband range
-      Pneumatics.set(false);
       if(Pneumatics.value() == 0){
         if(Controller1.ButtonUp.pressing()){
           Pneumatics.set(true);
