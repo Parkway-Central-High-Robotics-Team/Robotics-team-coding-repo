@@ -43,13 +43,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-If downloading the files from the folders does not work, here is the link to a shared drive folder with all our code in it. 
-https://drive.google.com/drive/folders/1m6y-5Cl-S9-uSEkgwX5xBIIcqZ27FNts?usp=sharing
-
-## Badges
-
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
