@@ -1,0 +1,18 @@
+{
+	"project": {
+		"name": "Right2Goal1Ring",
+		"slot": 1,
+		"description": "left_side_2_goal_1_ring WorldCompPro",
+		"platform": "V5",
+		"creationDate": "Thu, 05 Jan 2023 21:44:30 GMT",
+		"language": "cpp",
+		"sdkVersion": "V5_20220726_10_00_00",
+		"cpp": {
+			"includePath": []
+		}
+	},
+	"extension": {
+		"version": "0.3.0",
+		"json": 1
+	}
+}
