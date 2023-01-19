@@ -32,6 +32,8 @@ int main() {
     // Clear the screen and set the cursor to top left corner at the start of each loop
     Brain.Screen.clearScreen();
     Brain.Screen.setCursor(1, 1);
+    Optical2.setLight(ledState::on);
+    Optical2.setLightPower(50,percent);
 
     // Check if an object is detected by the Optical Sensor
     if (Optical2.isNearObject()) {
