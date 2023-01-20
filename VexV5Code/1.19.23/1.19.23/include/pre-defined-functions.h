@@ -3,6 +3,10 @@
 #include "v5.h"
 #include "v5_vcs.h"
 
+extern int side;
+extern int redSide;
+extern int blueSide;
+
 void intakeIn(int vel);
 void intakeInTime(int msc, int vel);
 void intakeInDeg(int deg, int vel);

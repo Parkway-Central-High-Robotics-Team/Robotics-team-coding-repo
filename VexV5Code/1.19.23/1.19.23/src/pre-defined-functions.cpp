@@ -2,77 +2,6 @@
 #include "pre-defined-functions.h"
 using namespace vex;
 
-void strafeLeftThreadFunctionStrafeAGroup(void){ 
-  StrafeAGroup.spin(reverse);
-  this_thread::sleep_for(25);
-}
-
-void strafeLeftThreadFunctionStrafeBGroup(void){ 
-  StrafeBGroup.spin(forward);
-  this_thread::sleep_for(25);
-}
-
-void strafeRightThreadFunctionStrafeAGroup(void){ 
-  StrafeAGroup.spin(forward);
-  this_thread::sleep_for(25);
-}
-
-void strafeRightThreadFunctionStrafeBGroup(void){ 
-  StrafeBGroup.spin(reverse);
-  this_thread::sleep_for(25);
-}
-
-
-void strafeLeft(int vel){
-  StrafeAGroup.setVelocity(vel, velocityUnits::pct);
-  StrafeBGroup.setVelocity(vel, velocityUnits::pct);
-  thread strafeLeftThread1 = thread(strafeLeftThreadFunctionStrafeAGroup);
-  thread strafeLeftThread2 = thread(strafeLeftThreadFunctionStrafeBGroup);
-  strafeLeftThread1.join();
-  strafeLeftThread2.join();
-}
-
-void strafeRight(int vel){
-  StrafeAGroup.setVelocity(vel, percent);
-  StrafeBGroup.setVelocity(vel, percent);
-  StrafeAGroup.setVelocity(vel, velocityUnits::pct);
-  StrafeBGroup.setVelocity(vel, velocityUnits::pct);
-  thread strafeRightThread1 = thread(strafeRightThreadFunctionStrafeAGroup);
-  thread strafeRightThread2 = thread(strafeRightThreadFunctionStrafeBGroup);
-  strafeRightThread1.join();
-  strafeRightThread2.join();
-}
-
-void strafeLeftTime(int msc, int vel){
-  StrafeAGroup.setVelocity(vel, percent);
-  StrafeBGroup.setVelocity(vel, percent);
-  StrafeAGroup.spinFor(reverse, msc, timeUnits::msec);
-  StrafeBGroup.spinFor(forward, msc, timeUnits::msec);
-  StrafeAGroup.stop();
-  StrafeBGroup.stop();
-}
-
-void strafeLeftDis(int inch, int vel){
-  StrafeAGroup.spinFor(reverse, inch, rotationUnits::deg, vel, velocityUnits::pct);
-  StrafeBGroup.spinFor(forward, inch, rotationUnits::deg, vel, velocityUnits::pct);
-  StrafeAGroup.stop();
-  StrafeBGroup.stop();
-}
-
-void strafeRightTime(int msc, int vel){
-  StrafeAGroup.spinFor(forward, msc, timeUnits::msec, vel, velocityUnits::pct);
-  StrafeBGroup.spinFor(reverse, msc, timeUnits::msec, vel, velocityUnits::pct);
-  StrafeAGroup.stop();
-  StrafeBGroup.stop();
-}
-
-void strafeRightDis(int inch, int vel){
-  StrafeAGroup.spinFor(forward, inch, rotationUnits::deg, vel, velocityUnits::pct);
-  StrafeBGroup.spinFor(reverse, inch, rotationUnits::deg, vel, velocityUnits::pct);
-  StrafeAGroup.stop();
-  StrafeBGroup.stop();
-}
-
 void intakeStop(void) {
   intake.stop();
 }
@@ -131,7 +60,33 @@ void opticalFunction(){
   Optical2.setLight(ledState::on);
   Optical2.setLightPower(50,percent);
 
-  if (Optical2.isNearObject()) {
+  if (Optical2.isNearObject()){
+    Brain.Screen.print("Object Detected");
+    Brain.Screen.newLine();
+
+    Brain.Screen.print("Brightness: ");
+    Brain.Screen.print("%.2f", Optical2.brightness());
+    Brain.Screen.newLine();
+
+    Brain.Screen.print("Hue: ");
+    Brain.Screen.print("%.2f", Optical2.hue());
+    Brain.Screen.newLine();
+    if(side == redSide){
+      if(Optical2.color() == blue){
+        intake.stop(brakeType::hold);
+      }else {
+        intake.spin(forward, 15, velocityUnits::pct);
+      }
+    }else if (side == blueSide) {
+      if(Optical2.color() == red){
+        intake.stop(brakeType::hold);
+      }else {
+        intake.spin(forward, 15, velocityUnits::pct);
+      }
+    }
+  }
+
+  /*if (Optical2.isNearObject()) {
     Brain.Screen.print("Object Detected");
     Brain.Screen.newLine();
     
@@ -152,9 +107,9 @@ void opticalFunction(){
     Brain.Screen.newLine();
   } else {
     Brain.Screen.print("No Object Detected");
-  }
+  }*/
 
-  Optical2.setLight(ledState::off);
+  //Optical2.setLight(ledState::off);
 }
 
 /*
