@@ -3,7 +3,7 @@
 
 using namespace vex;
 void moveForward(int x){
-  Drivetrain.drive(reverse, 100, velocityUnits::pct);
+  Drivetrain.drive(reverse, 75, velocityUnits::pct);
   wait(x, timeUnits::msec);
   Drivetrain.stop(brake);
   //wait(milliseconds, timeUnits::msec);
@@ -11,7 +11,7 @@ void moveForward(int x){
 }
 
 void moveBackward(int x){
-  Drivetrain.drive(forward, 100, velocityUnits::pct);
+  Drivetrain.drive(forward, 75, velocityUnits::pct);
   wait(x, timeUnits::msec);
   Drivetrain.stop(brake);
 }
@@ -48,10 +48,14 @@ void roller(int x){
 
 void auton_function_test(void) {
   roller(500);
-  moveBackward(500);
-  turnRight(500);
-  moveForward(500);
+  moveForward(600);
+  turnRight(1050);
+  moveBackward(630);
   roller(500);
+  moveForward(300);
+  turnLeft(500);
+  //moveForward(1000);
+  
   /*
   //roller first
   roller(500);
