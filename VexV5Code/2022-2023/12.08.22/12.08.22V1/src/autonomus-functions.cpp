@@ -11,7 +11,7 @@ void moveForward(int x){
 }
 
 void moveBackward(int x){
-  Drivetrain.drive(forward, 75, velocityUnits::pct);
+  Drivetrain.drive(forward, 65, velocityUnits::pct);
   wait(x, timeUnits::msec);
   Drivetrain.stop(brake);
 }
@@ -50,11 +50,18 @@ void auton_function_test(void) {
   roller(500);
   moveForward(600);
   turnRight(1050);
-  moveBackward(630);
+  moveBackward(750);
   roller(500);
   moveForward(300);
   turnLeft(500);
-  //moveForward(1000);
+  moveForward(3800);
+  turnRight(1450);
+  moveBackward(850);
+  roller(750);
+  //moveForward(600);
+  //turnLeft(1000);
+  //moveBackward(700);
+
   
   /*
   //roller first
