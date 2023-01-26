@@ -23,6 +23,7 @@ controller Controller1 = controller(primary);
 motor intake = motor(PORT20, ratio18_1, false);
 motor spinMtr1 = motor(PORT12, ratio18_1, true);
 motor spinMtr2 = motor(PORT13, ratio18_1, false);
+motor indexer = motor(PORT19, ratio18_1, true);
 motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
 digital_out Pneumatics = digital_out(Brain.ThreeWirePort.B);
 optical Optical2 = optical(PORT2);
@@ -55,6 +56,7 @@ int rc_auto_loop_function_Controller1() {
   // update the motors based on the input values
   while(true) {
     if(RemoteControlCodeEnabled) {
+      
       // calculate the drivetrain motor velocities from the controller joystick axies
       int drivetrainLeftSideSpeed = Controller1.Axis3.position();
       int drivetrainRightSideSpeed = Controller1.Axis2.position();
@@ -129,7 +131,7 @@ int rc_auto_loop_function_Controller1() {
       }
       //SPIN MOTORS BUTTONS
       if (Controller1.ButtonL1.pressing()) {
-        spinMtrs.spin(forward, 90, velocityUnits::pct);
+        spinMtrs.spin(forward, 70, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
@@ -148,6 +150,16 @@ int rc_auto_loop_function_Controller1() {
       } else if(Controller1.ButtonB.pressing()) {
         spinMtrs.spin(forward, 100, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
+      }
+      if(Controller1.ButtonRight.pressing()){
+        indexer.setVelocity(100, velocityUnits::pct);
+        indexer.spinTo(50, rotationUnits::deg);
+        indexer.setBrake(brake);
+      }
+      else if(Controller1.ButtonLeft.pressing()){
+        indexer.setVelocity(100, velocityUnits::pct);
+        indexer.spinTo(-50, rotationUnits::deg);
+        indexer.setBrake(brake);
       }
     }
     // wait before repeating the process
