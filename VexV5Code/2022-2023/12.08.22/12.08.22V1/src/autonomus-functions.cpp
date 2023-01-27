@@ -52,21 +52,28 @@ void auton_function_test(void) {
   turnRight(1050);
   moveBackward(750);
   roller(500);
-  moveForward(300);
-  turnLeft(500);
-  moveForward(3800);
-  turnRight(1450);
+  moveForward(575);
+  turnLeft(575);
+  moveForward(4200);
+  moveBackward(500);
+  turnRight(1525);
+  moveBackward(300);
+  roller(500);
+  moveForward(500);
+  turnRight(600);
+  
+  
+  /*turnRight(1450);
   moveBackward(850);
-  turnLeft(4200);
   moveBackward(300);
   roller(750);
   moveForward(600);
   turnRight(1100);
   moveBackward(650);
-  turnRight(8000);
   moveBackward(300);
 
   roller(500);
+  */
   
   
 
