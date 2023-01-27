@@ -56,6 +56,7 @@ int rc_auto_loop_function_Controller1() {
   // update the motors based on the input values
   while(true) {
     if(RemoteControlCodeEnabled) {
+      indexer.setBrake(brake);
       
       // calculate the drivetrain motor velocities from the controller joystick axies
       int drivetrainLeftSideSpeed = Controller1.Axis3.position();
@@ -131,7 +132,7 @@ int rc_auto_loop_function_Controller1() {
       }
       //SPIN MOTORS BUTTONS
       if (Controller1.ButtonL1.pressing()) {
-        spinMtrs.spin(forward, 70, velocityUnits::pct);
+        spinMtrs.spin(forward, 60, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
