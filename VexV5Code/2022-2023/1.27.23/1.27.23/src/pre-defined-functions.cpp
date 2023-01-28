@@ -199,9 +199,10 @@ void expansion(void){
 /////////////////////////////////////////////////////
 
 void indexerFire(void){
-  intakeOutTime(150, 50);
+  intakeOutTime(350, 100);
   indexer.setVelocity(100, velocityUnits::pct);
-  indexer.spinFor(forward, 50, rotationUnits::deg);
+  wait(100, timeUnits::msec);
+  indexer.spinFor(forward, 100, rotationUnits::deg);
   indexer.setBrake(brake);
   intakeInTime(3000, 100);
   indexer.spinFor(reverse, 250, timeUnits::msec);

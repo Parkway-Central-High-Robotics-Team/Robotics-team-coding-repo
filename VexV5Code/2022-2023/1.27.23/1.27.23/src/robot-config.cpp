@@ -139,13 +139,13 @@ int rc_auto_loop_function_Controller1() {
       }
 
       if (Controller1.ButtonY.pressing()) {
-        spinMtrs.spin(forward, 85, velocityUnits::pct);
+        spinMtrs.spin(forward, 65, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonX.pressing()) {
-        spinMtrs.spin(forward, 90, velocityUnits::pct);
+        spinMtrs.spin(forward, 80, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonA.pressing()) {
-        spinMtrs.spin(forward, 95, velocityUnits::pct);
+        spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonB.pressing()) {
         spinMtrs.spin(forward, 100, velocityUnits::pct);
