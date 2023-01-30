@@ -208,6 +208,20 @@ void indexerFire(void){
   indexer.spinFor(reverse, 250, timeUnits::msec);
 }
 
+void indexerFireAuton(void){
+  intakeOutTime(350, 100);
+  indexer.setVelocity(100, velocityUnits::pct);
+  wait(100, timeUnits::msec);
+  indexer.spinFor(forward, 100, rotationUnits::deg);
+  indexer.setBrake(brake);
+  intakeInTime(1000, 100);
+  indexer.spinFor(reverse, 250, timeUnits::msec);
+}
+
+void flywheel(int vel){
+  spinMtrs.spin(forward, vel, velocityUnits::pct);
+}
+
 /////////////////////////////////////////////////////
   /*if (Optical2.isNearObject()) {
     Brain.Screen.print("Object Detected");

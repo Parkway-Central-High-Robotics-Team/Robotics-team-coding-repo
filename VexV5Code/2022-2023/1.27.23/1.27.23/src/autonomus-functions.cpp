@@ -4,6 +4,7 @@
 using namespace vex;
 
 void auton_function_test(void) {
+  /*
   rollerTime(500);
   moveForwardTime(600);
   turnRightTime(1050);
@@ -19,6 +20,8 @@ void auton_function_test(void) {
   turnRightTime(1100);
   moveBackwardTime(700);
   rollerTime(500);
+  */
+  rollerTime(100, -100);
 
   
   /*
@@ -55,8 +58,14 @@ void auton_function_test(void) {
 }
 
 void auton_skills(void){
-  rollerTime(250);
+  startFlyWheel(1000);
+  rollerTime(100, -100);
   //expansion(); 
+  turnLeftTime(100);
+  indexerFireAuton();
+  wait(500, timeUnits::msec);
+  indexerFireAuton();
+  
 }
 
 void regular_auton(void) {

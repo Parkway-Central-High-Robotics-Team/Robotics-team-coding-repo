@@ -47,3 +47,6 @@ void rollerTime(int msc, int vel);
 
 void expansion(void);
 void indexerFire(void);
+void flywheel(int vel);
+
+void indexerFireAuton(void);

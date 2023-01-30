@@ -7,3 +7,4 @@ void auton_function_test(void);
 void TrackWithLargeFunction(void);
 void auton_skills(void);
 void roller2(void);
+void indexerFireAuton(void);
