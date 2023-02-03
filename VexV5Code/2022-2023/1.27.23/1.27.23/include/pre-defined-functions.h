@@ -44,7 +44,7 @@ void turnLeftTime(int msc, int vel, vex::brakeType bt);
 
 void rollerTime(int msc);
 void rollerTime(int msc, int vel);
-
+void indexerUp(void);
 void expansion(void);
 void indexerFire(void);
 void flywheel(int vel);

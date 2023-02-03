@@ -208,6 +208,10 @@ void indexerFire(void){
   indexer.spinFor(reverse, 250, timeUnits::msec);
 }
 
+void indexerUp(void){
+  indexer.spinFor(forward, 400, timeUnits::msec);
+}
+
 void indexerFireAuton(void){
   intakeOutTime(350, 100);
   indexer.setVelocity(100, velocityUnits::pct);

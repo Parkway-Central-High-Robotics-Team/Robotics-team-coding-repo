@@ -58,16 +58,41 @@ void auton_function_test(void) {
 }
 
 void auton_skills(void){
-  startFlyWheel(1000);
-  rollerTime(100, -100);
-  //expansion(); 
-  turnLeftTime(100);
-  indexerFireAuton();
-  wait(500, timeUnits::msec);
-  indexerFireAuton();
+  startFlyWheel(100);
+  rollerTime(500, -100);
+  moveForwardTime(75);
+  turnLeftTime(140);
+  indexerUp();
+  wait(1200, msec);
+  intakeInTime(1000, 100);
+  wait(1200, msec);
+  intakeInTime(1500, 100);
+  stopFlyWheel();
+
+
+
+  //indexerFireAuton();
+  //wait(500, timeUnits::msec);
+  //indexerFireAuton();
   
 }
 
+void auton_skills2(void){
+  startFlyWheel(95);
+  moveBackwardTime(850);
+  turnRightTime(420);
+  moveBackwardTime(350, 75);
+  rollerTime(500, -100);  
+  turnRightTime(150);
+  //moveForwardTime(100);
+  indexerUp();
+  wait(1200, msec);
+  intakeInTime(1200, 100);
+  wait(1200, msec);
+  intakeInTime(1500, 100);
+  stopFlyWheel();
+
+}
 void regular_auton(void) {
   intake.spinFor(forward, 15, rotationUnits::deg, 15, velocityUnits::pct);
   Drivetrain.driveFor(forward, 5, distanceUnits::in, 50, velocityUnits::pct);
