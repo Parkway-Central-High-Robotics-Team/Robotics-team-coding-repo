@@ -162,5 +162,35 @@ void auton_skills3(void){
 }
 
 void auton_skills_real(void){
-  
+  startFlyWheel(65);
+  startIntake();
+  wait(3000, timeUnits::msec);
+  moveBackwardTime(500);
+  moveForwardTime(500);
+  turnRightTime(625);
+  indexerUp();
+  wait(3000, timeUnits::msec);
+  indexerDown();
+  turnLeftTime(625);
+  for(int i = 0; i<3; i++){
+    moveBackwardTime(500);
+    moveForwardTime(500);
+  }
+  turnRightTime(625);
+  indexerUp();
+  wait(3000, timeUnits::msec);
+  indexerDown();
+  turnLeftTime(625);
+  for(int i = 0; i<3; i++){
+    moveBackwardTime(500);
+    moveForwardTime(500);
+  }
+  turnRightTime(625);
+  indexerUp();
+  wait(3000, timeUnits::msec);
+  indexerDown();
+  turnLeftTime(625);
+
+
+
 }
