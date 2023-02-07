@@ -199,7 +199,7 @@ void expansion(void){
 /////////////////////////////////////////////////////
 
 void indexerFire(void){
-  intakeOutTime(350, 100);
+  intakeOutTime(200, 100);
   indexer.setVelocity(100, velocityUnits::pct);
   wait(100, timeUnits::msec);
   indexer.spinFor(forward, 100, rotationUnits::deg);
@@ -251,3 +251,15 @@ void flywheel(int vel){
   }*/
 
   //Optical2.setLight(ledState::off);
+
+  void startIntake(void){
+    intake.spin(forward, 100, velocityUnits::pct);
+  }
+
+  void stopIntake(void){
+    intake.stop(coast);
+  }
+
+  void indexerDown(void){
+    indexer.spinFor(reverse, 400, timeUnits::msec);
+  }

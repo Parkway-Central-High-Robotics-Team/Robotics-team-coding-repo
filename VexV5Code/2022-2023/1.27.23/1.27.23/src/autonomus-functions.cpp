@@ -21,7 +21,7 @@ void auton_function_test(void) {
   moveBackwardTime(700);
   rollerTime(500);
   */
-  rollerTime(100, -100);
+  startIntake();
 
   
   /*
@@ -58,16 +58,35 @@ void auton_function_test(void) {
 }
 
 void auton_skills(void){
-  startFlyWheel(100);
+  startFlyWheel(80);
   rollerTime(500, -100);
-  moveForwardTime(75);
-  turnLeftTime(140);
+  moveForwardTime(150);
+  turnLeftTime(135);
   indexerUp();
-  wait(1200, msec);
-  intakeInTime(1000, 100);
-  wait(1200, msec);
-  intakeInTime(1500, 100);
+  wait(1500, msec);
+  intakeInTime(1100, 100);
+  //startFlyWheel(75);
+  //wait(200, msec);
+  intakeInTime(1100, 100);
+  turnRightTime(1040);
+  indexerDown();
   stopFlyWheel();
+
+  //moveBackwardTime(1750, 100);
+  //moveForwardTime(1000, 100);
+  //startIntake();
+  //moveBackwardTime(2500);
+  //turnRightTime(450);
+  //stopFlyWheel();
+  //stopIntake();
+  //indexerUp();
+  //intakeInTime(3000, 100);
+  //indexerDown();
+  //stopFlyWheel();
+
+
+  //stopFlyWheel();
+
 
 
 
@@ -78,18 +97,20 @@ void auton_skills(void){
 }
 
 void auton_skills2(void){
-  startFlyWheel(95);
+  startFlyWheel(80);
   moveBackwardTime(850);
-  turnRightTime(420);
-  moveBackwardTime(350, 75);
-  rollerTime(500, -100);  
-  turnRightTime(150);
+  turnRightTime(430);
+  moveBackwardTime(375, 50);
+  rollerTime(550, -100);  
+  moveForwardTime(120);
+  turnRightTime(140);
   //moveForwardTime(100);
   indexerUp();
   wait(1200, msec);
   intakeInTime(1200, 100);
-  wait(1200, msec);
+  //wait(1200, msec);
   intakeInTime(1500, 100);
+  indexerDown();
   stopFlyWheel();
 
 }
@@ -120,4 +141,26 @@ void shootLowerGoal(void) {
 
 void roller2(void){
   rollerTime(250);
+}
+
+void auton_skills3(void){
+  startFlyWheel(85);
+  moveBackwardTime(850);
+  turnRightTime(430);
+  moveBackwardTime(375, 50);
+  rollerTime(500, -100);  
+  moveForwardTime(120);
+  turnRightTime(140);
+  //moveForwardTime(100);
+  indexerUp();
+  wait(1200, msec);
+  intakeInTime(1000, 100);
+  //wait(1200, msec);
+  intakeInTime(1500, 100);
+  stopFlyWheel();
+
+}
+
+void auton_skills_real(void){
+  
 }
