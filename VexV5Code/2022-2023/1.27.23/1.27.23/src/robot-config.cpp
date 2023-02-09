@@ -26,7 +26,7 @@ motor spinMtr2 = motor(PORT13, ratio18_1, false);
 motor indexer = motor(PORT19, ratio18_1, true);
 motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
 digital_out Pneumatics = digital_out(Brain.ThreeWirePort.B);
-optical Optical2 = optical(PORT2);
+optical Optical2 = optical(PORT16);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -160,11 +160,14 @@ int rc_auto_loop_function_Controller1() {
       if(Controller1.ButtonRight.pressing()){
         indexerFire();
       }
-      else if(Controller1.ButtonLeft.pressing()){
+      if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);
         indexer.spinTo(-50, rotationUnits::deg);
         indexer.setBrake(brake);
       }
+      //if(Controller1.ButtonLeft.pressing()){
+        //opticalFunction();
+      //}
       
     }
     // wait before repeating the process
