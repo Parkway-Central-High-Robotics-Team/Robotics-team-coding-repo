@@ -47,7 +47,7 @@ void roller(int x){
 
 
 void auton_function_test(void) {
-  spinMtrs.spin(forward, 55, velocityUnits::pct);
+  //spinMtrs.spin(forward, 55, velocityUnits::pct);
   roller(500);
   moveForward(600);
   turnRight(1050);
@@ -55,8 +55,10 @@ void auton_function_test(void) {
   roller(500);
   moveForward(575);
   turnLeft(575);
-  moveForward(4250);
-  moveBackward(800);
+  moveForward(2000);
+  turnRight(750);
+  expansion();
+  /*moveBackward(800);
   turnRight(1525);
   moveBackward(800);
   roller(500);
@@ -65,9 +67,10 @@ void auton_function_test(void) {
   moveBackward(620);
   roller(500);
   moveForward(200);
-  turnLeft(1000);
+  turnLeft(1500);
   moveForward(2000);
-  
+  expansion();
+  */
   
   /*turnRight(1450);
   moveBackward(850);

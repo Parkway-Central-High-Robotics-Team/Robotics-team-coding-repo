@@ -26,7 +26,7 @@ motor spinMtr2 = motor(PORT13, ratio18_1, false);
 motor indexer = motor(PORT19, ratio18_1, true);
 motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
 digital_out Pneumatics = digital_out(Brain.ThreeWirePort.B);
-optical Optical2 = optical(PORT2);
+optical Optical2 = optical(PORT16);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -60,6 +60,10 @@ int rc_auto_loop_function_Controller1() {
       // calculate the drivetrain motor velocities from the controller joystick axies
       int drivetrainLeftSideSpeed = Controller1.Axis3.position();
       int drivetrainRightSideSpeed = Controller1.Axis2.position();
+    
+      
+      //Controller1.Screen.clearScreen();
+      //Controller1.Screen.print(spinMtr2.velocity);
       //int drivetrainStrafing = Controller1.Axis4.position();
       
       //START OF DRIVE CODE
@@ -139,7 +143,7 @@ int rc_auto_loop_function_Controller1() {
       }
 
       if (Controller1.ButtonY.pressing()) {
-        spinMtrs.spin(forward, 65, velocityUnits::pct);
+        spinMtrs.spin(forward, 70, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonX.pressing()) {
         spinMtrs.spin(forward, 80, velocityUnits::pct);
@@ -147,18 +151,24 @@ int rc_auto_loop_function_Controller1() {
       } else if(Controller1.ButtonA.pressing()) {
         spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
-      } else if(Controller1.ButtonB.pressing()) {
-        spinMtrs.spin(forward, 100, velocityUnits::pct);
-        Controller1LeftShoulderControlMotorsStopped = false;
+      } if(Controller1.ButtonB.pressing()) {
+        wait(500, timeUnits::msec);
+        Controller1.Screen.clearScreen();
+        Controller1.Screen.setCursor(1, 1);
+        Controller1.Screen.print(spinMtrs.velocity(velocityUnits::pct));
       }
       if(Controller1.ButtonRight.pressing()){
         indexerFire();
       }
-      else if(Controller1.ButtonLeft.pressing()){
+      if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);
         indexer.spinTo(-50, rotationUnits::deg);
         indexer.setBrake(brake);
       }
+      //if(Controller1.ButtonLeft.pressing()){
+        //opticalFunction();
+      //}
+      
     }
     // wait before repeating the process
     wait(20, msec);
