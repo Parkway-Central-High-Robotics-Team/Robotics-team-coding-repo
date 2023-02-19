@@ -199,7 +199,7 @@ void expansion(void){
 /////////////////////////////////////////////////////
 
 void indexerFire(void){
-  intakeOutTime(200, 100);
+  intakeOutTime(100, 100);
   indexer.setVelocity(100, velocityUnits::pct);
   wait(100, timeUnits::msec);
   indexer.spinFor(forward, 100, rotationUnits::deg);
@@ -213,12 +213,14 @@ void indexerUp(void){
 }
 
 void indexerFireAuton(void){
-  intakeOutTime(350, 100);
+  intakeOutTime(100, 100);
   indexer.setVelocity(100, velocityUnits::pct);
   wait(100, timeUnits::msec);
   indexer.spinFor(forward, 100, rotationUnits::deg);
   indexer.setBrake(brake);
-  intakeInTime(1000, 100);
+  intakeInTime(750, 100);
+  wait(500, timeUnits::msec);
+  intakeInTime(750, 100);
   indexer.spinFor(reverse, 250, timeUnits::msec);
 }
 
@@ -263,3 +265,14 @@ void flywheel(int vel){
   void indexerDown(void){
     indexer.spinFor(reverse, 400, timeUnits::msec);
   }
+
+  void testInertial(void){
+    DrivetrainInertial.startCalibration();
+    while(DrivetrainInertial.isCalibrating()){
+      Controller1.Screen.clearScreen();
+      Controller1.Screen.print("calibrating");
+    }
+    
+  }
+
+ 

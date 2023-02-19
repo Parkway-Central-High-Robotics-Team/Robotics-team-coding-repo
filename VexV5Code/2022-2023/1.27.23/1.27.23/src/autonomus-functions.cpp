@@ -5,19 +5,20 @@ using namespace vex;
 
 
 void auton_skills(void){
-  startFlyWheel(100);
+  startFlyWheel(90);
   rollerTime(500, 100);
-  moveForwardTime(500);
-  turnLeftTime(150);
+  moveForwardTime(110);
+  turnLeftTime(145);
+  wait(1000, timeUnits::msec);
   indexerFireAuton();
-  turnLeftTime(1000);
-  startIntake();
-  moveBackwardTime(1000);
-  stopIntake();
-  turnLeftTime(1000);
-  indexerFireAuton();
-  turnRightTime(1000);
-  moveBackwardTime(1000);
+  turnLeftTime(800);
+  //startIntake();
+  //moveBackwardTime(3000);
+  //stopIntake();
+  //turnLeftTime(1000);
+  //indexerFireAuton();
+  //turnRightTime(1000);
+  //moveBackwardTime(1000);
   
 }
 

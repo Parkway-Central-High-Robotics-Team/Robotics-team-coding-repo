@@ -53,3 +53,4 @@ void indexerFireAuton(void);
 void startIntake(void);
 void stopIntake(void);
 void indexerDown(void);
+void testInertial(void);

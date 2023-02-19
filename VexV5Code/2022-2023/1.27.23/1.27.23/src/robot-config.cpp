@@ -60,8 +60,14 @@ int rc_auto_loop_function_Controller1() {
       // calculate the drivetrain motor velocities from the controller joystick axies
       int drivetrainLeftSideSpeed = Controller1.Axis3.position();
       int drivetrainRightSideSpeed = Controller1.Axis2.position();
-    
+
       
+    
+      //Controller1.Screen.clearScreen();
+      //Controller1.Screen.setCursor(1, 1);
+      //Controller1.Screen.print(DrivetrainInertial.rotation());
+      //Controller1.Screen.setCursor(2, 1);
+      //Controller1.Screen.print(int(DrivetrainInertial.rotation())%360);
       //Controller1.Screen.clearScreen();
       //Controller1.Screen.print(spinMtr2.velocity);
       //int drivetrainStrafing = Controller1.Axis4.position();
@@ -143,7 +149,7 @@ int rc_auto_loop_function_Controller1() {
       }
 
       if (Controller1.ButtonY.pressing()) {
-        spinMtrs.spin(forward, 70, velocityUnits::pct);
+        spinMtrs.spin(forward, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonX.pressing()) {
         spinMtrs.spin(forward, 80, velocityUnits::pct);
@@ -160,14 +166,17 @@ int rc_auto_loop_function_Controller1() {
       if(Controller1.ButtonRight.pressing()){
         indexerFire();
       }
-      if(Controller1.ButtonLeft.pressing()){
+      /*if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);
         indexer.spinTo(-50, rotationUnits::deg);
         indexer.setBrake(brake);
-      }
+      }*/
       //if(Controller1.ButtonLeft.pressing()){
         //opticalFunction();
       //}
+      if(Controller1.ButtonLeft.pressing()){
+        testInertial();
+      }
       
     }
     // wait before repeating the process
