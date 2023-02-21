@@ -59,6 +59,40 @@ void pre_auton(void) {
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
+bool enableDrivePID = true;
+double kP = 0.0;
+double kI = 0.0;
+double kD = 0.0;
+int desiredValue = 200;
+
+int error;
+int prevError = 0;
+int derivative ;
+int totalError = 0;
+
+int drivePID(){
+  while(enableDrivePID==true){
+    int leftMotorPosition = LeftDriveSmart.position(degrees);
+    int rightMotorPosition = RightDriveSmart.position(degrees);
+    int averagePosition = (leftMotorPosition+rightMotorPosition)/2;
+
+    error = averagePosition - desiredValue; //proportional value
+
+    derivative = error - prevError; //derivative value
+
+    totalError += error; //integral value
+
+    double motorPower = (error*kP + totalError*kI + derivative*kD);
+
+    
+    prevError = error;
+    vex::task::sleep(20);
+  }
+
+  return 1;
+}
+
+
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
@@ -84,6 +118,7 @@ void autonomous(void) {
 /*---------------------------------------------------------------------------*/
 
 void usercontrol(void) {
+  enableDrivePID = false;
   // User control code here, inside the loop
   while (1) {
     // This is the main execution loop for the user control program.
