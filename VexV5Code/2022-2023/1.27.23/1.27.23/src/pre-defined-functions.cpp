@@ -218,10 +218,10 @@ void indexerFireAuton(void){
   wait(100, timeUnits::msec);
   indexer.spinFor(forward, 100, rotationUnits::deg);
   indexer.setBrake(brake);
-  intakeInTime(750, 100);
+  intakeInTime(600, 100);
   wait(500, timeUnits::msec);
-  intakeInTime(750, 100);
-  indexer.spinFor(reverse, 250, timeUnits::msec);
+  intakeInTime(1000, 100);
+  //indexer.spinFor(reverse, 250, timeUnits::msec);
 }
 
 void flywheel(int vel){

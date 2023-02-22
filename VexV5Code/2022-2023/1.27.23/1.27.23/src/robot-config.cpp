@@ -166,17 +166,15 @@ int rc_auto_loop_function_Controller1() {
       if(Controller1.ButtonRight.pressing()){
         indexerFire();
       }
-      /*if(Controller1.ButtonLeft.pressing()){
+      if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);
         indexer.spinTo(-50, rotationUnits::deg);
         indexer.setBrake(brake);
-      }*/
+      }
       //if(Controller1.ButtonLeft.pressing()){
         //opticalFunction();
       //}
-      if(Controller1.ButtonLeft.pressing()){
-        testInertial();
-      }
+      
       
     }
     // wait before repeating the process

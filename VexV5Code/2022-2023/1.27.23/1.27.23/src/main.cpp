@@ -33,7 +33,7 @@ competition Competition;
 
 /*---------------------------------------------------------------------------*/
 /*                          Pre-Autonomous Functions                         */
-/*                                                                           */
+/*                                                      */
 /*  You may want to perform some actions before the competition starts.      */
 /*  Do them in the following function.  You must return from this function   */
 /*  or the autonomous and usercontrol tasks will not be started.  This       */
@@ -64,11 +64,13 @@ double kP = 0.0;
 double kI = 0.0;
 double kD = 0.0;
 int desiredValue = 200;
+double motorPower = 0;
 
 int error;
 int prevError = 0;
 int derivative ;
 int totalError = 0;
+
 
 int drivePID(){
   while(enableDrivePID==true){
@@ -82,7 +84,7 @@ int drivePID(){
 
     totalError += error; //integral value
 
-    double motorPower = (error*kP + totalError*kI + derivative*kD);
+    motorPower = (error*kP + totalError*kI + derivative*kD);
 
     
     prevError = error;
