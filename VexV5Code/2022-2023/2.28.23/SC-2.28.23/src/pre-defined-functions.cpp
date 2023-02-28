@@ -111,7 +111,7 @@ void moveForwardTime(int msc, int vel, vex::brakeType bt){
 ////////////////////////////////////////////////////////////
 
 void moveBackwardTime(int msc){
-  Drivetrain.drive(forward, 65, velocityUnits::pct);
+  Drivetrain.drive(forward, 75, velocityUnits::pct);
   wait(msc, timeUnits::msec);
   Drivetrain.stop(brake);
 }
