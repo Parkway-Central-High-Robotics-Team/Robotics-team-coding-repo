@@ -5,7 +5,7 @@ using namespace vex;
 
 
 void auton_skills(void){
-  startFlyWheel(75);
+  startFlyWheel(78);
   rollerTime(500, 100);
   wait(1000, timeUnits::msec);
   moveForwardTime(75);

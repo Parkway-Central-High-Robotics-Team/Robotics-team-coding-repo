@@ -56,4 +56,6 @@ void indexerDown(void);
 void testInertial(void);
 
 int drivePID(void);
+void PID(void);
 extern bool enableDrivePID;
+double returnPID(void);

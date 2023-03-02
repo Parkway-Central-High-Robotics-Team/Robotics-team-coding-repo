@@ -276,8 +276,41 @@ void flywheel(int vel){
   }
 
  //////////////////////////////////////////////////////////
+void PID(void){
+  bool enableDrivePID = true;
+  double kP = 0.0;
+  double kI = 0.0;
+  double kD = 0.0;
+  int desiredValue = 200;
+  double motorPower = 0;
 
-bool enableDrivePID = true;
+  int error;
+  int prevError = 0;
+  int derivative ;
+  int totalError = 0;
+
+  while(enableDrivePID==true){
+    int leftMotorPosition = LeftDriveSmart.position(degrees);
+    int rightMotorPosition = RightDriveSmart.position(degrees);
+    int averagePosition = (leftMotorPosition+rightMotorPosition)/2;
+
+    error = averagePosition - desiredValue; //proportional value
+
+    derivative = error - prevError; //derivative value
+
+    totalError += error; //integral value
+
+    motorPower = (error*kP + totalError*kI + derivative*kD);
+
+    
+    prevError = error;
+    vex::task::sleep(20);
+  }
+}
+
+
+
+/*bool enableDrivePID = true;
 double kP = 0.0;
 double kI = 0.0;
 double kD = 0.0;
@@ -310,4 +343,8 @@ int drivePID(){
   }
 
   return 1;
+}*/
+
+double returnPID(void){
+  return 0.0;
 }

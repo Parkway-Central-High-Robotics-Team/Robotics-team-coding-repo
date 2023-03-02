@@ -54,7 +54,6 @@ bool driveBool = true;
 int rc_auto_loop_function_Controller1() {
   // process the controller input every 20 milliseconds
   // update the motors based on the input values
-  enableDrivePID = false;
   while(true) {
     if(RemoteControlCodeEnabled) {
       
@@ -165,7 +164,9 @@ int rc_auto_loop_function_Controller1() {
         Controller1.Screen.print(spinMtrs.velocity(velocityUnits::pct));
       }
       if(Controller1.ButtonRight.pressing()){
-        indexerFire();
+        //indexerFire();
+        //TrackWithLargeFunction();
+        visionTest();
       }
       if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);

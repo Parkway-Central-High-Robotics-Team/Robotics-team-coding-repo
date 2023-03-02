@@ -4,6 +4,8 @@
 using namespace vex;
 
 void auton_skills(void){
+  //enableDrivePID = false;
+  PID();
   startFlyWheel(75);
   rollerTime(500, 100);
   wait(1000, timeUnits::msec);
@@ -21,6 +23,7 @@ void auton_skills(void){
   wait(3000, timeUnits::msec);
   stopIntake();
   stopFlyWheel();
+
 
 
   //startIntake();
