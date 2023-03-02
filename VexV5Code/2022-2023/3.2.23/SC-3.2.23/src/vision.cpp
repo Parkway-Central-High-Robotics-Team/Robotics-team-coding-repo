@@ -53,7 +53,7 @@ void TrackWithLargeFunction() {
 void visionaim(void){
   	//#region config_init
 	Vision1.setBrightness(50);
-	Vision1.setSignature(SIG_RED);
+	Vision1.setSignature(SIG_BLUE);
 	//#endregion config_init
 	
     //camera image is 316 pixels wide, so the center is 316/2
@@ -62,9 +62,9 @@ void visionaim(void){
     //take it slow
     Drivetrain.setDriveVelocity(10,vex::velocityUnits::pct);
     Drivetrain.setTurnVelocity(10,vex::velocityUnits::pct);
-    if(not linedup) {
+    while(not linedup) {
         //snap a picture
-        Vision1.takeSnapshot(SIG_RED);
+        Vision1.takeSnapshot(SIG_BLUE);
         //did we see anything?
         if(Vision1.objectCount > 0) {
           if(Vision1.largestObject.width >= 30){

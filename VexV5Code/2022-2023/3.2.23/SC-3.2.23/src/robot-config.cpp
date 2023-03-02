@@ -158,10 +158,15 @@ int rc_auto_loop_function_Controller1() {
         spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } if(Controller1.ButtonB.pressing()) {
-        visionaim();
+        wait(500, timeUnits::msec);
+        Controller1.Screen.clearScreen();
+        Controller1.Screen.setCursor(1, 1);
+        Controller1.Screen.print(spinMtrs.velocity(velocityUnits::pct));
       }
       if(Controller1.ButtonRight.pressing()){
-        indexerFire();
+        //indexerFire();
+        //TrackWithLargeFunction();
+        visionTest();
       }
       if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);

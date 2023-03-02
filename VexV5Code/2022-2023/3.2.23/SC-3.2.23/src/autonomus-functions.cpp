@@ -3,9 +3,10 @@
 
 using namespace vex;
 
-
 void auton_skills(void){
-  startFlyWheel(78);
+  //enableDrivePID = false;
+  PID();
+  startFlyWheel(75);
   rollerTime(500, 100);
   wait(1000, timeUnits::msec);
   moveForwardTime(75);
@@ -14,13 +15,15 @@ void auton_skills(void){
   indexerFireAuton();
   turnLeftTime(500);
   RightDriveSmart.spinFor(forward, 1600, timeUnits::msec);
+  startFlyWheel(70);
   startIntake();
-  moveBackwardTime(2000);
-  turnRightTime(600);
+  moveBackwardTime(1700);
+  turnRightTime(565);
   //intakeInTime(500, 100);
   wait(3000, timeUnits::msec);
   stopIntake();
   stopFlyWheel();
+
 
 
   //startIntake();
