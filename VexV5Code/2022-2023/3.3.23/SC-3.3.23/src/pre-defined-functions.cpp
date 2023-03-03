@@ -199,12 +199,12 @@ void expansion(void){
 /////////////////////////////////////////////////////
 
 void indexerFire(void){
-  intakeOutTime(100, 100);
+  intakeOutTime(150, 100);
   indexer.setVelocity(100, velocityUnits::pct);
   wait(100, timeUnits::msec);
-  indexer.spinFor(forward, 100, rotationUnits::deg);
+  indexer.spinFor(forward, 175, rotationUnits::deg);
   indexer.setBrake(brake);
-  intakeInTime(3000, 100);
+  intakeInTime(2000, 100);
   indexer.spinFor(reverse, 250, timeUnits::msec);
 }
 
@@ -347,4 +347,9 @@ int drivePID(){
 
 double returnPID(void){
   return 0.0;
+}
+
+void setTimeout(std::function<void()> func, int milli) {
+  this_thread::sleep_for(std::chrono::milliseconds(milli));
+  func();
 }

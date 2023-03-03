@@ -60,3 +60,4 @@ int drivePID(void);
 void PID(void);
 extern bool enableDrivePID;
 double returnPID(void);
+void setTimeout();

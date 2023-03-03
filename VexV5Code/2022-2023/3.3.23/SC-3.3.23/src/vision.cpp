@@ -91,6 +91,8 @@ void visionaim(void){
 
 void visionTurn(void){
   	//#region config_init
+  Drivetrain.setTimeout(100, msec);
+  
 	int screen_middle_x = 316 / 2;
   bool linedup = false;
   //take it slow

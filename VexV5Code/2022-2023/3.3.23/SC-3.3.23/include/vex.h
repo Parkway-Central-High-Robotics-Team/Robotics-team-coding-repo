@@ -16,6 +16,14 @@
 #include <string.h>
 #include <iostream>
 #include <thread>
+#include <chrono>
+#include <condition_variable>
+#include <ctime>
+#include <functional> // for _1, _2
+#include <functional>
+#include <iostream>
+#include <mutex>
+#include <thread>
 
 #include "v5.h"
 #include "v5_vcs.h"
