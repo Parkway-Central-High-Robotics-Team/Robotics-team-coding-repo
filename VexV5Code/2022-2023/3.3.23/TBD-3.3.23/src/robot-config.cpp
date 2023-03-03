@@ -26,7 +26,7 @@ motor spinMtr2 = motor(PORT13, ratio18_1, false);
 motor indexer = motor(PORT19, ratio18_1, true);
 motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
 digital_out Pneumatics = digital_out(Brain.ThreeWirePort.B);
-optical Optical2 = optical(PORT16);
+optical Optical2 = optical(PORT2);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -58,23 +58,9 @@ int rc_auto_loop_function_Controller1() {
     if(RemoteControlCodeEnabled) {
       
       // calculate the drivetrain motor velocities from the controller joystick axies
-      int drivetrainLeftSideSpeed = Controller1.Axis3.position();
-      int drivetrainRightSideSpeed = Controller1.Axis2.position();
-
+      int drivetrainLeftSideSpeed = Controller1.Axis3.position() + Controller1.Axis1.position();
+      int drivetrainRightSideSpeed = Controller1.Axis3.position() - Controller1.Axis1.position();
       
-    
-      //Controller1.Screen.clearScreen();
-      //Controller1.Screen.setCursor(1, 1);
-      //Controller1.Screen.print(DrivetrainInertial.rotation());
-      //Controller1.Screen.setCursor(2, 1);
-      //Controller1.Screen.print(int(DrivetrainInertial.rotation())%360);
-      //Controller1.Screen.clearScreen();
-      //Controller1.Screen.print(spinMtr2.velocity);
-      //int drivetrainStrafing = Controller1.Axis4.position();
-      
-      //START OF DRIVE CODE
-      //START OF TANK DRIVE 
-
       // check if the value is inside of the deadband range
       if (drivetrainLeftSideSpeed < 5 && drivetrainLeftSideSpeed > -5) {
         // check if the left motor has already been stopped
@@ -101,7 +87,6 @@ int rc_auto_loop_function_Controller1() {
         // reset the toggle so that the deadband code knows to stop the right motor next time the input is in the deadband range
         DrivetrainRNeedsToBeStopped_Controller1 = true;
       }
-      // only tell the left drive motor to spin if the values are not in the deadband range
       if (DrivetrainLNeedsToBeStopped_Controller1) {
         LeftDriveSmart.setVelocity(drivetrainLeftSideSpeed, percent);
         LeftDriveSmart.spin(forward);
@@ -111,6 +96,8 @@ int rc_auto_loop_function_Controller1() {
         RightDriveSmart.setVelocity(drivetrainRightSideSpeed, percent);
         RightDriveSmart.spin(forward);
       }
+      
+      // only tell the left drive motor to spin if the values are not in the deadband range
       // check if the value is inside of the deadband range
       if(Pneumatics.value() == 0){
         if(Controller1.ButtonUp.pressing()){
@@ -127,10 +114,10 @@ int rc_auto_loop_function_Controller1() {
 
       //INTAKE BUTTONS
       if(Controller1.ButtonR1.pressing()){
-        intake.spin(forward, 100, velocityUnits::pct);
+        intake.spin(forward, 50, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonR2.pressing()) {
-        intake.spin(reverse, 100, velocityUnits::pct);
+        intake.spin(reverse, 50, velocityUnits::pct);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         //I girlbossed too close to the sun :((((
         //pure of heart, dumb of ass
@@ -149,7 +136,7 @@ int rc_auto_loop_function_Controller1() {
       }
 
       if (Controller1.ButtonY.pressing()) {
-        spinMtrs.spin(forward, 75, velocityUnits::pct);
+        spinMtrs.spin(forward, 65, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonX.pressing()) {
         spinMtrs.spin(forward, 80, velocityUnits::pct);
@@ -157,28 +144,18 @@ int rc_auto_loop_function_Controller1() {
       } else if(Controller1.ButtonA.pressing()) {
         spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
-      } if(Controller1.ButtonB.pressing()) {
-        wait(500, timeUnits::msec);
-        Controller1.Screen.clearScreen();
-        Controller1.Screen.setCursor(1, 1);
-        Controller1.Screen.print(spinMtrs.velocity(velocityUnits::pct));
+      } else if(Controller1.ButtonB.pressing()) {
+        spinMtrs.spin(forward, 100, velocityUnits::pct);
+        Controller1LeftShoulderControlMotorsStopped = false;
       }
       if(Controller1.ButtonRight.pressing()){
-        //indexerFire();
-        //TrackWithLargeFunction();
-        //visionTest();
-        visionTurn();
+        indexerFire();
       }
-      if(Controller1.ButtonLeft.pressing()){
+      else if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);
         indexer.spinTo(-50, rotationUnits::deg);
         indexer.setBrake(brake);
       }
-      //if(Controller1.ButtonLeft.pressing()){
-        //opticalFunction();
-      //}
-      
-      
     }
     // wait before repeating the process
     wait(20, msec);
