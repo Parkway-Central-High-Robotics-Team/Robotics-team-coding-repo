@@ -141,7 +141,7 @@ int rc_auto_loop_function_Controller1() {
       }
       //SPIN MOTORS BUTTONS
       if (Controller1.ButtonL1.pressing()) {
-        spinMtrs.spin(forward, 60, velocityUnits::pct);
+        spinMtrs.spin(forward, 66, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
@@ -158,16 +158,13 @@ int rc_auto_loop_function_Controller1() {
         spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } if(Controller1.ButtonB.pressing()) {
-        wait(500, timeUnits::msec);
-        Controller1.Screen.clearScreen();
-        Controller1.Screen.setCursor(1, 1);
-        Controller1.Screen.print(spinMtrs.velocity(velocityUnits::pct));
+        visionTurn();
       }
       if(Controller1.ButtonRight.pressing()){
-        //indexerFire();
+        indexerFire();
         //TrackWithLargeFunction();
         //visionTest();
-        visionTurn();
+        //visionTurn();
       }
       if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);
