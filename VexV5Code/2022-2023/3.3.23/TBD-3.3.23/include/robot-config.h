@@ -25,8 +25,6 @@ extern motor indexer;
 
 extern digital_out Pneumatics;
 extern optical Optical2;
-extern inertial DrivetrainInertial;
-extern vision Vision1;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

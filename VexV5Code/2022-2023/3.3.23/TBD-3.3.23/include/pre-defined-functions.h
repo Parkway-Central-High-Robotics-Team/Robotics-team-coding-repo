@@ -23,7 +23,6 @@ void visionTest(void);
 void pneumaticsFunction(void);
 void TrackWithLargeFunction(void);
 void visionaim(void);
-void visionTurn(void);
 
 void opticalFunction(void);
 
@@ -51,12 +50,3 @@ void indexerFire(void);
 void flywheel(int vel);
 
 void indexerFireAuton(void);
-void startIntake(void);
-void stopIntake(void);
-void indexerDown(void);
-void testInertial(void);
-
-int drivePID(void);
-void PID(void);
-extern bool enableDrivePID;
-double returnPID(void);
