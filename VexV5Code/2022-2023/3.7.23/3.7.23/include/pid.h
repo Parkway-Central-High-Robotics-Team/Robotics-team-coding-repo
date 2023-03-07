@@ -32,4 +32,4 @@ extern bool resetDriveSensors;
 //Variables modified for use
 extern bool enableDrivePID;
 
-int drivePID(void);
+void drivePID(void);

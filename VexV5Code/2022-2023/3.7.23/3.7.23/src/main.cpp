@@ -68,6 +68,7 @@ void autonomous(void) {
   //Drivetrain.drive(fwd, 100, velocityUnits::pct);
   //wait(1000, timeUnits::msec);
   //auton_skills_real();
+
   auton_skills();
   
   
@@ -87,6 +88,8 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
   while (1) {
+    enableDrivePID = false;
+    double turnImportance = 0.5;
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.

@@ -38,7 +38,7 @@ double signnum_c(double x) {
   return x;
 }
 
-int drivePID(){
+void drivePID(void){
   
   while(enableDrivePID){
 
@@ -114,6 +114,4 @@ int drivePID(){
     vex::task::sleep(20);
 
   }
-
-  return 1;
 }

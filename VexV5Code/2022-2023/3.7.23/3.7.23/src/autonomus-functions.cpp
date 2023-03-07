@@ -38,11 +38,39 @@ void auton_skills(void){
 }
 
 void PID_test(void){
+  /*Brain.Screen.print("IN PID");
   vex::task billWiTheScienceFi(drivePID);
 
   resetDriveSensors = true;
   desiredValue = 300;
   desiredTurnValue = 600;
+
+  vex::task::sleep(1000);
+
+  resetDriveSensors = true;
+  desiredValue = 300;
+  desiredTurnValue = 300;*/
+}
+
+void auton_skills2(){
+  startFlyWheel(65);
+  rollerTime(300);
+  moveForwardTime(500);
+  turnRightTime(450);
+  moveBackwardTime(830);
+  rollerTime(300);
+  moveForwardTime(120);
+  turnLeftTime(450);
+  moveForwardTime(1250);
+  //indexerFireSkills();
+  moveBackwardTime(700);
+  turnLeftTime(625);
+  startIntake();
+  moveBackwardTime(1750);
+  stopIntake();
+  turnRightTime(550);
+  //indexerFireSkills();
+  turnLeftTime(550);
 }
 
 
