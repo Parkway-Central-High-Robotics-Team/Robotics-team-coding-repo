@@ -61,3 +61,4 @@ void PID(void);
 extern bool enableDrivePID;
 double returnPID(void);
 void setTimeout();
+void indexerFireSkills(void);

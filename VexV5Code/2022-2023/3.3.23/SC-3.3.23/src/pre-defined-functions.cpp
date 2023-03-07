@@ -353,3 +353,13 @@ void setTimeout(std::function<void()> func, int milli) {
   this_thread::sleep_for(std::chrono::milliseconds(milli));
   func();
 }
+
+void indexerFireSkills(){
+  intakeOutTime(150, 100);
+  indexer.setVelocity(100, velocityUnits::pct);
+  wait(100, timeUnits::msec);
+  indexer.spinFor(forward, 175, rotationUnits::deg);
+  indexer.setBrake(brake);
+  intakeInTime(2000, 100);
+  indexer.spinFor(reverse, 250, timeUnits::msec);
+}

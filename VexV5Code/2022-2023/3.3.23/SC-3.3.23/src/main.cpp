@@ -67,7 +67,7 @@ void autonomous(void) {
   //Drivetrain.drive(fwd, 100, velocityUnits::pct);
   //wait(1000, timeUnits::msec);
   //auton_skills_real();
-  auton_skills();
+  auton_skills2();
   
   
   // ..........................................................................

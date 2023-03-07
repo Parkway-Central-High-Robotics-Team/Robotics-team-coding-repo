@@ -37,10 +37,30 @@ void auton_skills(void){
 }
 
 
-void auton_on_roller(void){
+void auton_skills2(){
+  startFlyWheel(65);
+  rollerTime(300);
+  moveForwardTime(500);
+  turnRightTime(450);
+  moveBackwardTime(830);
+  rollerTime(300);
+  moveForwardTime(120);
+  turnLeftTime(450);
+  moveForwardTime(1250);
+  indexerFireSkills();
+  moveBackwardTime(700);
+  turnLeftTime(625);
+  startIntake();
+  moveBackwardTime(1750);
+  stopIntake();
+  turnRightTime(550);
+  indexerFireSkills();
+  turnLeftTime(550);
 
-}
 
-void auton_off_roller(void){
-  
-}
+
+
+
+
+
+  }
