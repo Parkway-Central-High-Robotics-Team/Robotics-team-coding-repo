@@ -38,6 +38,7 @@ void TrackWithLargeFunction() {
             } else if (Vision1.largestObject.centerX > screen_middle_x + 5) {
                 //on the right, turn right
                 Drivetrain.turn(turnType::right);
+                Drivetrain.turnFor(5, rotationUnits::deg);
             } else {
                 //in the middle, we're done lining up
                 linedup = true;

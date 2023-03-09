@@ -40,22 +40,35 @@ void auton_skills(void){
 void auton_skills2(){
   startFlyWheel(65);
   rollerTime(300);
-  moveForwardTime(500);
-  turnRightTime(450);
-  moveBackwardTime(830);
+  //moveForwardTime(200);
+  //wait(100, timeUnits::msec);
+  //visionTurn();
+  startIntake();
+  moveForwardTime(600);
+  wait(150, timeUnits::msec);
+  Drivetrain.turnFor(right, 90, rotationUnits::deg);
+  //turnRightTime(600);
+  wait(150, timeUnits::msec);
+  stopIntake();
+  moveBackwardTime(915);
   rollerTime(300);
-  moveForwardTime(120);
-  turnLeftTime(450);
+  moveForwardTime(200);
+  wait(150, timeUnits::msec);
+  turnLeftTime(490);
+  wait(150, timeUnits::msec);
   moveForwardTime(1250);
   indexerFireSkills();
-  moveBackwardTime(700);
-  turnLeftTime(625);
+  moveBackwardTime(770);
+  turnLeftTime(666);
   startIntake();
-  moveBackwardTime(1750);
+  moveBackwardTime(1950);
   stopIntake();
-  turnRightTime(550);
+  turnRightTime(500);
+  //visionTurn();
   indexerFireSkills();
-  turnLeftTime(550);
+  turnLeftTime(450);
+  startIntake();
+  moveBackwardTime(1800);
 
 
 
@@ -64,3 +77,32 @@ void auton_skills2(){
 
 
   }
+
+void autonSkillsBackup(void){
+  startFlyWheel(65);
+  rollerTime(300);
+  //moveForwardTime(200);
+  //wait(100, timeUnits::msec);
+  //visionTurn();
+  startIntake();
+  moveForwardTime(500);
+  turnRightTime(500);
+  stopIntake();
+  moveBackwardTime(815);
+  rollerTime(300);
+  moveForwardTime(200);
+  turnLeftTime(490);
+  moveForwardTime(1250);
+  indexerFireSkills();
+  moveBackwardTime(770);
+  turnLeftTime(666);
+  startIntake();
+  moveBackwardTime(1950);
+  stopIntake();
+  turnRightTime(500);
+  //visionTurn();
+  indexerFireSkills();
+  turnLeftTime(450);
+  startIntake();
+  moveBackwardTime(1800);
+}
