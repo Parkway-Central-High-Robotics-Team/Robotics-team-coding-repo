@@ -88,8 +88,8 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
   while (1) {
-    enableDrivePID = false;
-    double turnImportance = 0.5;
+    //enableDrivePID = false;
+    //double turnImportance = 0.5;
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.

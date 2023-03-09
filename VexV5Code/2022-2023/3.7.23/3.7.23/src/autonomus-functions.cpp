@@ -72,12 +72,3 @@ void auton_skills2(){
   //indexerFireSkills();
   turnLeftTime(550);
 }
-
-
-void auton_on_roller(void){
-
-}
-
-void auton_off_roller(void){
-  
-}
