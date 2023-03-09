@@ -166,7 +166,8 @@ int rc_auto_loop_function_Controller1() {
       if(Controller1.ButtonRight.pressing()){
         //indexerFire();
         //TrackWithLargeFunction();
-        visionTest();
+        //visionTest();
+        visionTurn();
       }
       if(Controller1.ButtonLeft.pressing()){
         indexer.setVelocity(100, velocityUnits::pct);

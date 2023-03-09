@@ -89,6 +89,40 @@ void visionaim(void){
 }
 ////////////////////
 
+void visionTurn(void){
+  	//#region config_init
+	int screen_middle_x = 316 / 2;
+  bool linedup = false;
+  //take it slow
+  Drivetrain.setDriveVelocity(7,vex::velocityUnits::pct);
+  Drivetrain.setTurnVelocity(7,vex::velocityUnits::pct);
+  while(not linedup) {
+      //snap a picture
+      Vision1.takeSnapshot(SIG_BLUE);
+      //did we see anything?
+      if(Vision1.objectCount > 0) {
+          //where was the largest thing?
+          if(Vision1.largestObject.width >= 30){
+            if(Vision1.largestObject.centerX < screen_middle_x - 15) {
+                //on the left, turn left
+                Drivetrain.turn(turnType::left);
+            } else if (Vision1.largestObject.centerX > screen_middle_x + 15) {
+                //on the right, turn right
+                Drivetrain.turn(turnType::right);
+            } else {
+                //in the middle, we're done lining up
+                linedup = true;
+                Drivetrain.stop(coast);
+            }
+          }
+      } else {
+          //saw nothing, relax
+          Drivetrain.stop(coast);
+      }
+  }
+}
+////////////////////
+
 ////////////////////
 int returner = 0;
 

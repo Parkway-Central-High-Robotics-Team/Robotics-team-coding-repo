@@ -23,6 +23,7 @@ void visionTest(void);
 void pneumaticsFunction(void);
 void TrackWithLargeFunction(void);
 void visionaim(void);
+void visionTurn(void);
 
 void opticalFunction(void);
 
