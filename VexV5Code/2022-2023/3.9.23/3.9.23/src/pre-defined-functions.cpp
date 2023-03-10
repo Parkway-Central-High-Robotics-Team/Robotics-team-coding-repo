@@ -224,6 +224,16 @@ void indexerFireAuton(void){
   //indexer.spinFor(reverse, 250, timeUnits::msec);
 }
 
+void indexerFireSkills(){
+  intakeOutTime(150, 100);
+  indexer.setVelocity(100, velocityUnits::pct);
+  wait(100, timeUnits::msec);
+  indexer.spinFor(forward, 175, rotationUnits::deg);
+  indexer.setBrake(brake);
+  intakeInTime(2000, 100);
+  indexer.spinFor(reverse, 250, timeUnits::msec);
+}
+
 void flywheel(int vel){
   spinMtrs.spin(forward, vel, velocityUnits::pct);
 }

@@ -49,6 +49,7 @@ void indexerFire(void);
 void flywheel(int vel);
 ////////////////////
 void indexerFireAuton(void);
+void indexerFireSkills(void);
 void startIntake(void);
 void stopIntake(void);
 void indexerDown(void);
