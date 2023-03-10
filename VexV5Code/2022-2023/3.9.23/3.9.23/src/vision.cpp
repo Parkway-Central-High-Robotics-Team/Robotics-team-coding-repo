@@ -44,6 +44,7 @@ void visionTurn(void){
           Drivetrain.stop(coast);
       }
   }
+  Drivetrain.turnFor(right, 7, rotationUnits::deg);
 }
 ////////////////////
 int returner = 0;
