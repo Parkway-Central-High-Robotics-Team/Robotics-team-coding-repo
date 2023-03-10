@@ -52,7 +52,7 @@ void auton_skills2(){
   rollerTime(300);
   Drivetrain.driveFor(reverse, 10, distanceUnits::in);
   wait(150, timeUnits::msec);
-  Drivetrain.turnFor(left, 92, rotationUnits::deg);
+  Drivetrain.turnFor(left, 91, rotationUnits::deg);
 
   //Dives to the blue goal and fires
   wait(150, timeUnits::msec);
@@ -78,13 +78,13 @@ void auton_skills2(){
   Drivetrain.driveFor(forward, 49, distanceUnits::in, 55, velocityUnits::pct);
   Drivetrain.driveFor(reverse, 9, distanceUnits::in, 55, velocityUnits::pct); //3 Stack
   Drivetrain.turnFor(right, 53, rotationUnits::deg);
-  stopIntake();
   Drivetrain.driveFor(reverse, 15, distanceUnits::in, 75, velocityUnits::pct);
+  stopIntake();
   indexerFireSkills();
 
   //Drives to position to get roller
   Drivetrain.driveFor(forward, 25, distanceUnits::in, 75, velocityUnits::pct);
-  Drivetrain.turnFor(left, 5, rotationUnits::deg);
+  Drivetrain.turnFor(left, 7, rotationUnits::deg);
   startIntake();
 
   //Turns to the blue side roller and rolls it
@@ -95,23 +95,26 @@ void auton_skills2(){
   Drivetrain.driveFor(reverse, 18, distanceUnits::in, 75, velocityUnits::pct);
 
   //Turns to the red side roller and rolls it
-  Drivetrain.turnFor(right, 90, rotationUnits::deg);
+  /*Drivetrain.turnFor(right, 90, rotationUnits::deg);
   Drivetrain.driveFor(forward, 15, distanceUnits::in, 75, velocityUnits::pct);
   rollerTime(300);
-  Drivetrain.driveFor(reverse, 8, distanceUnits::in, 75, velocityUnits::pct);
+  Drivetrain.driveFor(reverse, 8, distanceUnits::in, 75, velocityUnits::pct);*/
 
-  Drivetrain.turnFor(right, 90, rotationUnits::deg);
+  //Turns 180, drives to be in line with disc, and collects them
+  Drivetrain.turnFor(right, 180, rotationUnits::deg);
   startIntake();
-
-  Drivetrain.driveFor(forward, 17, distanceUnits::in, 75, velocityUnits::pct);
-  Drivetrain.turnFor(right, 40, rotationUnits::deg);
+  Drivetrain.driveFor(forward, 15, distanceUnits::in, 75, velocityUnits::pct);
+  Drivetrain.turnFor(right, 45, rotationUnits::deg);
   Drivetrain.driveFor(forward, 50, distanceUnits::in, 75, velocityUnits::pct);
-  Drivetrain.turnFor(left, 45, rotationUnits::deg);
 
+  //Turns to red goal and fires
+  Drivetrain.turnFor(right, 110, rotationUnits::deg);
   indexerFireSkills();
-  //turnLeftTime(450);
-  //startIntake();
-  //moveBackwardTime(1800);
+
+  //Turns back to far corner and drives there for expansion
+  Drivetrain.turnFor(left, 60, rotationUnits::deg);
+  Drivetrain.driveFor(reverse, 50, distanceUnits::in, 75, velocityUnits::pct);
+  Drivetrain.turnFor(right, 15, rotationUnits::deg);
 }
 
 void autonSkillsBackup(void){
