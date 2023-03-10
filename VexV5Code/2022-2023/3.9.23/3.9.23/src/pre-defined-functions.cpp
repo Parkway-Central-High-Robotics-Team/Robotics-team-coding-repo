@@ -111,7 +111,7 @@ void moveForwardTime(int msc, int vel, vex::brakeType bt){
 ////////////////////////////////////////////////////////////
 
 void moveBackwardTime(int msc){
-  Drivetrain.drive(forward, 75, velocityUnits::pct);
+  Drivetrain.drive(forward, 100, velocityUnits::pct);
   wait(msc, timeUnits::msec);
   Drivetrain.stop(brake);
 }
@@ -202,7 +202,7 @@ void indexerFire(void){
   intakeOutTime(150, 100);
   indexer.setVelocity(100, velocityUnits::pct);
   wait(100, timeUnits::msec);
-  indexer.spinFor(forward, 175, rotationUnits::deg);
+  indexer.spinFor(forward, 200, rotationUnits::deg);
   indexer.setBrake(brake);
   intakeInTime(2000, 100);
   indexer.spinFor(reverse, 250, timeUnits::msec);

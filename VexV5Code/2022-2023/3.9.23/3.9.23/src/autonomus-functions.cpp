@@ -11,13 +11,13 @@ void auton_skills(void){
   moveForwardTime(75);
   turnLeftTime(150);
   wait(600, timeUnits::msec);
-  indexerFireAuton();
+  indexerFireSkills();
   turnLeftTime(500);
   RightDriveSmart.spinFor(forward, 1600, timeUnits::msec);
   startFlyWheel(70);
   startIntake();
-  moveBackwardTime(1700);
-  turnRightTime(565);
+  moveBackwardTime(1700,100);
+  turnRightTime(585);
   //intakeInTime(500, 100);
   wait(3000, timeUnits::msec);
   stopIntake();
@@ -41,14 +41,19 @@ void auton_skills2(){
   // Does the starting roller and turns to the othe roller on the left
   startFlyWheel(62);
   rollerTime(300);
+  //startIntake();
   startIntake();
-  Drivetrain.driveFor(reverse, 17, distanceUnits::in, 75, velocityUnits::pct);
+  Drivetrain.driveFor(reverse, 5, distanceUnits::in, 100, velocityUnits::pct);
+  Drivetrain.turnFor(right, 130, rotationUnits::deg, 45, velocityUnits::pct);
+  Drivetrain.driveFor(forward, 22, distanceUnits::in, 100, velocityUnits::pct);
   wait(150, timeUnits::msec);
-  Drivetrain.turnFor(right, 90, rotationUnits::deg);
+  Drivetrain.turnFor(left, 35, rotationUnits::deg, 45, velocityUnits::pct);
+  //Drivetrain.turnFor(right, 90, rotationUnits::deg, 45, velocityUnits::pct);
+  startIntake();
 
   //Goes to the second roller, turns it, backs up, and turns to the blue goal
   wait(150, timeUnits::msec);
-  moveBackwardTime(915);
+  moveBackwardTime(465);
   rollerTime(300);
   Drivetrain.driveFor(reverse, 10, distanceUnits::in);
   wait(150, timeUnits::msec);
@@ -108,13 +113,14 @@ void auton_skills2(){
   Drivetrain.driveFor(forward, 50, distanceUnits::in, 75, velocityUnits::pct);
 
   //Turns to red goal and fires
-  Drivetrain.turnFor(right, 110, rotationUnits::deg);
+  Drivetrain.turnFor(right, 85, rotationUnits::deg);
   indexerFireSkills();
 
   //Turns back to far corner and drives there for expansion
-  Drivetrain.turnFor(left, 60, rotationUnits::deg);
+  Drivetrain.turnFor(left, 120, rotationUnits::deg);
   Drivetrain.driveFor(reverse, 50, distanceUnits::in, 75, velocityUnits::pct);
   Drivetrain.turnFor(right, 15, rotationUnits::deg);
+  //Pneumatics.set(true);
 }
 
 void autonSkillsBackup(void){
