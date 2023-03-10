@@ -15,7 +15,7 @@ int side = redSide;
 void visionTurn(void){
   	//#region config_init
   //Drivetrain.setTimeout(100, msec);
-	int screen_middle_x = 316 / 2;
+	int screen_middle_x = (316 / 2)-15;
   bool linedup = false;
   //take it slow
   Drivetrain.setDriveVelocity(7,vex::velocityUnits::pct);
@@ -44,7 +44,7 @@ void visionTurn(void){
           Drivetrain.stop(coast);
       }
   }
-  Drivetrain.turnFor(right, 3, rotationUnits::deg);
+  //Drivetrain.turnFor(right, 3, rotationUnits::deg);
 }
 ////////////////////
 int returner = 0;
