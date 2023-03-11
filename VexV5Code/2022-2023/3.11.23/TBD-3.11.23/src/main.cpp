@@ -8,7 +8,6 @@
 /*----------------------------------------------------------------------------*/
 
 // ---- START VEXCODE CONFIGURED DEVICES ----
-
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
@@ -34,7 +33,7 @@ competition Competition;
 
 /*---------------------------------------------------------------------------*/
 /*                          Pre-Autonomous Functions                         */
-/*                                                      */
+/*                                                                           */
 /*  You may want to perform some actions before the competition starts.      */
 /*  Do them in the following function.  You must return from this function   */
 /*  or the autonomous and usercontrol tasks will not be started.  This       */
@@ -67,10 +66,6 @@ void autonomous(void) {
   //auton_function_test();
   //Drivetrain.drive(fwd, 100, velocityUnits::pct);
   //wait(1000, timeUnits::msec);
-  //auton_skills_real();
-
-  //auton_skills2();
-  //auton_skills2();
   auton_skills();
   
   
@@ -90,8 +85,6 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
   while (1) {
-    //enableDrivePID = false;
-    //double turnImportance = 0.5;
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.
