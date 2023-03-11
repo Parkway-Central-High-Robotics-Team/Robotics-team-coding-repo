@@ -8,16 +8,33 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
+<<<<<<< Updated upstream:VexV5Code/Training/Training-2022-10-11/Traning/src/robot-config.cpp
 motor leftMotorA = motor(PORT2, ratio18_1, false);
+=======
+motor leftMotorA = motor(PORT4, ratio18_1, false);
+>>>>>>> Stashed changes:VexV5Code/2022-2023/12.15.22/12.15.22/src/robot-config.cpp
 motor leftMotorB = motor(PORT3, ratio18_1, false);
 motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
-motor rightMotorA = motor(PORT8, ratio18_1, true);
-motor rightMotorB = motor(PORT9, ratio18_1, true);
+motor rightMotorA = motor(PORT9, ratio18_1, true);
+motor rightMotorB = motor(PORT8, ratio18_1, true);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
+<<<<<<< Updated upstream:VexV5Code/Training/Training-2022-10-11/Traning/src/robot-config.cpp
 inertial DrivetrainInertial = inertial(PORT11);
 smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainInertial, 319.19, 320, 40, mm, 1);
 controller Controller1 = controller(primary);
 motor Motor7 = motor(PORT7, ratio18_1, false);
+=======
+//motor_group StrafeAGroup = motor_group(leftMotorA, rightMotorB);
+//motor_group StrafeBGroup = motor_group(leftMotorB, rightMotorA);
+//inertial DrivetrainInertial = inertial(PORT11);
+//smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainInertial, 319.19, 320, 177.79999999999998, mm, 1);
+controller Controller1 = controller(primary);
+//motor intake = motor(PORT20, ratio18_1, false);
+motor spinMtr1 = motor(PORT20, ratio18_1, true);
+motor spinMtr2 = motor(PORT12, ratio18_1, false);
+//motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
+//digital_out Pneumatics = digital_out(Brain.ThreeWirePort.B);
+>>>>>>> Stashed changes:VexV5Code/2022-2023/12.15.22/12.15.22/src/robot-config.cpp
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -106,12 +123,9 @@ void vexcodeInit( void ) {
   Brain.Screen.setCursor(2, 1);
   // calibrate the drivetrain Inertial
   wait(200, msec);
-  DrivetrainInertial.calibrate();
   Brain.Screen.print("Calibrating Inertial for Drivetrain");
   // wait for the Inertial calibration process to finish
-  while (DrivetrainInertial.isCalibrating()) {
-    wait(25, msec);
-  }
+  
   // reset the screen now that the calibration is complete
   Brain.Screen.clearScreen();
   Brain.Screen.setCursor(1,1);
