@@ -22,7 +22,8 @@ void stopFlyWheel(void);
 void visionTest(void);
 void pneumaticsFunction(void);
 ////////////////////
-void visionTurn(void);
+void visionTurnBlue(void);
+void visionTurnRed(void);
 void opticalFunction(void);
 ////////////////////
 void moveForwardTime(int msc);
@@ -49,6 +50,7 @@ void indexerFire(void);
 void flywheel(int vel);
 ////////////////////
 void indexerFireAuton(void);
+void indexerFireSkills(void);
 void startIntake(void);
 void stopIntake(void);
 void indexerDown(void);

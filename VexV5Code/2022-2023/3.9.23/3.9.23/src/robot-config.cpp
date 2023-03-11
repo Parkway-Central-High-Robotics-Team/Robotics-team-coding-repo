@@ -142,7 +142,7 @@ int rc_auto_loop_function_Controller1() {
       }
       //SPIN MOTORS BUTTONS
       if (Controller1.ButtonL1.pressing()) {
-        spinMtrs.spin(forward, 60, velocityUnits::pct);
+        spinMtrs.spin(forward, 63, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if (Controller1.ButtonL2.pressing()) {
         spinMtrs.stop(coast);
@@ -153,13 +153,13 @@ int rc_auto_loop_function_Controller1() {
         spinMtrs.spin(forward, 75, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonX.pressing()) {
-        spinMtrs.spin(forward, 80, velocityUnits::pct);
+        visionTurnRed();
         Controller1LeftShoulderControlMotorsStopped = false;
       } else if(Controller1.ButtonA.pressing()) {
         spinMtrs.spin(forward, 90, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
       } if(Controller1.ButtonB.pressing()) {
-        visionTurn();
+        visionTurnBlue();
       }
       if(Controller1.ButtonRight.pressing()){
         indexerFire();

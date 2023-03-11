@@ -12,14 +12,14 @@ int redSide = 0;
 int blueSide = 1;
 int side = redSide;
 ////////////////////
-void visionTurn(void){
+void visionTurnBlue(void){
   	//#region config_init
   //Drivetrain.setTimeout(100, msec);
-	int screen_middle_x = 316 / 2;
+	int screen_middle_x = (316 / 2)-15;
   bool linedup = false;
   //take it slow
-  Drivetrain.setDriveVelocity(7,vex::velocityUnits::pct);
-  Drivetrain.setTurnVelocity(7,vex::velocityUnits::pct);
+  Drivetrain.setDriveVelocity(5,vex::velocityUnits::pct);
+  Drivetrain.setTurnVelocity(5,vex::velocityUnits::pct);
   while(not linedup) {
       //snap a picture
       Vision1.takeSnapshot(SIG_BLUE);
@@ -27,10 +27,10 @@ void visionTurn(void){
       if(Vision1.objectCount > 0) {
           //where was the largest thing?
           if(Vision1.largestObject.width >= 30){
-            if(Vision1.largestObject.centerX < screen_middle_x - 15) {
+            if(Vision1.largestObject.centerX < screen_middle_x - 10) {
                 //on the left, turn left
                 Drivetrain.turn(turnType::left);
-            } else if (Vision1.largestObject.centerX > screen_middle_x + 15) {
+            } else if (Vision1.largestObject.centerX > screen_middle_x + 10) {
                 //on the right, turn right
                 Drivetrain.turn(turnType::right);
             } else {
@@ -44,6 +44,41 @@ void visionTurn(void){
           Drivetrain.stop(coast);
       }
   }
+  //Drivetrain.turnFor(right, 3, rotationUnits::deg);
+}
+void visionTurnRed(void){
+  	//#region config_init
+  //Drivetrain.setTimeout(100, msec);
+	int screen_middle_x = (316 / 2)-15;
+  bool linedup = false;
+  //take it slow
+  Drivetrain.setDriveVelocity(5,vex::velocityUnits::pct);
+  Drivetrain.setTurnVelocity(5,vex::velocityUnits::pct);
+  while(not linedup) {
+      //snap a picture
+      Vision1.takeSnapshot(SIG_RED);
+      //did we see anything?
+      if(Vision1.objectCount > 0) {
+          //where was the largest thing?
+          if(Vision1.largestObject.width >= 30){
+            if(Vision1.largestObject.centerX < screen_middle_x - 10) {
+                //on the left, turn left
+                Drivetrain.turn(turnType::left);
+            } else if (Vision1.largestObject.centerX > screen_middle_x + 10) {
+                //on the right, turn right
+                Drivetrain.turn(turnType::right);
+            } else {
+                //in the middle, we're done lining up
+                linedup = true;
+                Drivetrain.stop(coast);
+            }
+          }
+      } else {
+          //saw nothing, relax
+          Drivetrain.stop(coast);
+      }
+  }
+  //Drivetrain.turnFor(right, 3, rotationUnits::deg);
 }
 ////////////////////
 int returner = 0;
