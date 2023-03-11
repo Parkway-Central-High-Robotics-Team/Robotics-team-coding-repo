@@ -45,7 +45,7 @@ void auton_skills2(){
   startIntake();
   Drivetrain.driveFor(reverse, 5, distanceUnits::in, 100, velocityUnits::pct);
   Drivetrain.turnFor(right, 130, rotationUnits::deg, 45, velocityUnits::pct);
-  Drivetrain.driveFor(forward, 22, distanceUnits::in, 100, velocityUnits::pct);
+  Drivetrain.driveFor(forward, 22, distanceUnits::in, 75, velocityUnits::pct);
   wait(150, timeUnits::msec);
   Drivetrain.turnFor(left, 35, rotationUnits::deg, 45, velocityUnits::pct);
   //Drivetrain.turnFor(right, 90, rotationUnits::deg, 45, velocityUnits::pct);
@@ -53,11 +53,11 @@ void auton_skills2(){
 
   //Goes to the second roller, turns it, backs up, and turns to the blue goal
   wait(150, timeUnits::msec);
-  moveBackwardTime(465);
+  moveBackwardTime(400);
   rollerTime(300);
   Drivetrain.driveFor(reverse, 10, distanceUnits::in);
   wait(150, timeUnits::msec);
-  Drivetrain.turnFor(left, 91, rotationUnits::deg);
+  Drivetrain.turnFor(left, 93, rotationUnits::deg);
 
   //Dives to the blue goal and fires
   wait(150, timeUnits::msec);
@@ -80,7 +80,7 @@ void auton_skills2(){
 
   //Turns to the 3 stack and collects it and fires it
   Drivetrain.turnFor(left, 92, rotationUnits::deg);
-  Drivetrain.driveFor(forward, 49, distanceUnits::in, 55, velocityUnits::pct);
+  Drivetrain.driveFor(forward, 49, distanceUnits::in, 75, velocityUnits::pct);
   Drivetrain.driveFor(reverse, 9, distanceUnits::in, 55, velocityUnits::pct); //3 Stack
   Drivetrain.turnFor(right, 53, rotationUnits::deg);
   Drivetrain.driveFor(reverse, 15, distanceUnits::in, 75, velocityUnits::pct);

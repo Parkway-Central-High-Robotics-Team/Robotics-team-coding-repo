@@ -70,7 +70,7 @@ void autonomous(void) {
   //auton_skills_real();
 
   //auton_skills2();
-  auton_skills();
+  auton_skills2();
   
   
   // ..........................................................................
