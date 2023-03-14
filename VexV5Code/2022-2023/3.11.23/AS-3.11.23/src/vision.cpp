@@ -17,10 +17,11 @@ void visionTurnBlue(void){
   //Drivetrain.setTimeout(100, msec);
 	int screen_middle_x = (316 / 2)-15;
   bool linedup = false;
+  bool timeout = false;
   //take it slow
   Drivetrain.setDriveVelocity(5,vex::velocityUnits::pct);
   Drivetrain.setTurnVelocity(5,vex::velocityUnits::pct);
-  while(not linedup) {
+  while(not linedup && timeout == false) {
       //snap a picture
       Vision1.takeSnapshot(SIG_BLUE);
       //did we see anything?
@@ -42,6 +43,8 @@ void visionTurnBlue(void){
       } else {
           //saw nothing, relax
           Drivetrain.stop(coast);
+          //break;
+          timeout = true;
       }
   }
   //Drivetrain.turnFor(right, 3, rotationUnits::deg);
@@ -51,10 +54,11 @@ void visionTurnRed(void){
   //Drivetrain.setTimeout(100, msec);
 	int screen_middle_x = (316 / 2)-15;
   bool linedup = false;
+  bool timeout = false;
   //take it slow
   Drivetrain.setDriveVelocity(5,vex::velocityUnits::pct);
   Drivetrain.setTurnVelocity(5,vex::velocityUnits::pct);
-  while(not linedup) {
+  while(not linedup && timeout == false) {
       //snap a picture
       Vision1.takeSnapshot(SIG_RED);
       //did we see anything?
@@ -76,6 +80,8 @@ void visionTurnRed(void){
       } else {
           //saw nothing, relax
           Drivetrain.stop(coast);
+          //break;
+          timeout = true;
       }
   }
   //Drivetrain.turnFor(right, 3, rotationUnits::deg);

@@ -5,16 +5,16 @@ using namespace vex;
 
 void auton_skills(void){
   //enableDrivePID = false;
-  startFlyWheel(75);
+  startFlyWheel(100);
   rollerTime(500, 100);
-  wait(1000, timeUnits::msec);
-  moveForwardTime(75);
+  wait(8000, timeUnits::msec);
+  moveForwardTime(100);
   turnLeftTime(150);
   wait(600, timeUnits::msec);
   indexerFireSkills();
   turnLeftTime(500);
-  RightDriveSmart.spinFor(forward, 1600, timeUnits::msec);
-  startFlyWheel(70);
+  RightDriveSmart.spinFor(forward, 1400, timeUnits::msec);
+  //startFlyWheel(70);
   startIntake();
   moveBackwardTime(1700,100);
   turnRightTime(585);
@@ -64,7 +64,11 @@ void auton_skills2(){
   stopIntake();
   moveForwardTime(1250);
   indexerFireSkills();
-
+  moveBackwardTime(1300);
+  Drivetrain.turnFor(right, 45, rotationUnits::deg);
+  Pneumatics.set(true);
+}
+  /*
   //Backs up and lines up with the three disc on the blue side. Then collects those disc
   Drivetrain.driveFor(forward, 22, distanceUnits::in, 55, velocityUnits::pct);
   Drivetrain.turnFor(left, 133, rotationUnits::deg);
@@ -98,13 +102,16 @@ void auton_skills2(){
   Drivetrain.driveFor(forward, 17, distanceUnits::in, 75, velocityUnits::pct);
   rollerTime(300);
   Drivetrain.driveFor(reverse, 18, distanceUnits::in, 75, velocityUnits::pct);
+  Drivetrain.turnFor(right, 125, rotationUnits::deg);
+  Pneumatics.set(true);
 
   //Turns to the red side roller and rolls it
-  /*Drivetrain.turnFor(right, 90, rotationUnits::deg);
+  Drivetrain.turnFor(right, 90, rotationUnits::deg);
   Drivetrain.driveFor(forward, 15, distanceUnits::in, 75, velocityUnits::pct);
   rollerTime(300);
-  Drivetrain.driveFor(reverse, 8, distanceUnits::in, 75, velocityUnits::pct);*/
+  Drivetrain.driveFor(reverse, 8, distanceUnits::in, 75, velocityUnits::pct);
 
+  
   //Turns 180, drives to be in line with disc, and collects them
   Drivetrain.turnFor(right, 180, rotationUnits::deg);
   startIntake();
@@ -121,7 +128,7 @@ void auton_skills2(){
   Drivetrain.driveFor(reverse, 50, distanceUnits::in, 75, velocityUnits::pct);
   Drivetrain.turnFor(right, 15, rotationUnits::deg);
   //Pneumatics.set(true);
-}
+  */
 
 void autonSkillsBackup(void){
   startFlyWheel(65);
