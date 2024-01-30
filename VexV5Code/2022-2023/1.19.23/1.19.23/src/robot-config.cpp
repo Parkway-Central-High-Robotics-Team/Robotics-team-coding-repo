@@ -9,21 +9,24 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-motor leftMotorA = motor(PORT1, ratio18_1, false);
+motor leftMotorA = motor(PORT2, ratio18_1, false);
 motor leftMotorB = motor(PORT4, ratio18_1, false);
 motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
-motor rightMotorA = motor(PORT2, ratio18_1, true);
-motor rightMotorB = motor(PORT3, ratio18_1, true);
+motor rightMotorA = motor(PORT10, ratio18_1, true);
+motor rightMotorB = motor(PORT9, ratio18_1, true);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 motor_group StrafeAGroup = motor_group(leftMotorA, rightMotorB);
 motor_group StrafeBGroup = motor_group(leftMotorB, rightMotorA);
 inertial DrivetrainInertial = inertial(PORT11);
 smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, DrivetrainInertial, 319.19, 320, 177.79999999999998, mm, 1);
 controller Controller1 = controller(primary);
-motor intake = motor(PORT20, ratio18_1, false);
-motor spinMtr1 = motor(PORT12, ratio18_1, true);
-motor spinMtr2 = motor(PORT13, ratio18_1, false);
-motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
+motor liftA = motor(PORT7, ratio18_1, false);
+motor liftB = motor(PORT5, ratio18_1, true);
+motor_group lifts = motor_group(liftA, liftB);
+motor shooter = motor(PORT18, ratio18_1, true);
+motor intake = motor(PORT13, ratio18_1, false);
+//motor spinMtr2 = motor(PORT13, ratio18_1, false);
+//motor_group spinMtrs = motor_group(spinMtr1, spinMtr2);
 digital_out Pneumatics = digital_out(Brain.ThreeWirePort.B);
 optical Optical2 = optical(PORT2);
 
@@ -33,8 +36,8 @@ bool RemoteControlCodeEnabled = true;
 // define variables used for controlling motors based on controller inputs
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
-bool Controller1LeftShoulderControlMotorsStopped = true;
-bool Controller1RightShoulderControlMotorsStopped = true;
+bool Controller1LeftShoulderControlMotorsStopped = false;
+bool Controller1RightShoulderControlMotorsStopped = false;
 bool Controller1UpDownButtonsControlMotorsStopped = true;
 bool Controller1XBButtonsControlMotorsStopped = true;
 bool Controller1YAButtonsControlMotorsStopped = true;
@@ -113,27 +116,32 @@ int rc_auto_loop_function_Controller1() {
         }
       }
 
-      //INTAKE BUTTONS
-      if(Controller1.ButtonR1.pressing()){
-        intake.spin(forward, 100, velocityUnits::pct);
+      //LIFT BUTTONS
+      if(Controller1.ButtonL1.pressing()){
+        lifts.spin(forward, 50, velocityUnits::pct);
         Controller1RightShoulderControlMotorsStopped = false;
-      } else if (Controller1.ButtonR2.pressing()) {
-        intake.spin(reverse, 100, velocityUnits::pct);
+      } else if (Controller1.ButtonL2.pressing()) {
+        lifts.spin(reverse, 50, velocityUnits::pct);
+       
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         //I girlbossed too close to the sun :((((
         //pure of heart, dumb of ass
         Controller1RightShoulderControlMotorsStopped = false;
       }
       else if(!Controller1RightShoulderControlMotorsStopped){
-        intake.stop(hold);
+        lifts.stop(hold);
       }
-      //SPIN MOTORS BUTTONS
-      if (Controller1.ButtonL1.pressing()) {
-        spinMtrs.spin(forward, 90, velocityUnits::pct);
+      //SHOOTER BUTTONS
+      if(Controller1.ButtonR1.pressing()){
+        shooter.spin(forward, 100, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
-      } else if (Controller1.ButtonL2.pressing()) {
-        spinMtrs.stop(coast);
+      }
+      else if(Controller1.ButtonR2.pressing()){
+        shooter.spin(reverse, 100, velocityUnits::pct);
         Controller1LeftShoulderControlMotorsStopped = false;
+      }
+      else if(!Controller1LeftShoulderControlMotorsStopped){
+        shooter.stop(hold);
       }
 
       if (Controller1.ButtonY.pressing()) {

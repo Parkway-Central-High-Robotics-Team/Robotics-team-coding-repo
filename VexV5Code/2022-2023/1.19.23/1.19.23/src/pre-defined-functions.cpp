@@ -34,13 +34,15 @@ void intakeOutDeg(int deg, int vel){
   intake.stop();
 }
 
-void startFlyWheel(int vel){
+/*void startFlyWheel(int vel){
   spinMtrs.spin(forward, vel, velocityUnits::pct);
 }
+*
 
 void stopFlyWheel(void){
   spinMtrs.stop();
 }
+*/
 
 void pneumaticsFunction(void){
   // NEEDS TO BE SET TO FALSE IN GLOBAL CODESPACE 
